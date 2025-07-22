@@ -1,6 +1,7 @@
 import { Metadata } from "next"
-import { Button } from "components/Button/Button"
 import { notFound } from "next/navigation"
+import Link from "next/link"
+import { Button } from "components/Button/Button"
 
 export const metadata: Metadata = {
   title: "Property Details | Las Vegas Real Estate",
@@ -57,11 +58,11 @@ export default function PropertyPage({ params }: PropertyPageProps) {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-4">
             <nav className="text-sm text-gray-500">
-              <a href="/properties" className="hover:text-blue-600">Properties</a>
+              <Link href="/properties" className="hover:text-blue-600">Properties</Link>
               <span className="mx-2">/</span>
-              <a href={`/neighborhoods/${property.neighborhood.toLowerCase()}`} className="hover:text-blue-600">
+              <Link href={`/neighborhoods/${property.neighborhood.toLowerCase()}`} className="hover:text-blue-600">
                 {property.neighborhood}
-              </a>
+              </Link>
               <span className="mx-2">/</span>
               <span className="text-gray-900">{property.address}</span>
             </nav>
