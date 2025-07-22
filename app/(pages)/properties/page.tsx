@@ -141,9 +141,9 @@ export default function PropertiesPage() {
               </div>
             </div>
             <div className="mt-6 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <Button className="bg-blue-600 text-white hover:bg-blue-700">
+              <button type="button" className="rounded-xl bg-blue-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-blue-700">
                 Search Properties
-              </Button>
+              </button>
               <Button href="/properties/search" intent="secondary" className="border-blue-600 text-blue-600 hover:bg-blue-50">
                 Advanced Search
               </Button>
@@ -214,17 +214,17 @@ export default function PropertiesPage() {
       <section className="bg-gray-50 py-8">
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex items-center justify-center space-x-2">
-            <Button intent="secondary" className="border-gray-300 text-gray-700 hover:bg-gray-50">
+            <button type="button" className="rounded-xl border border-gray-300 bg-transparent px-6 py-2.5 text-lg text-gray-700 transition-colors delay-50 hover:bg-gray-50">
               Previous
-            </Button>
-            <Button className="bg-blue-600 text-white hover:bg-blue-700">1</Button>
-            <Button intent="secondary" className="border-gray-300 text-gray-700 hover:bg-gray-50">2</Button>
-            <Button intent="secondary" className="border-gray-300 text-gray-700 hover:bg-gray-50">3</Button>
+            </button>
+            <button type="button" className="rounded-xl bg-blue-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-blue-700">1</button>
+            <button type="button" className="rounded-xl border border-gray-300 bg-transparent px-6 py-2.5 text-lg text-gray-700 transition-colors delay-50 hover:bg-gray-50">2</button>
+            <button type="button" className="rounded-xl border border-gray-300 bg-transparent px-6 py-2.5 text-lg text-gray-700 transition-colors delay-50 hover:bg-gray-50">3</button>
             <span className="text-gray-500">...</span>
-            <Button intent="secondary" className="border-gray-300 text-gray-700 hover:bg-gray-50">25</Button>
-            <Button intent="secondary" className="border-gray-300 text-gray-700 hover:bg-gray-50">
+            <button type="button" className="rounded-xl border border-gray-300 bg-transparent px-6 py-2.5 text-lg text-gray-700 transition-colors delay-50 hover:bg-gray-50">25</button>
+            <button type="button" className="rounded-xl border border-gray-300 bg-transparent px-6 py-2.5 text-lg text-gray-700 transition-colors delay-50 hover:bg-gray-50">
               Next
-            </Button>
+            </button>
           </div>
         </div>
       </section>
