@@ -154,9 +154,9 @@ export default function ContactPage() {
                     I'd like to receive market updates and real estate news
                   </label>
                 </div>
-                <Button type="submit" className="w-full bg-indigo-600 text-white hover:bg-indigo-700">
+                <button type="submit" className="w-full rounded-xl bg-indigo-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-indigo-700">
                   Send Message
-                </Button>
+                </button>
               </form>
             </div>
 
