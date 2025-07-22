@@ -72,9 +72,9 @@ export default function HomeValuationPage() {
                       className="w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
                       aria-label="Property address for valuation"
                     />
-                    <Button className="mt-4 w-full bg-teal-600 text-white hover:bg-teal-700">
+                    <button type="button" className="mt-4 w-full rounded-xl bg-teal-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-teal-700">
                       Get Valuation
-                    </Button>
+                    </button>
                   </div>
                 </div>
               </div>
