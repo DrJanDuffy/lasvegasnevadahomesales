@@ -1,6 +1,6 @@
 import { Metadata } from "next"
-import { notFound } from "next/navigation"
 import Link from "next/link"
+import { notFound } from "next/navigation"
 import { Button } from "components/Button/Button"
 
 export const metadata: Metadata = {
@@ -39,13 +39,14 @@ const getPropertyData = (slug: string) => {
 }
 
 interface PropertyPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
-export default function PropertyPage({ params }: PropertyPageProps) {
-  const property = getPropertyData(params.slug)
+export default async function PropertyPage({ params }: PropertyPageProps) {
+  const { slug } = await params
+  const property = getPropertyData(slug)
   
   if (!property) {
     notFound()
