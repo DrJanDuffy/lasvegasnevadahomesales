@@ -242,12 +242,12 @@ export default function AdvancedSearchPage() {
 
               {/* Search Buttons */}
               <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                <Button type="submit" className="bg-blue-600 text-white hover:bg-blue-700">
+                <button type="submit" className="rounded-xl bg-blue-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-blue-700">
                   Search Properties
-                </Button>
-                <Button type="reset" intent="secondary" className="border-gray-300 text-gray-700 hover:bg-gray-50">
+                </button>
+                <button type="reset" className="rounded-xl border border-gray-300 bg-transparent px-6 py-2.5 text-lg text-gray-700 transition-colors delay-50 hover:bg-gray-50">
                   Clear Filters
-                </Button>
+                </button>
                 <Button href="/properties" intent="secondary" className="border-blue-600 text-blue-600 hover:bg-blue-50">
                   Basic Search
                 </Button>
