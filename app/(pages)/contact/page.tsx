@@ -176,6 +176,9 @@ export default function ContactPage() {
                         <p className="font-semibold text-gray-900">Phone</p>
                         <p className="text-gray-600">(702) 555-0123</p>
                         <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM, Sat 10AM-4PM</p>
+                        <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-2 text-sm text-indigo-600 hover:text-indigo-800">
+                          Schedule a Call
+                        </Button>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -184,6 +187,9 @@ export default function ContactPage() {
                         <p className="font-semibold text-gray-900">Email</p>
                         <p className="text-gray-600">info@lasvegasnevadahomesales.com</p>
                         <p className="text-sm text-gray-500">We respond within 24 hours</p>
+                        <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-2 text-sm text-indigo-600 hover:text-indigo-800">
+                          Send Message
+                        </Button>
                       </div>
                     </div>
                     <div className="flex items-start">
@@ -225,16 +231,25 @@ export default function ContactPage() {
                       <p className="font-semibold text-gray-900">Sarah Johnson</p>
                       <p className="text-sm text-gray-600">Lead Real Estate Agent</p>
                       <p className="text-xs text-gray-500">15+ years experience in Las Vegas</p>
+                      <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-2 text-xs text-indigo-600 hover:text-indigo-800">
+                        Contact Sarah
+                      </Button>
                     </div>
                     <div className="rounded-lg bg-gray-50 p-4">
                       <p className="font-semibold text-gray-900">Mike Rodriguez</p>
                       <p className="text-sm text-gray-600">Investment Specialist</p>
                       <p className="text-xs text-gray-500">Expert in investment properties</p>
+                      <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-2 text-xs text-indigo-600 hover:text-indigo-800">
+                        Contact Mike
+                      </Button>
                     </div>
                     <div className="rounded-lg bg-gray-50 p-4">
                       <p className="font-semibold text-gray-900">Lisa Chen</p>
                       <p className="text-sm text-gray-600">Luxury Home Specialist</p>
                       <p className="text-xs text-gray-500">Summerlin & Henderson expert</p>
+                      <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-2 text-xs text-indigo-600 hover:text-indigo-800">
+                        Contact Lisa
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -276,6 +291,9 @@ export default function ContactPage() {
                   For urgent matters outside of business hours, please call our 24/7 hotline:
                 </p>
                 <p className="mt-2 text-lg font-semibold text-indigo-600">(702) 555-0124</p>
+                <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-2 text-sm text-indigo-600 hover:text-indigo-800">
+                  Emergency Contact Form
+                </Button>
               </div>
             </div>
             <div>
@@ -283,12 +301,14 @@ export default function ContactPage() {
                 Visit Our Office
               </h2>
               <div className="h-64 rounded-lg bg-gradient-to-br from-gray-300 to-gray-400">
-                {/* Placeholder for map */}
                 <div className="flex h-full items-center justify-center">
                   <div className="text-center">
                     <div className="mb-2 text-4xl">🗺️</div>
-                    <p className="text-gray-600">Interactive Map</p>
+                    <p className="text-gray-600">Visit Our Office</p>
                     <p className="text-sm text-gray-500">1234 Las Vegas Blvd, Las Vegas, NV 89101</p>
+                    <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-4 bg-indigo-600 text-white hover:bg-indigo-700">
+                      Get Directions & Contact Us
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -333,8 +353,8 @@ export default function ContactPage() {
             Our team is here to help you find your perfect Las Vegas home
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button href="tel:702-555-0123" className="bg-white text-indigo-900 hover:bg-indigo-50">
-              Call Now
+            <Button href="http://drjanduffy.realscout.com/onboarding" className="bg-white text-indigo-900 hover:bg-indigo-50">
+              Contact Us Now
             </Button>
             <Button href="/properties" intent="secondary" className="border-white text-white hover:bg-white hover:text-indigo-900">
               Browse Properties

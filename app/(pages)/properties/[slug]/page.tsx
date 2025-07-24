@@ -184,6 +184,9 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Phone: (702) 555-0123</p>
+                <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-1 text-xs text-blue-600 hover:text-blue-800">
+                  Contact Agent
+                </Button>
                     <p className="text-sm text-gray-600">Email: sarah@lasvegasnevadahomesales.com</p>
                   </div>
                   <Button href="/contact" className="w-full bg-blue-600 text-white hover:bg-blue-700">

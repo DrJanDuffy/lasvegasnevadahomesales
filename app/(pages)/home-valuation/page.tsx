@@ -49,25 +49,16 @@ export default function HomeValuationPage() {
               id="homebot-valuation-container"
               className="rounded-lg border border-gray-200 bg-white shadow-lg min-h-[480px] relative z-[1000]"
             >
-              {/* Placeholder for Homebot Widget */}
               <div className="flex h-96 items-center justify-center">
                 <div className="text-center">
                   <div className="mb-4 text-4xl">🏠</div>
-                  <h3 className="mb-2 text-xl font-semibold text-gray-900">Home Valuation Widget</h3>
-                  <p className="text-gray-600">
-                    Enter your address to get an instant property valuation
+                  <h3 className="mb-2 text-xl font-semibold text-gray-900">Get Your Home's Value</h3>
+                  <p className="text-gray-600 mb-6">
+                    Get an instant property valuation from our expert team
                   </p>
-                  <div className="mt-6">
-                    <input
-                      type="text"
-                      placeholder="Enter your address..."
-                      className="w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
-                      aria-label="Property address for valuation"
-                    />
-                    <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-4 w-full rounded-xl bg-teal-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-teal-700">
-                      Get Valuation
-                    </Button>
-                  </div>
+                  <Button href="http://drjanduffy.realscout.com/onboarding" className="w-full rounded-xl bg-teal-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-teal-700">
+                    Start Your Free Valuation
+                  </Button>
                 </div>
               </div>
             </div>
