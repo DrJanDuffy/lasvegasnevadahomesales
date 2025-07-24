@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import { Button } from "components/Button/Button"
 import { RealScoutOfficeListings } from "components/RealScout/RealScoutOfficeListings"
+import { RealScoutYourListings } from "components/RealScout/RealScoutYourListings"
 
 export const metadata: Metadata = {
   title: "Las Vegas Home Valuation | Get Your Home's Market Value",
@@ -204,6 +205,24 @@ export default function HomeValuationPage() {
               propertyTypes="SFR,MF,TC" 
               priceMin="600000" 
               priceMax="1200000"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Your Listings */}
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+            Our Latest Listings
+          </h2>
+          <div className="flex justify-center">
+            <RealScoutYourListings 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE" 
+              listingStatus="For Sale,Sold" 
+              propertyTypes="" 
+              priceMin="500000"
             />
           </div>
         </div>

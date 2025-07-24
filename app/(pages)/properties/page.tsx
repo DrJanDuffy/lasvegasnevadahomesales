@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import { Button } from "components/Button/Button"
+import { RealScoutYourListings } from "components/RealScout/RealScoutYourListings"
 
 export const metadata: Metadata = {
   title: "Las Vegas Homes for Sale | Property Search & Listings",
@@ -225,6 +226,24 @@ export default function PropertiesPage() {
             <button type="button" className="rounded-xl border border-gray-300 bg-transparent px-6 py-2.5 text-lg text-gray-700 transition-colors delay-50 hover:bg-gray-50">
               Next
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Your Listings */}
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+            Our Latest Listings
+          </h2>
+          <div className="flex justify-center">
+            <RealScoutYourListings 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE" 
+              listingStatus="For Sale,Sold" 
+              propertyTypes="" 
+              priceMin="500000"
+            />
           </div>
         </div>
       </section>

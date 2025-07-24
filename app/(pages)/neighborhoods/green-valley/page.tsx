@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import { Button } from "components/Button/Button"
+import { RealScoutYourListings } from "components/RealScout/RealScoutYourListings"
 
 export const metadata: Metadata = {
   title: "Green Valley Las Vegas | Affordable Homes & Great Community",
@@ -205,6 +206,24 @@ export default function GreenValleyPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Your Listings */}
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+            Our Latest Listings
+          </h2>
+          <div className="flex justify-center">
+            <RealScoutYourListings 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE" 
+              listingStatus="For Sale,Sold" 
+              propertyTypes="" 
+              priceMin="500000"
+            />
           </div>
         </div>
       </section>
