@@ -270,7 +270,7 @@ export default function MarketReportsPage() {
             <Button href="/contact" className="bg-white text-purple-900 hover:bg-purple-50">
               Request Custom Report
             </Button>
-            <Button href="/home-valuation" intent="secondary" className="border-white text-white hover:bg-white hover:text-purple-900">
+            <Button href="http://drjanduffy.realscout.com/onboarding" intent="secondary" className="border-white text-white hover:bg-white hover:text-purple-900">
               Get Home Valuation
             </Button>
           </div>

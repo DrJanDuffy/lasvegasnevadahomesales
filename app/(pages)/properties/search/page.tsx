@@ -323,7 +323,7 @@ export default function AdvancedSearchPage() {
             <Button href="/contact" className="bg-white text-blue-900 hover:bg-blue-50">
               Contact an Agent
             </Button>
-            <Button href="/home-valuation" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
+            <Button href="http://drjanduffy.realscout.com/onboarding" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
               Get Home Value
             </Button>
           </div>

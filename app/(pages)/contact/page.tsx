@@ -155,9 +155,9 @@ export default function ContactPage() {
                     I'd like to receive market updates and real estate news
                   </label>
                 </div>
-                <button type="submit" className="w-full rounded-xl bg-indigo-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-indigo-700">
+                <Button href="http://drjanduffy.realscout.com/onboarding" className="w-full rounded-xl bg-indigo-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-indigo-700">
                   Send Message
-                </button>
+                </Button>
               </form>
             </div>
 
@@ -203,7 +203,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="mb-4 text-xl font-semibold text-gray-900">Quick Actions</h3>
                   <div className="space-y-3">
-                    <Button href="/home-valuation" className="w-full justify-start bg-gray-100 text-gray-900 hover:bg-gray-200">
+                    <Button href="http://drjanduffy.realscout.com/onboarding" className="w-full justify-start bg-gray-100 text-gray-900 hover:bg-gray-200">
                       🏠 Get Home Valuation
                     </Button>
                     <Button href="/properties" className="w-full justify-start bg-gray-100 text-gray-900 hover:bg-gray-200">

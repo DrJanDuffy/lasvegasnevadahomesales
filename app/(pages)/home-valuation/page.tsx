@@ -21,7 +21,7 @@ export default function HomeValuationPage() {
             <p className="mb-8 text-xl font-light text-teal-100 md:text-2xl">
               Get an accurate market value for your Las Vegas property
             </p>
-            <Button href="#valuation-widget" className="bg-white text-teal-800 hover:bg-teal-50">
+            <Button href="http://drjanduffy.realscout.com/onboarding" className="bg-white text-teal-800 hover:bg-teal-50">
               Start Valuation
             </Button>
           </div>
@@ -64,9 +64,9 @@ export default function HomeValuationPage() {
                       className="w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
                       aria-label="Property address for valuation"
                     />
-                    <button type="button" className="mt-4 w-full rounded-xl bg-teal-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-teal-700">
+                    <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-4 w-full rounded-xl bg-teal-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-teal-700">
                       Get Valuation
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -228,7 +228,7 @@ export default function HomeValuationPage() {
             Get an instant valuation and connect with a local real estate expert
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button href="#valuation-widget" className="bg-white text-teal-800 hover:bg-teal-50">
+            <Button href="http://drjanduffy.realscout.com/onboarding" className="bg-white text-teal-800 hover:bg-teal-50">
               Get Free Valuation
             </Button>
             <Button href="/contact" intent="secondary" className="border-white text-white hover:bg-white hover:text-teal-800">
