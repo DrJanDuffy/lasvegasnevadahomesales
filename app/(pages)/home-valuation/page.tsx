@@ -41,21 +41,12 @@ export default function HomeValuationPage() {
           
           {/* Homebot Valuation Widget Container */}
           <div 
-            className="relative mx-auto max-w-2xl"
-            style={{
-              minHeight: '480px',
-              zIndex: 1000
-            }}
+            className="relative mx-auto max-w-2xl min-h-[480px] z-[1000]"
           >
             {/* Shadow DOM Container for Homebot Widget */}
             <div 
               id="homebot-valuation-container"
-              className="rounded-lg border border-gray-200 bg-white shadow-lg"
-              style={{
-                minHeight: '480px',
-                position: 'relative',
-                zIndex: 1000
-              }}
+              className="rounded-lg border border-gray-200 bg-white shadow-lg min-h-[480px] relative z-[1000]"
             >
               {/* Placeholder for Homebot Widget */}
               <div className="flex h-96 items-center justify-center">
