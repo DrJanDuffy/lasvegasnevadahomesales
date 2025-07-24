@@ -5,7 +5,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+        <script 
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js" 
+          type="module"
+          async
+          defer
+        ></script>
         <style>
           {`
             realscout-office-listings {
