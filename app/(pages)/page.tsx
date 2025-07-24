@@ -126,6 +126,25 @@ export default function LasVegasMarketOverview() {
         </div>
       </section>
 
+      {/* Featured Listings */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+            Featured Luxury Properties
+          </h2>
+          <div className="flex justify-center">
+            <realscout-office-listings 
+              agent-encoded-id="QWdlbnQtMjI1MDUw" 
+              sort-order="STATUS_AND_SIGNIFICANT_CHANGE" 
+              listing-status="For Sale" 
+              property-types="SFR,MF,TC" 
+              price-min="600000" 
+              price-max="1200000">
+            </realscout-office-listings>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-blue-900 py-16 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center">
