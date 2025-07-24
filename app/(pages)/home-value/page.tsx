@@ -1,5 +1,5 @@
-import { RealScoutHomeValue } from "components/RealScout/RealScoutHomeValue"
-import { RealScoutYourListings } from "components/RealScout/RealScoutYourListings"
+import { RealScoutHomeValue } from "../../../components/RealScout/RealScoutHomeValue"
+import { RealScoutYourListings } from "../../../components/RealScout/RealScoutYourListings"
 
 export default function HomeValuePage() {
   return (

@@ -1,7 +1,7 @@
 import { Metadata } from "next"
-import { Button } from "components/Button/Button"
-import { RealScoutOfficeListings } from "components/RealScout/RealScoutOfficeListings"
-import { RealScoutYourListings } from "components/RealScout/RealScoutYourListings"
+import { Button } from "../../components/Button/Button"
+import { RealScoutOfficeListings } from "../../components/RealScout/RealScoutOfficeListings"
+import { RealScoutYourListings } from "../../components/RealScout/RealScoutYourListings"
 
 export const metadata: Metadata = {
   title: "Las Vegas Real Estate Market | Homes for Sale in Las Vegas, NV",

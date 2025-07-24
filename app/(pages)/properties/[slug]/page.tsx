@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { Button } from "components/Button/Button"
+import { Button } from "../../../../components/Button/Button"
 
 export const metadata: Metadata = {
   title: "Property Details | Las Vegas Real Estate",

@@ -1,6 +1,6 @@
 import { Metadata } from "next"
-import { Button } from "components/Button/Button"
-import { RealScoutYourListings } from "components/RealScout/RealScoutYourListings"
+import { Button } from "../../../../components/Button/Button"
+import { RealScoutYourListings } from "../../../../components/RealScout/RealScoutYourListings"
 
 export const metadata: Metadata = {
   title: "Henderson Las Vegas | Family-Friendly Homes & Community",
