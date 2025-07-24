@@ -1,13 +1,13 @@
 'use client'
 
-import { Button } from "components/Button/Button"
-import { RealScoutOfficeListings } from "components/RealScout/RealScoutOfficeListings"
-import { RealScoutYourListings } from "components/RealScout/RealScoutYourListings"
-import { HomebotValuation } from "components/Homebot/HomebotValuation"
-import { ConversionTracker } from "components/Analytics/ConversionTracker"
-import { GoogleMaps } from "components/Google/GoogleMaps"
-import { GMBReviews } from "components/Google/GMBReviews"
-import { googleConfig } from "config/google-config"
+import { Button } from "../../../components/Button/Button"
+import { RealScoutOfficeListings } from "../../../components/RealScout/RealScoutOfficeListings"
+import { RealScoutYourListings } from "../../../components/RealScout/RealScoutYourListings"
+import { HomebotValuation } from "../../../components/Homebot/HomebotValuation"
+import { ConversionTracker } from "../../../components/Analytics/ConversionTracker"
+import { GoogleMaps } from "../../../components/Google/GoogleMaps"
+import { GMBReviews } from "../../../components/Google/GMBReviews"
+import { googleConfig } from "../../../config/google-config"
 
 // Declare gtag for TypeScript
 declare global {
