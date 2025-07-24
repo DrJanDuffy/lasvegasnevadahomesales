@@ -1,3 +1,5 @@
+import { RealScoutHomeValue } from "components/RealScout/RealScoutHomeValue"
+
 export default function HomeValuePage() {
   return (
     <div className="container mx-auto px-4 py-8">
@@ -6,7 +8,7 @@ export default function HomeValuePage() {
           Home Value Estimator
         </h1>
         <div className="flex justify-center">
-          <realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>
+          <RealScoutHomeValue agentEncodedId="QWdlbnQtMjI1MDUw" />
         </div>
       </div>
     </div>
