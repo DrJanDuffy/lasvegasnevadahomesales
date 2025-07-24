@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+/* Tailwind CSS v4 - Direct import not needed with @tailwindcss/postcss */
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
