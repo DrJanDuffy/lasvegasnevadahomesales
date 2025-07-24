@@ -1,4 +1,5 @@
-/* Tailwind CSS v4 - Direct import not needed with @tailwindcss/postcss */
+@import "tailwindcss/preflight";
+@tailwind utilities;
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
