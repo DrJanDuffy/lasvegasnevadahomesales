@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import { Button } from "components/Button/Button"
+import { RealScoutOfficeListings } from "components/RealScout/RealScoutOfficeListings"
 
 export const metadata: Metadata = {
   title: "Las Vegas Real Estate Market | Homes for Sale in Las Vegas, NV",
@@ -133,14 +134,14 @@ export default function LasVegasMarketOverview() {
             Featured Luxury Properties
           </h2>
           <div className="flex justify-center">
-            <realscout-office-listings 
-              agent-encoded-id="QWdlbnQtMjI1MDUw" 
-              sort-order="STATUS_AND_SIGNIFICANT_CHANGE" 
-              listing-status="For Sale" 
-              property-types="SFR,MF,TC" 
-              price-min="600000" 
-              price-max="1200000">
-            </realscout-office-listings>
+            <RealScoutOfficeListings 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE" 
+              listingStatus="For Sale" 
+              propertyTypes="SFR,MF,TC" 
+              priceMin="600000" 
+              priceMax="1200000"
+            />
           </div>
         </div>
       </section>
