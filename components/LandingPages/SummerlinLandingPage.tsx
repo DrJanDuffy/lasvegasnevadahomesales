@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from 'components/Button/Button'
+import { Button } from '../Button/Button'
 import Link from 'next/link'
 
 export function SummerlinLandingPage() {

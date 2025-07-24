@@ -1,11 +1,11 @@
 import "styles/tailwind.css"
 import "styles/home-valuation.css"
-import { Navigation } from "components/Navigation/Navigation"
-import { GoogleAnalytics } from "components/Google/GoogleAnalytics"
-import { GoogleTagManager, GoogleTagManagerBody } from "components/Google/GoogleTagManager"
-import { CoreWebVitals } from "components/Google/CoreWebVitals"
-import { SchemaMarkup } from "components/Google/SchemaMarkup"
-import { googleConfig } from "config/google-config"
+import { Navigation } from "../components/Navigation/Navigation"
+import { GoogleAnalytics } from "../components/Google/GoogleAnalytics"
+import { GoogleTagManager, GoogleTagManagerBody } from "../components/Google/GoogleTagManager"
+import { CoreWebVitals } from "../components/Google/CoreWebVitals"
+import { SchemaMarkup } from "../components/Google/SchemaMarkup"
+import { googleConfig } from "../config/google-config"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
