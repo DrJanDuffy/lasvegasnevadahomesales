@@ -1,5 +1,5 @@
-import "styles/tailwind.css"
-import "styles/home-valuation.css"
+import "../styles/tailwind.css"
+import "../styles/home-valuation.css"
 import { Navigation } from "../components/Navigation/Navigation"
 import { GoogleAnalytics } from "../components/Google/GoogleAnalytics"
 import { GoogleTagManager, GoogleTagManagerBody } from "../components/Google/GoogleTagManager"
