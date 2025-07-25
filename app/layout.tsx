@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "./globals.css"
+import "../styles/tailwind.css"
+import "../styles/home-valuation.css"
 import { Navigation } from "../components/Navigation/Navigation"
 import { StructuredData } from "../components/SEO/StructuredData"
 import { websiteSchema, organizationSchema } from "../components/SEO/StructuredData"

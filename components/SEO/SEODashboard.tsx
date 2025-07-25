@@ -10,7 +10,6 @@ interface SEOMetrics {
   firstInputDelay: number
   cumulativeLayoutShift: number
   timeToFirstByte: number
-  firstContentfulPaint: number
 }
 
 interface SearchConsoleData {
@@ -71,8 +70,7 @@ export default function SEODashboard({
           largestContentfulPaint: lcp ? lcp.startTime : 0,
           firstInputDelay: 0, // Would need to track user interactions
           cumulativeLayoutShift: 0, // Would need CLS observer
-          timeToFirstByte: navigation.responseStart - navigation.requestStart,
-          firstContentfulPaint: fcp ? fcp.startTime : 0
+          timeToFirstByte: navigation.responseStart - navigation.requestStart
         }
 
         setMetrics(metrics)
