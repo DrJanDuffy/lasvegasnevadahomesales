@@ -1,6 +1,8 @@
 import { Metadata } from "next"
 import { Button } from "../../../components/Button/Button"
 import { RealScoutYourListings } from "../../../components/RealScout/RealScoutYourListings"
+import { OptimizedImage } from "../../../components/OptimizedImage/OptimizedImage"
+import { PropertyGallery } from "../../../components/PropertyGallery/PropertyGallery"
 
 export const metadata: Metadata = {
   title: "Las Vegas Homes for Sale | Property Search & Listings",
@@ -123,7 +125,14 @@ export default function PropertiesPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {properties.map((property) => (
               <div key={property.id} className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
-                <div className="relative h-64 bg-gradient-to-br from-gray-300 to-gray-400">
+                <div className="relative h-64">
+                  <OptimizedImage
+                    src={property.image}
+                    alt={`${property.address} - ${property.type} in ${property.neighborhood}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                   <div className="absolute right-2 top-2 rounded-full bg-green-500 px-2 py-1 text-xs font-semibold text-white">
                     {property.status}
                   </div>
@@ -168,6 +177,40 @@ export default function PropertiesPage() {
             <button type="button" className="rounded-xl border border-gray-300 bg-transparent px-6 py-2.5 text-lg text-gray-700 transition-colors delay-50 hover:bg-gray-50">
               Next
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Property Gallery */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+            Featured Property Gallery
+          </h2>
+          <div className="mb-12">
+            <PropertyGallery
+              images={[
+                {
+                  src: "/images/properties/property-1.jpg",
+                  alt: "Beautiful Summerlin home exterior",
+                  caption: "Stunning exterior with modern design"
+                },
+                {
+                  src: "/images/properties/property-2.jpg",
+                  alt: "Spacious kitchen with granite countertops",
+                  caption: "Gourmet kitchen with premium finishes"
+                },
+                {
+                  src: "/images/properties/property-3.jpg",
+                  alt: "Open concept living area",
+                  caption: "Bright and airy living space"
+                }
+              ]}
+              propertyId="featured-1"
+              showThumbnails={true}
+              autoPlay={true}
+              interval={4000}
+            />
           </div>
         </div>
       </section>
