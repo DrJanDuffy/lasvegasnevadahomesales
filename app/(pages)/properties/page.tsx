@@ -127,7 +127,7 @@ export default function PropertiesPage() {
               <div key={property.id} className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
                 <div className="relative h-64">
                   <OptimizedImage
-                    src={property.image}
+                    src={property.image || "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop"}
                     alt={`${property.address} - ${property.type} in ${property.neighborhood}`}
                     fill
                     className="object-cover"
@@ -191,19 +191,29 @@ export default function PropertiesPage() {
             <PropertyGallery
               images={[
                 {
-                  src: "/images/properties/property-1.jpg",
+                  src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
                   alt: "Beautiful Summerlin home exterior",
                   caption: "Stunning exterior with modern design"
                 },
                 {
-                  src: "/images/properties/property-2.jpg",
+                  src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
                   alt: "Spacious kitchen with granite countertops",
                   caption: "Gourmet kitchen with premium finishes"
                 },
                 {
-                  src: "/images/properties/property-3.jpg",
+                  src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
                   alt: "Open concept living area",
                   caption: "Bright and airy living space"
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+                  alt: "Master bedroom suite",
+                  caption: "Luxurious master bedroom"
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
+                  alt: "Backyard oasis",
+                  caption: "Private backyard with pool"
                 }
               ]}
               propertyId="featured-1"

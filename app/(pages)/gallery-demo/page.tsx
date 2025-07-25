@@ -7,37 +7,71 @@ export const metadata: Metadata = {
   keywords: "CSS image gallery, RealScout gallery, property images, Las Vegas real estate gallery",
 }
 
-// Sample images for demo
+// Sample images for demo - using placeholder images that work immediately
 const sampleImages = [
   {
-    src: "/images/properties/property-1.jpg",
-    alt: "Beautiful Summerlin home exterior",
+    src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
+    alt: "Beautiful Las Vegas home exterior",
     caption: "Stunning exterior with modern design"
   },
   {
-    src: "/images/properties/property-2.jpg",
+    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
     alt: "Spacious kitchen with granite countertops",
     caption: "Gourmet kitchen with premium finishes"
   },
   {
-    src: "/images/properties/property-3.jpg",
+    src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
     alt: "Open concept living area",
     caption: "Bright and airy living space"
   },
   {
-    src: "/images/properties/property-4.jpg",
+    src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
     alt: "Master bedroom suite",
     caption: "Luxurious master bedroom"
   },
   {
-    src: "/images/properties/property-1.jpg",
+    src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
     alt: "Backyard oasis",
     caption: "Private backyard with pool"
   },
   {
-    src: "/images/properties/property-2.jpg",
+    src: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
     alt: "Garage and driveway",
     caption: "Two-car garage with ample parking"
+  }
+]
+
+// Additional sample images for more variety
+const moreSampleImages = [
+  {
+    src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
+    alt: "Modern home exterior",
+    caption: "Contemporary design with clean lines"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
+    alt: "Elegant dining room",
+    caption: "Formal dining area with chandelier"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+    alt: "Home office space",
+    caption: "Dedicated workspace with natural light"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop",
+    alt: "Walk-in closet",
+    caption: "Spacious master closet"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop",
+    alt: "Bathroom with modern fixtures",
+    caption: "Luxury bathroom with premium fixtures"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+    alt: "Family room",
+    caption: "Comfortable family gathering space"
   }
 ]
 
@@ -108,7 +142,7 @@ export default function GalleryDemoPage() {
             Pinterest-style masonry layout with varying image heights
           </p>
           <RealScoutImageGallery
-            images={sampleImages}
+            images={[...sampleImages, ...moreSampleImages]}
             galleryType="masonry"
             columns={4}
             gap={4}
@@ -207,16 +241,86 @@ export default function GalleryDemoPage() {
         </div>
       </section>
 
-      {/* Usage Examples */}
+      {/* How to Add Your Own Photos */}
       <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+            How to Add Your Own Photos
+          </h2>
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="rounded-lg bg-white p-6 shadow-sm">
+              <h3 className="mb-4 text-xl font-semibold text-gray-900">Method 1: Upload to Public Folder</h3>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p>1. Upload your images to <code className="bg-gray-100 px-2 py-1 rounded">public/images/properties/</code></p>
+                <p>2. Reference them in your code:</p>
+                <pre className="bg-gray-100 p-3 rounded text-xs overflow-x-auto">
+{`const images = [
+  {
+    src: "/images/properties/your-image.jpg",
+    alt: "Your property description",
+    caption: "Your caption"
+  }
+]`}
+                </pre>
+              </div>
+            </div>
+            
+            <div className="rounded-lg bg-white p-6 shadow-sm">
+              <h3 className="mb-4 text-xl font-semibold text-gray-900">Method 2: Use External URLs</h3>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p>1. Host images on a CDN or external service</p>
+                <p>2. Use the full URL in your code:</p>
+                <pre className="bg-gray-100 p-3 rounded text-xs overflow-x-auto">
+{`const images = [
+  {
+    src: "https://your-cdn.com/images/property.jpg",
+    alt: "Your property description",
+    caption: "Your caption"
+  }
+]`}
+                </pre>
+              </div>
+            </div>
+            
+            <div className="rounded-lg bg-white p-6 shadow-sm">
+              <h3 className="mb-4 text-xl font-semibold text-gray-900">Method 3: RealScout Integration</h3>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p>1. Use your RealScout widget ID</p>
+                <p>2. Images will load automatically:</p>
+                <pre className="bg-gray-100 p-3 rounded text-xs overflow-x-auto">
+{`<RealScoutWidgetGallery
+  widgetId="your-real-scout-widget-id"
+  galleryType="grid"
+  columns={3}
+/>`}
+                </pre>
+              </div>
+            </div>
+            
+            <div className="rounded-lg bg-white p-6 shadow-sm">
+              <h3 className="mb-4 text-xl font-semibold text-gray-900">Image Requirements</h3>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p>• <strong>Format:</strong> JPG, PNG, WebP</p>
+                <p>• <strong>Size:</strong> 800x600px minimum</p>
+                <p>• <strong>File size:</strong> Under 500KB</p>
+                <p>• <strong>Naming:</strong> Use descriptive names</p>
+                <p>• <strong>Alt text:</strong> Always include for accessibility</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Usage Examples */}
+      <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4">
           <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
             Usage Examples
           </h2>
           <div className="grid gap-8 lg:grid-cols-2">
-            <div className="rounded-lg bg-white p-6 shadow-sm">
+            <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-4 text-xl font-semibold text-gray-900">Basic Grid Gallery</h3>
-              <pre className="overflow-x-auto rounded bg-gray-100 p-4 text-sm">
+              <pre className="overflow-x-auto rounded bg-white p-4 text-sm">
 {`<RealScoutImageGallery
   images={propertyImages}
   galleryType="grid"
@@ -226,9 +330,9 @@ export default function GalleryDemoPage() {
               </pre>
             </div>
             
-            <div className="rounded-lg bg-white p-6 shadow-sm">
+            <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-4 text-xl font-semibold text-gray-900">Auto-Play Carousel</h3>
-              <pre className="overflow-x-auto rounded bg-gray-100 p-4 text-sm">
+              <pre className="overflow-x-auto rounded bg-white p-4 text-sm">
 {`<RealScoutImageGallery
   images={propertyImages}
   galleryType="carousel"
@@ -238,9 +342,9 @@ export default function GalleryDemoPage() {
               </pre>
             </div>
             
-            <div className="rounded-lg bg-white p-6 shadow-sm">
+            <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-4 text-xl font-semibold text-gray-900">Masonry Layout</h3>
-              <pre className="overflow-x-auto rounded bg-gray-100 p-4 text-sm">
+              <pre className="overflow-x-auto rounded bg-white p-4 text-sm">
 {`<RealScoutImageGallery
   images={propertyImages}
   galleryType="masonry"
@@ -250,9 +354,9 @@ export default function GalleryDemoPage() {
               </pre>
             </div>
             
-            <div className="rounded-lg bg-white p-6 shadow-sm">
+            <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-4 text-xl font-semibold text-gray-900">RealScout Widget</h3>
-              <pre className="overflow-x-auto rounded bg-gray-100 p-4 text-sm">
+              <pre className="overflow-x-auto rounded bg-white p-4 text-sm">
 {`<RealScoutWidgetGallery
   widgetId="your-widget-id"
   galleryType="grid"
