@@ -15,6 +15,7 @@ export function Navigation() {
     { href: '/home-valuation', label: 'Valuation' },
     { href: '/neighborhoods', label: 'Neighborhoods' },
     { href: '/market-reports', label: 'Market Reports' },
+    { href: '/techniques', label: 'See Techniques' },
     { href: '/contact', label: 'Contact' },
   ]
 

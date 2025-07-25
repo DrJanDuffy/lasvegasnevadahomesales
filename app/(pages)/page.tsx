@@ -45,6 +45,9 @@ export default function LasVegasMarketOverview() {
               <Button href="/home-valuation" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
                 Get Home Value
               </Button>
+              <Button href="/techniques" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
+                See Techniques
+              </Button>
             </div>
           </div>
         </div>
