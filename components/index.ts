@@ -2,6 +2,7 @@
 export { OptimizedImage } from './OptimizedImage/OptimizedImage'
 export { PropertyGallery } from './PropertyGallery/PropertyGallery'
 export { RealScoutPropertyImage, RealScoutPropertyGallery } from './RealScout/RealScoutPropertyImage'
+export { RealScoutImageGallery, RealScoutWidgetGallery } from './RealScout/RealScoutImageGallery'
 
 // Existing Components
 export { Button } from './Button/Button'
