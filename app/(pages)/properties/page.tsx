@@ -85,70 +85,12 @@ export default function PropertiesPage() {
         </div>
       </section>
 
-      {/* Search Filters */}
+      {/* RealScout Advanced Search */}
       <section className="bg-white py-8 shadow-sm">
         <div className="mx-auto max-w-7xl px-4">
           <div className="rounded-lg bg-gray-50 p-6">
             <h2 className="mb-6 text-2xl font-bold text-gray-900">Search Properties</h2>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-              <div>
-                <label htmlFor="location" className="mb-2 block text-sm font-medium text-gray-700">Location</label>
-                <select id="location" name="location" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select location">
-                  <option>All Locations</option>
-                  <option>Summerlin</option>
-                  <option>Henderson</option>
-                  <option>Green Valley</option>
-                  <option>Downtown</option>
-                  <option>Centennial Hills</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="price-min" className="mb-2 block text-sm font-medium text-gray-700">Price Range</label>
-                <div className="flex space-x-2">
-                  <select id="price-min" name="price-min" className="flex-1 rounded-md border border-gray-300 px-3 py-2" aria-label="Minimum price">
-                    <option>Min</option>
-                    <option>$200K</option>
-                    <option>$300K</option>
-                    <option>$400K</option>
-                    <option>$500K</option>
-                  </select>
-                  <select id="price-max" name="price-max" className="flex-1 rounded-md border border-gray-300 px-3 py-2" aria-label="Maximum price">
-                    <option>Max</option>
-                    <option>$400K</option>
-                    <option>$500K</option>
-                    <option>$750K</option>
-                    <option>$1M+</option>
-                  </select>
-                </div>
-              </div>
-              <div>
-                <label htmlFor="beds" className="mb-2 block text-sm font-medium text-gray-700">Bedrooms</label>
-                <select id="beds" name="beds" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select number of bedrooms">
-                  <option>Any</option>
-                  <option>1+</option>
-                  <option>2+</option>
-                  <option>3+</option>
-                  <option>4+</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="type" className="mb-2 block text-sm font-medium text-gray-700">Property Type</label>
-                <select id="type" name="type" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select property type">
-                  <option>All Types</option>
-                  <option>Single Family</option>
-                  <option>Townhouse</option>
-                  <option>Condo</option>
-                </select>
-              </div>
-            </div>
-            <div className="mt-6 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <button type="button" className="rounded-xl bg-blue-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-blue-700">
-                Search Properties
-              </button>
-              <Button href="/properties/search" intent="secondary" className="border-blue-600 text-blue-600 hover:bg-blue-50">
-                Advanced Search
-              </Button>
-            </div>
+            <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
           </div>
         </div>
       </section>
