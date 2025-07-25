@@ -1,9 +1,9 @@
-import withBundleAnalyzer from "@next/bundle-analyzer"
-import { type NextConfig } from "next"
+/** @type {import('next').NextConfig} */
+const withBundleAnalyzer = require("@next/bundle-analyzer")
 
-import { env } from "./env.mjs"
+const env = require("./env.mjs")
 
-const config: NextConfig = {
+const config = {
   reactStrictMode: true,
   logging: {
     fetches: {
@@ -18,4 +18,4 @@ const config: NextConfig = {
   ],
 }
 
-export default env.ANALYZE ? withBundleAnalyzer({ enabled: env.ANALYZE })(config) : config
+module.exports = env.ANALYZE ? withBundleAnalyzer({ enabled: env.ANALYZE })(config) : config 
