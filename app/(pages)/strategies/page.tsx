@@ -1,5 +1,9 @@
 import { Metadata } from "next"
 import { Button } from "../../../components/Button/Button"
+import { SEOHead } from '../../../components/SEO/SEOHead'
+import { FAQSchema, strategiesPageFAQs } from '../../../components/SEO/FAQSchema'
+import { ReviewSchema, agentReviews, agentAggregateRating } from '../../../components/SEO/ReviewSchema'
+import { HowToSchema, sellHomeHowTo, investRealEstateHowTo } from '../../../components/SEO/HowToSchema'
 
 export const metadata: Metadata = {
   title: "Real Estate Strategies & Techniques | Las Vegas Real Estate",
@@ -24,15 +28,31 @@ export const metadata: Metadata = {
 export default function StrategiesPage() {
   return (
     <>
+      <SEOHead
+        title="Real Estate Strategies | Las Vegas Nevada Home Sales"
+        description="Discover proven real estate strategies for buying and selling with Las Vegas Nevada Home Sales. Expert tips for negotiation, market timing, and investment success in Nevada."
+        keywords="Las Vegas Nevada Home Sales, real estate strategies, Nevada real estate, home buying tips, selling strategies, investment techniques"
+        canonical="/strategies"
+        ogImage="/images/og-strategies.jpg"
+      />
+      <FAQSchema faqs={strategiesPageFAQs} />
+      <ReviewSchema 
+        reviews={agentReviews} 
+        aggregateRating={agentAggregateRating}
+        itemName="Las Vegas Nevada Home Sales Real Estate Strategies"
+        itemType="RealEstateAgent"
+      />
+      <HowToSchema {...sellHomeHowTo} />
+      <HowToSchema {...investRealEstateHowTo} />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 text-center lg:py-24">
           <div className="mx-auto max-w-4xl">
             <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">
-              Real Estate Strategies & Techniques
+              Real Estate Strategies – Las Vegas Nevada Home Sales
             </h1>
             <p className="mb-8 text-xl font-light text-blue-100 md:text-2xl">
-              Master proven strategies for buying and selling homes in Las Vegas
+              Master proven strategies for buying and selling homes in Nevada with Las Vegas Nevada Home Sales
             </p>
           </div>
         </div>
@@ -199,10 +219,10 @@ export default function StrategiesPage() {
             Get personalized guidance from our Las Vegas real estate experts
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button href="/contact" className="bg-blue-600 text-white hover:bg-blue-700">
+            <Button href="/contact" className="bg-blue-600 text-white hover:bg-blue-700" aria-label="Get expert advice from Las Vegas Nevada Home Sales">
               Get Expert Advice
             </Button>
-            <Button href="/properties" intent="secondary" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+            <Button href="/properties" intent="secondary" className="border-blue-600 text-blue-600 hover:bg-blue-50" aria-label="Search Las Vegas Nevada Home Sales properties">
               Search Properties
             </Button>
           </div>

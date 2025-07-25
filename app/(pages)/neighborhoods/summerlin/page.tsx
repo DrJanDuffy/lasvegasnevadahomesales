@@ -4,6 +4,7 @@ import { RealScoutYourListings } from "../../../../components/RealScout/RealScou
 import { OptimizedImage } from "../../../../components/OptimizedImage/OptimizedImage"
 import { RealScoutSummerlinGallery } from "../../../../components/RealScout/RealScoutSummerlinGallery"
 import { RealScoutSummerlinShowcase } from "../../../../components/RealScout/RealScoutSummerlinShowcase"
+import { SEOHead } from '../../../../components/SEO/SEOHead'
 
 export const metadata: Metadata = {
   title: "Summerlin Las Vegas | Luxury Homes & Master-Planned Community",
@@ -14,13 +15,20 @@ export const metadata: Metadata = {
 export default function SummerlinPage() {
   return (
     <>
+      <SEOHead
+        title="Summerlin Las Vegas Nevada Home Sales | Luxury Homes & Master-Planned Community"
+        description="Explore Summerlin with Las Vegas Nevada Home Sales. Find luxury homes, golf course properties, and family residences in Las Vegas' premier master-planned community."
+        keywords="Las Vegas Nevada Home Sales, Summerlin homes, Summerlin real estate, luxury homes Las Vegas, Nevada real estate, Summerlin properties"
+        canonical="/neighborhoods/summerlin"
+        ogImage="/images/og-summerlin.jpg"
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <OptimizedImage
             src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&h=1080&fit=crop"
-            alt="Beautiful Summerlin neighborhood with luxury homes and mountain views"
+            alt="Beautiful Summerlin neighborhood with luxury homes and mountain views - Las Vegas Nevada Home Sales"
             fill
             className="object-cover"
             priority
@@ -37,13 +45,13 @@ export default function SummerlinPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-16 text-center text-white lg:py-24">
           <div className="mx-auto max-w-4xl">
             <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">
-              Summerlin
+              Summerlin Homes for Sale – Las Vegas Nevada Home Sales
             </h1>
             <p className="mb-8 text-xl font-light text-green-100 md:text-2xl">
-              Las Vegas' Premier Master-Planned Community
+              Discover luxury homes, golf course properties, and family residences in Summerlin with Las Vegas Nevada Home Sales – your trusted local experts.
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <Button href="/properties?neighborhood=summerlin" className="bg-white text-green-800 hover:bg-green-50">
+              <Button href="/properties?neighborhood=summerlin" className="bg-white text-green-800 hover:bg-green-50" aria-label="View all Summerlin homes for sale with Las Vegas Nevada Home Sales">
                 View Summerlin Homes
               </Button>
               <Button href="/contact" intent="secondary" className="border-white text-white hover:bg-white hover:text-green-800">
@@ -117,7 +125,7 @@ export default function SummerlinPage() {
             <div className="space-y-4">
               <OptimizedImage
                 src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop"
-                alt="Luxury Summerlin home with modern architecture"
+                alt="Luxury Summerlin home with modern architecture - Las Vegas Nevada Home Sales"
                 width={800}
                 height={600}
                 className="rounded-lg shadow-lg"
@@ -125,14 +133,14 @@ export default function SummerlinPage() {
               <div className="grid grid-cols-2 gap-4">
                 <OptimizedImage
                   src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=300&fit=crop"
-                  alt="Summerlin home backyard with pool and landscaping"
+                  alt="Summerlin home backyard with pool and landscaping - Las Vegas Nevada Home Sales"
                   width={400}
                   height={300}
                   className="rounded-lg shadow-md"
                 />
                 <OptimizedImage
                   src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop"
-                  alt="Summerlin home kitchen with premium finishes"
+                  alt="Summerlin home kitchen with premium finishes - Las Vegas Nevada Home Sales"
                   width={400}
                   height={300}
                   className="rounded-lg shadow-md"

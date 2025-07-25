@@ -2,6 +2,9 @@ import { Metadata } from "next"
 import { Button } from "../../../components/Button/Button"
 import { RealScoutOfficeListings } from "../../../components/RealScout/RealScoutOfficeListings"
 import { RealScoutYourListings } from "../../../components/RealScout/RealScoutYourListings"
+import { SEOHead } from '../../../components/SEO/SEOHead'
+import { FAQSchema, contactPageFAQs } from '../../../components/SEO/FAQSchema'
+import { ReviewSchema, companyReviews, companyAggregateRating } from '../../../components/SEO/ReviewSchema'
 
 export const metadata: Metadata = {
   title: "Contact Las Vegas Real Estate Experts | Get in Touch",
@@ -12,15 +15,29 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <SEOHead
+        title="Contact Las Vegas Nevada Home Sales | Real Estate Experts in NV"
+        description="Contact Las Vegas Nevada Home Sales for expert guidance on buying, selling, or investing in Las Vegas real estate. Call, email, or fill out our contact form."
+        keywords="Las Vegas Nevada Home Sales, contact Las Vegas real estate, Las Vegas real estate agent, Las Vegas realtor contact, Las Vegas property expert"
+        canonical="/contact"
+        ogImage="/images/og-contact.jpg"
+      />
+      <FAQSchema faqs={contactPageFAQs} />
+      <ReviewSchema 
+        reviews={companyReviews} 
+        aggregateRating={companyAggregateRating}
+        itemName="Las Vegas Nevada Home Sales Contact"
+        itemType="Organization"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-indigo-600 via-indigo-700 to-indigo-800 text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 text-center lg:py-24">
           <div className="mx-auto max-w-4xl">
             <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">
-              Contact Us
+              Contact Las Vegas Nevada Home Sales
             </h1>
             <p className="mb-8 text-xl font-light text-indigo-100 md:text-2xl">
-              Get in touch with our Las Vegas real estate experts
+              Get in touch with our Las Vegas Nevada Home Sales experts for all your real estate needs in Nevada.
             </p>
           </div>
         </div>
@@ -213,7 +230,7 @@ export default function ContactPage() {
                     <Button href="http://drjanduffy.realscout.com/onboarding" className="w-full justify-start bg-gray-100 text-gray-900 hover:bg-gray-200">
                       🏠 Get Home Valuation
                     </Button>
-                    <Button href="/properties" className="w-full justify-start bg-gray-100 text-gray-900 hover:bg-gray-200">
+                    <Button href="/properties" className="w-full justify-start bg-gray-100 text-gray-900 hover:bg-gray-200" aria-label="Browse Las Vegas Nevada Home Sales properties">
                       🔍 Search Properties
                     </Button>
                     <Button href="/market-reports" className="w-full justify-start bg-gray-100 text-gray-900 hover:bg-gray-200">

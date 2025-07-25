@@ -3,6 +3,9 @@ import { Button } from "../../../components/Button/Button"
 import { RealScoutYourListings } from "../../../components/RealScout/RealScoutYourListings"
 import { OptimizedImage } from "../../../components/OptimizedImage/OptimizedImage"
 import { PropertyGallery } from "../../../components/PropertyGallery/PropertyGallery"
+import { SEOHead } from '../../../components/SEO/SEOHead'
+import { FAQSchema, propertiesPageFAQs } from '../../../components/SEO/FAQSchema'
+import { ReviewSchema, serviceReviews, serviceAggregateRating } from '../../../components/SEO/ReviewSchema'
 
 export const metadata: Metadata = {
   title: "Las Vegas Homes for Sale | Property Search & Listings",
@@ -73,15 +76,29 @@ const properties = [
 export default function PropertiesPage() {
   return (
     <>
+      <SEOHead
+        title="Las Vegas Nevada Home Sales | Property Search & Listings"
+        description="Search thousands of Las Vegas Nevada Home Sales listings. Find your dream home in Las Vegas, Henderson, Summerlin, and all of Nevada."
+        keywords="Las Vegas Nevada Home Sales, Las Vegas homes for sale, Nevada real estate, property search, Summerlin homes, Henderson homes"
+        canonical="/properties"
+        ogImage="/images/og-properties.jpg"
+      />
+      <FAQSchema faqs={propertiesPageFAQs} />
+      <ReviewSchema 
+        reviews={serviceReviews} 
+        aggregateRating={serviceAggregateRating}
+        itemName="Las Vegas Nevada Home Sales Property Search"
+        itemType="RealEstateAgent"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 text-center lg:py-24">
           <div className="mx-auto max-w-4xl">
             <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">
-              Las Vegas Homes for Sale
+              Las Vegas Nevada Home Sales – Property Listings
             </h1>
             <p className="mb-8 text-xl font-light text-blue-100 md:text-2xl">
-              Find your perfect home in Las Vegas with our comprehensive property search
+              Find your perfect home with Las Vegas Nevada Home Sales. Search all properties in Las Vegas, Summerlin, Henderson, and more.
             </p>
           </div>
         </div>
@@ -128,7 +145,7 @@ export default function PropertiesPage() {
                 <div className="relative h-64">
                   <OptimizedImage
                     src={property.image || "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop"}
-                    alt={`${property.address} - ${property.type} in ${property.neighborhood}`}
+                    alt={`${property.address} - ${property.type} in ${property.neighborhood} | Las Vegas Nevada Home Sales`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -2,6 +2,12 @@ import { Metadata } from "next"
 import { Button } from "../../components/Button/Button"
 import { RealScoutOfficeListings } from "../../components/RealScout/RealScoutOfficeListings"
 import { RealScoutYourListings } from "../../components/RealScout/RealScoutYourListings"
+import { SEOHead } from '../../components/SEO/SEOHead'
+import { FAQSchema, homePageFAQs } from '../../components/SEO/FAQSchema'
+import { ReviewSchema, companyReviews, companyAggregateRating } from '../../components/SEO/ReviewSchema'
+import { HowToSchema, buyHomeHowTo } from '../../components/SEO/HowToSchema'
+import { LocalBusinessSchema } from '../../components/SEO/LocalBusinessSchema'
+import { AdvancedSEOMonitor } from '../../components/SEO/AdvancedSEOMonitor'
 
 export const metadata: Metadata = {
   title: "Las Vegas Real Estate Market | Homes for Sale in Las Vegas, NV",
@@ -28,15 +34,37 @@ export const metadata: Metadata = {
 export default function LasVegasMarketOverview() {
   return (
     <>
+      <SEOHead
+        title="Las Vegas Nevada Home Sales – Your Trusted Real Estate Experts"
+        description="Las Vegas Nevada Home Sales offers expert real estate services in Las Vegas, Summerlin, Henderson, and all of Nevada. Find your dream home or sell your property with confidence."
+        keywords="Las Vegas Nevada Home Sales, Las Vegas real estate, Nevada homes for sale, Summerlin homes, Henderson real estate, Las Vegas realtor"
+        canonical="/"
+        ogImage="/images/og-home.jpg"
+      />
+      <FAQSchema faqs={homePageFAQs} />
+      <ReviewSchema 
+        reviews={companyReviews} 
+        aggregateRating={companyAggregateRating}
+        itemType="Organization"
+      />
+      <HowToSchema {...buyHomeHowTo} />
+      <LocalBusinessSchema />
+      <AdvancedSEOMonitor 
+        pageUrl="/"
+        pageTitle="Las Vegas Nevada Home Sales – Your Trusted Real Estate Experts"
+        debug={process.env.NODE_ENV === 'development'}
+        trackUserBehavior={true}
+        trackConversions={true}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 text-center lg:py-24">
           <div className="mx-auto max-w-4xl">
             <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">
-              Las Vegas Real Estate Market
+              Las Vegas Nevada Home Sales – Your Trusted Real Estate Experts
             </h1>
             <p className="mb-8 text-xl font-light text-blue-100 md:text-2xl">
-              Your trusted source for Las Vegas real estate insights, market trends, and expert guidance
+              Welcome to Las Vegas Nevada Home Sales, your source for luxury homes, family residences, and investment properties in the heart of Nevada. Start your journey to homeownership in Summerlin, Henderson, and all of Las Vegas.
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
               <Button href="/properties" className="bg-white text-blue-900 hover:bg-blue-50">
@@ -45,9 +73,9 @@ export default function LasVegasMarketOverview() {
               <Button href="/home-valuation" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
                 Get Home Value
               </Button>
-                              <Button href="/strategies" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
-                  Real Estate Strategies
-                </Button>
+              <Button href="/strategies" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
+                Real Estate Strategies
+              </Button>
             </div>
           </div>
         </div>
@@ -92,7 +120,7 @@ export default function LasVegasMarketOverview() {
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Summerlin</h3>
                 <p className="mb-4 text-gray-600">Master-planned community with luxury homes and amenities</p>
-                <Button href="/neighborhoods/summerlin" className="text-sm">
+                <Button href="/neighborhoods/summerlin" className="text-sm" aria-label="See all Summerlin homes for sale with Las Vegas Nevada Home Sales">
                   Learn More
                 </Button>
               </div>

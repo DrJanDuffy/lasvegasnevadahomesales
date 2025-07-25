@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import { RealScoutImageGallery, RealScoutWidgetGallery } from "../../../components/RealScout/RealScoutImageGallery"
+import { SEOHead } from '../../../components/SEO/SEOHead'
 
 export const metadata: Metadata = {
   title: "CSS Image Gallery Demo | RealScout Integration",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 const sampleImages = [
   {
     src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
-    alt: "Beautiful Las Vegas home exterior",
+    alt: "Beautiful Las Vegas home exterior - Las Vegas Nevada Home Sales",
     caption: "Stunning exterior with modern design"
   },
   {
@@ -78,15 +79,22 @@ const moreSampleImages = [
 export default function GalleryDemoPage() {
   return (
     <>
+      <SEOHead
+        title="Las Vegas Nevada Home Sales | Image Gallery Demo"
+        description="Explore our beautiful Las Vegas Nevada Home Sales image gallery with RealScout integration. Multiple gallery types including grid, masonry, and carousel layouts."
+        keywords="Las Vegas Nevada Home Sales, image gallery, RealScout gallery, property images, Nevada real estate gallery"
+        canonical="/gallery-demo"
+        ogImage="/images/og-home.jpg"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 text-center lg:py-24">
           <div className="mx-auto max-w-4xl">
             <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">
-              CSS Image Gallery Demo
+              Las Vegas Nevada Home Sales – Image Gallery Demo
             </h1>
             <p className="mb-8 text-xl font-light text-blue-100 md:text-2xl">
-              Beautiful image galleries with RealScout widget integration
+              Beautiful image galleries for Las Vegas Nevada Home Sales with RealScout widget integration
             </p>
           </div>
         </div>
