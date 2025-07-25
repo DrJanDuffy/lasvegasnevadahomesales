@@ -5,6 +5,7 @@ import { GoogleAnalytics } from "../components/Google/GoogleAnalytics"
 import { GoogleTagManager, GoogleTagManagerBody } from "../components/Google/GoogleTagManager"
 import { CoreWebVitals } from "../components/Google/CoreWebVitals"
 import { SchemaMarkup } from "../components/Google/SchemaMarkup"
+import { StructuredData, websiteSchema, organizationSchema } from "../components/SEO/StructuredData"
 import { googleConfig } from "../config/google-config"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -105,6 +106,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           secondaryCategories={googleConfig.schema.secondaryCategories}
           openingHours={googleConfig.schema.openingHours}
         />
+        
+        {/* Additional SEO Structured Data */}
+        <StructuredData data={websiteSchema} />
+        <StructuredData data={organizationSchema} />
         
         <Navigation />
         {children}

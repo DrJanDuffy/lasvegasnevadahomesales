@@ -20,4 +20,9 @@ export { SchemaMarkup } from './Google/SchemaMarkup'
 export { CoreWebVitals } from './Google/CoreWebVitals'
 export { GMBReviews } from './Google/GMBReviews'
 export { ConversionTracker } from './Analytics/ConversionTracker'
-export { Tooltip } from './Tooltip/Tooltip' 
+export { Tooltip } from './Tooltip/Tooltip'
+
+// SEO Components
+export { SEOHead, realEstateStructuredData, propertyStructuredData, organizationStructuredData } from './SEO/SEOHead'
+export { Breadcrumbs, getHomeBreadcrumbs, getPropertiesBreadcrumbs, getPropertyDetailBreadcrumbs, getNeighborhoodsBreadcrumbs, getNeighborhoodDetailBreadcrumbs, getHomeValuationBreadcrumbs, getMarketReportsBreadcrumbs, getStrategiesBreadcrumbs, getContactBreadcrumbs } from './SEO/Breadcrumbs'
+export { StructuredData, realEstateAgentSchema, propertySchema, organizationSchema, localBusinessSchema, websiteSchema, breadcrumbSchema } from './SEO/StructuredData' 
