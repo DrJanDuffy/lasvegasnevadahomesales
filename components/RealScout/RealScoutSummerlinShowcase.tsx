@@ -40,12 +40,12 @@ export function RealScoutSummerlinShowcase({
         "Smart Home Technology"
       ],
       images: {
-        hero: "https://images.realscout.com/properties/12345/hero.jpg",
+        hero: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
         gallery: [
-          "https://images.realscout.com/properties/12345/gallery/1.jpg",
-          "https://images.realscout.com/properties/12345/gallery/2.jpg",
-          "https://images.realscout.com/properties/12345/gallery/3.jpg",
-          "https://images.realscout.com/properties/12345/gallery/4.jpg"
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop"
         ]
       },
       fallbackImages: {
@@ -82,12 +82,12 @@ export function RealScoutSummerlinShowcase({
         "Great Schools"
       ],
       images: {
-        hero: "https://images.realscout.com/properties/12346/hero.jpg",
+        hero: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
         gallery: [
-          "https://images.realscout.com/properties/12346/gallery/1.jpg",
-          "https://images.realscout.com/properties/12346/gallery/2.jpg",
-          "https://images.realscout.com/properties/12346/gallery/3.jpg",
-          "https://images.realscout.com/properties/12346/gallery/4.jpg"
+          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop"
         ]
       },
       fallbackImages: {
@@ -115,7 +115,7 @@ export function RealScoutSummerlinShowcase({
                 width={600}
                 height={400}
                 className="w-full h-64 object-cover"
-                onError={() => property.fallbackImages.hero}
+
               />
               
               {/* Status Badge */}
@@ -203,7 +203,7 @@ export function RealScoutSummerlinShowcase({
                         width={100}
                         height={75}
                         className="w-full h-16 object-cover rounded"
-                        onError={() => property.fallbackImages.gallery[imageIndex]}
+
                       />
                     </div>
                   ))}

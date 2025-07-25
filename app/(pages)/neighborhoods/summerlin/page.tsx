@@ -19,7 +19,7 @@ export default function SummerlinPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <OptimizedImage
-            src="https://images.realscout.com/properties/12345/hero.jpg"
+            src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&h=1080&fit=crop"
             alt="Beautiful Summerlin neighborhood with luxury homes and mountain views"
             fill
             className="object-cover"
@@ -116,7 +116,7 @@ export default function SummerlinPage() {
             </div>
             <div className="space-y-4">
               <OptimizedImage
-                src="https://images.realscout.com/properties/12345/hero.jpg"
+                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop"
                 alt="Luxury Summerlin home with modern architecture"
                 width={800}
                 height={600}
@@ -124,14 +124,14 @@ export default function SummerlinPage() {
               />
               <div className="grid grid-cols-2 gap-4">
                 <OptimizedImage
-                  src="https://images.realscout.com/properties/12345/gallery/4.jpg"
+                  src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=300&fit=crop"
                   alt="Summerlin home backyard with pool and landscaping"
                   width={400}
                   height={300}
                   className="rounded-lg shadow-md"
                 />
                 <OptimizedImage
-                  src="https://images.realscout.com/properties/12345/gallery/1.jpg"
+                  src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop"
                   alt="Summerlin home kitchen with premium finishes"
                   width={400}
                   height={300}

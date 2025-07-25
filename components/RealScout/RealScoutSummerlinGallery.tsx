@@ -15,68 +15,64 @@ export function RealScoutSummerlinGallery({
   galleryType = 'grid',
   columns = 3
 }: RealScoutSummerlinGalleryProps) {
-  // RealScout Summerlin property images - using actual RealScout property IDs for Summerlin homes
+  // RealScout Summerlin property images - using working Unsplash images as primary source
+  // In production, replace these with actual RealScout property image URLs
   const summerlinPropertyImages = [
     {
-      src: "https://images.realscout.com/properties/12345/hero.jpg",
+      src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
       alt: "Luxury Summerlin home with mountain views",
       caption: "Elegant 4-bedroom home with Red Rock Canyon views",
-      fallbackSrc: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop"
+      realScoutUrl: "https://images.realscout.com/properties/12345/hero.jpg" // Future RealScout URL
     },
     {
-      src: "https://images.realscout.com/properties/12345/gallery/1.jpg",
+      src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
       alt: "Summerlin home kitchen with granite countertops",
       caption: "Gourmet kitchen with premium finishes",
-      fallbackSrc: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop"
+      realScoutUrl: "https://images.realscout.com/properties/12345/gallery/1.jpg"
     },
     {
-      src: "https://images.realscout.com/properties/12345/gallery/2.jpg",
+      src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
       alt: "Summerlin home living room with high ceilings",
       caption: "Spacious living area with natural light",
-      fallbackSrc: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
+      realScoutUrl: "https://images.realscout.com/properties/12345/gallery/2.jpg"
     },
     {
-      src: "https://images.realscout.com/properties/12345/gallery/3.jpg",
+      src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
       alt: "Summerlin home master bedroom suite",
       caption: "Luxurious master bedroom with ensuite",
-      fallbackSrc: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"
+      realScoutUrl: "https://images.realscout.com/properties/12345/gallery/3.jpg"
     },
     {
-      src: "https://images.realscout.com/properties/12345/gallery/4.jpg",
+      src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
       alt: "Summerlin home backyard with pool",
       caption: "Private backyard oasis with pool and landscaping",
-      fallbackSrc: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop"
+      realScoutUrl: "https://images.realscout.com/properties/12345/gallery/4.jpg"
     },
     {
-      src: "https://images.realscout.com/properties/12345/gallery/5.jpg",
+      src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
       alt: "Summerlin home dining area",
       caption: "Formal dining room with elegant chandelier",
-      fallbackSrc: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop"
+      realScoutUrl: "https://images.realscout.com/properties/12345/gallery/5.jpg"
     },
     {
-      src: "https://images.realscout.com/properties/12345/gallery/6.jpg",
+      src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
       alt: "Summerlin home office space",
       caption: "Dedicated home office with built-ins",
-      fallbackSrc: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop"
+      realScoutUrl: "https://images.realscout.com/properties/12345/gallery/6.jpg"
     },
     {
-      src: "https://images.realscout.com/properties/12345/gallery/7.jpg",
+      src: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop",
       alt: "Summerlin home walk-in closet",
       caption: "Spacious master closet with custom organization",
-      fallbackSrc: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop"
+      realScoutUrl: "https://images.realscout.com/properties/12345/gallery/7.jpg"
     },
     {
-      src: "https://images.realscout.com/properties/12345/gallery/8.jpg",
+      src: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop",
       alt: "Summerlin home bathroom with modern fixtures",
       caption: "Luxury bathroom with premium fixtures",
-      fallbackSrc: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop"
+      realScoutUrl: "https://images.realscout.com/properties/12345/gallery/8.jpg"
     }
   ]
-
-  const handleImageError = (fallbackSrc: string) => {
-    // This function will be called by the OptimizedImage component
-    // The fallback is handled internally by the OptimizedImage component
-  }
 
   if (galleryType === 'grid') {
     return (
@@ -94,7 +90,6 @@ export function RealScoutSummerlinGallery({
                 width={400}
                 height={300}
                 className="object-cover w-full h-64"
-                onError={() => handleImageError(image.fallbackSrc)}
               />
               
               {/* RealScout branding */}
@@ -129,7 +124,6 @@ export function RealScoutSummerlinGallery({
                     width={800}
                     height={500}
                     className="object-cover w-full h-96"
-                    onError={() => handleImageError(image.fallbackSrc)}
                   />
                   
                   {/* RealScout branding */}
@@ -168,7 +162,6 @@ export function RealScoutSummerlinGallery({
               width={400}
               height={300}
               className="object-cover w-full h-64"
-              onError={() => handleImageError(image.fallbackSrc)}
             />
             
             {/* RealScout branding */}
