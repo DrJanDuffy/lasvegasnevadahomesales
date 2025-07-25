@@ -2,7 +2,8 @@ import { Metadata } from "next"
 import { Button } from "../../../../components/Button/Button"
 import { RealScoutYourListings } from "../../../../components/RealScout/RealScoutYourListings"
 import { OptimizedImage } from "../../../../components/OptimizedImage/OptimizedImage"
-import { RealScoutImageGallery } from "../../../../components/RealScout/RealScoutImageGallery"
+import { RealScoutSummerlinGallery } from "../../../../components/RealScout/RealScoutSummerlinGallery"
+import { RealScoutSummerlinShowcase } from "../../../../components/RealScout/RealScoutSummerlinShowcase"
 
 export const metadata: Metadata = {
   title: "Summerlin Las Vegas | Luxury Homes & Master-Planned Community",
@@ -18,7 +19,7 @@ export default function SummerlinPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <OptimizedImage
-            src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&h=1080&fit=crop"
+            src="https://images.realscout.com/properties/12345/hero.jpg"
             alt="Beautiful Summerlin neighborhood with luxury homes and mountain views"
             fill
             className="object-cover"
@@ -26,6 +27,10 @@ export default function SummerlinPage() {
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 via-green-800/70 to-green-700/80"></div>
+          {/* RealScout branding */}
+          <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded px-3 py-1 text-sm text-gray-600 font-medium">
+            Powered by RealScout
+          </div>
         </div>
         
         {/* Content */}
@@ -111,7 +116,7 @@ export default function SummerlinPage() {
             </div>
             <div className="space-y-4">
               <OptimizedImage
-                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop"
+                src="https://images.realscout.com/properties/12345/hero.jpg"
                 alt="Luxury Summerlin home with modern architecture"
                 width={800}
                 height={600}
@@ -119,73 +124,64 @@ export default function SummerlinPage() {
               />
               <div className="grid grid-cols-2 gap-4">
                 <OptimizedImage
-                  src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=300&fit=crop"
-                  alt="Summerlin golf course and landscaping"
+                  src="https://images.realscout.com/properties/12345/gallery/4.jpg"
+                  alt="Summerlin home backyard with pool and landscaping"
                   width={400}
                   height={300}
                   className="rounded-lg shadow-md"
                 />
                 <OptimizedImage
-                  src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop"
-                  alt="Summerlin community amenities"
+                  src="https://images.realscout.com/properties/12345/gallery/1.jpg"
+                  alt="Summerlin home kitchen with premium finishes"
                   width={400}
                   height={300}
                   className="rounded-lg shadow-md"
                 />
+              </div>
+              {/* RealScout branding */}
+              <div className="text-center">
+                <div className="inline-block bg-white bg-opacity-90 rounded px-3 py-1 text-sm text-gray-600 font-medium">
+                  Powered by RealScout
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Summerlin Photo Gallery */}
+      {/* RealScout Summerlin Property Gallery */}
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4">
           <h2 className="mb-8 text-center text-3xl font-bold text-gray-900 md:text-4xl">
-            Discover Summerlin's Beauty
+            Featured Summerlin Homes
           </h2>
           <p className="mb-12 text-center text-lg text-gray-600">
-            Explore the stunning landscapes, luxury homes, and world-class amenities that make Summerlin special
+            Discover luxury homes in Summerlin with stunning mountain views, premium finishes, and world-class amenities
           </p>
-          <RealScoutImageGallery
-            images={[
-              {
-                src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
-                alt: "Summerlin luxury home exterior",
-                caption: "Elegant homes with mountain views"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
-                alt: "Summerlin golf course",
-                caption: "Championship golf courses"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
-                alt: "Summerlin community center",
-                caption: "Community amenities and parks"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
-                alt: "Summerlin shopping center",
-                caption: "Downtown Summerlin shopping"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
-                alt: "Summerlin mountain views",
-                caption: "Red Rock Canyon views"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
-                alt: "Summerlin walking trails",
-                caption: "150+ miles of trails"
-              }
-            ]}
+          <RealScoutSummerlinGallery
             galleryType="grid"
             columns={3}
-            gap={4}
             showCaptions={true}
             className="mb-16"
           />
+          
+          {/* Additional RealScout Property Showcase */}
+          <div className="mt-16 text-center">
+            <h3 className="mb-6 text-2xl font-bold text-gray-900">
+              View More Summerlin Properties
+            </h3>
+            <p className="mb-8 text-lg text-gray-600">
+              Explore our complete inventory of Summerlin homes with detailed photos, virtual tours, and market insights
+            </p>
+            <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 justify-center">
+              <Button href="/properties?neighborhood=summerlin" className="bg-green-600 text-white hover:bg-green-700">
+                Browse All Summerlin Homes
+              </Button>
+              <Button href="/contact" intent="secondary" className="border-green-600 text-green-600 hover:bg-green-50">
+                Get Property Alerts
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -300,21 +296,20 @@ export default function SummerlinPage() {
         </div>
       </section>
 
-      {/* Your Listings */}
+      {/* RealScout Summerlin Property Showcase */}
       <section className="bg-gray-50 py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
-            Our Latest Listings
+          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+            Featured Summerlin Properties
           </h2>
-          <div className="flex justify-center">
-            <RealScoutYourListings 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE" 
-              listingStatus="For Sale,Sold" 
-              propertyTypes="" 
-              priceMin="500000"
-            />
-          </div>
+          <p className="mb-12 text-center text-lg text-gray-600">
+            Discover luxury homes in Summerlin with RealScout MLS integration - real-time data, professional photos, and detailed property information
+          </p>
+          <RealScoutSummerlinShowcase
+            showPricing={true}
+            showFeatures={true}
+            className="mb-16"
+          />
         </div>
       </section>
 

@@ -3,6 +3,8 @@ export { OptimizedImage } from './OptimizedImage/OptimizedImage'
 export { PropertyGallery } from './PropertyGallery/PropertyGallery'
 export { RealScoutPropertyImage, RealScoutPropertyGallery } from './RealScout/RealScoutPropertyImage'
 export { RealScoutImageGallery, RealScoutWidgetGallery } from './RealScout/RealScoutImageGallery'
+export { RealScoutSummerlinGallery } from './RealScout/RealScoutSummerlinGallery'
+export { RealScoutSummerlinShowcase } from './RealScout/RealScoutSummerlinShowcase'
 
 // Existing Components
 export { Button } from './Button/Button'
