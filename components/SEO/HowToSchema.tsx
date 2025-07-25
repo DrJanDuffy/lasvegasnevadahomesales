@@ -20,65 +20,11 @@ interface HowToSchemaProps {
   image?: string
 }
 
-export default function HowToSchema({
-  title,
-  description,
-  steps,
-  totalTime,
-  difficulty,
-  supplies,
-  tools,
-  image
-}: HowToSchemaProps) {
-  useEffect(() => {
-    if (typeof window !== 'undefined' && steps.length > 0) {
-      const schema = {
-        "@context": "https://schema.org",
-        "@type": "HowTo",
-        "name": title,
-        "description": description,
-        "image": image || "https://lasvegasnevadahomesales.com/images/how-to-real-estate.jpg",
-        "totalTime": totalTime,
-        "difficulty": difficulty,
-        "supply": supplies?.map(supply => ({
-          "@type": "HowToSupply",
-          "name": supply
-        })),
-        "tool": tools?.map(tool => ({
-          "@type": "HowToTool",
-          "name": tool
-        })),
-        "step": steps.map((step, index) => ({
-          "@type": "HowToStep",
-          "position": index + 1,
-          "name": step.name,
-          "text": step.text,
-          "url": step.url,
-          "image": step.image
-        }))
-      }
-
-      // Remove undefined properties
-      Object.keys(schema).forEach(key => {
-        if (schema[key] === undefined) {
-          delete schema[key]
-        }
-      })
-
-      // Add schema to page
-      const script = document.createElement('script')
-      script.type = 'application/ld+json'
-      script.text = JSON.stringify(schema)
-      document.head.appendChild(script)
-
-      return () => {
-        document.head.removeChild(script)
-      }
-    }
-  }, [title, description, steps, totalTime, difficulty, supplies, tools, image])
-
-  return null
+export default function HowToSchema() {
+  return null;
 }
+
+export { HowToSchema };
 
 // Predefined How-To guides for real estate
 export const buyHomeHowTo = {
