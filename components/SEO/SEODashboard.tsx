@@ -32,13 +32,14 @@ interface SearchConsoleData {
 }
 
 interface SEODashboardProps {
-  pageUrl: string
-  pageTitle: string
-  targetKeywords: string[]
-  debug?: boolean
+  pageUrl?: string;
+  pageTitle?: string;
+  targetKeywords?: string[];
+  debug?: boolean;
 }
 
-export default function SEODashboard() {
+export default function SEODashboard({ pageUrl, pageTitle, targetKeywords, debug }: SEODashboardProps) {
+  // For now, just render null (or you can add a placeholder UI)
   return null;
 }
 
