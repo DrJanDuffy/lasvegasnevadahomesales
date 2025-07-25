@@ -1,6 +1,8 @@
 import { Metadata } from "next"
 import { Button } from "../../../../components/Button/Button"
 import { RealScoutYourListings } from "../../../../components/RealScout/RealScoutYourListings"
+import { OptimizedImage } from "../../../../components/OptimizedImage/OptimizedImage"
+import { RealScoutImageGallery } from "../../../../components/RealScout/RealScoutImageGallery"
 
 export const metadata: Metadata = {
   title: "Summerlin Las Vegas | Luxury Homes & Master-Planned Community",
@@ -12,8 +14,22 @@ export default function SummerlinPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 text-center lg:py-24">
+      <section className="relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <OptimizedImage
+            src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&h=1080&fit=crop"
+            alt="Beautiful Summerlin neighborhood with luxury homes and mountain views"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 via-green-800/70 to-green-700/80"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="relative mx-auto max-w-7xl px-4 py-16 text-center text-white lg:py-24">
           <div className="mx-auto max-w-4xl">
             <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">
               Summerlin
@@ -93,8 +109,83 @@ export default function SummerlinPage() {
                 </div>
               </div>
             </div>
-            <div className="h-96 rounded-lg bg-gradient-to-br from-green-400 to-green-600"></div>
+            <div className="space-y-4">
+              <OptimizedImage
+                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop"
+                alt="Luxury Summerlin home with modern architecture"
+                width={800}
+                height={600}
+                className="rounded-lg shadow-lg"
+              />
+              <div className="grid grid-cols-2 gap-4">
+                <OptimizedImage
+                  src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=300&fit=crop"
+                  alt="Summerlin golf course and landscaping"
+                  width={400}
+                  height={300}
+                  className="rounded-lg shadow-md"
+                />
+                <OptimizedImage
+                  src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop"
+                  alt="Summerlin community amenities"
+                  width={400}
+                  height={300}
+                  className="rounded-lg shadow-md"
+                />
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Summerlin Photo Gallery */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+            Discover Summerlin's Beauty
+          </h2>
+          <p className="mb-12 text-center text-lg text-gray-600">
+            Explore the stunning landscapes, luxury homes, and world-class amenities that make Summerlin special
+          </p>
+          <RealScoutImageGallery
+            images={[
+              {
+                src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
+                alt: "Summerlin luxury home exterior",
+                caption: "Elegant homes with mountain views"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
+                alt: "Summerlin golf course",
+                caption: "Championship golf courses"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
+                alt: "Summerlin community center",
+                caption: "Community amenities and parks"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+                alt: "Summerlin shopping center",
+                caption: "Downtown Summerlin shopping"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+                alt: "Summerlin mountain views",
+                caption: "Red Rock Canyon views"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+                alt: "Summerlin walking trails",
+                caption: "150+ miles of trails"
+              }
+            ]}
+            galleryType="grid"
+            columns={3}
+            gap={4}
+            showCaptions={true}
+            className="mb-16"
+          />
         </div>
       </section>
 
