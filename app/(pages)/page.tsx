@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { Button } from "../../components/Button/Button"
 import { RealScoutOfficeListings } from "../../components/RealScout/RealScoutOfficeListings"
 import { RealScoutYourListings } from "../../components/RealScout/RealScoutYourListings"
+import { OptimizedImage } from "../../components/OptimizedImage/OptimizedImage"
 import { SEOHead } from '../../components/SEO/SEOHead'
 import { FAQSchema, homePageFAQs } from '../../components/SEO/FAQSchema'
 import { ReviewSchema, companyReviews, companyAggregateRating } from '../../components/SEO/ReviewSchema'
@@ -116,43 +117,79 @@ export default function LasVegasMarketOverview() {
           </h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
-              <div className="h-48 bg-gradient-to-br from-green-400 to-green-600"></div>
+              <div className="relative h-48 overflow-hidden">
+                <OptimizedImage
+                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="Summerlin luxury homes and golf course"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Summerlin</h3>
                 <p className="mb-4 text-gray-600">Master-planned community with luxury homes and amenities</p>
-                            <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm" aria-label="See all Summerlin homes for sale with Las Vegas Nevada Home Sales">
-              Learn More
-            </Button>
+                <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm" aria-label="See all Summerlin homes for sale with Las Vegas Nevada Home Sales">
+                  Learn More
+                </Button>
               </div>
             </div>
             <div className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
-              <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600"></div>
+              <div className="relative h-48 overflow-hidden">
+                <OptimizedImage
+                  src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="Henderson family-friendly neighborhood"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Henderson</h3>
                 <p className="mb-4 text-gray-600">Family-friendly city with excellent schools and parks</p>
-                            <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
-              Learn More
-            </Button>
+                <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
+                  Learn More
+                </Button>
               </div>
             </div>
             <div className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
-              <div className="h-48 bg-gradient-to-br from-purple-400 to-purple-600"></div>
+              <div className="relative h-48 overflow-hidden">
+                <OptimizedImage
+                  src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="Green Valley affordable homes"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Green Valley</h3>
                 <p className="mb-4 text-gray-600">Affordable homes with great community amenities</p>
-                            <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
-              Learn More
-            </Button>
+                <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
+                  Learn More
+                </Button>
               </div>
             </div>
             <div className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
-              <div className="h-48 bg-gradient-to-br from-red-400 to-red-600"></div>
+              <div className="relative h-48 overflow-hidden">
+                <OptimizedImage
+                  src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="Downtown Las Vegas urban living"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Downtown</h3>
                 <p className="mb-4 text-gray-600">Urban living with entertainment and cultural attractions</p>
-                            <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
-              Learn More
-            </Button>
+                <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
+                  Learn More
+                </Button>
               </div>
             </div>
           </div>

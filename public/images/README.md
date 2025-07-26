@@ -1,83 +1,229 @@
-# Images Folder - Las Vegas Real Estate Website
+# Las Vegas Nevada Home Sales - Image Directory
 
-## 📁 Folder Structure
+This directory contains all images for the Las Vegas Nevada Home Sales website. Please follow the guidelines below when adding new images.
+
+## 📁 Directory Structure
 
 ```
 public/images/
-├── properties/          # Property listing photos
-├── neighborhoods/       # Neighborhood photos  
-├── agents/             # Agent profile photos
-├── testimonials/       # Client testimonial photos
-└── general/            # General site images
+├── neighborhoods/          # Neighborhood photos
+├── properties/            # Property listing photos
+├── hero/                  # Hero section images
+├── team/                  # Team member photos
+├── testimonials/          # Client testimonial photos
+├── og/                    # Open Graph images
+├── gallery/               # General gallery images
+├── amenities/             # Community amenities photos
+└── market-reports/        # Market report graphics
 ```
 
-## 🖼️ How to Add Your Photos
+## 🏘️ Neighborhoods Directory
 
-### **Step 1: Upload Your Images**
-1. Copy your image files to the appropriate folder
-2. Use descriptive file names (e.g., `summerlin-hero.jpg`, `property-1-kitchen.jpg`)
-3. Ensure images are optimized (under 500KB for properties, under 1MB for hero images)
+**Location**: `public/images/neighborhoods/`
 
-### **Step 2: Reference in Code**
-```jsx
-// For property images
-<img src="/images/properties/your-image.jpg" alt="Description" />
+**Files to add**:
+- `summerlin.jpg` - Summerlin luxury homes and golf course
+- `henderson.jpg` - Henderson family-friendly neighborhood
+- `green-valley.jpg` - Green Valley affordable homes
+- `downtown.jpg` - Downtown Las Vegas urban living
 
-// For neighborhood images  
-<img src="/images/neighborhoods/summerlin-hero.jpg" alt="Summerlin neighborhood" />
+**Recommended specs**:
+- Size: 800x600px minimum
+- Format: JPG, PNG, or WebP
+- File size: Under 500KB
+- Content: High-quality neighborhood photos
 
-// Using Next.js Image component (recommended)
-import Image from 'next/image'
-<Image src="/images/properties/your-image.jpg" alt="Description" width={800} height={600} />
+## 🏠 Properties Directory
+
+**Location**: `public/images/properties/`
+
+**Structure**:
 ```
+properties/
+├── property-1/
+│   ├── main.jpg
+│   ├── kitchen.jpg
+│   ├── living-room.jpg
+│   └── exterior.jpg
+├── property-2/
+│   └── ...
+```
+
+**Recommended specs**:
+- Size: 1200x800px minimum
+- Format: JPG or WebP
+- File size: Under 1MB per image
+- Content: Professional real estate photography
+
+## 🎯 Hero Directory
+
+**Location**: `public/images/hero/`
+
+**Files to add**:
+- `homepage-hero.jpg` - Main homepage hero image
+- `contact-hero.jpg` - Contact page hero
+- `properties-hero.jpg` - Properties page hero
+- `valuation-hero.jpg` - Home valuation page hero
+
+**Recommended specs**:
+- Size: 1920x1080px
+- Format: JPG or WebP
+- File size: Under 800KB
+- Content: Las Vegas real estate scenes
+
+## 👥 Team Directory
+
+**Location**: `public/images/team/`
+
+**Files to add**:
+- `dr-jan-duffy.jpg` - Dr. Jan Duffy professional photo
+- `team-member-1.jpg` - Additional team members
+- `office.jpg` - Office/team photo
+
+**Recommended specs**:
+- Size: 400x600px (portrait)
+- Format: JPG
+- File size: Under 300KB
+- Content: Professional headshots
+
+## 💬 Testimonials Directory
+
+**Location**: `public/images/testimonials/`
+
+**Files to add**:
+- `client-1.jpg` - Client testimonial photos
+- `client-2.jpg` - Additional client photos
+- `review-photos/` - Subdirectory for review photos
+
+**Recommended specs**:
+- Size: 300x300px (square)
+- Format: JPG
+- File size: Under 200KB
+- Content: Client photos (with permission)
+
+## 🔗 Open Graph Directory
+
+**Location**: `public/images/og/`
+
+**Files to add**:
+- `og-home.jpg` - Homepage Open Graph image
+- `og-properties.jpg` - Properties page OG image
+- `og-contact.jpg` - Contact page OG image
+- `og-valuation.jpg` - Valuation page OG image
+
+**Recommended specs**:
+- Size: 1200x630px (Facebook/Twitter standard)
+- Format: JPG or PNG
+- File size: Under 1MB
+- Content: Branded images with text overlay
+
+## 🖼️ Gallery Directory
+
+**Location**: `public/images/gallery/`
+
+**Structure**:
+```
+gallery/
+├── las-vegas-scenes/
+├── community-events/
+├── property-showcases/
+└── market-events/
+```
+
+**Recommended specs**:
+- Size: 800x600px minimum
+- Format: JPG or WebP
+- File size: Under 500KB
+- Content: General site images
+
+## 🏊 Amenities Directory
+
+**Location**: `public/images/amenities/`
+
+**Files to add**:
+- `golf-courses.jpg` - Golf course amenities
+- `parks.jpg` - Community parks
+- `shopping.jpg` - Shopping centers
+- `schools.jpg` - Local schools
+- `entertainment.jpg` - Entertainment venues
+
+**Recommended specs**:
+- Size: 600x400px
+- Format: JPG
+- File size: Under 300KB
+- Content: Community amenities
+
+## 📊 Market Reports Directory
+
+**Location**: `public/images/market-reports/`
+
+**Files to add**:
+- `market-trends.jpg` - Market trend graphics
+- `price-charts.jpg` - Price chart images
+- `neighborhood-stats.jpg` - Neighborhood statistics
+
+**Recommended specs**:
+- Size: 800x600px
+- Format: PNG or JPG
+- File size: Under 400KB
+- Content: Market data visualizations
 
 ## 📋 Image Guidelines
 
-### **Property Photos**
-- **Size**: 1200x800 pixels (16:9 ratio)
-- **Format**: JPG or WebP
-- **File size**: Under 500KB
-- **Naming**: `property-{id}-{room}.jpg`
+### **File Naming Convention**
+- Use lowercase letters
+- Separate words with hyphens
+- Include descriptive names
+- Example: `summerlin-luxury-homes.jpg`
 
-### **Neighborhood Photos**
-- **Size**: 1920x1080 pixels (16:9 ratio)  
-- **Format**: JPG or WebP
-- **File size**: Under 1MB
-- **Naming**: `{neighborhood}-hero.jpg`
+### **Image Optimization**
+- Compress images before uploading
+- Use appropriate formats (JPG for photos, PNG for graphics)
+- Consider WebP for better performance
+- Keep file sizes reasonable for fast loading
 
-### **Agent Photos**
-- **Size**: 400x400 pixels (1:1 ratio)
-- **Format**: JPG or WebP
-- **File size**: Under 200KB
-- **Naming**: `agent-{name}.jpg`
+### **Content Guidelines**
+- Use high-quality, professional photos
+- Ensure proper lighting and composition
+- Include variety in perspectives and styles
+- Respect copyright and licensing requirements
+- Get permission for client photos
 
-## 🚀 Quick Examples
+### **SEO Best Practices**
+- Use descriptive alt text
+- Include relevant keywords in filenames
+- Optimize for web performance
+- Consider lazy loading for large galleries
 
-### **Adding a Property Photo**
-1. Save your image as `property-1-exterior.jpg` in `properties/` folder
-2. Update your code:
-```jsx
-const property = {
-  id: 1,
-  address: "1234 Summerlin Pkwy",
-  image: "/images/properties/property-1-exterior.jpg"
-}
-```
+## 🚀 How to Use Images in Code
 
-### **Adding a Neighborhood Hero Image**
-1. Save your image as `summerlin-hero.jpg` in `neighborhoods/` folder
-2. Update your code:
-```jsx
-<Image 
-  src="/images/neighborhoods/summerlin-hero.jpg"
-  alt="Beautiful Summerlin neighborhood"
-  width={1200}
+### **Next.js Image Component**
+```typescript
+import { OptimizedImage } from '../../components/OptimizedImage/OptimizedImage'
+
+<OptimizedImage
+  src="/images/neighborhoods/summerlin.jpg"
+  alt="Summerlin luxury homes and golf course"
+  width={800}
   height={600}
+  className="object-cover"
 />
 ```
 
-## 💡 Tips
-- Always include descriptive alt text for accessibility
-- Use consistent naming conventions
-- Optimize images before uploading
-- Keep file sizes small for faster loading 
+### **Regular HTML Image**
+```html
+<img 
+  src="/images/neighborhoods/summerlin.jpg" 
+  alt="Summerlin luxury homes and golf course"
+  className="w-full h-48 object-cover"
+/>
+```
+
+## 📞 Support
+
+For questions about image requirements or optimization, contact the development team.
+
+---
+
+**Last Updated**: July 26, 2025
+**Version**: 1.0 
