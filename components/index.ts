@@ -17,6 +17,9 @@ export { RealScoutAdvancedSearch } from './RealScout/RealScoutAdvancedSearch'
 export { SearchBar } from './Search/SearchBar'
 export { LeadCaptureForm } from './Forms/LeadCaptureForm'
 
+// AI & Analysis
+export { PhotoAnalyzer } from './PhotoAnalysis/PhotoAnalyzer'
+
 // Property Components
 export { FeaturedProperties } from './Properties/FeaturedProperties'
 
