@@ -2,6 +2,12 @@
 
 import React, { useEffect } from 'react';
 
+// Type declarations for Performance API
+interface LayoutShift extends PerformanceEntry {
+  value: number;
+  hadRecentInput: boolean;
+}
+
 interface AdvancedSEOMonitorProps {
   pageUrl?: string;
   pageTitle?: string;
@@ -88,8 +94,9 @@ export default function AdvancedSEOMonitor({
       const clsObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         entries.forEach((entry) => {
-          if (!entry.hadRecentInput) {
-            clsValue += (entry as any).value;
+          const layoutShiftEntry = entry as LayoutShift;
+          if (!layoutShiftEntry.hadRecentInput) {
+            clsValue += layoutShiftEntry.value;
           }
         });
         if (debug) {

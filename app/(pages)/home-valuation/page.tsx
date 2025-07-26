@@ -3,6 +3,7 @@
 import { Button } from "../../../components/Button/Button"
 import { RealScoutOfficeListings } from "../../../components/RealScout/RealScoutOfficeListings"
 import { RealScoutYourListings } from "../../../components/RealScout/RealScoutYourListings"
+import { RealScoutHomeValue } from "../../../components/RealScout/RealScoutHomeValue"
 import { HomebotValuation } from "../../../components/Homebot/HomebotValuation"
 import { ConversionTracker } from "../../../components/Analytics/ConversionTracker"
 import { GoogleMaps } from "../../../components/Google/GoogleMaps"
@@ -180,11 +181,34 @@ export default function HomeValuationPage() {
             </p>
           </div>
           
+          {/* RealScout Home Value Widget */}
+          <div className="mb-12">
+            <h3 className="mb-6 text-2xl font-bold text-[#0A2540] text-center">
+              Get Your Instant Home Value Estimate
+            </h3>
+            <p className="mb-8 text-center text-gray-600 max-w-2xl mx-auto">
+              Get a quick estimate of your home's value with our advanced RealScout valuation tool. 
+              This instant estimate is based on current market data and recent sales in your area.
+            </p>
+            <div className="flex justify-center">
+              <div className="w-full max-w-2xl">
+                <RealScoutHomeValue agentEncodedId="QWdlbnQtMjI1MDUw" />
+              </div>
+            </div>
+          </div>
+
           {/* Homebot Valuation Widget Container */}
           <div 
             id="homebot-valuation-container"
             className="relative mx-auto max-w-2xl"
           >
+            <h3 className="mb-6 text-2xl font-bold text-[#0A2540] text-center">
+              Schedule Your Comprehensive Home Evaluation
+            </h3>
+            <p className="mb-8 text-center text-gray-600 max-w-2xl mx-auto">
+              For a detailed, personalized evaluation with market analysis and strategic recommendations, 
+              schedule your free consultation with our expert team.
+            </p>
             <HomebotValuation className="rounded-lg border border-gray-200 bg-white shadow-lg" />
           </div>
         </div>

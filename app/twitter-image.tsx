@@ -58,15 +58,15 @@ export default async function Image() {
             marginBottom: '30px',
           }}
         >
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
             <div style={{ fontSize: '28px', marginBottom: '6px' }}>🏘️</div>
             <div>Luxury Homes</div>
           </div>
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
             <div style={{ fontSize: '28px', marginBottom: '6px' }}>🏡</div>
             <div>Family Homes</div>
           </div>
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
             <div style={{ fontSize: '28px', marginBottom: '6px' }}>🌆</div>
             <div>Downtown Condos</div>
           </div>

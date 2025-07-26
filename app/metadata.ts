@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { seoConfig } from '../config/seo-config'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(seoConfig.site.url),
+  metadataBase: new URL('https://www.lasvegasnevadahomesales.com'),
   title: {
     default: seoConfig.pages.home.title,
     template: `%s | ${seoConfig.site.name}`

@@ -46,20 +46,20 @@ export default function HowToSchema({
       "@type": "HowToTool",
       "name": tool
     })),
-    "step": steps.map((step, index) => ({
+    "step": steps?.map((step, index) => ({
       "@type": "HowToStep",
       "position": index + 1,
       "name": step.name,
       "text": step.text,
       "url": step.url,
       "image": step.image
-    }))
+    })) || []
   };
 
   // Remove undefined properties
   Object.keys(structuredData).forEach(key => {
-    if (structuredData[key] === undefined) {
-      delete structuredData[key];
+    if ((structuredData as any)[key] === undefined) {
+      delete (structuredData as any)[key];
     }
   });
 

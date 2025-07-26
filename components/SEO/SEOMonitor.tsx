@@ -143,7 +143,7 @@ export function SEOMonitor({ pageName, enableTracking = true }: SEOMonitorProps)
         const target = e.target as HTMLElement
         if (target.tagName === 'A' || target.closest('a')) {
           const link = target.tagName === 'A' ? target : target.closest('a')
-          trackEvent('link_click', link?.href || 'unknown_link')
+          trackEvent('link_click', (link as HTMLAnchorElement)?.href || 'unknown_link')
         }
       })
     }

@@ -277,7 +277,7 @@ export default function BlogPage() {
                 placeholder="Enter your email address"
                 className="flex-1 rounded-lg border border-purple-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
-              <Button href="#" className="bg-white text-purple-900 hover:bg-purple-50">
+              <Button href="http://drjanduffy.realscout.com/onboarding" className="bg-white text-purple-900 hover:bg-purple-50">
                 Subscribe
               </Button>
             </div>

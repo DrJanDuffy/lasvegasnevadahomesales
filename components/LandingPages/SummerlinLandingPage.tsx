@@ -281,19 +281,19 @@ export function SummerlinLandingPage() {
                          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
                <h3 className="mb-4 text-xl font-bold text-[#0A2540]">Downtown Summerlin Luxury Home</h3>
                <p className="mb-4 text-gray-600">Stunning luxury home in the heart of Downtown Summerlin with premium finishes and convenient access to shopping and dining.</p>
-               <Link href="/properties/downtown-summerlin-luxury" className="text-[#3A8DDE] hover:underline font-semibold">View Details →</Link>
+               <Link href="http://drjanduffy.realscout.com/onboarding" className="text-[#3A8DDE] hover:underline font-semibold">View Details →</Link>
              </div>
              
              <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
                <h3 className="mb-4 text-xl font-bold text-[#0A2540]">Red Rock Country Club Estate</h3>
                <p className="mb-4 text-gray-600">Magnificent estate with golf course views and world-class amenities in the prestigious Red Rock Country Club community.</p>
-               <Link href="/properties/red-rock-estate" className="text-[#3A8DDE] hover:underline font-semibold">View Details →</Link>
+               <Link href="http://drjanduffy.realscout.com/onboarding" className="text-[#3A8DDE] hover:underline font-semibold">View Details →</Link>
              </div>
              
              <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
                <h3 className="mb-4 text-xl font-bold text-[#0A2540]">The Ridges Custom Home</h3>
                <p className="mb-4 text-gray-600">Custom luxury home with spectacular Red Rock Canyon views in the exclusive Ridges community.</p>
-               <Link href="/properties/ridges-custom" className="text-[#3A8DDE] hover:underline font-semibold">View Details →</Link>
+               <Link href="http://drjanduffy.realscout.com/onboarding" className="text-[#3A8DDE] hover:underline font-semibold">View Details →</Link>
              </div>
           </div>
           

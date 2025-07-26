@@ -2,7 +2,7 @@ export const seoConfig = {
   // Site Information
   site: {
     name: "Las Vegas Nevada Home Sales",
-    url: "https://lasvegasnevadahomesales.com",
+    url: "https://www.lasvegasnevadahomesales.com",
     description: "Premier real estate services in Las Vegas, Nevada. Find your dream home in Summerlin, Henderson, Green Valley, and Downtown Las Vegas.",
     keywords: "Las Vegas real estate, Summerlin homes, Henderson real estate, Green Valley homes, Downtown Las Vegas, Nevada real estate, Las Vegas homes for sale, Las Vegas realtor, Las Vegas real estate agent",
     author: "Las Vegas Nevada Home Sales",

@@ -319,7 +319,7 @@ export default function TestimonialsPage() {
               <p className="mb-4 text-sm text-gray-600">
                 Read our reviews on Google Business
               </p>
-              <Button href="#" className="text-yellow-600 hover:text-yellow-700">
+              <Button href="http://drjanduffy.realscout.com/onboarding" className="text-yellow-600 hover:text-yellow-700">
                 View Google Reviews →
               </Button>
             </div>
@@ -329,7 +329,7 @@ export default function TestimonialsPage() {
               <p className="mb-4 text-sm text-gray-600">
                 Check out our Facebook page reviews
               </p>
-              <Button href="#" className="text-blue-600 hover:text-blue-700">
+              <Button href="http://drjanduffy.realscout.com/onboarding" className="text-blue-600 hover:text-blue-700">
                 View Facebook Reviews →
               </Button>
             </div>
@@ -339,7 +339,7 @@ export default function TestimonialsPage() {
               <p className="mb-4 text-sm text-gray-600">
                 See our reviews on Zillow
               </p>
-              <Button href="#" className="text-blue-600 hover:text-blue-700">
+              <Button href="http://drjanduffy.realscout.com/onboarding" className="text-blue-600 hover:text-blue-700">
                 View Zillow Reviews →
               </Button>
             </div>

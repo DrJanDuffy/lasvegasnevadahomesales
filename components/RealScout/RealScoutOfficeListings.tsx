@@ -1,22 +1,32 @@
+"use client"
+
+import { realScoutConfig } from '../../config/realscout-config';
+
 interface RealScoutOfficeListingsProps {
-  agentEncodedId: string;
+  agentEncodedId?: string;
   sortOrder?: string;
   listingStatus?: string;
   propertyTypes?: string;
   priceMin?: string;
   priceMax?: string;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 export function RealScoutOfficeListings({
-  agentEncodedId,
+  agentEncodedId = realScoutConfig.widgets.officeListings.agentEncodedId,
   sortOrder = "STATUS_AND_SIGNIFICANT_CHANGE",
   listingStatus = "For Sale",
   propertyTypes = "SFR,MF,TC",
   priceMin,
-  priceMax
+  priceMax,
+  className = "",
+  style = {}
 }: RealScoutOfficeListingsProps) {
   return (
-    <div
+    <div 
+      className={`realscout-widget realscout-office-listings ${className}`}
+      style={style}
       dangerouslySetInnerHTML={{
         __html: `<realscout-office-listings 
           agent-encoded-id="${agentEncodedId}" 

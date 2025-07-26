@@ -1,0 +1,84 @@
+/* Homebot Widget Styles */
+.homebot-valuation-widget {
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+  min-height: 480px;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Widget Loading States */
+.homebot-valuation-widget:empty::before {
+  content: "Loading Homebot valuation widget...";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 480px;
+  color: #666;
+  font-style: italic;
+  background: #f7f9fc;
+  border-radius: 8px;
+}
+
+/* Homebot iframe styling */
+.homebot-valuation-widget iframe {
+  width: 100% !important;
+  min-height: 480px !important;
+  border: none !important;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .homebot-valuation-widget {
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    min-height: 400px;
+  }
+  
+  .homebot-valuation-widget:empty::before {
+    height: 400px;
+  }
+  
+  .homebot-valuation-widget iframe {
+    min-height: 400px !important;
+  }
+}
+
+/* Widget Container Styling */
+.homebot-widget-container {
+  padding: 1rem;
+  background: #f7f9fc;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.homebot-widget-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0a2540;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Error State */
+.homebot-widget-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 480px;
+  color: #dc2626;
+  font-weight: 500;
+  text-align: center;
+  padding: 1rem;
+  background: #fef2f2;
+  border-radius: 8px;
+}
+
+.homebot-widget-error::before {
+  content: "⚠️ Homebot widget temporarily unavailable";
+} 

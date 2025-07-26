@@ -181,7 +181,7 @@ export default function MarketReportsPage() {
                   <span className="font-semibold text-green-600">↗️ +6.8%</span>
                 </div>
               </div>
-              <Button href="/neighborhoods/summerlin" className="mt-4 w-full">
+              <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-4 w-full">
                 View Summerlin Report
               </Button>
             </div>
@@ -206,7 +206,7 @@ export default function MarketReportsPage() {
                   <span className="font-semibold text-green-600">↗️ +4.2%</span>
                 </div>
               </div>
-              <Button href="/neighborhoods/henderson" className="mt-4 w-full">
+              <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-4 w-full">
                 View Henderson Report
               </Button>
             </div>
@@ -231,7 +231,7 @@ export default function MarketReportsPage() {
                   <span className="font-semibold text-green-600">↗️ +3.7%</span>
                 </div>
               </div>
-              <Button href="/neighborhoods/green-valley" className="mt-4 w-full">
+              <Button href="http://drjanduffy.realscout.com/onboarding" className="mt-4 w-full">
                 View Green Valley Report
               </Button>
             </div>

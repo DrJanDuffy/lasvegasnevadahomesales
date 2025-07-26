@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://lasvegasnevadahomesales.com' // Update with your actual domain
+  const baseUrl = 'https://www.lasvegasnevadahomesales.com'
 
   return {
     rules: [

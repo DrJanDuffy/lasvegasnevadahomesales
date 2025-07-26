@@ -276,7 +276,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
             <Button href="/contact" className="bg-white text-blue-900 hover:bg-blue-50">
               Schedule Viewing
             </Button>
-            <Button href="tel:702-555-0123" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
+            <Button href="tel:+17025001981" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
               Call Now
             </Button>
           </div>

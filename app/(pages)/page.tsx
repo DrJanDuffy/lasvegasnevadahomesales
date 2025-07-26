@@ -120,9 +120,9 @@ export default function LasVegasMarketOverview() {
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Summerlin</h3>
                 <p className="mb-4 text-gray-600">Master-planned community with luxury homes and amenities</p>
-                <Button href="/neighborhoods/summerlin" className="text-sm" aria-label="See all Summerlin homes for sale with Las Vegas Nevada Home Sales">
-                  Learn More
-                </Button>
+                            <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm" aria-label="See all Summerlin homes for sale with Las Vegas Nevada Home Sales">
+              Learn More
+            </Button>
               </div>
             </div>
             <div className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
@@ -130,9 +130,9 @@ export default function LasVegasMarketOverview() {
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Henderson</h3>
                 <p className="mb-4 text-gray-600">Family-friendly city with excellent schools and parks</p>
-                <Button href="/neighborhoods/henderson" className="text-sm">
-                  Learn More
-                </Button>
+                            <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
+              Learn More
+            </Button>
               </div>
             </div>
             <div className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
@@ -140,9 +140,9 @@ export default function LasVegasMarketOverview() {
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Green Valley</h3>
                 <p className="mb-4 text-gray-600">Affordable homes with great community amenities</p>
-                <Button href="/neighborhoods/green-valley" className="text-sm">
-                  Learn More
-                </Button>
+                            <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
+              Learn More
+            </Button>
               </div>
             </div>
             <div className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
@@ -150,9 +150,9 @@ export default function LasVegasMarketOverview() {
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Downtown</h3>
                 <p className="mb-4 text-gray-600">Urban living with entertainment and cultural attractions</p>
-                <Button href="/neighborhoods/downtown" className="text-sm">
-                  Learn More
-                </Button>
+                            <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
+              Learn More
+            </Button>
               </div>
             </div>
           </div>

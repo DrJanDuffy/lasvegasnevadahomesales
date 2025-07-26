@@ -6,12 +6,26 @@ export { RealScoutImageGallery, RealScoutWidgetGallery } from './RealScout/RealS
 export { RealScoutSummerlinGallery } from './RealScout/RealScoutSummerlinGallery'
 export { RealScoutSummerlinShowcase } from './RealScout/RealScoutSummerlinShowcase'
 
-// Existing Components
-export { Button } from './Button/Button'
-export { Navigation } from './Navigation/Navigation'
+// RealScout Widget Components
 export { RealScoutYourListings } from './RealScout/RealScoutYourListings'
 export { RealScoutHomeValue } from './RealScout/RealScoutHomeValue'
 export { RealScoutOfficeListings } from './RealScout/RealScoutOfficeListings'
+export { RealScoutSimpleSearch } from './RealScout/RealScoutSimpleSearch'
+export { RealScoutAdvancedSearch } from './RealScout/RealScoutAdvancedSearch'
+
+// Search & Forms
+export { SearchBar } from './Search/SearchBar'
+export { LeadCaptureForm } from './Forms/LeadCaptureForm'
+
+// Property Components
+export { FeaturedProperties } from './Properties/FeaturedProperties'
+
+// Layout Components
+export { Footer } from './Footer/Footer'
+
+// Existing Components
+export { Button } from './Button/Button'
+export { Navigation } from './Navigation/Navigation'
 export { HomebotValuation } from './Homebot/HomebotValuation'
 export { GoogleAnalytics } from './Google/GoogleAnalytics'
 export { GoogleMaps } from './Google/GoogleMaps'
