@@ -69,23 +69,40 @@ export function EmailJSContactForm({
       const template = getEmailTemplate(formType)
       const fieldMappings = getFieldMappings(formType === 'propertyInquiry' ? 'property' : formType === 'homeValuation' ? 'valuation' : 'contact')
 
-      // Prepare template parameters
-      const templateParams = {
+      // Prepare template parameters with safe property access
+      const templateParams: Record<string, any> = {
         [fieldMappings.name]: `${data.firstName} ${data.lastName}`,
         [fieldMappings.email]: data.email,
         [fieldMappings.phone]: data.phone || '',
         [fieldMappings.message]: data.message || '',
         [fieldMappings.source]: source,
         [fieldMappings.pageUrl]: typeof window !== 'undefined' ? window.location.href : '',
-        // Property-specific fields
-        ...(data.propertyAddress && { [fieldMappings.propertyAddress]: data.propertyAddress }),
-        ...(data.propertyType && { [fieldMappings.propertyType]: data.propertyType }),
-        ...(data.budget && { [fieldMappings.budget]: data.budget }),
-        ...(data.timeline && { [fieldMappings.timeline]: data.timeline }),
-        ...(data.estimatedValue && { [fieldMappings.estimatedValue]: data.estimatedValue }),
-        ...(data.bedrooms && { [fieldMappings.bedrooms]: data.bedrooms }),
-        ...(data.bathrooms && { [fieldMappings.bathrooms]: data.bathrooms }),
-        ...(data.squareFootage && { [fieldMappings.squareFootage]: data.squareFootage }),
+      }
+
+      // Add property-specific fields safely with type assertion
+      if ('propertyAddress' in data && (data as any).propertyAddress && 'propertyAddress' in fieldMappings) {
+        templateParams[fieldMappings.propertyAddress as string] = (data as any).propertyAddress
+      }
+      if ('propertyType' in data && (data as any).propertyType && 'propertyType' in fieldMappings) {
+        templateParams[fieldMappings.propertyType as string] = (data as any).propertyType
+      }
+      if ('budget' in data && (data as any).budget && 'budget' in fieldMappings) {
+        templateParams[fieldMappings.budget as string] = (data as any).budget
+      }
+      if ('timeline' in data && (data as any).timeline && 'timeline' in fieldMappings) {
+        templateParams[fieldMappings.timeline as string] = (data as any).timeline
+      }
+      if ('estimatedValue' in data && (data as any).estimatedValue && 'estimatedValue' in fieldMappings) {
+        templateParams[fieldMappings.estimatedValue as string] = (data as any).estimatedValue
+      }
+      if ('bedrooms' in data && (data as any).bedrooms && 'bedrooms' in fieldMappings) {
+        templateParams[fieldMappings.bedrooms as string] = (data as any).bedrooms
+      }
+      if ('bathrooms' in data && (data as any).bathrooms && 'bathrooms' in fieldMappings) {
+        templateParams[fieldMappings.bathrooms as string] = (data as any).bathrooms
+      }
+      if ('squareFootage' in data && (data as any).squareFootage && 'squareFootage' in fieldMappings) {
+        templateParams[fieldMappings.squareFootage as string] = (data as any).squareFootage
       }
 
       // Send email via EmailJS
@@ -112,14 +129,14 @@ export function EmailJSContactForm({
               message: data.message,
               source: source,
               pageUrl: typeof window !== 'undefined' ? window.location.href : '',
-              propertyAddress: data.propertyAddress,
-              propertyType: data.propertyType,
-              budget: data.budget,
-              timeline: data.timeline,
-              estimatedValue: data.estimatedValue,
-              bedrooms: data.bedrooms,
-              bathrooms: data.bathrooms,
-              squareFootage: data.squareFootage,
+              propertyAddress: ('propertyAddress' in data) ? data.propertyAddress : undefined,
+              propertyType: ('propertyType' in data) ? data.propertyType : undefined,
+              budget: ('budget' in data) ? data.budget : undefined,
+              timeline: ('timeline' in data) ? data.timeline : undefined,
+              estimatedValue: ('estimatedValue' in data) ? data.estimatedValue : undefined,
+              bedrooms: ('bedrooms' in data) ? data.bedrooms : undefined,
+              bathrooms: ('bathrooms' in data) ? data.bathrooms : undefined,
+              squareFootage: ('squareFootage' in data) ? data.squareFootage : undefined,
             }),
           })
 
@@ -141,8 +158,8 @@ export function EmailJSContactForm({
             event_category: 'lead_generation',
             event_label: source,
             value: 1,
-            custom_parameter_1: data.budget,
-            custom_parameter_2: data.timeline,
+            custom_parameter_1: ('budget' in data) ? data.budget : undefined,
+            custom_parameter_2: ('timeline' in data) ? data.timeline : undefined,
           })
         }
 
