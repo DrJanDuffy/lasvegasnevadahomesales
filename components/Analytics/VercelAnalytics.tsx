@@ -27,6 +27,9 @@ interface RealEstateTracking {
 // Extend Window interface for global tracking functions
 declare global {
   interface Window {
+    analytics?: {
+      track: (event: string, properties?: Record<string, any>) => void
+    }
     realEstateTracking: RealEstateTracking
     trackPropertyView: (propertyId: string, price: number, neighborhood: string, propertyType: string) => void
     trackLeadSubmission: (leadType: string, value: number, source: string) => void

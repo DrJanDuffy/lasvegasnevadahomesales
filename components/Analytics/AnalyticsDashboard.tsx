@@ -3,6 +3,15 @@
 import { useEffect, useState } from 'react'
 import { analyticsConfig, analyticsHelpers } from '../../config/analytics-config'
 
+// Extend Window interface for Vercel Analytics
+declare global {
+  interface Window {
+    analytics?: {
+      track: (event: string, properties?: Record<string, any>) => void
+    }
+  }
+}
+
 interface AnalyticsData {
   pageViews: number
   uniqueVisitors: number
