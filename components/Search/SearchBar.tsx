@@ -20,10 +20,10 @@ export function SearchBar({
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
             if (searchQuery.trim()) {
-          // Track search interaction with Vercel Analytics
-          if (typeof window !== 'undefined' && window.trackNeighborhoodSearch) {
-            window.trackNeighborhoodSearch(searchQuery.trim(), 'property_search')
-          }
+                // Track search interaction with Vercel Analytics
+      if (typeof window !== 'undefined' && window.realEstateTracking?.trackNeighborhoodSearch) {
+        window.realEstateTracking.trackNeighborhoodSearch(searchQuery.trim(), 'property_search')
+      }
           
           // Track with Google Analytics as well
           if (typeof gtag !== 'undefined') {

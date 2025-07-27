@@ -30,19 +30,7 @@ declare global {
     analytics?: {
       track: (event: string, properties?: Record<string, any>) => void
     }
-    realEstateTracking: RealEstateTracking
-    trackPropertyView: (propertyId: string, price: number, neighborhood: string, propertyType: string) => void
-    trackLeadSubmission: (leadType: string, value: number, source: string) => void
-    trackValuationRequest: (propertyAddress: string, estimatedValue: number) => void
-    trackNeighborhoodSearch: (neighborhood: string, searchType: string) => void
-    trackMarketReportDownload: (reportType: string, neighborhood: string) => void
-    trackPhoneCall: (phoneNumber: string, callSource: string) => void
-    trackFormInteraction: (formId: string, action: string) => void
-    trackCTAClick: (ctaType: string, location: string, value?: number) => void
-    trackWidgetInteraction: (widgetType: string, action: string) => void
-    trackScrollDepth: (depth: number) => void
-    trackTimeOnPage: (timeSpent: number) => void
-    trackUserJourney: (step: string, data?: Record<string, any>) => void
+    realEstateTracking?: RealEstateTracking
   }
 }
 
@@ -223,18 +211,6 @@ export function VercelAnalytics({ mode = 'production', debug = false }: VercelAn
 
     // Make tracking functions available globally
     window.realEstateTracking = realEstateTracking
-    window.trackPropertyView = realEstateTracking.trackPropertyView
-    window.trackLeadSubmission = realEstateTracking.trackLeadSubmission
-    window.trackValuationRequest = realEstateTracking.trackValuationRequest
-    window.trackNeighborhoodSearch = realEstateTracking.trackNeighborhoodSearch
-    window.trackMarketReportDownload = realEstateTracking.trackMarketReportDownload
-    window.trackPhoneCall = realEstateTracking.trackPhoneCall
-    window.trackFormInteraction = realEstateTracking.trackFormInteraction
-    window.trackCTAClick = realEstateTracking.trackCTAClick
-    window.trackWidgetInteraction = realEstateTracking.trackWidgetInteraction
-    window.trackScrollDepth = realEstateTracking.trackScrollDepth
-    window.trackTimeOnPage = realEstateTracking.trackTimeOnPage
-    window.trackUserJourney = realEstateTracking.trackUserJourney
 
     // Track scroll depth
     let maxScroll = 0
@@ -345,18 +321,6 @@ export function VercelAnalytics({ mode = 'production', debug = false }: VercelAn
       
       // Clean up global functions
       delete window.realEstateTracking
-      delete window.trackPropertyView
-      delete window.trackLeadSubmission
-      delete window.trackValuationRequest
-      delete window.trackNeighborhoodSearch
-      delete window.trackMarketReportDownload
-      delete window.trackPhoneCall
-      delete window.trackFormInteraction
-      delete window.trackCTAClick
-      delete window.trackWidgetInteraction
-      delete window.trackScrollDepth
-      delete window.trackTimeOnPage
-      delete window.trackUserJourney
     }
   }, [debug])
 

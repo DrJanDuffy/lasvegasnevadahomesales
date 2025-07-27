@@ -80,11 +80,10 @@ function isLegitimateUser(request: NextRequest): boolean {
 
 function getRateLimitKey(request: NextRequest): string {
   // Use IP address for rate limiting
-  const ip = request.headers.get('x-forwarded-for') || 
-             request.headers.get('x-real-ip') || 
-             request.ip || 
+  const ip = request.headers.get('x-forwarded-for') ||
+             request.headers.get('x-real-ip') ||
              'unknown'
-  
+
   return `${ip}:${request.nextUrl.pathname}`
 }
 

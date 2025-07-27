@@ -54,8 +54,8 @@ export function LeadCaptureForm({
 
     try {
       // Track form interaction with Vercel Analytics
-      if (typeof window !== 'undefined' && window.trackFormInteraction) {
-        window.trackFormInteraction('lead-capture-form', 'form_started')
+      if (typeof window !== 'undefined' && window.realEstateTracking?.trackFormInteraction) {
+        window.realEstateTracking.trackFormInteraction('lead-capture-form', 'form_started')
       }
       
       // Track with Google Analytics as well
@@ -121,8 +121,8 @@ export function LeadCaptureForm({
 
       if (result.success) {
         // Track successful submission with Vercel Analytics
-        if (typeof window !== 'undefined' && window.trackLeadSubmission) {
-          window.trackLeadSubmission('contact-form', 25, source)
+        if (typeof window !== 'undefined' && window.realEstateTracking?.trackLeadSubmission) {
+          window.realEstateTracking.trackLeadSubmission('contact-form', 25, source)
         }
         
         // Track with Google Analytics as well
@@ -165,7 +165,7 @@ export function LeadCaptureForm({
           event_category: 'lead_generation',
           event_label: source,
           value: 1,
-          error_message: error.message
+          error_message: error instanceof Error ? error.message : 'Unknown error'
         })
       }
 

@@ -70,62 +70,8 @@ export function GoogleAnalytics({
       // Make gtag available globally
       window.gtag = gtag
 
-      // Custom real estate events
-      window.trackPropertyView = (propertyId: string, price: number, neighborhood: string, propertyType: string) => {
-        gtag('event', 'view_item', {
-          currency: 'USD',
-          value: price,
-          item_id: propertyId,
-          item_category: 'real_estate',
-          item_location_id: neighborhood,
-          item_variant: propertyType,
-          custom_parameter: 'las_vegas_market'
-        })
-      }
-
-      window.trackLeadSubmission = (leadType: string, value: number, source: string) => {
-        gtag('event', 'generate_lead', {
-          currency: 'USD',
-          value: value,
-          lead_type: leadType,
-          content_id: source,
-          custom_parameter: 'las_vegas_lead'
-        })
-      }
-
-      window.trackValuationRequest = (propertyAddress: string, estimatedValue: number) => {
-        gtag('event', 'begin_checkout', {
-          currency: 'USD',
-          value: estimatedValue,
-          item_category: 'valuation_service',
-          item_id: propertyAddress,
-          custom_parameter: 'home_valuation'
-        })
-      }
-
-      window.trackPhoneCall = (phoneNumber: string, callSource: string) => {
-        gtag('event', 'phone_call', {
-          phone_number: phoneNumber,
-          call_source: callSource,
-          custom_parameter: 'las_vegas_contact'
-        })
-      }
-
-      window.trackNeighborhoodSearch = (neighborhood: string, searchType: string) => {
-        gtag('event', 'search', {
-          search_term: neighborhood,
-          search_type: searchType,
-          custom_parameter: 'neighborhood_search'
-        })
-      }
-
-      window.trackMarketReportDownload = (reportType: string, neighborhood: string) => {
-        gtag('event', 'download', {
-          file_name: `${reportType}_${neighborhood}_report`,
-          file_extension: 'pdf',
-          custom_parameter: 'market_report'
-        })
-      }
+      // Note: Real estate tracking functions are now handled by VercelAnalytics.tsx
+      // This component focuses on Google Analytics (gtag) setup and basic tracking
 
       // Track page views with custom parameters
       const trackPageView = (pageTitle: string, pageLocation: string) => {
@@ -209,9 +155,8 @@ export function GoogleAnalytics({
         })
       }
 
-      // Expose tracking functions
-      window.trackFormInteraction = trackFormInteraction
-      window.trackCTAClick = trackCTAClick
+      // Note: Real estate tracking functions are now handled by VercelAnalytics.tsx
+      // This component focuses on Google Analytics (gtag) setup and basic tracking
 
       // Debug mode
       if (enableDebug) {
@@ -237,13 +182,5 @@ declare global {
   interface Window {
     dataLayer: unknown[]
     gtag: (...args: unknown[]) => void
-    trackPropertyView: (propertyId: string, price: number, neighborhood: string, propertyType: string) => void
-    trackLeadSubmission: (leadType: string, value: number, source: string) => void
-    trackValuationRequest: (propertyAddress: string, estimatedValue: number) => void
-    trackPhoneCall: (phoneNumber: string, callSource: string) => void
-    trackNeighborhoodSearch: (neighborhood: string, searchType: string) => void
-    trackMarketReportDownload: (reportType: string, neighborhood: string) => void
-    trackFormInteraction: (formId: string, action: string) => void
-    trackCTAClick?: (ctaType: string, location: string, value?: number) => void
   }
 } 
