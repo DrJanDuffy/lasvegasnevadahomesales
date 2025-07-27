@@ -33,6 +33,7 @@ export const metadata: Metadata = {
         width: seoConfig.openGraph.imageWidth,
         height: seoConfig.openGraph.imageHeight,
         alt: 'Las Vegas Nevada Home Sales - Premier Real Estate Services',
+        type: seoConfig.openGraph.imageType,
       },
     ],
   },

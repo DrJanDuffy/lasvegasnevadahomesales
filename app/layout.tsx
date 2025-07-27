@@ -10,14 +10,11 @@ import { websiteSchema, organizationSchema } from "../components/SEO/StructuredD
 import { SEODashboard } from "../components/SEO/SEODashboard"
 import { VercelAnalytics } from "../components/Analytics/VercelAnalytics"
 import Script from "next/script"
+import { metadata as siteMetadata } from "./metadata"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: "Las Vegas Nevada Home Sales | Your Trusted Real Estate Experts",
-  description: "Las Vegas Nevada Home Sales offers expert real estate services in Las Vegas, Summerlin, Henderson, and all of Nevada. Find your dream home or sell your property with confidence.",
-  keywords: "Las Vegas Nevada Home Sales, Las Vegas real estate, Nevada homes for sale, Summerlin homes, Henderson real estate, Las Vegas realtor",
-}
+export const metadata: Metadata = siteMetadata
 
 export default function RootLayout({
   children,

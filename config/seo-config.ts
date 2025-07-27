@@ -167,7 +167,7 @@ export const seoConfig = {
     locale: "en_US",
     imageWidth: 1200,
     imageHeight: 630,
-    imageType: "image/jpeg"
+    imageType: "image/png"
   },
 
   // Twitter Card Defaults
