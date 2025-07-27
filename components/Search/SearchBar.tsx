@@ -19,8 +19,31 @@ export function SearchBar({
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    if (searchQuery.trim() && onSearch) {
-      onSearch(searchQuery.trim())
+            if (searchQuery.trim()) {
+          // Track search interaction with Vercel Analytics
+          if (typeof window !== 'undefined' && window.trackNeighborhoodSearch) {
+            window.trackNeighborhoodSearch(searchQuery.trim(), 'property_search')
+          }
+          
+          // Track with Google Analytics as well
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'search', {
+              event_category: 'property_search',
+              event_label: searchQuery.trim(),
+              value: 1
+            })
+          }
+
+      // Call onSearch callback if provided
+      if (onSearch) {
+        onSearch(searchQuery.trim())
+      } else {
+        // Default behavior: redirect to search results
+        const searchParams = new URLSearchParams({
+          q: searchQuery.trim()
+        })
+        window.location.href = `/properties/search?${searchParams.toString()}`
+      }
     }
   }
 

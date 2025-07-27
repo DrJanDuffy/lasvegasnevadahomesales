@@ -53,11 +53,16 @@ export function LeadCaptureForm({
     setIsSubmitting(true)
 
     try {
-      // Track conversion
+      // Track form interaction with Vercel Analytics
+      if (typeof window !== 'undefined' && window.trackFormInteraction) {
+        window.trackFormInteraction('lead-capture-form', 'form_started')
+      }
+      
+      // Track with Google Analytics as well
       if (typeof gtag !== 'undefined') {
         gtag('event', 'form_submit', {
           event_category: 'lead_generation',
-          event_label: 'home_valuation_request',
+          event_label: source,
           value: 1
         })
       }
@@ -67,22 +72,70 @@ export function LeadCaptureForm({
         onLeadCapture(formData)
       }
 
-      // Submit to Follow Up Boss API
-      const response = await fetch('/api/leads', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          source: source,
-          pageUrl: typeof window !== 'undefined' ? window.location.href : '',
-        }),
-      })
+      // Prepare enhanced lead data
+      const enhancedFormData = {
+        ...formData,
+        source: source,
+        pageUrl: typeof window !== 'undefined' ? window.location.href : '',
+        timestamp: new Date().toISOString(),
+        userAgent: typeof window !== 'undefined' ? navigator.userAgent : '',
+        // Add UTM parameters if available
+        utm_source: typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('utm_source') || 'direct' : 'direct',
+        utm_medium: typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('utm_medium') || 'website' : 'website',
+        utm_campaign: typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('utm_campaign') || 'organic' : 'organic',
+      }
 
-      const result = await response.json() as { success: boolean; error?: string }
+      // Submit to API with retry logic
+      let response
+      let retries = 0
+      const maxRetries = 3
+
+      while (retries < maxRetries) {
+        try {
+          response = await fetch('/api/leads', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(enhancedFormData),
+          })
+
+          if (response.ok) break
+          
+          retries++
+          if (retries < maxRetries) {
+            await new Promise(resolve => setTimeout(resolve, 1000 * retries)) // Exponential backoff
+          }
+        } catch (fetchError) {
+          retries++
+          if (retries >= maxRetries) throw fetchError
+          await new Promise(resolve => setTimeout(resolve, 1000 * retries))
+        }
+      }
+
+      if (!response || !response.ok) {
+        throw new Error(`HTTP ${response?.status}: ${response?.statusText || 'Network error'}`)
+      }
+
+      const result = await response.json() as { success: boolean; error?: string; personId?: string }
 
       if (result.success) {
+        // Track successful submission with Vercel Analytics
+        if (typeof window !== 'undefined' && window.trackLeadSubmission) {
+          window.trackLeadSubmission('contact-form', 25, source)
+        }
+        
+        // Track with Google Analytics as well
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'lead_submitted', {
+            event_category: 'lead_generation',
+            event_label: source,
+            value: 1,
+            custom_parameter_1: formData.budget,
+            custom_parameter_2: formData.timeline,
+          })
+        }
+
         setIsSubmitted(true)
         
         // Reset form after 3 seconds
@@ -105,7 +158,19 @@ export function LeadCaptureForm({
 
     } catch (error) {
       console.error('Error submitting form:', error)
-      alert('There was an error submitting your request. Please try again or contact us directly.')
+      
+      // Track failed submission
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'form_error', {
+          event_category: 'lead_generation',
+          event_label: source,
+          value: 1,
+          error_message: error.message
+        })
+      }
+
+      // Show user-friendly error message
+      alert('There was an error submitting your request. Please try again or contact us directly at (702) 555-0123.')
     } finally {
       setIsSubmitting(false)
     }

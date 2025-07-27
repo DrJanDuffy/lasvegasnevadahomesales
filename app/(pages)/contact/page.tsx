@@ -6,6 +6,7 @@ import { LeadCaptureForm } from "../../../components/Forms/LeadCaptureForm"
 import { SEOHead } from '../../../components/SEO/SEOHead'
 import { FAQSchema, contactPageFAQs } from '../../../components/SEO/FAQSchema'
 import { ReviewSchema, companyReviews, companyAggregateRating } from '../../../components/SEO/ReviewSchema'
+import { AnalyticsDashboard } from '../../../components/Analytics/AnalyticsDashboard'
 
 export const metadata: Metadata = {
   title: "Contact Las Vegas Real Estate Experts | Get in Touch",
@@ -193,6 +194,9 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      
+      {/* Analytics Dashboard (Development Only) */}
+      <AnalyticsDashboard pageType="contact" debug={process.env.NODE_ENV === 'development'} />
     </>
   )
 } 

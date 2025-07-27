@@ -4,6 +4,15 @@ import { LeadData } from '../../../config/crm-config';
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if API key is configured
+    if (!process.env.FOLLOW_UP_BOSS_API_KEY) {
+      console.error('Follow Up Boss API key not configured');
+      return NextResponse.json(
+        { error: 'Service temporarily unavailable. Please try again later.' },
+        { status: 503 }
+      );
+    }
+
     const body = await request.json() as any;
     const leadData: LeadData = {
       ...body,
@@ -31,20 +40,23 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Log lead submission attempt
+    console.log('Processing lead submission:', {
+      source: leadData.source,
+      email: leadData.email,
+      timestamp: new Date().toISOString()
+    });
+
     // Process the lead through Follow Up Boss
     const result = await followUpBossService.processLead(leadData);
 
     if (result.success) {
-      // Track conversion in analytics
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'lead_submitted', {
-          event_category: 'lead_generation',
-          event_label: leadData.source,
-          value: 1,
-          custom_parameter_1: leadData.budget,
-          custom_parameter_2: leadData.timeline,
-        });
-      }
+      // Log successful submission
+      console.log('Lead processed successfully:', {
+        personId: result.personId,
+        source: leadData.source,
+        timestamp: new Date().toISOString()
+      });
 
       return NextResponse.json({
         success: true,

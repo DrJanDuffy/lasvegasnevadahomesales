@@ -8,6 +8,7 @@ import { Navigation } from "../components/Navigation/Navigation"
 import { StructuredData } from "../components/SEO/StructuredData"
 import { websiteSchema, organizationSchema } from "../components/SEO/StructuredData"
 import { SEODashboard } from "../components/SEO/SEODashboard"
+import { VercelAnalytics } from "../components/Analytics/VercelAnalytics"
 import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -71,6 +72,10 @@ export default function RootLayout({
             "Las Vegas homes for sale",
             "Nevada real estate"
           ]}
+          debug={process.env.NODE_ENV === 'development'}
+        />
+        <VercelAnalytics 
+          mode={process.env.NODE_ENV === 'production' ? 'production' : 'development'}
           debug={process.env.NODE_ENV === 'development'}
         />
       </body>
