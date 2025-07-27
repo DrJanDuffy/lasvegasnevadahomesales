@@ -147,6 +147,45 @@ export function EmailJSContactForm({
           console.warn('Database storage failed, but email was sent successfully:', dbError)
         }
 
+        // Send lead notification email
+        try {
+          const notificationResponse = await fetch('/api/notify-lead', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              name: `${data.firstName} ${data.lastName}`,
+              email: data.email,
+              phone: data.phone,
+              message: data.message,
+              source: source,
+              pageUrl: typeof window !== 'undefined' ? window.location.href : '',
+              propertyAddress: ('propertyAddress' in data) ? data.propertyAddress : undefined,
+              propertyType: ('propertyType' in data) ? data.propertyType : undefined,
+              budget: ('budget' in data) ? data.budget : undefined,
+              timeline: ('timeline' in data) ? data.timeline : undefined,
+              estimatedValue: ('estimatedValue' in data) ? data.estimatedValue : undefined,
+              bedrooms: ('bedrooms' in data) ? data.bedrooms : undefined,
+              bathrooms: ('bathrooms' in data) ? data.bathrooms : undefined,
+              squareFootage: ('squareFootage' in data) ? data.squareFootage : undefined,
+              // Extract UTM parameters from URL
+              utmSource: typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('utm_source') : undefined,
+              utmMedium: typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('utm_medium') : undefined,
+              utmCampaign: typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('utm_campaign') : undefined,
+            }),
+          })
+
+          if (notificationResponse.ok) {
+            const notificationData = await notificationResponse.json()
+            console.log('Lead notification sent with score:', notificationData.leadScore)
+          } else {
+            console.warn('Failed to send lead notification')
+          }
+        } catch (notificationError) {
+          console.warn('Lead notification failed:', notificationError)
+        }
+
         // Track successful submission with Vercel Analytics
         if (typeof window !== 'undefined' && window.realEstateTracking?.trackLeadSubmission) {
           window.realEstateTracking.trackLeadSubmission('emailjs-form', 25, source)
