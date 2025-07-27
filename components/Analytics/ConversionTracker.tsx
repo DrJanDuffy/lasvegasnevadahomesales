@@ -6,15 +6,8 @@ interface ConversionTrackerProps {
   pageType: 'home-valuation' | 'contact' | 'property-search'
 }
 
-// Extend Window interface for global tracking functions
-declare global {
-  interface Window {
-    trackCTAClick?: (ctaType: string, location: string, value?: number) => void
-    trackPhoneClick?: () => void
-    trackFormSubmission?: (formType: string) => void
-    trackWidgetInteraction?: (widgetType: string, action: string) => void
-  }
-}
+// Note: Window interface extensions are now handled in VercelAnalytics.tsx
+// This component uses Google Analytics (gtag) for tracking
 
 export function ConversionTracker({ pageType }: ConversionTrackerProps) {
   useEffect(() => {
@@ -106,11 +99,8 @@ export function ConversionTracker({ pageType }: ConversionTrackerProps) {
       }
     }
 
-    // Expose tracking functions globally for use in other components
-    window.trackCTAClick = trackCTAClick
-    window.trackPhoneClick = trackPhoneClick
-    window.trackFormSubmission = trackFormSubmission
-    window.trackWidgetInteraction = trackWidgetInteraction
+    // Note: Global tracking functions are now handled by VercelAnalytics.tsx
+    // This component focuses on Google Analytics (gtag) tracking only
 
     // Track Homebot widget interactions
     const observer = new MutationObserver((mutations) => {
@@ -138,10 +128,7 @@ export function ConversionTracker({ pageType }: ConversionTrackerProps) {
       window.removeEventListener('scroll', trackScrollDepth)
       clearInterval(timeInterval)
       observer.disconnect()
-      delete window.trackCTAClick
-      delete window.trackPhoneClick
-      delete window.trackFormSubmission
-      delete window.trackWidgetInteraction
+      // Note: Global tracking functions are managed by VercelAnalytics.tsx
     }
   }, [pageType])
 
