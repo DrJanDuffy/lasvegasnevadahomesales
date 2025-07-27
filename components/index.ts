@@ -20,6 +20,9 @@ export { LeadCaptureForm } from './Forms/LeadCaptureForm'
 // AI & Analysis
 export { PhotoAnalyzer } from './PhotoAnalysis/PhotoAnalyzer'
 
+// Market Data
+export { MarketDataWidget } from './MarketData/MarketDataWidget'
+
 // Property Components
 export { FeaturedProperties } from './Properties/FeaturedProperties'
 

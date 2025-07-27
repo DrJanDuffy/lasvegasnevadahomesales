@@ -9,6 +9,7 @@ import { ReviewSchema, companyReviews, companyAggregateRating } from '../../comp
 import { HowToSchema, buyHomeHowTo } from '../../components/SEO/HowToSchema'
 import { LocalBusinessSchema } from '../../components/SEO/LocalBusinessSchema'
 import { AdvancedSEOMonitor } from '../../components/SEO/AdvancedSEOMonitor'
+import { MarketDataWidget } from '../../components/MarketData/MarketDataWidget'
 
 export const metadata: Metadata = {
   title: "Las Vegas Real Estate Market | Homes for Sale in Las Vegas, NV",
@@ -106,6 +107,13 @@ export default function LasVegasMarketOverview() {
               <div className="text-sm text-gray-600">Active Listings</div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Market Intelligence Widget */}
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <MarketDataWidget />
         </div>
       </section>
 
