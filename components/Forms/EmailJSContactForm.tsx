@@ -177,7 +177,7 @@ export function EmailJSContactForm({
           })
 
           if (notificationResponse.ok) {
-            const notificationData = await notificationResponse.json()
+            const notificationData = await notificationResponse.json() as { leadScore?: number }
             console.log('Lead notification sent with score:', notificationData.leadScore)
           } else {
             console.warn('Failed to send lead notification')

@@ -135,39 +135,13 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
   
-  // Check if user is legitimate
-  const isLegitimate = isLegitimateUser(request)
-  
-  // Apply rate limiting
-  const rateLimit = checkRateLimit(request)
-  
-  if (!rateLimit.allowed) {
-    // Rate limit exceeded
-    return NextResponse.json(
-      { error: rateLimit.message },
-      { status: 429 }
-    )
-  }
-  
-  // Add security headers
+  // Temporarily disable bot detection and rate limiting for testing
   const response = NextResponse.next()
   
-  // Security headers for legitimate users
+  // Add basic security headers
   response.headers.set('X-Frame-Options', 'DENY')
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
-  
-  // Add rate limit headers
-  const key = getRateLimitKey(request)
-  const current = rateLimitStore.get(key)
-  if (current) {
-    response.headers.set('X-RateLimit-Limit', '10')
-    response.headers.set('X-RateLimit-Remaining', String(Math.max(0, 10 - current.count)))
-    response.headers.set('X-RateLimit-Reset', String(current.resetTime))
-  }
-  
-  // Add user type header for debugging
-  response.headers.set('X-User-Type', isLegitimate ? 'legitimate' : 'suspicious')
   
   return response
 }

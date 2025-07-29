@@ -11,7 +11,7 @@ interface PropertyImage {
 
 interface PropertyGalleryProps {
   images: PropertyImage[]
-  propertyId: string
+  propertyId?: string
   className?: string
   showThumbnails?: boolean
   autoPlay?: boolean
@@ -20,7 +20,7 @@ interface PropertyGalleryProps {
 
 export function PropertyGallery({
   images,
-  propertyId,
+  propertyId: _propertyId,
   className = "",
   showThumbnails = true,
   autoPlay = false,

@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { Button } from '../Button/Button'
 
 interface FooterProps {
@@ -12,25 +13,26 @@ export function Footer({ className = '' }: FooterProps) {
   return (
     <footer className={`bg-gray-900 text-white ${className}`}>
       <div className="mx-auto max-w-7xl px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
-          <div className="lg:col-span-1">
+          <div>
             <h3 className="text-xl font-bold mb-4">Las Vegas Nevada Home Sales</h3>
             <p className="text-gray-300 mb-4">
-              Your trusted partner for all things real estate in Las Vegas, Nevada. 
-              Expert guidance for buying, selling, and investing in properties.
+              Your trusted partner for buying and selling real estate in Las Vegas, Nevada. 
+              Expert guidance, local knowledge, and personalized service.
             </p>
             <div className="flex space-x-4">
-              <a href="tel:+17025001981" className="text-blue-400 hover:text-blue-300 transition-colors">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
+              <a href="https://www.facebook.com/lasvegasnevadahomesales" className="text-gray-300 hover:text-white transition-colors">
+                <span className="sr-only">Facebook</span>
+                📘
               </a>
-              <a href="mailto:info@lasvegasnevadahomesales.com" className="text-blue-400 hover:text-blue-300 transition-colors">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
+              <a href="https://www.linkedin.com/company/lasvegasnevadahomesales" className="text-gray-300 hover:text-white transition-colors">
+                <span className="sr-only">LinkedIn</span>
+                💼
+              </a>
+              <a href="https://www.instagram.com/lasvegasnevadahomesales" className="text-gray-300 hover:text-white transition-colors">
+                <span className="sr-only">Instagram</span>
+                📷
               </a>
             </div>
           </div>
@@ -40,29 +42,29 @@ export function Footer({ className = '' }: FooterProps) {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/properties" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/properties" className="text-gray-300 hover:text-white transition-colors">
                   Browse Properties
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/home-valuation" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/home-valuation" className="text-gray-300 hover:text-white transition-colors">
                   Home Valuation
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/neighborhoods" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/neighborhoods" className="text-gray-300 hover:text-white transition-colors">
                   Neighborhoods
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/market-reports" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/market-reports" className="text-gray-300 hover:text-white transition-colors">
                   Market Reports
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/strategies" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/strategies" className="text-gray-300 hover:text-white transition-colors">
                   Real Estate Strategies
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

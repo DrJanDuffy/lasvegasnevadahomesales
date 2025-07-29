@@ -25,7 +25,7 @@ export function MarketDataWidget({ className = '', showImages = true }: MarketDa
     lastUpdated: new Date().toLocaleDateString()
   })
 
-  const [isLoading, setIsLoading] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false)
 
   // Simulate real-time data updates
   useEffect(() => {

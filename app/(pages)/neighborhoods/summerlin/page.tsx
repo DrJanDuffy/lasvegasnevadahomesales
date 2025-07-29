@@ -1,9 +1,6 @@
 import { Metadata } from "next"
 import { Button } from "../../../../components/Button/Button"
-import { RealScoutYourListings } from "../../../../components/RealScout/RealScoutYourListings"
 import { OptimizedImage } from "../../../../components/OptimizedImage/OptimizedImage"
-import { RealScoutSummerlinGallery } from "../../../../components/RealScout/RealScoutSummerlinGallery"
-import { RealScoutSummerlinShowcase } from "../../../../components/RealScout/RealScoutSummerlinShowcase"
 import { SEOHead } from '../../../../components/SEO/SEOHead'
 
 export const metadata: Metadata = {
@@ -166,12 +163,7 @@ export default function SummerlinPage() {
           <p className="mb-12 text-center text-lg text-gray-600">
             Discover luxury homes in Summerlin with stunning mountain views, premium finishes, and world-class amenities
           </p>
-          <RealScoutSummerlinGallery
-            galleryType="grid"
-            columns={3}
-            showCaptions={true}
-            className="mb-16"
-          />
+          {/* RealScoutSummerlinGallery component was removed, so this section is now empty */}
           
           {/* Additional RealScout Property Showcase */}
           <div className="mt-16 text-center">
@@ -313,11 +305,7 @@ export default function SummerlinPage() {
           <p className="mb-12 text-center text-lg text-gray-600">
             Discover luxury homes in Summerlin with RealScout MLS integration - real-time data, professional photos, and detailed property information
           </p>
-          <RealScoutSummerlinShowcase
-            showPricing={true}
-            showFeatures={true}
-            className="mb-16"
-          />
+          {/* RealScoutSummerlinShowcase component was removed, so this section is now empty */}
         </div>
       </section>
 

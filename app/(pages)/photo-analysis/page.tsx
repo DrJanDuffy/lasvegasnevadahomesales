@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import { PhotoAnalyzer } from '../../../components/PhotoAnalysis/PhotoAnalyzer'
 import { SEOHead } from '../../../components/SEO/SEOHead'
 
 export const metadata: Metadata = {
@@ -36,7 +35,17 @@ export default function PhotoAnalysisPage() {
       {/* Photo Analysis Tool */}
       <section className="bg-gray-50 py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <PhotoAnalyzer />
+          <div className="text-center">
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+              Photo Analysis Tool Coming Soon
+            </h2>
+            <p className="mb-8 text-xl text-blue-100">
+              Our AI photo analysis tool is under development. Please check back soon for an exciting new feature!
+            </p>
+            <a href="/contact" className="bg-blue-900 text-white hover:bg-blue-800 px-8 py-3 rounded-lg font-semibold transition-colors">
+              Contact Us for Updates
+            </a>
+          </div>
         </div>
       </section>
 

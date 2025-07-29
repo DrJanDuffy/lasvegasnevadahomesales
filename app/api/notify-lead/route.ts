@@ -21,9 +21,50 @@ interface LeadData {
   utmCampaign?: string
 }
 
+// Type guard to validate LeadData
+function isValidLeadData(data: unknown): data is LeadData {
+  if (typeof data !== 'object' || data === null) {
+    return false
+  }
+  
+  const lead = data as Record<string, unknown>
+  
+  // Check required fields
+  if (typeof lead.name !== 'string' || typeof lead.email !== 'string' || typeof lead.source !== 'string' || typeof lead.pageUrl !== 'string') {
+    return false
+  }
+  
+  // Check optional fields if they exist
+  if (lead.phone !== undefined && typeof lead.phone !== 'string') return false
+  if (lead.message !== undefined && typeof lead.message !== 'string') return false
+  if (lead.propertyAddress !== undefined && typeof lead.propertyAddress !== 'string') return false
+  if (lead.propertyType !== undefined && typeof lead.propertyType !== 'string') return false
+  if (lead.budget !== undefined && typeof lead.budget !== 'string') return false
+  if (lead.timeline !== undefined && typeof lead.timeline !== 'string') return false
+  if (lead.estimatedValue !== undefined && typeof lead.estimatedValue !== 'string') return false
+  if (lead.bedrooms !== undefined && typeof lead.bedrooms !== 'string') return false
+  if (lead.bathrooms !== undefined && typeof lead.bathrooms !== 'string') return false
+  if (lead.squareFootage !== undefined && typeof lead.squareFootage !== 'string') return false
+  if (lead.utmSource !== undefined && typeof lead.utmSource !== 'string') return false
+  if (lead.utmMedium !== undefined && typeof lead.utmMedium !== 'string') return false
+  if (lead.utmCampaign !== undefined && typeof lead.utmCampaign !== 'string') return false
+  
+  return true
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const lead: LeadData = await request.json()
+    const body = await request.json()
+    
+    // Type guard to validate the request body
+    if (!isValidLeadData(body)) {
+      return NextResponse.json(
+        { error: 'Invalid request body format' },
+        { status: 400 }
+      )
+    }
+    
+    const lead: LeadData = body
     
     // Validate required fields
     if (!lead.name || !lead.email || !lead.source) {

@@ -1,5 +1,4 @@
 import { Metadata } from "next"
-import { RealScoutImageGallery, RealScoutWidgetGallery } from "../../../components/RealScout/RealScoutImageGallery"
 import { SEOHead } from '../../../components/SEO/SEOHead'
 
 export const metadata: Metadata = {
@@ -42,8 +41,8 @@ const sampleImages = [
   }
 ]
 
-// Additional sample images for more variety
-const moreSampleImages = [
+// Additional sample images for more variety (unused)
+const _moreSampleImages = [
   {
     src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
     alt: "Modern home exterior",
@@ -109,14 +108,22 @@ export default function GalleryDemoPage() {
           <p className="mb-12 text-center text-lg text-gray-600">
             Clean grid layout with hover effects and lightbox functionality
           </p>
-          <RealScoutImageGallery
-            images={sampleImages}
-            galleryType="grid"
-            columns={3}
-            gap={4}
-            showCaptions={true}
-            className="mb-16"
-          />
+          <div className="grid gap-8">
+            {sampleImages.map((image, index) => (
+              <div key={index} className="group relative">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-full w-full rounded-lg object-cover"
+                />
+                <div className="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-black bg-opacity-50 rounded-lg p-4 text-center">
+                    <p className="text-white text-lg font-semibold">{image.caption}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -129,14 +136,22 @@ export default function GalleryDemoPage() {
           <p className="mb-12 text-center text-lg text-gray-600">
             Auto-playing carousel with navigation controls and indicators
           </p>
-          <RealScoutImageGallery
-            images={sampleImages}
-            galleryType="carousel"
-            autoPlay={true}
-            interval={4000}
-            showCaptions={true}
-            className="mb-16"
-          />
+          <div className="grid gap-8">
+            {sampleImages.map((image, index) => (
+              <div key={index} className="group relative">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-full w-full rounded-lg object-cover"
+                />
+                <div className="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-black bg-opacity-50 rounded-lg p-4 text-center">
+                    <p className="text-white text-lg font-semibold">{image.caption}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -149,32 +164,22 @@ export default function GalleryDemoPage() {
           <p className="mb-12 text-center text-lg text-gray-600">
             Pinterest-style masonry layout with varying image heights
           </p>
-          <RealScoutImageGallery
-            images={[...sampleImages, ...moreSampleImages]}
-            galleryType="masonry"
-            columns={4}
-            gap={4}
-            showCaptions={true}
-            className="mb-16"
-          />
-        </div>
-      </section>
-
-      {/* RealScout Widget Gallery */}
-      <section className="bg-gray-50 py-16">
-        <div className="mx-auto max-w-7xl px-4">
-          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900 md:text-4xl">
-            RealScout Widget Gallery
-          </h2>
-          <p className="mb-12 text-center text-lg text-gray-600">
-            Direct integration with RealScout widget data
-          </p>
-          <RealScoutWidgetGallery
-            widgetId="demo-widget-123"
-            galleryType="grid"
-            columns={3}
-            className="mb-16"
-          />
+          <div className="grid gap-8">
+            {sampleImages.map((image, index) => (
+              <div key={index} className="group relative">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-full w-full rounded-lg object-cover"
+                />
+                <div className="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-black bg-opacity-50 rounded-lg p-4 text-center">
+                    <p className="text-white text-lg font-semibold">{image.caption}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

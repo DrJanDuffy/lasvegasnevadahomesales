@@ -5,10 +5,7 @@ import { RealScoutOfficeListings } from "../../../components/RealScout/RealScout
 import { RealScoutYourListings } from "../../../components/RealScout/RealScoutYourListings"
 import { RealScoutHomeValue } from "../../../components/RealScout/RealScoutHomeValue"
 import { HomebotValuation } from "../../../components/Homebot/HomebotValuation"
-import { ConversionTracker } from "../../../components/Analytics/ConversionTracker"
-import { GoogleMaps } from "../../../components/Google/GoogleMaps"
-import { GMBReviews } from "../../../components/Google/GMBReviews"
-import { googleConfig } from "../../../config/google-config"
+// import { googleConfig } from "../../../config/google-config"
 
 // Declare gtag for TypeScript
 declare global {
@@ -18,7 +15,6 @@ declare global {
 export default function HomeValuationPage() {
   return (
     <>
-      <ConversionTracker pageType="home-valuation" />
       {/* Hero Section with Urgency */}
       <section className="bg-gradient-to-br from-[#0A2540] via-[#3A8DDE] to-[#16B286] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -253,11 +249,7 @@ export default function HomeValuationPage() {
           
           {/* Google My Business Reviews */}
           <div className="mb-12">
-            <GMBReviews 
-              appId={googleConfig.gmb.appId}
-              title="What Our Clients Say"
-              showTitle={true}
-            />
+            {/* GMBReviews component was removed, so this section is now empty */}
           </div>
           
           {/* Final CTA */}
@@ -367,14 +359,7 @@ export default function HomeValuationPage() {
           <p className="text-center text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
             Explore our service areas and discover the perfect neighborhood for your next home
           </p>
-          <GoogleMaps 
-            apiKey={googleConfig.maps.apiKey}
-            height="500px"
-            showNeighborhoods={true}
-            showListings={true}
-            center={googleConfig.maps.center}
-            zoom={googleConfig.maps.zoom}
-          />
+          {/* GoogleMaps component was removed, so this section is now empty */}
         </div>
       </section>
 
