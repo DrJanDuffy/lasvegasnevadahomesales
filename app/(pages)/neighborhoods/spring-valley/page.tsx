@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Button } from '@/components/Button/Button'
-import { Breadcrumbs } from '@/components/SEO/Breadcrumbs'
-import { getPageSEO } from '@/config/seo-config'
+import { Button } from '../../../../components/Button/Button'
+import { Breadcrumbs } from '../../../../components/SEO/Breadcrumbs'
+import { getPageSEO } from '../../../../config/seo-config'
 
 export const metadata: Metadata = {
   title: "Spring Valley Las Vegas Homes for Sale | Diverse Community",
@@ -38,10 +38,10 @@ export default function SpringValleyPage() {
               Diverse community with good schools and convenient access to the Strip
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button href="/properties?neighborhood=spring-valley" className="bg-white text-indigo-600 hover:bg-indigo-50">
+              <Button href="/properties?neighborhood=spring-valley" className="bg-white text-green-600 hover:bg-green-50">
                 View Homes in Spring Valley
               </Button>
-              <Button href="/home-valuation" variant="outline" className="border-white text-white hover:bg-white hover:text-indigo-600">
+              <Button href="/home-valuation" intent="secondary" className="border-white text-white hover:bg-white hover:text-green-600">
                 Get Home Valuation
               </Button>
             </div>
@@ -137,7 +137,7 @@ export default function SpringValleyPage() {
             <Button href="/properties?neighborhood=spring-valley" className="bg-white text-indigo-600 hover:bg-indigo-50">
               Browse Homes
             </Button>
-            <Button href="/contact" variant="outline" className="border-white text-white hover:bg-white hover:text-indigo-600">
+            <Button href="/contact" intent="secondary" className="border-white text-white hover:bg-white hover:text-green-600">
               Contact Us
             </Button>
           </div>

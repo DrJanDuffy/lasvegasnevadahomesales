@@ -69,10 +69,10 @@ const config = {
         permanent: true,
       },
       // Health check redirects
-      { source: "/healthz", destination: "/api/health" },
-      { source: "/api/healthz", destination: "/api/health" },
-      { source: "/health", destination: "/api/health" },
-      { source: "/ping", destination: "/api/health" },
+      { source: "/healthz", destination: "/api/health", permanent: true },
+      { source: "/api/healthz", destination: "/api/health", permanent: true },
+      { source: "/health", destination: "/api/health", permanent: true },
+      { source: "/ping", destination: "/api/health", permanent: true },
     ]
   },
 }

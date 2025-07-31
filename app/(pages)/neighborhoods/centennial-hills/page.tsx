@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Button } from '@/components/Button/Button'
-import { Breadcrumbs } from '@/components/SEO/Breadcrumbs'
-import { getPageSEO } from '@/config/seo-config'
+import { Button } from '../../../../components/Button/Button'
+import { Breadcrumbs } from '../../../../components/SEO/Breadcrumbs'
+import { getPageSEO } from '../../../../config/seo-config'
 
 export const metadata: Metadata = {
   title: "Centennial Hills Las Vegas Homes for Sale | Northwest Community",
@@ -41,7 +41,7 @@ export default function CentennialHillsPage() {
               <Button href="/properties?neighborhood=centennial-hills" className="bg-white text-yellow-600 hover:bg-yellow-50">
                 View Homes in Centennial Hills
               </Button>
-              <Button href="/home-valuation" variant="outline" className="border-white text-white hover:bg-white hover:text-yellow-600">
+              <Button href="/home-valuation" intent="secondary" className="border-white text-white hover:bg-white hover:text-yellow-600">
                 Get Home Valuation
               </Button>
             </div>
@@ -137,7 +137,7 @@ export default function CentennialHillsPage() {
             <Button href="/properties?neighborhood=centennial-hills" className="bg-white text-yellow-600 hover:bg-yellow-50">
               Browse Homes
             </Button>
-            <Button href="/contact" variant="outline" className="border-white text-white hover:bg-white hover:text-yellow-600">
+            <Button href="/contact" intent="secondary" className="border-white text-white hover:bg-white hover:text-yellow-600">
               Contact Us
             </Button>
           </div>

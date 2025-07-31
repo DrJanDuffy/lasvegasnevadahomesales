@@ -1,8 +1,8 @@
 import { Metadata } from "next"
 import { SEOHead } from '../../../components/SEO/SEOHead'
-import { FAQSchema, marketIntelligenceFAQs } from '../../../components/SEO/FAQSchema'
-import { ReviewSchema, marketReviews, marketAggregateRating } from '../../../components/SEO/ReviewSchema'
-import { HowToSchema, marketAnalysisHowTo } from '../../../components/SEO/HowToSchema'
+import { FAQSchema } from '../../../components/SEO/FAQSchema'
+import { ReviewSchema } from '../../../components/SEO/ReviewSchema'
+import { HowToSchema } from '../../../components/SEO/HowToSchema'
 import { OptimizedImage } from '../../../components/OptimizedImage/OptimizedImage'
 
 export const metadata: Metadata = {
