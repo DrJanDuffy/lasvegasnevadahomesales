@@ -64,6 +64,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/neighborhoods/centennial-hills`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/neighborhoods/spring-valley`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
     
     // Content & Resource Pages - Medium Priority
     {
@@ -123,60 +135,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.5,
-    },
-    
-    // Property Type Filter Pages - High Priority for SEO
-    {
-      url: `${baseUrl}/properties?type=single-family`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/properties?type=condo`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/properties?type=luxury`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/properties?type=investment`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    
-    // Strategy Type Pages - Medium Priority
-    {
-      url: `${baseUrl}/strategies?type=buying`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/strategies?type=selling`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/strategies?type=investment`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.6,
-    },
-    
-    // Valuation Type Pages - High Priority
-    {
-      url: `${baseUrl}/home-valuation?type=detailed`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8,
     },
   ]
 } 

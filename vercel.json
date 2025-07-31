@@ -1,5 +1,668 @@
 {
   "buildCommand": "npm install --legacy-peer-deps && npm run build",
   "installCommand": "npm install --legacy-peer-deps",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/manifest.webmanifest",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/opengraph-image",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/twitter-image",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/home-value",
+      "destination": "/home-valuation",
+      "permanent": true
+    },
+    {
+      "source": "/summerlin",
+      "destination": "/neighborhoods/summerlin",
+      "permanent": true
+    },
+    {
+      "source": "/get-a-free-consultation",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/get-a-free-consultation/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/offer",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/offer/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/properties/1",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties/2",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties/3",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties/4",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties/6789-summerlin-pkwy",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties/12345-red-rock-canyon-dr",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/blog-post-title-two-n8ffx",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog-post-title-two-n8ffx/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/resources",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/resources/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/travel",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/travel/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/las-vegas-neighborhood-insights",
+      "destination": "/neighborhoods",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/las-vegas-neighborhood-insights/",
+      "destination": "/neighborhoods",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/home-selling-strategies",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/home-selling-strategies/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/fashion",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/fashion/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/sports",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/sports/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/entertainment",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/entertainment/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/10-things-your-mom-should-have-taught-you-about-fashion",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/10-things-your-mom-should-have-taught-you-about-fashion/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/10-things-your-mom-should-have-taught-you-about-fashion/?replytocom=58",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/10-things-i-learned-about-parrots-so-far",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/10-things-i-learned-about-parrots-so-far/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/properties?type=single-family",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties?neighborhood=downtown",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties?type=condo",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties?type=townhouse",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties?neighborhood=summerlin",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties?neighborhood=henderson",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties?neighborhood=green-valley",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties?neighborhood=centennial-hills",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties?neighborhood=spring-valley",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/services/investment-opportunities/feed",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/services/investment-opportunities/feed/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/home-selling-strategies/feed",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/home-selling-strategies/feed/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/home-2/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home-2/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login.php?action=lostpassword&backend",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/strategies?type=selling",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/services/investment-opportunities",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/services/investment-opportunities/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/home-buying-guide",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/home-buying-guide/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/9-facts-everyone-should-know-about-the-world",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/9-facts-everyone-should-know-about-the-world/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/secrets-your-parents-never-told-you-about-trees",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/secrets-your-parents-never-told-you-about-trees/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/real-estate-tips",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/real-estate-tips/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/investment-opportunities",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/las-vegas-homes/investment-opportunities/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/the-sun-is-shinning-on-home-sellers-this-summer",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/do-you-make-these-simple-mistakes-in-parenting",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/do-you-make-these-simple-mistakes-in-parenting/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/easy-ways-you-can-turn-fruits-into-success",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/easy-ways-you-can-turn-fruits-into-success/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/little-known-facts-about-wildlife-and-why-they-matter",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/little-known-facts-about-wildlife-and-why-they-matter/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/this-here-is-a-twitter-embed-example",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/this-here-is-a-twitter-embed-example/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/believe-in-your-mountain-climbing-skills-but-never-stop-improving",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/believe-in-your-mountain-climbing-skills-but-never-stop-improving/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/never-lose-your-friendship-again",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/never-lose-your-friendship-again/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/apply-these-9-secret-techniques-to-improve-flowers",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/apply-these-9-secret-techniques-to-improve-flowers/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/10-architecture-tricks-you-wish-you-knew-before",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/10-architecture-tricks-you-wish-you-knew-before/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/rock-music-do-you-really-need-it-this-will-help-you-decide",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/rock-music-do-you-really-need-it-this-will-help-you-decide/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/services/market-trends",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/services/market-trends/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/take-advantage-of-different-weather-forecasts",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/take-advantage-of-different-weather-forecasts/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/9-ridiculously-simple-ways-to-improve-your-friendship",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/9-ridiculously-simple-ways-to-improve-your-friendship/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/10-things-you-can-learn-about-fashion-from-walruses",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/10-things-you-can-learn-about-fashion-from-walruses/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/2019",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/2019/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/instagram-embed-example-you-got-it",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/instagram-embed-example-you-got-it/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/438",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/438/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services/first-time-buyers",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/services/first-time-buyers/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/author/drduffybhhsnv-com",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/author/drduffybhhsnv-com/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/what-can-you-learn-about-fashion-and-style-from-cats",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/what-can-you-learn-about-fashion-and-style-from-cats/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/home-3",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home-3/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/master-the-art-of-making-great-coffee-with-these-6-tips",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/master-the-art-of-making-great-coffee-with-these-6-tips/",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/contact-2",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-2/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/properties?type=condo",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/properties?type=investment",
+      "destination": "/properties",
+      "permanent": true
+    },
+    {
+      "source": "/strategies?type=buying",
+      "destination": "/strategies",
+      "permanent": true
+    },
+    {
+      "source": "/strategies?type=investment",
+      "destination": "/strategies",
+      "permanent": true
+    }
+  ]
 } 

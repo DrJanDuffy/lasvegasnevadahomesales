@@ -3,6 +3,13 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Las Vegas Real Estate Market | Homes for Sale in Las Vegas, NV",
   description: "Discover the latest Las Vegas real estate market trends, homes for sale, and expert insights. Find your dream home in Las Vegas, Henderson, Summerlin, and surrounding areas.",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function LasVegasMarketOverview() {

@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   title: "Las Vegas Homes for Sale | Property Search & Listings",
   description: "Search thousands of Las Vegas homes for sale. Filter by price, location, bedrooms, and more. Find your dream home in Las Vegas, Henderson, Summerlin, and surrounding areas.",
   keywords: "Las Vegas homes for sale, Las Vegas real estate listings, Las Vegas property search, homes for sale Las Vegas",
+  alternates: {
+    canonical: "/properties",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 // Mock property data - in a real app, this would come from an API
