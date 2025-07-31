@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   title: "Real Estate Strategies & Techniques | Las Vegas Real Estate",
   description: "Discover proven real estate strategies and techniques for buying and selling homes in Las Vegas. Expert tips for negotiation, market timing, and investment success.",
   keywords: "real estate strategies, Las Vegas real estate techniques, home buying tips, selling strategies, real estate investment techniques",
+  alternates: {
+    canonical: "/strategies",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     url: "https://lasvegasnevadahomesales.com/strategies",
     title: "Real Estate Strategies & Techniques | Expert Las Vegas Real Estate",

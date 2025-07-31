@@ -178,20 +178,20 @@ export const seoConfig = {
     imageAlt: "Las Vegas Nevada Home Sales"
   },
 
-  // Verification Codes
+  // Verification Codes - Update these with your actual codes
   verification: {
-    google: "your-google-verification-code",
-    bing: "your-bing-verification-code",
-    yandex: "your-yandex-verification-code",
-    facebook: "your-facebook-app-id"
+    google: process.env.GOOGLE_VERIFICATION_CODE || "your-google-verification-code",
+    bing: process.env.BING_VERIFICATION_CODE || "your-bing-verification-code",
+    yandex: process.env.YANDEX_VERIFICATION_CODE || "your-yandex-verification-code",
+    facebook: process.env.FACEBOOK_APP_ID || "your-facebook-app-id"
   },
 
   // Analytics
   analytics: {
-    googleAnalytics: "G-XXXXXXXXXX",
-    googleTagManager: "GTM-XXXXXXX",
-    facebookPixel: "your-facebook-pixel-id",
-    linkedInInsight: "your-linkedin-insight-tag"
+    googleAnalytics: process.env.GOOGLE_ANALYTICS_ID || "G-XXXXXXXXXX",
+    googleTagManager: process.env.GOOGLE_TAG_MANAGER_ID || "GTM-XXXXXXX",
+    facebookPixel: process.env.FACEBOOK_PIXEL_ID || "your-facebook-pixel-id",
+    linkedInInsight: process.env.LINKEDIN_INSIGHT_TAG || "your-linkedin-insight-tag"
   }
 }
 

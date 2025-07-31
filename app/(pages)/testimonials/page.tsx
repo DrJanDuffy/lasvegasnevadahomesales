@@ -1,7 +1,35 @@
+import { Metadata } from "next"
 import { SEOHead } from '../../../components/SEO/SEOHead'
 import { FAQSchema } from '../../../components/SEO/FAQSchema'
 import { ReviewSchema, companyReviews, companyAggregateRating } from '../../../components/SEO/ReviewSchema'
 import { Button } from '../../../components/Button/Button'
+
+export const metadata: Metadata = {
+  title: "Client Testimonials | Las Vegas Nevada Home Sales",
+  description: "Read real client testimonials and reviews from Las Vegas Nevada Home Sales. See what our satisfied clients say about our real estate services in Las Vegas, Summerlin, Henderson, and all of Nevada.",
+  keywords: "Las Vegas Nevada Home Sales testimonials, client reviews, real estate agent reviews, Las Vegas realtor testimonials, Nevada real estate reviews",
+  alternates: {
+    canonical: "/testimonials",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    url: "https://lasvegasnevadahomesales.com/testimonials",
+    title: "Client Testimonials | Las Vegas Nevada Home Sales",
+    description: "Read real client testimonials and reviews from Las Vegas Nevada Home Sales. See what our satisfied clients say about our real estate services in Las Vegas, Summerlin, Henderson, and all of Nevada.",
+    type: "website",
+    images: [
+      {
+        url: "/images/og-testimonials.jpg",
+        alt: "Las Vegas Nevada Home Sales Client Testimonials",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+}
 
 // FAQ data for testimonials
 const testimonialsFAQs = [

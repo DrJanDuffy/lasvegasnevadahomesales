@@ -1,11 +1,35 @@
-import { Metadata } from 'next'
+import { Metadata } from "next"
 import { SEOHead } from '../../../components/SEO/SEOHead'
+import { FAQSchema } from '../../../components/SEO/FAQSchema'
+import { ReviewSchema } from '../../../components/SEO/ReviewSchema'
+import { HowToSchema } from '../../../components/SEO/HowToSchema'
 import { OptimizedImage } from '../../../components/OptimizedImage/OptimizedImage'
 
 export const metadata: Metadata = {
-  title: 'Las Vegas Real Estate Market Intelligence | Current Trends & Forecasts',
-  description: 'Stay informed with the latest Las Vegas real estate market trends, home price forecasts, mortgage rate projections, and expert insights for 2025.',
-  keywords: 'Las Vegas real estate market, home price forecasts, mortgage rates, market trends, housing market 2025, Las Vegas property values',
+  title: "Las Vegas Real Estate Market Intelligence | Current Trends & Forecasts",
+  description: "Stay informed with the latest Las Vegas real estate market trends, home price forecasts, mortgage rate projections, and expert insights for 2025.",
+  keywords: "Las Vegas real estate market, home price forecasts, mortgage rates, market trends, housing market 2025, Las Vegas property values",
+  alternates: {
+    canonical: "/market-intelligence",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    url: "https://lasvegasnevadahomesales.com/market-intelligence",
+    title: "Las Vegas Real Estate Market Intelligence | Expert Market Analysis",
+    description: "Stay informed with the latest Las Vegas real estate market trends, home price forecasts, mortgage rate projections, and expert insights for 2025.",
+    type: "website",
+    images: [
+      {
+        url: "/images/market-reports/market-intelligence-hero.jpg",
+        alt: "Las Vegas Real Estate Market Intelligence",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 }
 
 export default function MarketIntelligencePage() {
