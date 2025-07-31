@@ -32,12 +32,49 @@ const config = {
       },
     ],
   },
-  rewrites: async () => [
-    { source: "/healthz", destination: "/api/health" },
-    { source: "/api/healthz", destination: "/api/health" },
-    { source: "/health", destination: "/api/health" },
-    { source: "/ping", destination: "/api/health" },
-  ],
+  async redirects() {
+    return [
+      // Domain redirects
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.lasvegasnevadahomesales.com',
+          },
+        ],
+        destination: 'https://lasvegasnevadahomesales.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'http://lasvegasnevadahomesales.com',
+          },
+        ],
+        destination: 'https://lasvegasnevadahomesales.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'http://www.lasvegasnevadahomesales.com',
+          },
+        ],
+        destination: 'https://lasvegasnevadahomesales.com/:path*',
+        permanent: true,
+      },
+      // Health check redirects
+      { source: "/healthz", destination: "/api/health", permanent: true },
+      { source: "/api/healthz", destination: "/api/health", permanent: true },
+      { source: "/health", destination: "/api/health", permanent: true },
+      { source: "/ping", destination: "/api/health", permanent: true },
+    ]
+  },
 }
 
 module.exports = env.ANALYZE ? withBundleAnalyzer({ enabled: env.ANALYZE })(config) : config 
