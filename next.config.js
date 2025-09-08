@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const withBundleAnalyzer = require('@next/bundle-analyzer');
-
-const env = require('./env.mjs');
-
 const config = {
   reactStrictMode: true,
   typescript: {
@@ -40,4 +36,4 @@ const config = {
   ],
 };
 
-module.exports = env.ANALYZE ? withBundleAnalyzer({ enabled: env.ANALYZE })(config) : config;
+module.exports = config;
