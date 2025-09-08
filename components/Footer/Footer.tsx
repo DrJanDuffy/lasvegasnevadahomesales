@@ -22,10 +22,10 @@ export function Footer({ className = '' }: FooterProps) {
             </p>
             <div className="flex space-x-4">
               <a
-                href="tel:+17025001981"
+                href="tel:+17022221964"
                 className="text-blue-400 hover:text-blue-300 transition-colors"
-                aria-label="Call us at (702) 500-1981"
-                title="Call us at (702) 500-1981"
+                aria-label="Call us at 702-222-1964"
+                title="Call us at 702-222-1964"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -173,8 +173,8 @@ export function Footer({ className = '' }: FooterProps) {
               <div className="pt-4">
                 <p className="text-gray-300 text-sm">
                   📞{' '}
-                  <a href="tel:+17025001981" className="text-blue-400 hover:text-blue-300">
-                    (702) 500-1981
+                  <a href="tel:+17022221964" className="text-blue-400 hover:text-blue-300">
+                    702-222-1964
                   </a>
                 </p>
                 <p className="text-gray-300 text-sm">
@@ -193,11 +193,23 @@ export function Footer({ className = '' }: FooterProps) {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
-              © {currentYear} Las Vegas Nevada Home Sales. All rights reserved.
+          <div className="text-center space-y-4">
+            {/* Main Footer Content */}
+            <div className="text-gray-300 text-sm leading-relaxed">
+              <p className="font-semibold text-white mb-2">
+                © {currentYear} Las Vegas Real Estate Expert | Nevada Home Sales & Property Listings
+              </p>
+              <p className="mb-2">
+                Dr. Jan Duffy, Licensed Realtor #S.0197614 | Las Vegas Valley Specialist
+              </p>
+              <p className="mb-4">
+                Call/Text: <a href="tel:+17022221964" className="text-blue-400 hover:text-blue-300 font-semibold">702-222-1964</a> | 
+                Serving Henderson, Summerlin, Spring Valley & All Las Vegas Communities
+              </p>
             </div>
-            <div className="flex space-x-6 text-sm">
+            
+            {/* Legal Links */}
+            <div className="flex flex-wrap justify-center space-x-6 text-sm">
               <a
                 href="http://drjanduffy.realscout.com/onboarding"
                 className="text-gray-400 hover:text-white transition-colors"

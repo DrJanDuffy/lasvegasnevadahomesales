@@ -23,7 +23,7 @@ export const realEstateAgentSchema = {
   description:
     'Premier real estate services in Las Vegas, Nevada. Find your dream home in Summerlin, Henderson, Green Valley, and Downtown Las Vegas.',
   url: 'https://lasvegasnevadahomesales.com',
-  telephone: '+1-702-500-1981',
+  telephone: '+1-702-222-1964',
   email: 'info@lasvegasnevadahomesales.com',
   address: {
     '@type': 'PostalAddress',
@@ -144,7 +144,7 @@ export const organizationSchema = {
   ],
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+1-702-500-1981',
+    telephone: '+1-702-222-1964',
     contactType: 'customer service',
     areaServed: 'US',
     availableLanguage: 'English',
@@ -165,7 +165,7 @@ export const localBusinessSchema = {
   name: 'Las Vegas Nevada Home Sales',
   description: 'Premier real estate services in Las Vegas, Nevada',
   url: 'https://lasvegasnevadahomesales.com',
-  telephone: '+1-702-500-1981',
+  telephone: '+1-702-222-1964',
   email: 'info@lasvegasnevadahomesales.com',
   address: {
     '@type': 'PostalAddress',

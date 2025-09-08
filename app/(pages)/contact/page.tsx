@@ -81,7 +81,7 @@ export default function ContactPage() {
                       <div className="mr-4 text-2xl text-indigo-600">📞</div>
                       <div>
                         <p className="font-semibold text-gray-900">Phone</p>
-                        <p className="text-gray-600">(702) 500-1981</p>
+                        <p className="text-gray-600">702-222-1964</p>
                         <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM, Sat 10AM-4PM</p>
                         <Button
                           href="http://drjanduffy.realscout.com/onboarding"

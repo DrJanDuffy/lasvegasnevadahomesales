@@ -49,7 +49,7 @@ export default function LocalBusinessSchema({
   name = 'Las Vegas Nevada Home Sales',
   description = 'Premier Las Vegas real estate agency specializing in luxury homes, family properties, and investment opportunities across Summerlin, Henderson, Green Valley, and Downtown Las Vegas.',
   url = 'https://lasvegasnevadahomesales.com',
-  telephone = '+1-702-500-1981',
+  telephone = '+1-702-222-1964',
   email = 'info@lasvegasnevadahomesales.com',
   address = {
     streetAddress: '123 Las Vegas Blvd',

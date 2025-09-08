@@ -187,7 +187,7 @@ export function LeadCaptureForm({
 
       // Show user-friendly error message
       alert(
-        'There was an error submitting your request. Please try again or contact us directly at (702) 500-1981.'
+        'There was an error submitting your request. Please try again or contact us directly at 702-222-1964.'
       );
     } finally {
       setIsSubmitting(false);
@@ -281,7 +281,7 @@ export function LeadCaptureForm({
                 id="phone"
                 value={formData.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
-                placeholder="(702) 500-1981"
+                placeholder="702-222-1964"
               />
             </FormControl>
           </FormField>
