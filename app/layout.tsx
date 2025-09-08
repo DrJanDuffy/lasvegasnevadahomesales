@@ -7,6 +7,7 @@ import '../styles/homebot-widgets.css';
 import Script from 'next/script';
 import { VercelAnalytics } from '../components/Analytics/VercelAnalytics';
 import { Navigation } from '../components/Navigation/Navigation';
+import { Footer } from '../components/Footer/Footer';
 import { SEODashboard } from '../components/SEO/SEODashboard';
 import {
   organizationSchema,
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StructuredData data={organizationSchema} />
         <Navigation />
         <main>{children}</main>
+        <Footer />
         <SEODashboard
           pageUrl="/"
           pageTitle="Las Vegas Nevada Home Sales"

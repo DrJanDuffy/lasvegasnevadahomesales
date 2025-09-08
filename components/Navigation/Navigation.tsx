@@ -41,22 +41,22 @@ export function Navigation() {
           description: 'Find your perfect home',
         },
         {
-          href: 'http://drjanduffy.realscout.com/onboarding',
+          href: '/properties?type=single-family',
           label: 'Single Family',
           description: 'Detached homes',
         },
         {
-          href: 'http://drjanduffy.realscout.com/onboarding',
+          href: '/properties?type=condo',
           label: 'Condos',
           description: 'Low-maintenance living',
         },
         {
-          href: 'http://drjanduffy.realscout.com/onboarding',
+          href: '/properties?type=luxury',
           label: 'Luxury Homes',
           description: 'Premium properties',
         },
         {
-          href: 'http://drjanduffy.realscout.com/onboarding',
+          href: '/properties?type=investment',
           label: 'Investment',
           description: 'Rental properties',
         },
@@ -73,7 +73,7 @@ export function Navigation() {
           description: 'Instant home value estimate',
         },
         {
-          href: 'http://drjanduffy.realscout.com/onboarding',
+          href: '/home-value',
           label: 'Detailed Report',
           description: 'Comprehensive analysis',
         },
@@ -86,27 +86,27 @@ export function Navigation() {
       description: 'Explore Las Vegas areas',
       children: [
         {
-          href: 'http://drjanduffy.realscout.com/onboarding',
+          href: '/neighborhoods/summerlin',
           label: 'Summerlin',
           description: 'Luxury master-planned community',
         },
         {
-          href: 'http://drjanduffy.realscout.com/onboarding',
+          href: '/neighborhoods/henderson',
           label: 'Henderson',
           description: 'Family-friendly city',
         },
         {
-          href: 'http://drjanduffy.realscout.com/onboarding',
+          href: '/neighborhoods/green-valley',
           label: 'Green Valley',
           description: 'Affordable family homes',
         },
         {
-          href: 'http://drjanduffy.realscout.com/onboarding',
+          href: '/neighborhoods/downtown',
           label: 'Downtown',
           description: 'Urban living & entertainment',
         },
         {
-          href: 'http://drjanduffy.realscout.com/onboarding',
+          href: '/neighborhoods',
           label: 'All Areas',
           description: 'Complete neighborhood guide',
         },
@@ -119,12 +119,12 @@ export function Navigation() {
       children: [
         { href: '/strategies', label: 'Buying Guide', description: 'How to buy a home' },
         {
-          href: 'http://drjanduffy.realscout.com/onboarding',
+          href: '/strategies#selling',
           label: 'Selling Guide',
           description: 'How to sell your home',
         },
         {
-          href: 'http://drjanduffy.realscout.com/onboarding',
+          href: '/strategies#investment',
           label: 'Investment Guide',
           description: 'Real estate investing',
         },
@@ -215,28 +215,37 @@ export function Navigation() {
                       }
                     }}
                   >
-                    <button
-                      className={`px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center space-x-1 ${
-                        isActive(item.href)
-                          ? 'text-blue-900 bg-blue-50'
-                          : 'text-gray-700 hover:text-blue-900 hover:bg-blue-50'
-                      }`}
-                    >
-                      <span>{item.label}</span>
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    <div className="flex items-center">
+                      <Link
+                        href={item.href}
+                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center space-x-1 ${
+                          isActive(item.href)
+                            ? 'text-blue-900 bg-blue-50'
+                            : 'text-gray-700 hover:text-blue-900 hover:bg-blue-50'
+                        }`}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
+                        <span>{item.label}</span>
+                      </Link>
+                      <button
+                        className="px-1 py-2 text-gray-700 hover:text-blue-900 transition-colors"
+                        onClick={() => setActiveDropdown(activeDropdown === item.href ? null : item.href)}
+                        aria-label={`Toggle ${item.label} menu`}
+                      >
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </button>
+                    </div>
 
                     {/* Dropdown Menu */}
                     {activeDropdown === item.href && (
@@ -419,31 +428,39 @@ export function Navigation() {
               <div key={item.href}>
                 {item.children ? (
                   <div>
-                    <button
-                      onClick={() =>
-                        setActiveDropdown(activeDropdown === item.href ? null : item.href)
-                      }
-                      className={`w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center justify-between ${
-                        isActive(item.href)
-                          ? 'text-blue-900 bg-blue-50'
-                          : 'text-gray-700 hover:text-blue-900 hover:bg-blue-50'
-                      }`}
-                    >
-                      <span>{item.label}</span>
-                      <svg
-                        className={`w-4 h-4 transition-transform ${activeDropdown === item.href ? 'rotate-180' : ''}`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    <div className="flex items-center">
+                      <Link
+                        href={item.href}
+                        className={`flex-1 px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                          isActive(item.href)
+                            ? 'text-blue-900 bg-blue-50'
+                            : 'text-gray-700 hover:text-blue-900 hover:bg-blue-50'
+                        }`}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
+                        {item.label}
+                      </Link>
+                      <button
+                        onClick={() =>
+                          setActiveDropdown(activeDropdown === item.href ? null : item.href)
+                        }
+                        className="px-2 py-2 text-gray-700 hover:text-blue-900 transition-colors"
+                        aria-label={`Toggle ${item.label} menu`}
+                      >
+                        <svg
+                          className={`w-4 h-4 transition-transform ${activeDropdown === item.href ? 'rotate-180' : ''}`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </button>
+                    </div>
 
                     {activeDropdown === item.href && (
                       <div className="ml-4 mt-1 space-y-1">
