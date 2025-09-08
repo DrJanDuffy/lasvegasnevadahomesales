@@ -14,7 +14,7 @@ export const seoConfig = {
 
   // Contact Information
   contact: {
-    phone: '+1-702-555-0123',
+    phone: '+1-702-500-1981',
     email: 'info@lasvegasnevadahomesales.com',
     address: {
       street: '1234 Las Vegas Blvd',

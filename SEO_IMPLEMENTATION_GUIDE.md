@@ -119,7 +119,7 @@ This guide covers the comprehensive SEO implementation for the Las Vegas real es
   "name": "Las Vegas Nevada Home Sales",
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+1-702-555-0123"
+    "telephone": "+1-702-500-1981"
   }
 }
 ```
