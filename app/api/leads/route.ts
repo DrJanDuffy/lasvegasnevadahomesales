@@ -1,11 +1,13 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import type { LeadData } from '../../../config/crm-config';
 import { followUpBossService } from '../../../services/followUpBossService';
+import { crmConfig } from '../../../config/crm-config';
 
 export async function POST(request: NextRequest) {
   try {
-    // Check if API key is configured
-    if (!process.env.FOLLOW_UP_BOSS_API_KEY) {
+    // Check if API key is configured (use fallback from config)
+    const apiKey = process.env.FOLLOW_UP_BOSS_API_KEY || crmConfig.followUpBoss.apiKey;
+    if (!apiKey) {
       console.error('Follow Up Boss API key not configured');
       return NextResponse.json(
         { error: 'Service temporarily unavailable. Please try again later.' },

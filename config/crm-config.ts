@@ -1,7 +1,7 @@
 // CRM Configuration - Follow Up Boss
 export const crmConfig = {
   followUpBoss: {
-    apiKey: process.env.FOLLOW_UP_BOSS_API_KEY || '',
+    apiKey: process.env.FOLLOW_UP_BOSS_API_KEY || 'fka_0N4mnNSsO8ju1Cgq8WoC3Juqmk57vvN962',
     baseUrl: 'https://api.followupboss.com/v1',
     endpoints: {
       people: '/people',
@@ -12,7 +12,7 @@ export const crmConfig = {
     },
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Basic ${Buffer.from(`${process.env.FOLLOW_UP_BOSS_API_KEY || ''}:`).toString('base64')}`,
+      Authorization: `Basic ${Buffer.from(`${process.env.FOLLOW_UP_BOSS_API_KEY || 'fka_0N4mnNSsO8ju1Cgq8WoC3Juqmk57vvN962'}:`).toString('base64')}`,
     },
   },
 
