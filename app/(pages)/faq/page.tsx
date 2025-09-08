@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import { Button } from '../../../components/Button/Button';
 import { FAQSchema } from '../../../components/SEO/FAQSchema';
 import {
@@ -123,6 +124,8 @@ const comprehensiveFAQs = [
 ];
 
 export default function FAQPage() {
+  const generalQuestionsId = useId();
+  
   return (
     <>
       <SEOHead
@@ -171,7 +174,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Categories */}
-      <section id="general-questions" className="bg-white py-16">
+      <section id={generalQuestionsId} className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4">
           <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
             Common Questions by Category
@@ -183,8 +186,8 @@ export default function FAQPage() {
               About Las Vegas Nevada Home Sales
             </h3>
             <div className="space-y-6">
-              {comprehensiveFAQs.slice(0, 3).map((faq, index) => (
-                <div key={index} className="rounded-lg border border-gray-200 p-6">
+              {comprehensiveFAQs.slice(0, 3).map((faq) => (
+                <div key={faq.question} className="rounded-lg border border-gray-200 p-6">
                   <h4 className="mb-3 text-lg font-semibold text-gray-900">{faq.question}</h4>
                   <p className="text-gray-600">{faq.answer}</p>
                 </div>
@@ -196,8 +199,8 @@ export default function FAQPage() {
           <div className="mb-16">
             <h3 className="mb-8 text-2xl font-bold text-gray-900">Buying a Home in Las Vegas</h3>
             <div className="space-y-6">
-              {comprehensiveFAQs.slice(3, 7).map((faq, index) => (
-                <div key={index} className="rounded-lg border border-gray-200 p-6">
+              {comprehensiveFAQs.slice(3, 7).map((faq) => (
+                <div key={faq.question} className="rounded-lg border border-gray-200 p-6">
                   <h4 className="mb-3 text-lg font-semibold text-gray-900">{faq.question}</h4>
                   <p className="text-gray-600">{faq.answer}</p>
                 </div>
@@ -209,8 +212,8 @@ export default function FAQPage() {
           <div className="mb-16">
             <h3 className="mb-8 text-2xl font-bold text-gray-900">Selling Your Home</h3>
             <div className="space-y-6">
-              {comprehensiveFAQs.slice(7, 11).map((faq, index) => (
-                <div key={index} className="rounded-lg border border-gray-200 p-6">
+              {comprehensiveFAQs.slice(7, 11).map((faq) => (
+                <div key={faq.question} className="rounded-lg border border-gray-200 p-6">
                   <h4 className="mb-3 text-lg font-semibold text-gray-900">{faq.question}</h4>
                   <p className="text-gray-600">{faq.answer}</p>
                 </div>
@@ -222,8 +225,8 @@ export default function FAQPage() {
           <div className="mb-16">
             <h3 className="mb-8 text-2xl font-bold text-gray-900">Real Estate Investment</h3>
             <div className="space-y-6">
-              {comprehensiveFAQs.slice(11, 14).map((faq, index) => (
-                <div key={index} className="rounded-lg border border-gray-200 p-6">
+              {comprehensiveFAQs.slice(11, 14).map((faq) => (
+                <div key={faq.question} className="rounded-lg border border-gray-200 p-6">
                   <h4 className="mb-3 text-lg font-semibold text-gray-900">{faq.question}</h4>
                   <p className="text-gray-600">{faq.answer}</p>
                 </div>
@@ -235,8 +238,8 @@ export default function FAQPage() {
           <div className="mb-16">
             <h3 className="mb-8 text-2xl font-bold text-gray-900">Our Services</h3>
             <div className="space-y-6">
-              {comprehensiveFAQs.slice(14, 17).map((faq, index) => (
-                <div key={index} className="rounded-lg border border-gray-200 p-6">
+              {comprehensiveFAQs.slice(14, 17).map((faq) => (
+                <div key={faq.question} className="rounded-lg border border-gray-200 p-6">
                   <h4 className="mb-3 text-lg font-semibold text-gray-900">{faq.question}</h4>
                   <p className="text-gray-600">{faq.answer}</p>
                 </div>
@@ -248,8 +251,8 @@ export default function FAQPage() {
           <div className="mb-16">
             <h3 className="mb-8 text-2xl font-bold text-gray-900">Market Information</h3>
             <div className="space-y-6">
-              {comprehensiveFAQs.slice(17, 20).map((faq, index) => (
-                <div key={index} className="rounded-lg border border-gray-200 p-6">
+              {comprehensiveFAQs.slice(17, 20).map((faq) => (
+                <div key={faq.question} className="rounded-lg border border-gray-200 p-6">
                   <h4 className="mb-3 text-lg font-semibold text-gray-900">{faq.question}</h4>
                   <p className="text-gray-600">{faq.answer}</p>
                 </div>

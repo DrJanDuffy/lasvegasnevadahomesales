@@ -173,15 +173,15 @@ export function GoogleMaps({
                 </svg>
               `)
               : property.type === 'neighborhood'
-              ? 'data:image/svg+xml;charset=UTF-8,' +
-                encodeURIComponent(`
+                ? 'data:image/svg+xml;charset=UTF-8,' +
+                  encodeURIComponent(`
                 <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="12" cy="12" r="10" fill="#3A8DDE"/>
                   <text x="12" y="16" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">N</text>
                 </svg>
               `)
-              : 'data:image/svg+xml;charset=UTF-8,' +
-                encodeURIComponent(`
+                : 'data:image/svg+xml;charset=UTF-8,' +
+                  encodeURIComponent(`
                 <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="12" cy="12" r="10" fill="#0A2540"/>
                   <text x="12" y="16" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">L</text>
@@ -223,7 +223,7 @@ export function GoogleMaps({
 
       const bounds = new (window as any).google.maps.LatLngBounds();
       places.forEach((place: any) => {
-        if (place.geometry && place.geometry.viewport) {
+        if (place.geometry?.viewport) {
           bounds.union(place.geometry.viewport);
         } else {
           bounds.extend(place.geometry.location);
@@ -313,7 +313,6 @@ export function GoogleMaps({
       },
     ];
   };
-
 
   if (isLoading) {
     return (

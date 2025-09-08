@@ -1,3 +1,5 @@
+import { useId } from 'react';
+import Image from 'next/image';
 import { Button } from '../../../components/Button/Button';
 import { FAQSchema } from '../../../components/SEO/FAQSchema';
 import {
@@ -130,6 +132,8 @@ const categories = [
 ];
 
 export default function BlogPage() {
+  const featuredPostsId = useId();
+  
   return (
     <>
       <SEOHead
@@ -178,7 +182,7 @@ export default function BlogPage() {
       </section>
 
       {/* Featured Post */}
-      <section id="featured-posts" className="bg-white py-16">
+      <section id={featuredPostsId} className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4">
           <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
             Featured Article
@@ -189,7 +193,12 @@ export default function BlogPage() {
               <div key={post.id} className="mx-auto max-w-4xl">
                 <div className="overflow-hidden rounded-lg bg-white shadow-lg">
                   <div className="relative h-64 md:h-96">
-                    <img src={post.image} alt={post.title} className="h-full w-full object-cover" />
+                    <Image 
+                      src={post.image} 
+                      alt={post.title} 
+                      fill
+                      className="object-cover" 
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div className="absolute bottom-4 left-4 text-white">
                       <span className="rounded-full bg-purple-600 px-3 py-1 text-sm font-semibold">
@@ -229,6 +238,7 @@ export default function BlogPage() {
             {categories.map((category) => (
               <button
                 key={category}
+                type="button"
                 className="rounded-full bg-white px-6 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-purple-50 hover:text-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
               >
                 {category}
@@ -253,10 +263,11 @@ export default function BlogPage() {
                   className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105"
                 >
                   <div className="relative h-48">
-                    <img
+                    <Image
                       src={post.image}
                       alt={post.title}
-                      className="h-full w-full object-cover transition-transform group-hover:scale-110"
+                      fill
+                      className="object-cover transition-transform group-hover:scale-110"
                     />
                     <div className="absolute top-4 left-4">
                       <span className="rounded-full bg-purple-600 px-3 py-1 text-sm font-semibold text-white">

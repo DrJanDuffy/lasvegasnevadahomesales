@@ -197,6 +197,7 @@ export default function GalleryDemoPage() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-label="High Resolution Icon"
                 >
                   <path
                     strokeLinecap="round"
@@ -219,6 +220,7 @@ export default function GalleryDemoPage() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-label="Mobile Responsive Icon"
                 >
                   <path
                     strokeLinecap="round"
@@ -241,6 +243,7 @@ export default function GalleryDemoPage() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-label="Lightbox View Icon"
                 >
                   <path
                     strokeLinecap="round"
@@ -263,6 +266,7 @@ export default function GalleryDemoPage() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-label="Touch Gestures Icon"
                 >
                   <path
                     strokeLinecap="round"
@@ -289,6 +293,7 @@ export default function GalleryDemoPage() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-label="Performance Icon"
                 >
                   <path
                     strokeLinecap="round"
@@ -309,6 +314,7 @@ export default function GalleryDemoPage() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-label="Accessibility Icon"
                 >
                   <path
                     strokeLinecap="round"
