@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Button } from '../../../../components/Button/Button';
 import { RealScoutYourListings } from '../../../../components/RealScout/RealScoutYourListings';
+import { SEOHead } from '../../../../components/SEO/SEOHead';
+import { NeighborhoodPageSchema } from '../../../../components/SEO/PageSchemas';
 
 export const metadata: Metadata = {
   title: 'Henderson Las Vegas Real Estate | Family Homes for Sale | Las Vegas Nevada Home Sales',
