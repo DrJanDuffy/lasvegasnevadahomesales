@@ -352,7 +352,7 @@ export function LeadCaptureForm({
         <Button
           type="submit"
           disabled={isSubmitting}
-          variant="primary"
+          variant="default"
           size="lg"
           className="w-full"
         >
