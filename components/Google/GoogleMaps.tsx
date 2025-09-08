@@ -121,6 +121,118 @@ export function GoogleMaps({
     },
   ];
 
+  const addNeighborhoodBoundaries = (mapInstance: any) => {
+    neighborhoods.forEach((neighborhood) => {
+      const _rectangle = new (window as any).google.maps.Rectangle({
+        bounds: neighborhood.bounds,
+        fillColor: '#3A8DDE',
+        fillOpacity: 0.1,
+        strokeColor: '#0A2540',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        map: mapInstance,
+      });
+
+      // Add neighborhood label
+      new (window as any).google.maps.Marker({
+        position: neighborhood.center,
+        map: mapInstance,
+        label: {
+          text: neighborhood.name,
+          className: 'neighborhood-label',
+        },
+        icon: {
+          url:
+            'data:image/svg+xml;charset=UTF-8,' +
+            encodeURIComponent(`
+            <svg width="100" height="30" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="30" fill="#0A2540" rx="15"/>
+              <text x="50" y="20" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">${neighborhood.name}</text>
+            </svg>
+          `),
+          scaledSize: new (window as any).google.maps.Size(100, 30),
+        },
+      });
+    });
+  };
+
+  const addPropertyMarkers = (mapInstance: any) => {
+    properties.forEach((property) => {
+      const marker = new (window as any).google.maps.Marker({
+        position: { lat: property.lat, lng: property.lng },
+        map: mapInstance,
+        title: property.title,
+        icon: {
+          url:
+            property.type === 'sold'
+              ? 'data:image/svg+xml;charset=UTF-8,' +
+                encodeURIComponent(`
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" fill="#16B286"/>
+                  <text x="12" y="16" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">S</text>
+                </svg>
+              `)
+              : property.type === 'neighborhood'
+              ? 'data:image/svg+xml;charset=UTF-8,' +
+                encodeURIComponent(`
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" fill="#3A8DDE"/>
+                  <text x="12" y="16" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">N</text>
+                </svg>
+              `)
+              : 'data:image/svg+xml;charset=UTF-8,' +
+                encodeURIComponent(`
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" fill="#0A2540"/>
+                  <text x="12" y="16" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">L</text>
+                </svg>
+              `),
+          scaledSize: new (window as any).google.maps.Size(24, 24),
+        },
+      });
+
+      // Add info window
+      const infoWindow = new (window as any).google.maps.InfoWindow({
+        content: `
+          <div style="padding: 10px; max-width: 200px;">
+            <h3 style="margin: 0 0 5px 0; font-size: 14px; color: #0A2540;">${property.title}</h3>
+            <p style="margin: 0 0 5px 0; font-size: 12px; color: #16B286; font-weight: bold;">${property.price}</p>
+            <p style="margin: 0; font-size: 11px; color: #666;">${property.address}</p>
+          </div>
+        `,
+      });
+
+      marker.addListener('click', () => {
+        infoWindow.open(mapInstance, marker);
+      });
+    });
+  };
+
+  const addSearchBox = (mapInstance: any) => {
+    const searchBox = new (window as any).google.maps.places.SearchBox(
+      document.getElementById('search-box')
+    );
+
+    mapInstance.addListener('bounds_changed', () => {
+      searchBox.setBounds(mapInstance.getBounds());
+    });
+
+    searchBox.addListener('places_changed', () => {
+      const places = searchBox.getPlaces();
+      if (places.length === 0) return;
+
+      const bounds = new (window as any).google.maps.LatLngBounds();
+      places.forEach((place: any) => {
+        if (place.geometry && place.geometry.viewport) {
+          bounds.union(place.geometry.viewport);
+        } else {
+          bounds.extend(place.geometry.location);
+        }
+      });
+      mapInstance.fitBounds(bounds);
+    });
+  };
+
   useEffect(() => {
     if (!mapRef.current || !apiKey || apiKey === 'YOUR_API_KEY') {
       setIsLoading(false);
@@ -202,120 +314,6 @@ export function GoogleMaps({
     ];
   };
 
-  const addNeighborhoodBoundaries = (mapInstance: any) => {
-    neighborhoods.forEach((neighborhood) => {
-      const _rectangle = new (window as any).google.maps.Rectangle({
-        bounds: neighborhood.bounds,
-        fillColor: '#3A8DDE',
-        fillOpacity: 0.1,
-        strokeColor: '#0A2540',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        map: mapInstance,
-      });
-
-      // Add neighborhood label
-      new (window as any).google.maps.Marker({
-        position: neighborhood.center,
-        map: mapInstance,
-        label: {
-          text: neighborhood.name,
-          className: 'neighborhood-label',
-        },
-        icon: {
-          url:
-            'data:image/svg+xml;charset=UTF-8,' +
-            encodeURIComponent(`
-            <svg width="100" height="30" xmlns="http://www.w3.org/2000/svg">
-              <rect width="100" height="30" fill="#0A2540" rx="15"/>
-              <text x="50" y="20" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">${neighborhood.name}</text>
-            </svg>
-          `),
-          scaledSize: new (window as any).google.maps.Size(100, 30),
-        },
-      });
-    });
-  };
-
-  const addPropertyMarkers = (mapInstance: any) => {
-    properties.forEach((property) => {
-      const marker = new (window as any).google.maps.Marker({
-        position: { lat: property.lat, lng: property.lng },
-        map: mapInstance,
-        title: property.title,
-        icon: {
-          url:
-            property.type === 'sold'
-              ? 'data:image/svg+xml;charset=UTF-8,' +
-                encodeURIComponent(`
-                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="#16B286"/>
-                  <text x="12" y="16" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">S</text>
-                </svg>
-              `)
-              : 'data:image/svg+xml;charset=UTF-8,' +
-                encodeURIComponent(`
-                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="#FF6B35"/>
-                  <text x="12" y="16" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">$</text>
-                </svg>
-              `),
-          scaledSize: new (window as any).google.maps.Size(24, 24),
-        },
-      });
-
-      // Add info window
-      const infoWindow = new (window as any).google.maps.InfoWindow({
-        content: `
-          <div style="padding: 10px; max-width: 200px;">
-            <h3 style="margin: 0 0 5px 0; color: #0A2540; font-size: 14px;">${property.title}</h3>
-            <p style="margin: 0 0 5px 0; color: #FF6B35; font-weight: bold; font-size: 16px;">${property.price}</p>
-            <p style="margin: 0; color: #666; font-size: 12px;">${property.address}</p>
-            <p style="margin: 5px 0 0 0; color: #16B286; font-size: 11px; text-transform: uppercase;">${property.type}</p>
-          </div>
-        `,
-      });
-
-      marker.addListener('click', () => {
-        infoWindow.open(mapInstance, marker);
-      });
-    });
-  };
-
-  const addSearchBox = (mapInstance: any) => {
-    const input = document.createElement('input');
-    input.className = 'map-search-box';
-    input.placeholder = 'Search Las Vegas neighborhoods...';
-    input.style.cssText = `
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: 300px;
-      height: 40px;
-      padding: 0 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
-      z-index: 1000;
-    `;
-
-    mapRef.current?.parentElement?.appendChild(input);
-
-    const searchBox = new (window as any).google.maps.places.SearchBox(input);
-
-    searchBox.addListener('places_changed', () => {
-      const places = searchBox.getPlaces();
-      if (places.length === 0) return;
-
-      const bounds = new (window as any).google.maps.LatLngBounds();
-      places.forEach((place: any) => {
-        if (place.geometry?.location) {
-          bounds.extend(place.geometry.location);
-        }
-      });
-      mapInstance.fitBounds(bounds);
-    });
-  };
 
   if (isLoading) {
     return (
