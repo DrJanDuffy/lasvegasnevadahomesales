@@ -3,11 +3,33 @@ import { Button } from '../../../../components/Button/Button';
 import { RealScoutYourListings } from '../../../../components/RealScout/RealScoutYourListings';
 
 export const metadata: Metadata = {
-  title: 'Green Valley Las Vegas | Affordable Homes & Great Community',
+  title: 'Green Valley Las Vegas Real Estate | Affordable Homes for Sale | Las Vegas Nevada Home Sales',
   description:
-    'Discover Green Valley, an affordable Las Vegas neighborhood with great amenities and convenient location. Find your perfect home in this growing community.',
+    'Find affordable homes for sale in Green Valley Las Vegas. Great amenities, convenient location, and growing community. Expert real estate guidance from Las Vegas Nevada Home Sales.',
   keywords:
-    'Green Valley Las Vegas, Green Valley homes, Green Valley real estate, affordable Las Vegas homes',
+    'Green Valley Las Vegas real estate, Green Valley homes for sale, affordable homes Las Vegas, Green Valley properties, Las Vegas Nevada Home Sales, budget-friendly homes, Green Valley community',
+  openGraph: {
+    title: 'Green Valley Las Vegas Real Estate | Affordable Homes for Sale',
+    description: 'Find affordable homes for sale in Green Valley Las Vegas. Great amenities, convenient location, and growing community.',
+    url: 'https://lasvegasnevadahomesales.com/neighborhoods/green-valley',
+    siteName: 'Las Vegas Nevada Home Sales',
+    images: [
+      {
+        url: 'https://lasvegasnevadahomesales.com/images/og-green-valley.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Green Valley Las Vegas Affordable Homes',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Green Valley Las Vegas Real Estate | Affordable Homes for Sale',
+    description: 'Find affordable homes for sale in Green Valley Las Vegas. Great amenities, convenient location, and growing community.',
+    images: ['https://lasvegasnevadahomesales.com/images/og-green-valley.jpg'],
+  },
 };
 
 export default function GreenValleyPage() {

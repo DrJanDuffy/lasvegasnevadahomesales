@@ -3,11 +3,33 @@ import { Button } from '../../../../components/Button/Button';
 import { RealScoutYourListings } from '../../../../components/RealScout/RealScoutYourListings';
 
 export const metadata: Metadata = {
-  title: 'Henderson Las Vegas | Family-Friendly Homes & Community',
+  title: 'Henderson Las Vegas Real Estate | Family Homes for Sale | Las Vegas Nevada Home Sales',
   description:
-    "Discover Henderson, Las Vegas' family-friendly city with excellent schools, parks, and affordable housing. Find your perfect home in this growing Las Vegas suburb.",
+    "Find family-friendly homes for sale in Henderson Las Vegas. Excellent schools, parks, and affordable housing in this growing Las Vegas suburb. Expert real estate guidance from Las Vegas Nevada Home Sales.",
   keywords:
-    'Henderson Las Vegas, Henderson homes, Henderson real estate, Henderson schools, Henderson parks',
+    'Henderson Las Vegas real estate, Henderson homes for sale, family homes Henderson, Henderson schools, Las Vegas Nevada Home Sales, Henderson properties, affordable homes Las Vegas',
+  openGraph: {
+    title: 'Henderson Las Vegas Real Estate | Family Homes for Sale',
+    description: "Find family-friendly homes for sale in Henderson Las Vegas. Excellent schools, parks, and affordable housing in this growing Las Vegas suburb.",
+    url: 'https://lasvegasnevadahomesales.com/neighborhoods/henderson',
+    siteName: 'Las Vegas Nevada Home Sales',
+    images: [
+      {
+        url: 'https://lasvegasnevadahomesales.com/images/og-henderson.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Henderson Las Vegas Family Homes',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Henderson Las Vegas Real Estate | Family Homes for Sale',
+    description: "Find family-friendly homes for sale in Henderson Las Vegas. Excellent schools, parks, and affordable housing in this growing Las Vegas suburb.",
+    images: ['https://lasvegasnevadahomesales.com/images/og-henderson.jpg'],
+  },
 };
 
 export default function HendersonPage() {

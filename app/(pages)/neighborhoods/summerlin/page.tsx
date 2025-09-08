@@ -6,11 +6,33 @@ import { RealScoutSummerlinShowcase } from '../../../../components/RealScout/Rea
 import { SEOHead } from '../../../../components/SEO/SEOHead';
 
 export const metadata: Metadata = {
-  title: 'Summerlin Las Vegas | Luxury Homes & Master-Planned Community',
+  title: 'Summerlin Las Vegas Real Estate | Luxury Homes for Sale | Las Vegas Nevada Home Sales',
   description:
-    "Discover Summerlin, Las Vegas' premier master-planned community. Luxury homes, golf courses, shopping centers, and top-rated schools in a beautiful desert setting.",
+    "Find luxury homes for sale in Summerlin Las Vegas. Premier master-planned community with golf courses, top schools, and shopping. Expert real estate guidance from Las Vegas Nevada Home Sales.",
   keywords:
-    'Summerlin Las Vegas, Summerlin homes, Summerlin real estate, Summerlin golf courses, Summerlin shopping',
+    'Summerlin Las Vegas real estate, Summerlin homes for sale, luxury homes Summerlin, Summerlin golf course homes, Las Vegas Nevada Home Sales, Summerlin properties, master-planned community Las Vegas',
+  openGraph: {
+    title: 'Summerlin Las Vegas Real Estate | Luxury Homes for Sale',
+    description: "Find luxury homes for sale in Summerlin Las Vegas. Premier master-planned community with golf courses, top schools, and shopping.",
+    url: 'https://lasvegasnevadahomesales.com/neighborhoods/summerlin',
+    siteName: 'Las Vegas Nevada Home Sales',
+    images: [
+      {
+        url: 'https://lasvegasnevadahomesales.com/images/og-summerlin.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Summerlin Las Vegas Luxury Homes',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Summerlin Las Vegas Real Estate | Luxury Homes for Sale',
+    description: "Find luxury homes for sale in Summerlin Las Vegas. Premier master-planned community with golf courses, top schools, and shopping.",
+    images: ['https://lasvegasnevadahomesales.com/images/og-summerlin.jpg'],
+  },
 };
 
 export default function SummerlinPage() {

@@ -3,11 +3,33 @@ import { Button } from '../../../../components/Button/Button';
 import { RealScoutYourListings } from '../../../../components/RealScout/RealScoutYourListings';
 
 export const metadata: Metadata = {
-  title: 'Downtown Las Vegas | Urban Living & Entertainment',
+  title: 'Downtown Las Vegas Real Estate | Urban Homes for Sale | Las Vegas Nevada Home Sales',
   description:
-    'Discover Downtown Las Vegas, the heart of the city with urban living, entertainment, cultural attractions, and nightlife. Find your perfect urban home in Las Vegas.',
+    'Find urban homes for sale in Downtown Las Vegas. Heart of the city with entertainment, cultural attractions, and nightlife. Expert real estate guidance from Las Vegas Nevada Home Sales.',
   keywords:
-    'Downtown Las Vegas, Las Vegas urban living, Downtown Las Vegas real estate, Las Vegas entertainment district',
+    'Downtown Las Vegas real estate, Downtown Las Vegas homes for sale, urban living Las Vegas, Las Vegas entertainment district, Las Vegas Nevada Home Sales, downtown properties, urban homes Las Vegas',
+  openGraph: {
+    title: 'Downtown Las Vegas Real Estate | Urban Homes for Sale',
+    description: 'Find urban homes for sale in Downtown Las Vegas. Heart of the city with entertainment, cultural attractions, and nightlife.',
+    url: 'https://lasvegasnevadahomesales.com/neighborhoods/downtown',
+    siteName: 'Las Vegas Nevada Home Sales',
+    images: [
+      {
+        url: 'https://lasvegasnevadahomesales.com/images/og-downtown.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Downtown Las Vegas Urban Homes',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Downtown Las Vegas Real Estate | Urban Homes for Sale',
+    description: 'Find urban homes for sale in Downtown Las Vegas. Heart of the city with entertainment, cultural attractions, and nightlife.',
+    images: ['https://lasvegasnevadahomesales.com/images/og-downtown.jpg'],
+  },
 };
 
 export default function DowntownPage() {

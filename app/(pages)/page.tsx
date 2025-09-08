@@ -162,7 +162,7 @@ export default function LasVegasMarketOverview() {
               </CardHeader>
               <CardContent>
                 <Button
-                  href="http://drjanduffy.realscout.com/onboarding"
+                  href="/neighborhoods/summerlin"
                   variant="default"
                   size="sm"
                   aria-label="See all Summerlin homes for sale with Las Vegas Nevada Home Sales"
@@ -189,7 +189,7 @@ export default function LasVegasMarketOverview() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button href="http://drjanduffy.realscout.com/onboarding" variant="default" size="sm">
+                <Button href="/neighborhoods/henderson" variant="default" size="sm">
                   Learn More
                 </Button>
               </CardContent>
@@ -212,7 +212,7 @@ export default function LasVegasMarketOverview() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button href="http://drjanduffy.realscout.com/onboarding" variant="default" size="sm">
+                <Button href="/neighborhoods/green-valley" variant="default" size="sm">
                   Learn More
                 </Button>
               </CardContent>
@@ -236,7 +236,7 @@ export default function LasVegasMarketOverview() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button href="http://drjanduffy.realscout.com/onboarding" variant="default" size="sm">
+                <Button href="/neighborhoods/downtown" variant="default" size="sm">
                   Learn More
                 </Button>
               </CardContent>
