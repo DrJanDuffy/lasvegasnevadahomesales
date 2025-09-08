@@ -65,9 +65,9 @@ export default function LasVegasMarketOverview() {
             <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">
               Las Vegas Nevada Home Sales – Your Trusted Real Estate Experts
             </h1>
-            <p className="mb-8 text-xl font-light text-blue-100 md:text-2xl">
-              Welcome to Las Vegas Nevada Home Sales, your source for luxury homes, family residences, and investment properties in the heart of Nevada. Start your journey to homeownership in Summerlin, Henderson, and all of Las Vegas.
-            </p>
+        <p className="mb-8 text-xl font-light text-blue-100 md:text-2xl">
+          Welcome to Las Vegas Nevada Home Sales, your premier source for luxury homes, family residences, and investment properties in the heart of Nevada. Start your journey to homeownership in Summerlin, Henderson, and all of Las Vegas.
+        </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
               <Button href="/properties" className="bg-white text-blue-900 hover:bg-blue-50">
                 Search Homes
