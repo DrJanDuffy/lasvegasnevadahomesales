@@ -156,10 +156,14 @@ export async function GET(request: NextRequest) {
       const dateString = new Date(pubDate).toISOString().split('T')[0];
       const content = item['content:encoded']?.[0] || description || '';
       
-      // Extract image
+      // Extract image - try description first, then content
       let image = 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop';
       
-      if (item['media:content']?.[0]?.$.url) {
+      // First try to extract from description (which often has the featured image)
+      const descriptionImage = extractImageFromContent(description);
+      if (descriptionImage !== 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop') {
+        image = descriptionImage;
+      } else if (item['media:content']?.[0]?.$.url) {
         image = item['media:content'][0].$.url;
       } else if (item['media:thumbnail']?.[0]?.$.url) {
         image = item['media:thumbnail'][0].$.url;
