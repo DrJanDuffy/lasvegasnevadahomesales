@@ -16,6 +16,22 @@ const config = {
       fullUrl: true,
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'files.keepingcurrentmatters.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   rewrites: async () => [
     { source: '/healthz', destination: '/api/health' },
     { source: '/api/healthz', destination: '/api/health' },
