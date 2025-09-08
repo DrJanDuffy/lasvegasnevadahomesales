@@ -81,20 +81,18 @@ export default function LasVegasMarketOverview() {
               homeownership in Summerlin, Henderson, and all of Las Vegas.
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <Button asChild className="bg-white text-blue-900 hover:bg-blue-50 font-semibold px-8 py-3">
+              <Button asChild className="bg-white text-blue-900 hover:bg-blue-50 font-semibold px-8 py-3 shadow-lg">
                 <Link href="/properties">Search Homes</Link>
               </Button>
               <Button
                 asChild
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-3"
+                className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-3 shadow-lg backdrop-blur-sm"
               >
                 <Link href="/home-valuation">Get Home Value</Link>
               </Button>
               <Button
                 asChild
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-3"
+                className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-3 shadow-lg backdrop-blur-sm"
               >
                 <Link href="/strategies">Real Estate Strategies</Link>
               </Button>
