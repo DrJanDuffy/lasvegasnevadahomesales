@@ -14,6 +14,7 @@ import {
   ReviewSchema,
 } from '../../components/SEO/ReviewSchema';
 import { SEOHead } from '../../components/SEO/SEOHead';
+import { LatestBlogPosts } from '../../components/Blog/LatestBlogPosts';
 
 export const metadata: Metadata = {
   title: 'Las Vegas Real Estate Market | Homes for Sale in Las Vegas, NV',
@@ -266,6 +267,26 @@ export default function LasVegasMarketOverview() {
               propertyTypes=""
               priceMin="500000"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Blog Posts Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center mb-12">
+            <h2 className="mb-6 text-3xl font-bold text-[#0A2540] md:text-4xl">
+              Latest Real Estate Insights
+            </h2>
+            <p className="text-lg text-gray-600">
+              Stay informed with the latest market trends, buying tips, and real estate news
+            </p>
+          </div>
+          <LatestBlogPosts limit={3} showFeatured={true} />
+          <div className="text-center mt-8">
+            <Button href="/blog" className="bg-[#0A2540] text-white hover:bg-[#3A8DDE]">
+              View All Articles
+            </Button>
           </div>
         </div>
       </section>

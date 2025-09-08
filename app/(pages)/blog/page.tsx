@@ -8,6 +8,7 @@ import {
   serviceReviews,
 } from '../../../components/SEO/ReviewSchema';
 import { SEOHead } from '../../../components/SEO/SEOHead';
+import { LatestBlogPosts } from '../../../components/Blog/LatestBlogPosts';
 
 // FAQ data for blog
 const blogFAQs = [
@@ -249,49 +250,7 @@ export default function BlogPage() {
           <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
             Latest Articles
           </h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {blogPosts
-              .filter((post) => !post.featured)
-              .map((post) => (
-                <article
-                  key={post.id}
-                  className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105"
-                >
-                  <div className="relative h-48">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-transform group-hover:scale-110"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="rounded-full bg-purple-600 px-3 py-1 text-sm font-semibold text-white">
-                        {post.category}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <div className="mb-3 flex items-center space-x-3 text-sm text-gray-500">
-                      <span>By {post.author}</span>
-                      <span>•</span>
-                      <span>{new Date(post.date).toLocaleDateString()}</span>
-                      <span>•</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                    <h3 className="mb-3 text-xl font-bold text-gray-900 group-hover:text-purple-600">
-                      {post.title}
-                    </h3>
-                    <p className="mb-4 text-gray-600">{post.excerpt}</p>
-                    <Button
-                      href={`/blog/${post.slug}`}
-                      className="text-purple-600 hover:text-purple-700"
-                    >
-                      Read More →
-                    </Button>
-                  </div>
-                </article>
-              ))}
-          </div>
+          <LatestBlogPosts limit={12} />
         </div>
       </section>
 
