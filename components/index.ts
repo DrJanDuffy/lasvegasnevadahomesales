@@ -18,7 +18,6 @@ export { MarketDataWidget } from './MarketData/MarketDataWidget';
 export { Navigation } from './Navigation/Navigation';
 export { OptimizedImage } from './OptimizedImage/OptimizedImage';
 // AI & Analysis
-export { PhotoAnalyzer } from './PhotoAnalysis/PhotoAnalyzer';
 
 // Property Components
 export { FeaturedProperties } from './Properties/FeaturedProperties';
@@ -49,4 +48,3 @@ export { SEOMonitor } from './SEO/SEOMonitor';
 export { StructuredData } from './SEO/StructuredData';
 // Search & Forms
 export { SearchBar } from './Search/SearchBar';
-export { Tooltip } from './Tooltip/Tooltip';
