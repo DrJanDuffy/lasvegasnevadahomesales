@@ -15,6 +15,7 @@ import {
 } from '../../components/SEO/ReviewSchema';
 import { SEOHead } from '../../components/SEO/SEOHead';
 import { LatestBlogPosts } from '../../components/Blog/LatestBlogPosts';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/card';
 
 export const metadata: Metadata = {
   title: 'Las Vegas Real Estate Market | Homes for Sale in Las Vegas, NV',
@@ -142,7 +143,7 @@ export default function LasVegasMarketOverview() {
             Popular Las Vegas Neighborhoods
           </h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
+            <Card className="group overflow-hidden transition-transform hover:scale-105 hover:shadow-xl">
               <div className="relative h-48 overflow-hidden">
                 <OptimizedImage
                   src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
@@ -153,21 +154,24 @@ export default function LasVegasMarketOverview() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-gray-900">Summerlin</h3>
-                <p className="mb-4 text-gray-600">
+              <CardHeader>
+                <CardTitle className="text-xl">Summerlin</CardTitle>
+                <CardDescription>
                   Master-planned community with luxury homes and amenities
-                </p>
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
                 <Button
                   href="http://drjanduffy.realscout.com/onboarding"
-                  className="text-sm"
+                  variant="primary"
+                  size="sm"
                   aria-label="See all Summerlin homes for sale with Las Vegas Nevada Home Sales"
                 >
                   Learn More
                 </Button>
-              </div>
-            </div>
-            <div className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
+              </CardContent>
+            </Card>
+            <Card className="group overflow-hidden transition-transform hover:scale-105 hover:shadow-xl">
               <div className="relative h-48 overflow-hidden">
                 <OptimizedImage
                   src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
@@ -178,17 +182,19 @@ export default function LasVegasMarketOverview() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-gray-900">Henderson</h3>
-                <p className="mb-4 text-gray-600">
+              <CardHeader>
+                <CardTitle className="text-xl">Henderson</CardTitle>
+                <CardDescription>
                   Family-friendly city with excellent schools and parks
-                </p>
-                <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button href="http://drjanduffy.realscout.com/onboarding" variant="primary" size="sm">
                   Learn More
                 </Button>
-              </div>
-            </div>
-            <div className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
+              </CardContent>
+            </Card>
+            <Card className="group overflow-hidden transition-transform hover:scale-105 hover:shadow-xl">
               <div className="relative h-48 overflow-hidden">
                 <OptimizedImage
                   src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
@@ -199,17 +205,20 @@ export default function LasVegasMarketOverview() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-gray-900">Green Valley</h3>
-                <p className="mb-4 text-gray-600">
+              <CardHeader>
+                <CardTitle className="text-xl">Green Valley</CardTitle>
+                <CardDescription>
                   Affordable homes with great community amenities
-                </p>
-                <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button href="http://drjanduffy.realscout.com/onboarding" variant="primary" size="sm">
                   Learn More
                 </Button>
-              </div>
-            </div>
-            <div className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105">
+              </CardContent>
+            </Card>
+            
+            <Card className="group overflow-hidden transition-transform hover:scale-105 hover:shadow-xl">
               <div className="relative h-48 overflow-hidden">
                 <OptimizedImage
                   src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
@@ -220,16 +229,18 @@ export default function LasVegasMarketOverview() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-gray-900">Downtown</h3>
-                <p className="mb-4 text-gray-600">
+              <CardHeader>
+                <CardTitle className="text-xl">Downtown</CardTitle>
+                <CardDescription>
                   Urban living with entertainment and cultural attractions
-                </p>
-                <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button href="http://drjanduffy.realscout.com/onboarding" variant="primary" size="sm">
                   Learn More
                 </Button>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

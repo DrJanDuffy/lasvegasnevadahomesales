@@ -1,0 +1,23 @@
+{
+  "name": "shadcn-mcp-server",
+  "version": "1.0.0",
+  "description": "Optimized MCP server for shadcn/ui component management",
+  "type": "module",
+  "main": "shadcn-mcp-server.js",
+  "scripts": {
+    "start": "node shadcn-mcp-server.js",
+    "dev": "node --watch shadcn-mcp-server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0"
+  },
+  "keywords": [
+    "mcp",
+    "shadcn",
+    "ui",
+    "components",
+    "optimization"
+  ],
+  "author": "Las Vegas Nevada Home Sales",
+  "license": "MIT"
+}

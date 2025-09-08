@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 
 interface BlogPost {
   id: string;
@@ -101,9 +102,9 @@ export function LatestBlogPosts({
     <div className={className}>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
-          <article
+          <Card
             key={post.id}
-            className="group overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105"
+            className="group overflow-hidden transition-transform hover:scale-105 hover:shadow-xl"
           >
             <div className="relative h-48">
               <Image
@@ -119,18 +120,22 @@ export function LatestBlogPosts({
                 </span>
               </div>
             </div>
-            <div className="p-6">
-              <div className="mb-3 flex items-center space-x-3 text-sm text-gray-500">
+            <CardHeader>
+              <div className="flex items-center space-x-3 text-sm text-gray-500">
                 <span>By {post.author}</span>
                 <span>•</span>
                 <span>{new Date(post.date).toLocaleDateString()}</span>
                 <span>•</span>
                 <span>{post.readTime}</span>
               </div>
-              <h3 className="mb-3 text-xl font-bold text-gray-900 group-hover:text-purple-600">
+              <CardTitle className="group-hover:text-purple-600 transition-colors">
                 {post.title}
-              </h3>
-              <p className="mb-4 text-gray-600">{post.excerpt}</p>
+              </CardTitle>
+              <CardDescription>
+                {post.excerpt}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
               <div className="flex space-x-2">
                 <Link
                   href={post.externalUrl}
@@ -147,8 +152,8 @@ export function LatestBlogPosts({
                   View Details
                 </Link>
               </div>
-            </div>
-          </article>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </div>

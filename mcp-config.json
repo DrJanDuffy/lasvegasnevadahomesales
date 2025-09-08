@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "node",
+      "args": ["mcp-servers/shadcn-mcp-server.js"],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "shadcn": {
+    "style": "new-york",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "tailwind": {
+      "config": "tailwind.config.js",
+      "css": "styles/tailwind.css"
+    },
+    "aliases": {
+      "components": "@/components",
+      "utils": "@/lib/utils"
+    },
+    "optimizations": {
+      "performance": true,
+      "accessibility": true,
+      "seo": true,
+      "bundleSize": true
+    }
+  }
+}

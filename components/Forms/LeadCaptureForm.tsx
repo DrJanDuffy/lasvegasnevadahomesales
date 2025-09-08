@@ -1,6 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { Button } from '../Button/Button';
+import { Input } from '../ui/input';
+import { Label } from '../ui/label';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
+import { Form, FormField, FormLabel, FormControl, FormDescription, FormMessage } from '../ui/form';
 
 interface LeadCaptureFormProps {
   title?: string;
@@ -195,158 +200,171 @@ export function LeadCaptureForm({
 
   if (isSubmitted) {
     return (
-      <div
-        className={`bg-green-50 border border-green-200 rounded-lg p-6 text-center ${className}`}
-      >
-        <div className="text-green-600 text-4xl mb-4">✓</div>
-        <h3 className="text-xl font-bold text-green-800 mb-2">Thank You!</h3>
-        <p className="text-green-700">
-          We've received your request. Our team will contact you within 24 hours with your
-          personalized home valuation.
-        </p>
-      </div>
+      <Card className={`bg-green-50 border-green-200 ${className}`}>
+        <CardContent className="p-6 text-center">
+          <div className="text-green-600 text-4xl mb-4">✓</div>
+          <CardTitle className="text-xl text-green-800 mb-2">Thank You!</CardTitle>
+          <CardDescription className="text-green-700">
+            We've received your request. Our team will contact you within 24 hours with your
+            personalized home valuation.
+          </CardDescription>
+        </CardContent>
+      </Card>
     );
   }
 
   return (
-    <div className={`bg-white border border-gray-200 rounded-lg shadow-lg p-6 ${className}`}>
-      <div className="text-center mb-6">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-600">{subtitle}</p>
-      </div>
-
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <Card className={className}>
+      <CardHeader className="text-center">
+        <CardTitle className="text-2xl">{title}</CardTitle>
+        <CardDescription>{subtitle}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+          <FormField>
+            <FormLabel htmlFor="firstName">
               First Name *
-            </label>
-            <input
-              type="text"
-              id="firstName"
-              required
-              value={formData.firstName}
-              onChange={(e) => handleInputChange('firstName', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Your first name"
-            />
-          </div>
-          <div>
-            <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+            </FormLabel>
+            <FormControl>
+              <Input
+                type="text"
+                id="firstName"
+                required
+                value={formData.firstName}
+                onChange={(e) => handleInputChange('firstName', e.target.value)}
+                placeholder="Your first name"
+              />
+            </FormControl>
+          </FormField>
+          <FormField>
+            <FormLabel htmlFor="lastName">
               Last Name *
-            </label>
-            <input
-              type="text"
-              id="lastName"
-              required
-              value={formData.lastName}
-              onChange={(e) => handleInputChange('lastName', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Your last name"
-            />
-          </div>
+            </FormLabel>
+            <FormControl>
+              <Input
+                type="text"
+                id="lastName"
+                required
+                value={formData.lastName}
+                onChange={(e) => handleInputChange('lastName', e.target.value)}
+                placeholder="Your last name"
+              />
+            </FormControl>
+          </FormField>
         </div>
 
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+        <FormField>
+          <FormLabel htmlFor="email">
             Email Address *
-          </label>
-          <input
-            type="email"
-            id="email"
-            required
-            value={formData.email}
-            onChange={(e) => handleInputChange('email', e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            placeholder="your.email@example.com"
-          />
-        </div>
+          </FormLabel>
+          <FormControl>
+            <Input
+              type="email"
+              id="email"
+              required
+              value={formData.email}
+              onChange={(e) => handleInputChange('email', e.target.value)}
+              placeholder="your.email@example.com"
+            />
+          </FormControl>
+        </FormField>
 
         {showPhone && (
-          <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+          <FormField>
+            <FormLabel htmlFor="phone">
               Phone Number
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              value={formData.phone}
-              onChange={(e) => handleInputChange('phone', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="(702) 555-0123"
-            />
-          </div>
+            </FormLabel>
+            <FormControl>
+              <Input
+                type="tel"
+                id="phone"
+                value={formData.phone}
+                onChange={(e) => handleInputChange('phone', e.target.value)}
+                placeholder="(702) 555-0123"
+              />
+            </FormControl>
+          </FormField>
         )}
 
         {showBudget && (
-          <div>
-            <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-1">
+          <FormField>
+            <FormLabel htmlFor="budget">
               Budget Range
-            </label>
-            <select
-              id="budget"
-              value={formData.budget}
-              onChange={(e) => handleInputChange('budget', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option value="">Select budget range</option>
-              <option value="under-300k">Under $300,000</option>
-              <option value="300k-500k">$300,000 - $500,000</option>
-              <option value="500k-750k">$500,000 - $750,000</option>
-              <option value="750k-1m">$750,000 - $1,000,000</option>
-              <option value="over-1m">Over $1,000,000</option>
-            </select>
-          </div>
+            </FormLabel>
+            <FormControl>
+              <select
+                id="budget"
+                value={formData.budget}
+                onChange={(e) => handleInputChange('budget', e.target.value)}
+                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                <option value="">Select budget range</option>
+                <option value="under-300k">Under $300,000</option>
+                <option value="300k-500k">$300,000 - $500,000</option>
+                <option value="500k-750k">$500,000 - $750,000</option>
+                <option value="750k-1m">$750,000 - $1,000,000</option>
+                <option value="over-1m">Over $1,000,000</option>
+              </select>
+            </FormControl>
+          </FormField>
         )}
 
         {showTimeline && (
-          <div>
-            <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-1">
+          <FormField>
+            <FormLabel htmlFor="timeline">
               Timeline
-            </label>
-            <select
-              id="timeline"
-              value={formData.timeline}
-              onChange={(e) => handleInputChange('timeline', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option value="">Select timeline</option>
-              <option value="immediately">Immediately</option>
-              <option value="1-3-months">1-3 months</option>
-              <option value="3-6-months">3-6 months</option>
-              <option value="6-12-months">6-12 months</option>
-              <option value="just-looking">Just looking</option>
-            </select>
-          </div>
+            </FormLabel>
+            <FormControl>
+              <select
+                id="timeline"
+                value={formData.timeline}
+                onChange={(e) => handleInputChange('timeline', e.target.value)}
+                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                <option value="">Select timeline</option>
+                <option value="immediately">Immediately</option>
+                <option value="1-3-months">1-3 months</option>
+                <option value="3-6-months">3-6 months</option>
+                <option value="6-12-months">6-12 months</option>
+                <option value="just-looking">Just looking</option>
+              </select>
+            </FormControl>
+          </FormField>
         )}
 
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+        <FormField>
+          <FormLabel htmlFor="message">
             Additional Information
-          </label>
-          <textarea
-            id="message"
-            rows={3}
-            value={formData.message}
-            onChange={(e) => handleInputChange('message', e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            placeholder="Tell us about your specific needs..."
-          />
-        </div>
+          </FormLabel>
+          <FormControl>
+            <textarea
+              id="message"
+              rows={3}
+              value={formData.message}
+              onChange={(e) => handleInputChange('message', e.target.value)}
+              className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              placeholder="Tell us about your specific needs..."
+            />
+          </FormControl>
+        </FormField>
 
-        <button
+        <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-blue-600 text-white hover:bg-blue-700 disabled:bg-gray-400 py-3 rounded-md font-semibold transition-colors duration-200"
+          variant="primary"
+          size="lg"
+          className="w-full"
         >
           {isSubmitting ? 'Submitting...' : 'Get Free Valuation'}
-        </button>
+        </Button>
 
         <p className="text-xs text-gray-500 text-center">
           By submitting this form, you agree to receive communications from Las Vegas Nevada Home
           Sales. We respect your privacy and will never share your information.
         </p>
-      </form>
-    </div>
+        </Form>
+      </CardContent>
+    </Card>
   );
 }
