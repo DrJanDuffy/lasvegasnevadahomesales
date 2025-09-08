@@ -209,16 +209,9 @@ export default function HomeValuationPage() {
 
           {/* RealScout Home Value Widget */}
           <div className="mb-12">
-            <h3 className="mb-6 text-2xl font-bold text-[#0A2540] text-center">
-              Get Your Instant Home Value Estimate
-            </h3>
-            <p className="mb-8 text-center text-gray-600 max-w-2xl mx-auto">
-              Get a quick estimate of your home's value with our advanced RealScout valuation tool.
-              This instant estimate is based on current market data and recent sales in your area.
-            </p>
             <div className="flex justify-center">
               <div className="w-full max-w-2xl">
-                <RealScoutHomeValue agentEncodedId="QWdlbnQtMjI1MDUw" />
+                <realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>
               </div>
             </div>
           </div>

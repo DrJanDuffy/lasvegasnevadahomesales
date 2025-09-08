@@ -270,6 +270,25 @@ export default function LasVegasMarketOverview() {
         </div>
       </section>
 
+      {/* Home Value Section */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="text-center mb-12">
+            <h2 className="mb-6 text-3xl font-bold text-[#0A2540] md:text-4xl">
+              Get Your Home's Market Value
+            </h2>
+            <p className="text-lg text-gray-600">
+              Enter your address below to receive an instant property valuation and market analysis
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="w-full max-w-2xl">
+              <realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-blue-900 py-16 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center">

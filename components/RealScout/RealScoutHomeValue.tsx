@@ -21,9 +21,8 @@ export function RealScoutHomeValue({
         maxWidth: '100%',
         ...style,
       }}
-      dangerouslySetInnerHTML={{
-        __html: `<realscout-home-value agent-encoded-id="${agentEncodedId}"></realscout-home-value>`,
-      }}
-    />
+    >
+      <realscout-home-value agent-encoded-id={agentEncodedId}></realscout-home-value>
+    </div>
   );
 }

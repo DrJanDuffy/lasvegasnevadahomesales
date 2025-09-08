@@ -37,6 +37,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               width: 100%;
             }
             realscout-home-value {
+              --rs-hvw-background-color: #ffffff;
+              --rs-hvw-title-color: #000000;
+              --rs-hvw-subtitle-color: rgba(28, 30, 38, 0.5);
+              --rs-hvw-primary-button-text-color: #ffffff;
+              --rs-hvw-primary-button-color: rgb(35, 93, 137);
+              --rs-hvw-secondary-button-text-color: rgb(35, 93, 137);
+              --rs-hvw-secondary-button-color: #ffffff;
+              --rs-hvw-widget-width: auto;
               width: 100% !important;
               max-width: 100%;
               display: block;

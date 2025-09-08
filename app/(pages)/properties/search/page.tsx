@@ -488,7 +488,7 @@ export default function AdvancedSearchPage() {
               Contact an Agent
             </Button>
             <Button
-              href="http://drjanduffy.realscout.com/onboarding"
+              href="/home-valuation"
               intent="secondary"
               className="border-white text-white hover:bg-white hover:text-blue-900"
             >
