@@ -15,6 +15,7 @@ import {
   ReviewSchema,
 } from '../../components/SEO/ReviewSchema';
 import { SEOHead } from '../../components/SEO/SEOHead';
+import { HomepageSchema, WebsiteSchema } from '../../components/SEO/PageSchemas';
 import { LatestBlogPosts } from '../../components/Blog/LatestBlogPosts';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/card';
 
@@ -61,6 +62,8 @@ export default function LasVegasMarketOverview() {
       />
       <HowToSchema {...buyHomeHowTo} />
       <LocalBusinessSchema />
+      <HomepageSchema />
+      <WebsiteSchema />
       <AdvancedSEOMonitor
         pageUrl="/"
         pageTitle="Las Vegas Nevada Home Sales – Your Trusted Real Estate Experts"

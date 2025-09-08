@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../../../../components/Button/Button';
 import { SEOHead } from '../../../../components/SEO/SEOHead';
+import { BlogPostSchema } from '../../../../components/SEO/PageSchemas';
 
 interface BlogPost {
   id: string;
@@ -90,6 +91,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         description={post.excerpt}
         keywords={`Las Vegas real estate, ${post.category.toLowerCase()}, real estate news, market insights`}
         canonical={`/blog/${post.slug}`}
+      />
+      <BlogPostSchema
+        title={post.title}
+        description={post.excerpt}
+        author={post.author}
+        datePublished={post.date}
+        dateModified={post.date}
+        image={post.image}
+        url={`https://lasvegasnevadahomesales.com/blog/${post.slug}`}
       />
       
       <div className="min-h-screen bg-white">

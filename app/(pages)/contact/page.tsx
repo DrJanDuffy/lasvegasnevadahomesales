@@ -11,6 +11,7 @@ import {
   ReviewSchema,
 } from '../../../components/SEO/ReviewSchema';
 import { SEOHead } from '../../../components/SEO/SEOHead';
+import { ContactPageSchema } from '../../../components/SEO/PageSchemas';
 
 export const metadata: Metadata = {
   title: 'Contact Las Vegas Real Estate Experts | Get in Touch',
@@ -37,6 +38,7 @@ export default function ContactPage() {
         itemName="Las Vegas Nevada Home Sales Contact"
         itemType="Organization"
       />
+      <ContactPageSchema />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-indigo-600 via-indigo-700 to-indigo-800 text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 text-center lg:py-24">

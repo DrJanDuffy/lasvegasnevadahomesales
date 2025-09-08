@@ -10,6 +10,7 @@ import {
   serviceReviews,
 } from '../../../components/SEO/ReviewSchema';
 import { SEOHead } from '../../../components/SEO/SEOHead';
+import { PropertiesPageSchema } from '../../../components/SEO/PageSchemas';
 
 export const metadata: Metadata = {
   title: 'Las Vegas Homes for Sale | Property Search & Listings',
@@ -121,6 +122,7 @@ export default function PropertiesPage() {
         itemName="Las Vegas Nevada Home Sales Property Search"
         itemType="RealEstateAgent"
       />
+      <PropertiesPageSchema />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 text-center lg:py-24">

@@ -4,6 +4,7 @@ import { OptimizedImage } from '../../../../components/OptimizedImage/OptimizedI
 import { RealScoutSummerlinGallery } from '../../../../components/RealScout/RealScoutSummerlinGallery';
 import { RealScoutSummerlinShowcase } from '../../../../components/RealScout/RealScoutSummerlinShowcase';
 import { SEOHead } from '../../../../components/SEO/SEOHead';
+import { NeighborhoodPageSchema } from '../../../../components/SEO/PageSchemas';
 
 export const metadata: Metadata = {
   title: 'Summerlin Las Vegas Real Estate | Luxury Homes for Sale | Las Vegas Nevada Home Sales',
@@ -44,6 +45,13 @@ export default function SummerlinPage() {
         keywords="Las Vegas Nevada Home Sales, Summerlin homes, Summerlin real estate, luxury homes Las Vegas, Nevada real estate, Summerlin properties"
         canonical="/neighborhoods/summerlin"
         ogImage="/images/og-summerlin.jpg"
+      />
+      <NeighborhoodPageSchema
+        neighborhood="Summerlin"
+        description="Premier master-planned community in Las Vegas with luxury homes, golf courses, top schools, and world-class amenities."
+        averagePrice="$750,000"
+        population="100,000+"
+        medianAge="42"
       />
       {/* Hero Section */}
       <section className="relative overflow-hidden">
