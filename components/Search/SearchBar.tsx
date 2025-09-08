@@ -66,6 +66,7 @@ export function SearchBar({
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-label="Search icon"
               >
                 <path
                   strokeLinecap="round"

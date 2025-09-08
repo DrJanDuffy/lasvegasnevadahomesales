@@ -108,7 +108,16 @@ export function RealScoutImageGallery({
             key={index}
             className="gallery-item"
             onClick={() => openLightbox(image, index)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLightbox(image, index);
+              }
+            }}
+            role="button"
+            tabIndex={0}
             style={{ aspectRatio: '4/3' }}
+            aria-label={`View image ${index + 1}: ${image.alt}`}
           >
             <OptimizedImage
               src={image.src}
@@ -127,9 +136,24 @@ export function RealScoutImageGallery({
 
         {/* Lightbox */}
         {isLightboxOpen && selectedImage && (
-          <div className="lightbox-overlay" onClick={closeLightbox}>
-            <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-              <button className="lightbox-close" onClick={closeLightbox}>
+          <div 
+            className="lightbox-overlay" 
+            onClick={closeLightbox}
+            onKeyDown={(e) => {
+              if (e.key === 'Escape') {
+                closeLightbox();
+              }
+            }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Image lightbox"
+          >
+            <div 
+              className="lightbox-content" 
+              onClick={(e) => e.stopPropagation()}
+              onKeyDown={(e) => e.stopPropagation()}
+            >
+              <button type="button" className="lightbox-close" onClick={closeLightbox} aria-label="Close lightbox">
                 ×
               </button>
 
@@ -144,10 +168,10 @@ export function RealScoutImageGallery({
 
               {images.length > 1 && (
                 <>
-                  <button className="lightbox-nav prev" onClick={goToPrevious}>
+                  <button type="button" className="lightbox-nav prev" onClick={goToPrevious} aria-label="Previous image">
                     ‹
                   </button>
-                  <button className="lightbox-nav next" onClick={goToNext}>
+                  <button type="button" className="lightbox-nav next" onClick={goToNext} aria-label="Next image">
                     ›
                   </button>
                 </>
@@ -187,10 +211,10 @@ export function RealScoutImageGallery({
 
           {images.length > 1 && (
             <>
-              <button className="carousel-nav prev" onClick={goToPrevious}>
+              <button type="button" className="carousel-nav prev" onClick={goToPrevious}>
                 ‹
               </button>
-              <button className="carousel-nav next" onClick={goToNext}>
+              <button type="button" className="carousel-nav next" onClick={goToNext}>
                 ›
               </button>
 
@@ -198,6 +222,7 @@ export function RealScoutImageGallery({
                 {images.map((_, index) => (
                   <button
                     key={index}
+                    type="button"
                     className={`carousel-indicator ${index === currentIndex ? 'active' : ''}`}
                     onClick={() => setCurrentIndex(index)}
                     title={`Go to image ${index + 1}`}
@@ -227,7 +252,16 @@ export function RealScoutImageGallery({
             key={index}
             className="masonry-item"
             onClick={() => openLightbox(image, index)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLightbox(image, index);
+              }
+            }}
+            role="button"
+            tabIndex={0}
             style={{ aspectRatio: Math.random() * 0.5 + 0.75 }} // Random aspect ratios for masonry effect
+            aria-label={`View image ${index + 1}: ${image.alt}`}
           >
             <OptimizedImage
               src={image.src}

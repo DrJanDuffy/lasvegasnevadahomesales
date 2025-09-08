@@ -43,7 +43,9 @@ function makeRequest(url, options = {}) {
 
     const req = client.request(requestOptions, (res) => {
       let data = '';
-      res.on('data', (chunk) => (data += chunk));
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
       res.on('end', () => {
         resolve({
           status: res.statusCode,
@@ -265,7 +267,9 @@ function testEnvironmentConfig() {
 
   if (configIssues.length > 0) {
     console.log('\n⚠️ Environment Configuration Issues:');
-    configIssues.forEach((issue) => console.log(`  - ${issue}`));
+    configIssues.forEach((issue) => {
+      console.log(`  - ${issue}`);
+    });
   } else {
     console.log('✅ All required environment variables are configured');
   }
@@ -306,7 +310,9 @@ function generateReport() {
 
     if (results.issues.length > 0) {
       console.log('  Issues:');
-      results.issues.forEach((issue) => console.log(`    - ${issue}`));
+      results.issues.forEach((issue) => {
+        console.log(`    - ${issue}`);
+      });
     }
   });
 
