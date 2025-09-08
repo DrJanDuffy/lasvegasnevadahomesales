@@ -18,7 +18,7 @@
           "value": "http"
         }
       ],
-      "destination": "https://lasvegasnevadahomesales.com/:path*",
+      "destination": "https://lasvegasnevadahomesales.com/$1",
       "permanent": true
     },
     {
@@ -29,7 +29,7 @@
           "value": "www.lasvegasnevadahomesales.com"
         }
       ],
-      "destination": "https://lasvegasnevadahomesales.com/:path*",
+      "destination": "https://lasvegasnevadahomesales.com/$1",
       "permanent": true
     }
   ],
