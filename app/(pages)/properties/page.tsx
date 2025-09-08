@@ -17,6 +17,31 @@ export const metadata: Metadata = {
     'Search thousands of Las Vegas homes for sale. Filter by price, location, bedrooms, and more. Find your dream home in Las Vegas, Henderson, Summerlin, and surrounding areas.',
   keywords:
     'Las Vegas homes for sale, Las Vegas real estate listings, Las Vegas property search, homes for sale Las Vegas',
+  alternates: {
+    canonical: 'https://lasvegasnevadahomesales.com/properties',
+  },
+  openGraph: {
+    title: 'Las Vegas Homes for Sale | Property Search & Listings',
+    description: 'Search thousands of Las Vegas homes for sale. Filter by price, location, bedrooms, and more.',
+    url: 'https://lasvegasnevadahomesales.com/properties',
+    siteName: 'Las Vegas Nevada Home Sales',
+    images: [
+      {
+        url: 'https://lasvegasnevadahomesales.com/images/og-properties.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Las Vegas Homes for Sale',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Las Vegas Homes for Sale | Property Search & Listings',
+    description: 'Search thousands of Las Vegas homes for sale. Filter by price, location, bedrooms, and more.',
+    images: ['https://lasvegasnevadahomesales.com/images/og-properties.jpg'],
+  },
 };
 
 // Mock property data - in a real app, this would come from an API
