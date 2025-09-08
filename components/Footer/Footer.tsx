@@ -79,6 +79,21 @@ export function Footer({ className = '' }: FooterProps) {
                   Real Estate Strategies
                 </a>
               </li>
+              <li>
+                <a href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="/faq" className="text-gray-300 hover:text-white transition-colors">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href="/testimonials" className="text-gray-300 hover:text-white transition-colors">
+                  Testimonials
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -88,7 +103,7 @@ export function Footer({ className = '' }: FooterProps) {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="http://drjanduffy.realscout.com/onboarding"
+                  href="/neighborhoods/summerlin"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Summerlin
@@ -96,7 +111,7 @@ export function Footer({ className = '' }: FooterProps) {
               </li>
               <li>
                 <a
-                  href="http://drjanduffy.realscout.com/onboarding"
+                  href="/neighborhoods/henderson"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Henderson
@@ -104,7 +119,7 @@ export function Footer({ className = '' }: FooterProps) {
               </li>
               <li>
                 <a
-                  href="http://drjanduffy.realscout.com/onboarding"
+                  href="/neighborhoods/green-valley"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Green Valley
@@ -112,7 +127,7 @@ export function Footer({ className = '' }: FooterProps) {
               </li>
               <li>
                 <a
-                  href="http://drjanduffy.realscout.com/onboarding"
+                  href="/neighborhoods/downtown"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Downtown Las Vegas
@@ -120,7 +135,7 @@ export function Footer({ className = '' }: FooterProps) {
               </li>
               <li>
                 <a
-                  href="http://drjanduffy.realscout.com/onboarding"
+                  href="/neighborhoods"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   View All Areas

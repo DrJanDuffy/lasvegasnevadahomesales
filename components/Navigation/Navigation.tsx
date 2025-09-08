@@ -130,6 +130,8 @@ export function Navigation() {
         },
         { href: '/market-reports', label: 'Market Reports', description: 'Latest market data' },
         { href: '/blog', label: 'Blog', description: 'Real estate insights' },
+        { href: '/faq', label: 'FAQ', description: 'Frequently asked questions' },
+        { href: '/testimonials', label: 'Testimonials', description: 'Client reviews' },
       ],
     },
     {
