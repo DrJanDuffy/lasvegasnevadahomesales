@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Button } from '../../components/Button/Button';
+import Link from 'next/link';
+import { Button } from '../../components/ui/button';
 import { MarketDataWidget } from '../../components/MarketData/MarketDataWidget';
 import { OptimizedImage } from '../../components/OptimizedImage/OptimizedImage';
 import { RealScoutOfficeListings } from '../../components/RealScout/RealScoutOfficeListings';
@@ -80,22 +81,22 @@ export default function LasVegasMarketOverview() {
               homeownership in Summerlin, Henderson, and all of Las Vegas.
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <Button href="/properties" className="bg-white text-blue-900 hover:bg-blue-50">
-                Search Homes
+              <Button asChild className="bg-white text-blue-900 hover:bg-blue-50 font-semibold px-8 py-3">
+                <Link href="/properties">Search Homes</Link>
               </Button>
               <Button
-                href="/home-valuation"
-                variant="secondary"
-                className="border-white text-white hover:bg-white hover:text-blue-900"
+                asChild
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-3"
               >
-                Get Home Value
+                <Link href="/home-valuation">Get Home Value</Link>
               </Button>
               <Button
-                href="/strategies"
-                variant="secondary"
-                className="border-white text-white hover:bg-white hover:text-blue-900"
+                asChild
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-3"
               >
-                Real Estate Strategies
+                <Link href="/strategies">Real Estate Strategies</Link>
               </Button>
             </div>
           </div>
@@ -279,6 +280,61 @@ export default function LasVegasMarketOverview() {
               priceMin="500000"
             />
           </div>
+          <div className="mt-12 text-center">
+            <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
+              <h3 className="mb-4 text-2xl font-bold text-gray-900">
+                Don't See What You're Looking For?
+              </h3>
+              <p className="mb-6 text-gray-600">
+                Our team has access to thousands of Las Vegas properties. Let us help you find 
+                the perfect home that meets your specific criteria and budget.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="bg-[#0A2540] text-white hover:bg-[#3A8DDE]">
+                  <Link href="/properties">Search All Properties</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-[#0A2540] text-[#0A2540] hover:bg-[#0A2540] hover:text-white">
+                  <Link href="/contact">Get Custom Search</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Local SEO Section */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center mb-12">
+            <h2 className="mb-6 text-3xl font-bold text-[#0A2540] md:text-4xl">
+              Why Choose Las Vegas for Your Next Home?
+            </h2>
+            <p className="text-lg text-gray-600">
+              Discover what makes Las Vegas one of the most attractive real estate markets in the country
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="text-center">
+              <div className="mb-4 text-4xl">🏔️</div>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">Red Rock Canyon</h3>
+              <p className="text-gray-600">World-class outdoor recreation and stunning natural beauty</p>
+            </div>
+            <div className="text-center">
+              <div className="mb-4 text-4xl">🎭</div>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">Entertainment Capital</h3>
+              <p className="text-gray-600">World-class shows, dining, and entertainment options</p>
+            </div>
+            <div className="text-center">
+              <div className="mb-4 text-4xl">💰</div>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">No State Income Tax</h3>
+              <p className="text-gray-600">Keep more of your money with Nevada's tax-friendly policies</p>
+            </div>
+            <div className="text-center">
+              <div className="mb-4 text-4xl">✈️</div>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">Easy Access</h3>
+              <p className="text-gray-600">Major airport hub with direct flights to anywhere</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -295,27 +351,54 @@ export default function LasVegasMarketOverview() {
           </div>
           <LatestBlogPosts limit={3} showFeatured={true} />
           <div className="text-center mt-8">
-            <Button href="/blog" className="bg-[#0A2540] text-white hover:bg-[#3A8DDE]">
-              View All Articles
+            <Button asChild className="bg-[#0A2540] text-white hover:bg-[#3A8DDE]">
+              <Link href="/blog">View All Articles</Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* Home Value Section */}
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-4xl px-4">
-          <div className="text-center mb-12">
-            <h2 className="mb-6 text-3xl font-bold text-[#0A2540] md:text-4xl">
-              Get Your Home's Market Value
-            </h2>
-            <p className="text-lg text-gray-600">
-              Enter your address below to receive an instant property valuation and market analysis
-            </p>
-          </div>
-          <div className="flex justify-center">
-            <div className="w-full max-w-2xl">
-              <realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <h2 className="mb-6 text-3xl font-bold text-[#0A2540] md:text-4xl">
+                Get Your Home's Market Value
+              </h2>
+              <p className="mb-6 text-lg text-gray-700">
+                Discover what your Las Vegas home is worth in today's market. Our advanced valuation 
+                tool provides instant, accurate estimates based on recent sales data and market trends.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
+                    <span className="text-green-600">✓</span>
+                  </div>
+                  <span className="text-gray-700">Instant property valuation</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
+                    <span className="text-green-600">✓</span>
+                  </div>
+                  <span className="text-gray-700">Market analysis & trends</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
+                    <span className="text-green-600">✓</span>
+                  </div>
+                  <span className="text-gray-700">No obligation consultation</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h3 className="mb-4 text-xl font-semibold text-gray-900">What's my home worth?</h3>
+              <p className="mb-6 text-gray-600">
+                Get your free, instant home valuation in seconds
+              </p>
+              <div className="w-full">
+                <realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>
+              </div>
             </div>
           </div>
         </div>
@@ -329,15 +412,15 @@ export default function LasVegasMarketOverview() {
             Get expert guidance and access to the latest Las Vegas real estate listings
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button href="/contact" className="bg-white text-blue-900 hover:bg-blue-50">
-              Contact Us
+            <Button asChild className="bg-white text-blue-900 hover:bg-blue-50 font-semibold px-8 py-3">
+              <Link href="/contact">Contact Us</Link>
             </Button>
             <Button
-              href="/market-reports"
-              variant="secondary"
-              className="border-white text-white hover:bg-white hover:text-blue-900"
+              asChild
+              variant="outline"
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-3"
             >
-              View Market Reports
+              <Link href="/market-reports">View Market Reports</Link>
             </Button>
           </div>
         </div>
