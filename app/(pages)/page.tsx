@@ -163,12 +163,12 @@ export default function LasVegasMarketOverview() {
               </CardHeader>
               <CardContent>
                 <Button
-                  href="/neighborhoods/summerlin"
+                  asChild
                   variant="default"
                   size="sm"
                   aria-label="See all Summerlin homes for sale with Las Vegas Nevada Home Sales"
                 >
-                  Learn More
+                  <Link href="/neighborhoods/summerlin">Learn More</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -190,8 +190,8 @@ export default function LasVegasMarketOverview() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button href="/neighborhoods/henderson" variant="default" size="sm">
-                  Learn More
+                <Button asChild variant="default" size="sm">
+                  <Link href="/neighborhoods/henderson">Learn More</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -213,8 +213,8 @@ export default function LasVegasMarketOverview() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button href="/neighborhoods/green-valley" variant="default" size="sm">
-                  Learn More
+                <Button asChild variant="default" size="sm">
+                  <Link href="/neighborhoods/green-valley">Learn More</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -237,8 +237,8 @@ export default function LasVegasMarketOverview() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button href="/neighborhoods/downtown" variant="default" size="sm">
-                  Learn More
+                <Button asChild variant="default" size="sm">
+                  <Link href="/neighborhoods/downtown">Learn More</Link>
                 </Button>
               </CardContent>
             </Card>
