@@ -295,9 +295,12 @@ export function LeadCaptureForm({
             <FormControl>
               <select
                 id="budget"
+                name="budget"
                 value={formData.budget}
                 onChange={(e) => handleInputChange('budget', e.target.value)}
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                aria-label="Budget Range"
+                title="Select your budget range"
               >
                 <option value="">Select budget range</option>
                 <option value="under-300k">Under $300,000</option>
@@ -318,9 +321,12 @@ export function LeadCaptureForm({
             <FormControl>
               <select
                 id="timeline"
+                name="timeline"
                 value={formData.timeline}
                 onChange={(e) => handleInputChange('timeline', e.target.value)}
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                aria-label="Timeline"
+                title="Select your timeline"
               >
                 <option value="">Select timeline</option>
                 <option value="immediately">Immediately</option>
