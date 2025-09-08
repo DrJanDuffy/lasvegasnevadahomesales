@@ -256,7 +256,7 @@ export default function StrategiesPage() {
             </Button>
             <Button
               href="/properties"
-              intent="secondary"
+              variant="secondary"
               className="border-blue-600 text-blue-600 hover:bg-blue-50"
               aria-label="Search Las Vegas Nevada Home Sales properties"
             >

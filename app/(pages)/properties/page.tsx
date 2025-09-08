@@ -344,7 +344,7 @@ export default function PropertiesPage() {
             </Button>
             <Button
               href="/properties/search"
-              intent="secondary"
+              variant="secondary"
               className="border-white text-white hover:bg-white hover:text-blue-900"
             >
               Advanced Search

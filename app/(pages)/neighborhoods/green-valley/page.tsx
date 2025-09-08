@@ -32,7 +32,7 @@ export default function GreenValleyPage() {
               </Button>
               <Button
                 href="/contact"
-                intent="secondary"
+                variant="secondary"
                 className="border-white text-white hover:bg-white hover:text-purple-800"
               >
                 Contact Local Expert
@@ -266,7 +266,7 @@ export default function GreenValleyPage() {
             </Button>
             <Button
               href="/contact"
-              intent="secondary"
+              variant="secondary"
               className="border-white text-white hover:bg-white hover:text-purple-800"
             >
               Get Expert Guidance

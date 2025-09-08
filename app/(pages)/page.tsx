@@ -85,14 +85,14 @@ export default function LasVegasMarketOverview() {
               </Button>
               <Button
                 href="/home-valuation"
-                intent="secondary"
+                variant="secondary"
                 className="border-white text-white hover:bg-white hover:text-blue-900"
               >
                 Get Home Value
               </Button>
               <Button
                 href="/strategies"
-                intent="secondary"
+                variant="secondary"
                 className="border-white text-white hover:bg-white hover:text-blue-900"
               >
                 Real Estate Strategies
@@ -334,7 +334,7 @@ export default function LasVegasMarketOverview() {
             </Button>
             <Button
               href="/market-reports"
-              intent="secondary"
+              variant="secondary"
               className="border-white text-white hover:bg-white hover:text-blue-900"
             >
               View Market Reports

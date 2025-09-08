@@ -62,7 +62,7 @@ export default function SummerlinPage() {
               </Button>
               <Button
                 href="/contact"
-                intent="secondary"
+                variant="secondary"
                 className="border-white text-white hover:bg-white hover:text-green-800"
               >
                 Contact Local Expert
@@ -202,7 +202,7 @@ export default function SummerlinPage() {
               </Button>
               <Button
                 href="/contact"
-                intent="secondary"
+                variant="secondary"
                 className="border-green-600 text-green-600 hover:bg-green-50"
               >
                 Get Property Alerts
@@ -365,7 +365,7 @@ export default function SummerlinPage() {
             </Button>
             <Button
               href="/contact"
-              intent="secondary"
+              variant="secondary"
               className="border-white text-white hover:bg-white hover:text-green-800"
             >
               Get Expert Guidance

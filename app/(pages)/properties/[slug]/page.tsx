@@ -110,7 +110,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
               </Button>
               <Button
                 href="/home-valuation"
-                intent="secondary"
+                variant="secondary"
                 className="border-blue-600 text-blue-600 hover:bg-blue-50"
               >
                 Get Home Value
@@ -334,7 +334,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
             </Button>
             <Button
               href="tel:+17025001981"
-              intent="secondary"
+              variant="secondary"
               className="border-white text-white hover:bg-white hover:text-blue-900"
             >
               Call Now

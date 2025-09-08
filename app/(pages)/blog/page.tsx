@@ -172,7 +172,7 @@ export default function BlogPage() {
               </Button>
               <Button
                 href="/contact"
-                intent="secondary"
+                variant="secondary"
                 className="border-white text-white hover:bg-white hover:text-purple-900"
               >
                 Subscribe to Updates
@@ -340,7 +340,7 @@ export default function BlogPage() {
             </Button>
             <Button
               href="/properties"
-              intent="secondary"
+              variant="secondary"
               className="border-purple-600 text-purple-600 hover:bg-purple-50"
             >
               Browse Properties

@@ -218,7 +218,7 @@ export function RealScoutSummerlinShowcase({
                 </Button>
                 <Button
                   href="/contact"
-                  intent="secondary"
+                  variant="secondary"
                   className="border-green-600 text-green-600 hover:bg-green-50"
                 >
                   Contact Agent

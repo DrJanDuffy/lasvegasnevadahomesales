@@ -388,7 +388,7 @@ export default function AdvancedSearchPage() {
                 </button>
                 <Button
                   href="/properties"
-                  intent="secondary"
+                  variant="secondary"
                   className="border-blue-600 text-blue-600 hover:bg-blue-50"
                 >
                   Basic Search
@@ -489,7 +489,7 @@ export default function AdvancedSearchPage() {
             </Button>
             <Button
               href="/home-valuation"
-              intent="secondary"
+              variant="secondary"
               className="border-white text-white hover:bg-white hover:text-blue-900"
             >
               Get Home Value

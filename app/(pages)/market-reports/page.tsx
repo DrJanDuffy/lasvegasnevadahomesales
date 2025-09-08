@@ -128,7 +128,7 @@ export default function MarketReportsPage() {
               </Button>
               <Button
                 href="/contact"
-                intent="secondary"
+                variant="secondary"
                 className="border-white text-white hover:bg-white hover:text-green-900"
               >
                 Get Custom Report
@@ -331,7 +331,7 @@ export default function MarketReportsPage() {
             </Button>
             <Button
               href="/properties"
-              intent="secondary"
+              variant="secondary"
               className="border-green-600 text-green-600 hover:bg-green-50"
             >
               Browse Properties

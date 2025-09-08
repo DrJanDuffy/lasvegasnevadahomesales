@@ -32,7 +32,7 @@ export default function HendersonPage() {
               </Button>
               <Button
                 href="/contact"
-                intent="secondary"
+                variant="secondary"
                 className="border-white text-white hover:bg-white hover:text-blue-800"
               >
                 Contact Local Expert
@@ -338,7 +338,7 @@ export default function HendersonPage() {
             </Button>
             <Button
               href="/contact"
-              intent="secondary"
+              variant="secondary"
               className="border-white text-white hover:bg-white hover:text-blue-800"
             >
               Get Expert Guidance

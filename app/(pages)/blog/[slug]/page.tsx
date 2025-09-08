@@ -154,7 +154,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </a>
                 <Button
                   href="/blog"
-                  intent="secondary"
+                  variant="secondary"
                   className="border-gray-300 text-gray-700 hover:bg-gray-50"
                 >
                   Back to Blog
@@ -177,7 +177,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <Button href="/blog" className="bg-[#0A2540] text-white hover:bg-[#3A8DDE]">
                 View All Articles
               </Button>
-              <Button href="/contact" intent="secondary" className="border-[#0A2540] text-[#0A2540] hover:bg-[#0A2540] hover:text-white">
+              <Button href="/contact" variant="secondary" className="border-[#0A2540] text-[#0A2540] hover:bg-[#0A2540] hover:text-white">
                 Contact Us
               </Button>
             </div>

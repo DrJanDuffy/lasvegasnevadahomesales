@@ -163,7 +163,7 @@ export default function FAQPage() {
               </Button>
               <Button
                 href="/contact"
-                intent="secondary"
+                variant="secondary"
                 className="border-white text-white hover:bg-white hover:text-indigo-900"
               >
                 Ask Your Question
@@ -278,7 +278,7 @@ export default function FAQPage() {
             </Button>
             <Button
               href="/home-valuation"
-              intent="secondary"
+              variant="secondary"
               className="border-indigo-600 text-indigo-600 hover:bg-indigo-50"
             >
               Get Home Valuation

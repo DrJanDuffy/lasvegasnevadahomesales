@@ -187,7 +187,7 @@ export default function TestimonialsPage() {
               </Button>
               <Button
                 href="/contact"
-                intent="secondary"
+                variant="secondary"
                 className="border-white text-white hover:bg-white hover:text-yellow-900"
               >
                 Share Your Story
@@ -334,7 +334,7 @@ export default function TestimonialsPage() {
             </Button>
             <Button
               href="/properties"
-              intent="secondary"
+              variant="secondary"
               className="border-white text-white hover:bg-white hover:text-yellow-900"
             >
               Browse Properties
