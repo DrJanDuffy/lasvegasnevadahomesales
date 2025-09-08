@@ -125,7 +125,7 @@ const comprehensiveFAQs = [
 
 export default function FAQPage() {
   const generalQuestionsId = useId();
-  
+
   return (
     <>
       <SEOHead

@@ -1,5 +1,5 @@
-import { useId } from 'react';
 import Image from 'next/image';
+import { useId } from 'react';
 import { Button } from '../../../components/Button/Button';
 import { FAQSchema } from '../../../components/SEO/FAQSchema';
 import {
@@ -133,7 +133,7 @@ const categories = [
 
 export default function BlogPage() {
   const featuredPostsId = useId();
-  
+
   return (
     <>
       <SEOHead
@@ -193,12 +193,7 @@ export default function BlogPage() {
               <div key={post.id} className="mx-auto max-w-4xl">
                 <div className="overflow-hidden rounded-lg bg-white shadow-lg">
                   <div className="relative h-64 md:h-96">
-                    <Image 
-                      src={post.image} 
-                      alt={post.title} 
-                      fill
-                      className="object-cover" 
-                    />
+                    <Image src={post.image} alt={post.title} fill className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div className="absolute bottom-4 left-4 text-white">
                       <span className="rounded-full bg-purple-600 px-3 py-1 text-sm font-semibold">

@@ -136,8 +136,8 @@ export function RealScoutImageGallery({
 
         {/* Lightbox */}
         {isLightboxOpen && selectedImage && (
-          <div 
-            className="lightbox-overlay" 
+          <div
+            className="lightbox-overlay"
             onClick={closeLightbox}
             onKeyDown={(e) => {
               if (e.key === 'Escape') {
@@ -148,12 +148,17 @@ export function RealScoutImageGallery({
             aria-modal="true"
             aria-label="Image lightbox"
           >
-            <div 
-              className="lightbox-content" 
+            <div
+              className="lightbox-content"
               onClick={(e) => e.stopPropagation()}
               onKeyDown={(e) => e.stopPropagation()}
             >
-              <button type="button" className="lightbox-close" onClick={closeLightbox} aria-label="Close lightbox">
+              <button
+                type="button"
+                className="lightbox-close"
+                onClick={closeLightbox}
+                aria-label="Close lightbox"
+              >
                 ×
               </button>
 
@@ -168,10 +173,20 @@ export function RealScoutImageGallery({
 
               {images.length > 1 && (
                 <>
-                  <button type="button" className="lightbox-nav prev" onClick={goToPrevious} aria-label="Previous image">
+                  <button
+                    type="button"
+                    className="lightbox-nav prev"
+                    onClick={goToPrevious}
+                    aria-label="Previous image"
+                  >
                     ‹
                   </button>
-                  <button type="button" className="lightbox-nav next" onClick={goToNext} aria-label="Next image">
+                  <button
+                    type="button"
+                    className="lightbox-nav next"
+                    onClick={goToNext}
+                    aria-label="Next image"
+                  >
                     ›
                   </button>
                 </>
