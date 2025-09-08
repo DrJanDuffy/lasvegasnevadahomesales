@@ -160,7 +160,7 @@ function sitemapToXml(sitemap: MetadataRoute.Sitemap): string {
     return `
   <url>
     <loc>${item.url}</loc>
-    <lastmod>${item.lastModified?.toISOString()}</lastmod>
+    <lastmod>${item.lastModified instanceof Date ? item.lastModified.toISOString() : item.lastModified}</lastmod>
     <changefreq>${item.changeFrequency}</changefreq>
     <priority>${item.priority}</priority>
   </url>`
