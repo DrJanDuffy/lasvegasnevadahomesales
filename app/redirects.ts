@@ -5,7 +5,9 @@ export function handleRedirects(pathname: string) {
   // Remove UTM parameters and redirect to clean URL
   if (pathname.includes('?utm_')) {
     const cleanPath = pathname.split('?')[0]
-    redirect(cleanPath)
+    if (cleanPath) {
+      redirect(cleanPath)
+    }
   }
   
   // Handle /home redirects
