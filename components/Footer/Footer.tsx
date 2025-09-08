@@ -22,10 +22,10 @@ export function Footer({ className = '' }: FooterProps) {
             </p>
             <div className="flex space-x-4">
               <a
-                href="tel:+17022221964"
+                href="tel:+17025001981"
                 className="text-blue-400 hover:text-blue-300 transition-colors"
-                aria-label="Call us at 702-222-1964"
-                title="Call us at 702-222-1964"
+                aria-label="Call us at (702) 500-1981"
+                title="Call us at (702) 500-1981"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -173,8 +173,8 @@ export function Footer({ className = '' }: FooterProps) {
               <div className="pt-4">
                 <p className="text-gray-300 text-sm">
                   📞{' '}
-                  <a href="tel:+17022221964" className="text-blue-400 hover:text-blue-300">
-                    702-222-1964
+                  <a href="tel:+17025001981" className="text-blue-400 hover:text-blue-300">
+                    (702) 500-1981
                   </a>
                 </p>
                 <p className="text-gray-300 text-sm">
@@ -203,7 +203,7 @@ export function Footer({ className = '' }: FooterProps) {
                 Dr. Jan Duffy, Licensed Realtor #S.0197614 | Las Vegas Valley Specialist
               </p>
               <p className="mb-4">
-                Call/Text: <a href="tel:+17022221964" className="text-blue-400 hover:text-blue-300 font-semibold">702-222-1964</a> | 
+                Call/Text: <a href="tel:+17025001981" className="text-blue-400 hover:text-blue-300 font-semibold">(702) 500-1981</a> | 
                 Serving Henderson, Summerlin, Spring Valley & All Las Vegas Communities
               </p>
             </div>
