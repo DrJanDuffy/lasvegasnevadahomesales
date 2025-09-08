@@ -124,7 +124,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
       <section className="bg-gray-50 py-8">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {property.images.map((image, index) => (
+            {property.images.map((_image, index) => (
               <div
                 key={index}
                 className="aspect-video rounded-lg bg-gradient-to-br from-gray-300 to-gray-400"

@@ -1,8 +1,8 @@
 // Functionality Test Script for Las Vegas Nevada Home Sales
 // This script tests the key functionality of your real estate website
 
-const https = require('https');
-const http = require('http');
+const https = require('node:https');
+const http = require('node:http');
 
 console.log('🔍 Testing Las Vegas Nevada Home Sales Website Functionality\n');
 
@@ -286,7 +286,7 @@ function generateReport() {
     (sum, category) => sum + category.passed,
     0
   );
-  const totalFailed = Object.values(testResults).reduce(
+  const _totalFailed = Object.values(testResults).reduce(
     (sum, category) => sum + category.failed,
     0
   );

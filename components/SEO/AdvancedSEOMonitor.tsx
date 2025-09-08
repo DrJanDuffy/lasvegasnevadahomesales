@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 // Type declarations for Performance API
 interface LayoutShift extends PerformanceEntry {
@@ -52,7 +52,7 @@ export default function AdvancedSEOMonitor({
       const lcpObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         const lastEntry = entries[entries.length - 1];
-        if (lastEntry && lastEntry.startTime) {
+        if (lastEntry?.startTime) {
           if (debug) {
             console.log(`LCP: ${lastEntry.startTime.toFixed(2)}ms`);
           }
@@ -238,7 +238,7 @@ export default function AdvancedSEOMonitor({
       if (behaviorCleanup) behaviorCleanup();
       if (conversionCleanup) conversionCleanup();
     };
-  }, [pageUrl, pageTitle, debug, trackUserBehavior, trackConversions]);
+  }, [pageUrl, pageTitle, debug]);
 
   return null;
 }

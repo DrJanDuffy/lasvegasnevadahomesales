@@ -107,7 +107,7 @@ export function RealScoutSummerlinShowcase({
   return (
     <div className={`real-scout-summerlin-showcase ${className}`}>
       <div className="grid gap-8 lg:grid-cols-2">
-        {summerlinProperties.map((property, index) => (
+        {summerlinProperties.map((property, _index) => (
           <div key={property.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
             {/* Property Image */}
             <div className="relative">

@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
-
 interface LocalBusinessSchemaProps {
   name?: string;
   description?: string;

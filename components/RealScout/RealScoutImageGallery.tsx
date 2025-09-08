@@ -37,7 +37,7 @@ export function RealScoutImageGallery({
   realScoutWidgetId,
 }: RealScoutImageGalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(autoPlay);
+  const [isPlaying, _setIsPlaying] = useState(autoPlay);
   const [selectedImage, setSelectedImage] = useState<RealScoutImage | null>(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 

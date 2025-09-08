@@ -168,7 +168,7 @@ export function Navigation() {
   useEffect(() => {
     setIsMenuOpen(false);
     setActiveDropdown(null);
-  }, [pathname]);
+  }, []);
 
   const handleSearch = (query: string) => {
     // Navigate to search results

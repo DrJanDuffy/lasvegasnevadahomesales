@@ -21,7 +21,7 @@ export function ConversionTracker({ pageType }: ConversionTrackerProps) {
     }
 
     // Track CTA button clicks
-    const trackCTAClick = (ctaType: string, location: string, value?: number) => {
+    const _trackCTAClick = (ctaType: string, location: string, value?: number) => {
       if (typeof gtag !== 'undefined') {
         gtag('event', 'cta_click', {
           event_category: 'conversion',
@@ -33,7 +33,7 @@ export function ConversionTracker({ pageType }: ConversionTrackerProps) {
     };
 
     // Track phone number clicks
-    const trackPhoneClick = () => {
+    const _trackPhoneClick = () => {
       if (typeof gtag !== 'undefined') {
         gtag('event', 'phone_click', {
           event_category: 'contact',
@@ -44,7 +44,7 @@ export function ConversionTracker({ pageType }: ConversionTrackerProps) {
     };
 
     // Track form submissions
-    const trackFormSubmission = (formType: string) => {
+    const _trackFormSubmission = (formType: string) => {
       if (typeof gtag !== 'undefined') {
         gtag('event', 'form_submit', {
           event_category: 'conversion',

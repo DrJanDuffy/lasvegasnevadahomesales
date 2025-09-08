@@ -176,7 +176,16 @@ export function GoogleMaps({
         script.remove();
       }
     };
-  }, [apiKey, center, zoom, showNeighborhoods, showListings]);
+  }, [
+    apiKey,
+    center,
+    zoom,
+    showNeighborhoods,
+    showListings,
+    addNeighborhoodBoundaries,
+    addPropertyMarkers, // Add search box
+    addSearchBox,
+  ]);
 
   const getCustomMapStyles = () => {
     return [

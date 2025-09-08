@@ -14,7 +14,7 @@ class FollowUpBossService {
     this.baseUrl = crmConfig.followUpBoss.baseUrl;
     this.headers = {
       'Content-Type': 'application/json',
-      Authorization: `Basic ${Buffer.from(crmConfig.followUpBoss.apiKey + ':').toString('base64')}`,
+      Authorization: `Basic ${Buffer.from(`${crmConfig.followUpBoss.apiKey}:`).toString('base64')}`,
     };
   }
 
@@ -230,7 +230,7 @@ class FollowUpBossService {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     const iso = tomorrow.toISOString();
-    return (iso && iso.split('T')[0]) || '';
+    return iso?.split('T')[0] || '';
   }
 }
 

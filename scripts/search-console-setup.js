@@ -7,8 +7,8 @@
  * for the Las Vegas Nevada Home Sales website.
  */
 
-const fs = require('fs');
-const path = require('path');
+const _fs = require('node:fs');
+const _path = require('node:path');
 
 console.log('🔍 Google Search Console Setup Helper');
 console.log('=====================================\n');
@@ -46,7 +46,7 @@ const setupChecklist = [
     instructions: [
       'Go to Google Search Console',
       'Click "Add Property"',
-      'Enter: ' + config.domain,
+      `Enter: ${config.domain}`,
       'Choose "Domain" property type',
       'Follow verification instructions',
     ],

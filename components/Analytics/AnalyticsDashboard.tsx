@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { analyticsConfig, analyticsHelpers } from '../../config/analytics-config';
 
 // Extend Window interface for Vercel Analytics
 declare global {

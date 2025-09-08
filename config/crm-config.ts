@@ -12,7 +12,7 @@ export const crmConfig = {
     },
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Basic ${Buffer.from((process.env.FOLLOW_UP_BOSS_API_KEY || '') + ':').toString('base64')}`,
+      Authorization: `Basic ${Buffer.from(`${process.env.FOLLOW_UP_BOSS_API_KEY || ''}:`).toString('base64')}`,
     },
   },
 

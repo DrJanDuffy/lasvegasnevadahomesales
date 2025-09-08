@@ -141,7 +141,7 @@ export function GoogleAnalytics({
       const timeInterval = setInterval(trackTimeOnPage, 30000);
 
       // Track form interactions
-      const trackFormInteraction = (formId: string, action: string): void => {
+      const _trackFormInteraction = (formId: string, action: string): void => {
         gtag('event', 'form_interaction', {
           form_id: formId,
           form_action: action,
@@ -150,7 +150,7 @@ export function GoogleAnalytics({
       };
 
       // Track CTA clicks
-      const trackCTAClick = (ctaType: string, location: string, value?: number) => {
+      const _trackCTAClick = (ctaType: string, location: string, value?: number) => {
         gtag('event', 'cta_click', {
           cta_type: ctaType,
           cta_location: location,

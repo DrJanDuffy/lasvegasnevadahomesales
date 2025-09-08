@@ -3,7 +3,6 @@ import { Button } from '../../../../components/Button/Button';
 import { OptimizedImage } from '../../../../components/OptimizedImage/OptimizedImage';
 import { RealScoutSummerlinGallery } from '../../../../components/RealScout/RealScoutSummerlinGallery';
 import { RealScoutSummerlinShowcase } from '../../../../components/RealScout/RealScoutSummerlinShowcase';
-import { RealScoutYourListings } from '../../../../components/RealScout/RealScoutYourListings';
 import { SEOHead } from '../../../../components/SEO/SEOHead';
 
 export const metadata: Metadata = {
