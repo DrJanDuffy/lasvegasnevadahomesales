@@ -1,12 +1,14 @@
-import { Metadata } from 'next'
-import { SEOHead } from '../../../components/SEO/SEOHead'
-import { OptimizedImage } from '../../../components/OptimizedImage/OptimizedImage'
+import type { Metadata } from 'next';
+import { OptimizedImage } from '../../../components/OptimizedImage/OptimizedImage';
+import { SEOHead } from '../../../components/SEO/SEOHead';
 
 export const metadata: Metadata = {
   title: 'Las Vegas Real Estate Market Intelligence | Current Trends & Forecasts',
-  description: 'Stay informed with the latest Las Vegas real estate market trends, home price forecasts, mortgage rate projections, and expert insights for 2025.',
-  keywords: 'Las Vegas real estate market, home price forecasts, mortgage rates, market trends, housing market 2025, Las Vegas property values',
-}
+  description:
+    'Stay informed with the latest Las Vegas real estate market trends, home price forecasts, mortgage rate projections, and expert insights for 2025.',
+  keywords:
+    'Las Vegas real estate market, home price forecasts, mortgage rates, market trends, housing market 2025, Las Vegas property values',
+};
 
 export default function MarketIntelligencePage() {
   return (
@@ -27,13 +29,20 @@ export default function MarketIntelligencePage() {
               Las Vegas Market Intelligence
             </h1>
             <p className="mb-8 text-xl font-light text-blue-100 md:text-2xl">
-              Expert insights, real-time data, and market forecasts to guide your real estate decisions in Las Vegas
+              Expert insights, real-time data, and market forecasts to guide your real estate
+              decisions in Las Vegas
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <a href="#market-overview" className="bg-white text-blue-900 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors">
+              <a
+                href="#market-overview"
+                className="bg-white text-blue-900 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors"
+              >
                 View Market Overview
               </a>
-              <a href="#forecasts" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors">
+              <a
+                href="#forecasts"
+                className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors"
+              >
                 See Forecasts
               </a>
             </div>
@@ -47,7 +56,7 @@ export default function MarketIntelligencePage() {
           <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
             Current Market Overview
           </h2>
-          
+
           {/* Market Stats Grid */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 mb-16">
             <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6 text-center">
@@ -55,19 +64,19 @@ export default function MarketIntelligencePage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Price Growth</h3>
               <p className="text-sm text-gray-600">Expected national growth in 2025</p>
             </div>
-            
+
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">6.5%</div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Mortgage Rates</h3>
               <p className="text-sm text-gray-600">Projected average by year-end</p>
             </div>
-            
+
             <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 text-center">
               <div className="text-3xl font-bold text-purple-600 mb-2">0.13%</div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Foreclosure Rate</h3>
               <p className="text-sm text-gray-600">Only 1 in 758 homes affected</p>
             </div>
-            
+
             <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6 text-center">
               <div className="text-3xl font-bold text-orange-600 mb-2">55%</div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Price Increase</h3>
@@ -90,7 +99,9 @@ export default function MarketIntelligencePage() {
               </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Market Stability</h3>
-                <p className="text-gray-600">Strong fundamentals support continued growth in Las Vegas real estate market</p>
+                <p className="text-gray-600">
+                  Strong fundamentals support continued growth in Las Vegas real estate market
+                </p>
               </div>
             </div>
 
@@ -107,7 +118,9 @@ export default function MarketIntelligencePage() {
               </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Inventory Trends</h3>
-                <p className="text-gray-600">Balanced supply and demand creating healthy market conditions</p>
+                <p className="text-gray-600">
+                  Balanced supply and demand creating healthy market conditions
+                </p>
               </div>
             </div>
 
@@ -124,7 +137,9 @@ export default function MarketIntelligencePage() {
               </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Investment Outlook</h3>
-                <p className="text-gray-600">Favorable conditions for both buyers and sellers in Las Vegas</p>
+                <p className="text-gray-600">
+                  Favorable conditions for both buyers and sellers in Las Vegas
+                </p>
               </div>
             </div>
           </div>
@@ -142,7 +157,7 @@ export default function MarketIntelligencePage() {
             {/* Home Price Forecasts */}
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h3 className="mb-6 text-2xl font-bold text-gray-900">Home Price Forecasts</h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg">
                   <div>
@@ -171,7 +186,8 @@ export default function MarketIntelligencePage() {
 
               <div className="mt-6 p-4 bg-yellow-50 rounded-lg">
                 <p className="text-sm text-gray-700">
-                  <strong>Key Insight:</strong> No major national decline or crash predicted. Experts expect steady, sustainable growth.
+                  <strong>Key Insight:</strong> No major national decline or crash predicted.
+                  Experts expect steady, sustainable growth.
                 </p>
               </div>
             </div>
@@ -179,7 +195,7 @@ export default function MarketIntelligencePage() {
             {/* Mortgage Rate Forecasts */}
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h3 className="mb-6 text-2xl font-bold text-gray-900">Mortgage Rate Projections</h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-center justify-between p-4 bg-orange-50 rounded-lg">
                   <div>
@@ -208,7 +224,8 @@ export default function MarketIntelligencePage() {
 
               <div className="mt-6 p-4 bg-blue-50 rounded-lg">
                 <p className="text-sm text-gray-700">
-                  <strong>Expert Advice:</strong> Don't wait for rates to drop significantly. Focus on your personal situation and market timing.
+                  <strong>Expert Advice:</strong> Don't wait for rates to drop significantly. Focus
+                  on your personal situation and market timing.
                 </p>
               </div>
             </div>
@@ -283,10 +300,11 @@ export default function MarketIntelligencePage() {
               <div className="mb-4 text-4xl">🏠</div>
               <h3 className="mb-2 text-lg font-semibold text-gray-900">Strong Fundamentals</h3>
               <p className="text-sm text-gray-600">
-                Las Vegas continues to attract buyers with its lifestyle, affordability, and growth potential
+                Las Vegas continues to attract buyers with its lifestyle, affordability, and growth
+                potential
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="mb-4 text-4xl">📈</div>
               <h3 className="mb-2 text-lg font-semibold text-gray-900">Growth Potential</h3>
@@ -294,7 +312,7 @@ export default function MarketIntelligencePage() {
                 Market positioned for steady appreciation with strong economic drivers
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="mb-4 text-4xl">🎯</div>
               <h3 className="mb-2 text-lg font-semibold text-gray-900">Investment Opportunity</h3>
@@ -327,22 +345,27 @@ export default function MarketIntelligencePage() {
       {/* CTA Section */}
       <section className="bg-blue-900 py-16 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-            Ready to Navigate the Market?
-          </h2>
+          <h2 className="mb-6 text-3xl font-bold md:text-4xl">Ready to Navigate the Market?</h2>
           <p className="mb-8 text-xl text-blue-100">
-            Get personalized market insights and expert guidance for your Las Vegas real estate journey.
+            Get personalized market insights and expert guidance for your Las Vegas real estate
+            journey.
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <a href="/contact" className="bg-white text-blue-900 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors">
+            <a
+              href="/contact"
+              className="bg-white text-blue-900 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
               Get Market Analysis
             </a>
-            <a href="/home-valuation" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors">
+            <a
+              href="/home-valuation"
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
               Home Value Check
             </a>
           </div>
         </div>
       </section>
     </>
-  )
-} 
+  );
+}

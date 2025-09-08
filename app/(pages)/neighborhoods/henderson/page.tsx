@@ -1,12 +1,14 @@
-import { Metadata } from "next"
-import { Button } from "../../../../components/Button/Button"
-import { RealScoutYourListings } from "../../../../components/RealScout/RealScoutYourListings"
+import type { Metadata } from 'next';
+import { Button } from '../../../../components/Button/Button';
+import { RealScoutYourListings } from '../../../../components/RealScout/RealScoutYourListings';
 
 export const metadata: Metadata = {
-  title: "Henderson Las Vegas | Family-Friendly Homes & Community",
-  description: "Discover Henderson, Las Vegas' family-friendly city with excellent schools, parks, and affordable housing. Find your perfect home in this growing Las Vegas suburb.",
-  keywords: "Henderson Las Vegas, Henderson homes, Henderson real estate, Henderson schools, Henderson parks",
-}
+  title: 'Henderson Las Vegas | Family-Friendly Homes & Community',
+  description:
+    "Discover Henderson, Las Vegas' family-friendly city with excellent schools, parks, and affordable housing. Find your perfect home in this growing Las Vegas suburb.",
+  keywords:
+    'Henderson Las Vegas, Henderson homes, Henderson real estate, Henderson schools, Henderson parks',
+};
 
 export default function HendersonPage() {
   return (
@@ -22,10 +24,17 @@ export default function HendersonPage() {
               Las Vegas' Premier Family-Friendly City
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <Button href="/properties?neighborhood=henderson" className="bg-white text-blue-800 hover:bg-blue-50">
+              <Button
+                href="/properties?neighborhood=henderson"
+                className="bg-white text-blue-800 hover:bg-blue-50"
+              >
                 View Henderson Homes
               </Button>
-              <Button href="/contact" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-800">
+              <Button
+                href="/contact"
+                intent="secondary"
+                className="border-white text-white hover:bg-white hover:text-blue-800"
+              >
                 Contact Local Expert
               </Button>
             </div>
@@ -62,17 +71,17 @@ export default function HendersonPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
-                About Henderson
-              </h2>
+              <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">About Henderson</h2>
               <p className="mb-6 text-lg text-gray-600">
-                Henderson is Nevada's second-largest city and one of the fastest-growing communities in the Las Vegas Valley. 
-                Known for its family-friendly atmosphere, excellent schools, and abundant parks and recreation opportunities, 
-                Henderson offers a suburban lifestyle with easy access to all that Las Vegas has to offer.
+                Henderson is Nevada's second-largest city and one of the fastest-growing communities
+                in the Las Vegas Valley. Known for its family-friendly atmosphere, excellent
+                schools, and abundant parks and recreation opportunities, Henderson offers a
+                suburban lifestyle with easy access to all that Las Vegas has to offer.
               </p>
               <p className="mb-6 text-lg text-gray-600">
-                The city consistently ranks as one of the safest cities in America and has been recognized for its quality 
-                of life, making it an ideal place for families, professionals, and retirees alike.
+                The city consistently ranks as one of the safest cities in America and has been
+                recognized for its quality of life, making it an ideal place for families,
+                professionals, and retirees alike.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -108,32 +117,46 @@ export default function HendersonPage() {
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-blue-600">🎓</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Top-Rated Schools</h3>
-              <p className="text-gray-600">Clark County School District with A+ rated schools and excellent academic programs</p>
+              <p className="text-gray-600">
+                Clark County School District with A+ rated schools and excellent academic programs
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-green-600">🌳</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Parks & Recreation</h3>
-              <p className="text-gray-600">70+ parks, trails, and recreation centers including the Henderson Bird Viewing Preserve</p>
+              <p className="text-gray-600">
+                70+ parks, trails, and recreation centers including the Henderson Bird Viewing
+                Preserve
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-purple-600">🛍️</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Shopping & Dining</h3>
-              <p className="text-gray-600">The District at Green Valley Ranch, Galleria at Sunset, and numerous local restaurants</p>
+              <p className="text-gray-600">
+                The District at Green Valley Ranch, Galleria at Sunset, and numerous local
+                restaurants
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-orange-600">🏥</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Healthcare</h3>
-              <p className="text-gray-600">St. Rose Dominican Hospitals and numerous medical facilities throughout the city</p>
+              <p className="text-gray-600">
+                St. Rose Dominican Hospitals and numerous medical facilities throughout the city
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-red-600">🎭</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Entertainment</h3>
-              <p className="text-gray-600">Green Valley Ranch Resort, Henderson Pavilion, and cultural events year-round</p>
+              <p className="text-gray-600">
+                Green Valley Ranch Resort, Henderson Pavilion, and cultural events year-round
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-indigo-600">🚗</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Transportation</h3>
-              <p className="text-gray-600">Easy access to I-215, I-515, and convenient public transportation options</p>
+              <p className="text-gray-600">
+                Easy access to I-215, I-515, and convenient public transportation options
+              </p>
             </div>
           </div>
         </div>
@@ -218,7 +241,10 @@ export default function HendersonPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-3 text-xl font-bold text-gray-900">Green Valley</h3>
-              <p className="mb-4 text-gray-600">Established neighborhood with mature trees, excellent schools, and convenient shopping</p>
+              <p className="mb-4 text-gray-600">
+                Established neighborhood with mature trees, excellent schools, and convenient
+                shopping
+              </p>
               <div className="text-sm text-gray-500">
                 <p>Median Price: $380,000</p>
                 <p>Avg. Days on Market: 25</p>
@@ -226,7 +252,9 @@ export default function HendersonPage() {
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-3 text-xl font-bold text-gray-900">Anthem</h3>
-              <p className="mb-4 text-gray-600">Master-planned community with golf courses, parks, and luxury homes</p>
+              <p className="mb-4 text-gray-600">
+                Master-planned community with golf courses, parks, and luxury homes
+              </p>
               <div className="text-sm text-gray-500">
                 <p>Median Price: $650,000</p>
                 <p>Avg. Days on Market: 30</p>
@@ -234,7 +262,9 @@ export default function HendersonPage() {
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-3 text-xl font-bold text-gray-900">Seven Hills</h3>
-              <p className="mb-4 text-gray-600">Upscale community with mountain views, custom homes, and exclusive amenities</p>
+              <p className="mb-4 text-gray-600">
+                Upscale community with mountain views, custom homes, and exclusive amenities
+              </p>
               <div className="text-sm text-gray-500">
                 <p>Median Price: $750,000</p>
                 <p>Avg. Days on Market: 35</p>
@@ -242,7 +272,9 @@ export default function HendersonPage() {
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-3 text-xl font-bold text-gray-900">Inspirada</h3>
-              <p className="mb-4 text-gray-600">Newer master-planned community with modern homes and family-friendly amenities</p>
+              <p className="mb-4 text-gray-600">
+                Newer master-planned community with modern homes and family-friendly amenities
+              </p>
               <div className="text-sm text-gray-500">
                 <p>Median Price: $520,000</p>
                 <p>Avg. Days on Market: 22</p>
@@ -250,7 +282,9 @@ export default function HendersonPage() {
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-3 text-xl font-bold text-gray-900">MacDonald Ranch</h3>
-              <p className="mb-4 text-gray-600">Established community with golf course, parks, and diverse housing options</p>
+              <p className="mb-4 text-gray-600">
+                Established community with golf course, parks, and diverse housing options
+              </p>
               <div className="text-sm text-gray-500">
                 <p>Median Price: $480,000</p>
                 <p>Avg. Days on Market: 28</p>
@@ -258,7 +292,9 @@ export default function HendersonPage() {
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-3 text-xl font-bold text-gray-900">Sun City Anthem</h3>
-              <p className="mb-4 text-gray-600">Active adult community with golf, fitness centers, and social activities</p>
+              <p className="mb-4 text-gray-600">
+                Active adult community with golf, fitness centers, and social activities
+              </p>
               <div className="text-sm text-gray-500">
                 <p>Median Price: $420,000</p>
                 <p>Avg. Days on Market: 32</p>
@@ -275,11 +311,11 @@ export default function HendersonPage() {
             Our Latest Listings
           </h2>
           <div className="flex justify-center">
-            <RealScoutYourListings 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE" 
-              listingStatus="For Sale,Sold" 
-              propertyTypes="" 
+            <RealScoutYourListings
+              agentEncodedId="QWdlbnQtMjI1MDUw"
+              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+              listingStatus="For Sale,Sold"
+              propertyTypes=""
               priceMin="500000"
             />
           </div>
@@ -289,22 +325,27 @@ export default function HendersonPage() {
       {/* CTA Section */}
       <section className="bg-blue-800 py-16 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-            Ready to Call Henderson Home?
-          </h2>
+          <h2 className="mb-6 text-3xl font-bold md:text-4xl">Ready to Call Henderson Home?</h2>
           <p className="mb-8 text-xl text-blue-100">
             Our Henderson experts can help you find the perfect home in this family-friendly city
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button href="/properties?neighborhood=henderson" className="bg-white text-blue-800 hover:bg-blue-50">
+            <Button
+              href="/properties?neighborhood=henderson"
+              className="bg-white text-blue-800 hover:bg-blue-50"
+            >
               Browse Henderson Homes
             </Button>
-            <Button href="/contact" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-800">
+            <Button
+              href="/contact"
+              intent="secondary"
+              className="border-white text-white hover:bg-white hover:text-blue-800"
+            >
               Get Expert Guidance
             </Button>
           </div>
         </div>
       </section>
     </>
-  )
-} 
+  );
+}

@@ -1,19 +1,19 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import { OptimizedImage } from '../OptimizedImage/OptimizedImage'
+import { useEffect, useState } from 'react';
+import { OptimizedImage } from '../OptimizedImage/OptimizedImage';
 
 interface MarketData {
-  priceGrowth: string
-  mortgageRate: string
-  foreclosureRate: string
-  priceIncrease: string
-  lastUpdated: string
+  priceGrowth: string;
+  mortgageRate: string;
+  foreclosureRate: string;
+  priceIncrease: string;
+  lastUpdated: string;
 }
 
 interface MarketDataWidgetProps {
-  className?: string
-  showImages?: boolean
+  className?: string;
+  showImages?: boolean;
 }
 
 export function MarketDataWidget({ className = '', showImages = true }: MarketDataWidgetProps) {
@@ -22,22 +22,22 @@ export function MarketDataWidget({ className = '', showImages = true }: MarketDa
     mortgageRate: '6.5%',
     foreclosureRate: '0.13%',
     priceIncrease: '55%',
-    lastUpdated: new Date().toLocaleDateString()
-  })
+    lastUpdated: new Date().toLocaleDateString(),
+  });
 
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   // Simulate real-time data updates
   useEffect(() => {
     const interval = setInterval(() => {
-      setMarketData(prev => ({
+      setMarketData((prev) => ({
         ...prev,
-        lastUpdated: new Date().toLocaleDateString()
-      }))
-    }, 60000) // Update every minute
+        lastUpdated: new Date().toLocaleDateString(),
+      }));
+    }, 60000); // Update every minute
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
   const stats = [
     {
@@ -45,53 +45,51 @@ export function MarketDataWidget({ className = '', showImages = true }: MarketDa
       value: marketData.priceGrowth,
       description: 'Expected national growth in 2025',
       color: 'green',
-      icon: '📈'
+      icon: '📈',
     },
     {
       label: 'Mortgage Rates',
       value: marketData.mortgageRate,
       description: 'Projected average by year-end',
       color: 'blue',
-      icon: '🏠'
+      icon: '🏠',
     },
     {
       label: 'Foreclosure Rate',
       value: marketData.foreclosureRate,
       description: 'Only 1 in 758 homes affected',
       color: 'purple',
-      icon: '🛡️'
+      icon: '🛡️',
     },
     {
       label: 'Price Increase',
       value: marketData.priceIncrease,
       description: 'Nationally over past 5 years',
       color: 'orange',
-      icon: '💰'
-    }
-  ]
+      icon: '💰',
+    },
+  ];
 
   const getColorClasses = (color: string) => {
     switch (color) {
       case 'green':
-        return 'bg-gradient-to-br from-green-50 to-green-100 text-green-600'
+        return 'bg-gradient-to-br from-green-50 to-green-100 text-green-600';
       case 'blue':
-        return 'bg-gradient-to-br from-blue-50 to-blue-100 text-blue-600'
+        return 'bg-gradient-to-br from-blue-50 to-blue-100 text-blue-600';
       case 'purple':
-        return 'bg-gradient-to-br from-purple-50 to-purple-100 text-purple-600'
+        return 'bg-gradient-to-br from-purple-50 to-purple-100 text-purple-600';
       case 'orange':
-        return 'bg-gradient-to-br from-orange-50 to-orange-100 text-orange-600'
+        return 'bg-gradient-to-br from-orange-50 to-orange-100 text-orange-600';
       default:
-        return 'bg-gradient-to-br from-gray-50 to-gray-100 text-gray-600'
+        return 'bg-gradient-to-br from-gray-50 to-gray-100 text-gray-600';
     }
-  }
+  };
 
   return (
     <div className={`bg-white rounded-lg shadow-lg p-6 ${className}`}>
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-xl font-bold text-gray-900">Market Intelligence</h3>
-        <div className="text-sm text-gray-500">
-          Updated: {marketData.lastUpdated}
-        </div>
+        <div className="text-sm text-gray-500">Updated: {marketData.lastUpdated}</div>
       </div>
 
       {/* Market Stats Grid */}
@@ -175,13 +173,13 @@ export function MarketDataWidget({ className = '', showImages = true }: MarketDa
 
       {/* CTA */}
       <div className="mt-6 text-center">
-        <a 
-          href="/market-intelligence" 
+        <a
+          href="/market-intelligence"
           className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
         >
           View Full Market Report
         </a>
       </div>
     </div>
-  )
-} 
+  );
+}

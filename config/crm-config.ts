@@ -12,10 +12,10 @@ export const crmConfig = {
     },
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Basic ${Buffer.from((process.env.FOLLOW_UP_BOSS_API_KEY || '') + ':').toString('base64')}`,
+      Authorization: `Basic ${Buffer.from((process.env.FOLLOW_UP_BOSS_API_KEY || '') + ':').toString('base64')}`,
     },
   },
-  
+
   // Lead Source Mapping
   leadSources: {
     'home-valuation': 'Home Valuation Page',
@@ -23,20 +23,20 @@ export const crmConfig = {
     'lead-capture-form': 'Lead Capture Form',
     'property-search': 'Property Search',
     'neighborhood-page': 'Neighborhood Page',
-    'blog': 'Blog',
+    blog: 'Blog',
     'social-media': 'Social Media',
   },
-  
+
   // Property Types Mapping
   propertyTypes: {
     'single-family': 'Single Family',
-    'condo': 'Condo',
-    'townhouse': 'Townhouse',
+    condo: 'Condo',
+    townhouse: 'Townhouse',
     'multi-family': 'Multi Family',
-    'land': 'Land',
-    'commercial': 'Commercial',
+    land: 'Land',
+    commercial: 'Commercial',
   },
-  
+
   // Budget Ranges
   budgetRanges: {
     'under-300k': 'Under $300,000',
@@ -45,10 +45,10 @@ export const crmConfig = {
     '750k-1m': '$750,000 - $1,000,000',
     'over-1m': 'Over $1,000,000',
   },
-  
+
   // Timeline Mapping
   timelines: {
-    'immediately': 'Immediately',
+    immediately: 'Immediately',
     '1-3-months': '1-3 months',
     '3-6-months': '3-6 months',
     '6-12-months': '6-12 months',
@@ -109,4 +109,4 @@ export interface LeadData {
   pageUrl?: string;
   userAgent?: string;
   ipAddress?: string;
-} 
+}

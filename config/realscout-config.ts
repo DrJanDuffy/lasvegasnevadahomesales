@@ -2,7 +2,7 @@
 export const realScoutConfig = {
   // Agent Encoded ID - Replace with your actual RealScout agent ID
   agentEncodedId: process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID || 'demo-agent-id',
-  
+
   // Widget Configuration
   widgets: {
     homeValue: {
@@ -26,13 +26,13 @@ export const realScoutConfig = {
       agentEncodedId: process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID || 'demo-agent-id',
     },
   },
-  
+
   // API Configuration
   api: {
     baseUrl: 'https://api.realscout.com',
     version: 'v3',
   },
-  
+
   // Widget Loading Configuration
   loading: {
     strategy: 'beforeInteractive' as const,
@@ -41,7 +41,7 @@ export const realScoutConfig = {
 };
 
 // RealScout Widget Types
-export type RealScoutWidgetType = 
+export type RealScoutWidgetType =
   | 'home-value'
   | 'office-listings'
   | 'your-listings'
@@ -53,4 +53,4 @@ export interface RealScoutWidgetProps {
   agentEncodedId?: string;
   className?: string;
   style?: React.CSSProperties;
-} 
+}

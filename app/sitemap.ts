@@ -1,9 +1,9 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.lasvegasnevadahomesales.com'
-  const currentDate = new Date()
-  
+  const baseUrl = 'https://www.lasvegasnevadahomesales.com';
+  const currentDate = new Date();
+
   return [
     // Homepage - Highest Priority
     {
@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
-    
+
     // Core Service Pages - High Priority
     {
       url: `${baseUrl}/properties`,
@@ -32,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
-    
+
     // Neighborhood Pages - High Priority for Local SEO
     {
       url: `${baseUrl}/neighborhoods`,
@@ -64,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-    
+
     // Content & Resource Pages - Medium Priority
     {
       url: `${baseUrl}/market-reports`,
@@ -84,7 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
-    
+
     // Contact & Support Pages - Medium Priority
     {
       url: `${baseUrl}/contact`,
@@ -116,7 +116,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-    
+
     // Gallery & Demo Pages - Lower Priority
     {
       url: `${baseUrl}/gallery-demo`,
@@ -124,7 +124,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
-    
+
     // Property Type Filter Pages - High Priority for SEO
     {
       url: `${baseUrl}/properties?type=single-family`,
@@ -150,7 +150,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 0.8,
     },
-    
+
     // Strategy Type Pages - Medium Priority
     {
       url: `${baseUrl}/strategies?type=buying`,
@@ -170,7 +170,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.6,
     },
-    
+
     // Valuation Type Pages - High Priority
     {
       url: `${baseUrl}/home-valuation?type=detailed`,
@@ -178,5 +178,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-  ]
-} 
+  ];
+}

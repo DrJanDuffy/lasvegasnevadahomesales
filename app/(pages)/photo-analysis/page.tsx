@@ -1,12 +1,14 @@
-import { Metadata } from 'next'
-import { PhotoAnalyzer } from '../../../components/PhotoAnalysis/PhotoAnalyzer'
-import { SEOHead } from '../../../components/SEO/SEOHead'
+import type { Metadata } from 'next';
+import { PhotoAnalyzer } from '../../../components/PhotoAnalysis/PhotoAnalyzer';
+import { SEOHead } from '../../../components/SEO/SEOHead';
 
 export const metadata: Metadata = {
   title: 'AI Photo Analysis | Las Vegas Nevada Home Sales',
-  description: 'Analyze your real estate photos with AI to optimize them for your Las Vegas Nevada Home Sales website. Get insights on brand fit, quality, SEO potential, and emotional impact.',
-  keywords: 'AI photo analysis, real estate photography, Las Vegas real estate photos, photo optimization, SEO photo analysis',
-}
+  description:
+    'Analyze your real estate photos with AI to optimize them for your Las Vegas Nevada Home Sales website. Get insights on brand fit, quality, SEO potential, and emotional impact.',
+  keywords:
+    'AI photo analysis, real estate photography, Las Vegas real estate photos, photo optimization, SEO photo analysis',
+};
 
 export default function PhotoAnalysisPage() {
   return (
@@ -27,7 +29,9 @@ export default function PhotoAnalysisPage() {
               AI Photo Analysis for Real Estate
             </h1>
             <p className="mb-8 text-xl font-light text-blue-100 md:text-2xl">
-              Optimize your real estate photos with AI-powered analysis. Get insights on brand fit, quality, SEO potential, and emotional impact for your Las Vegas Nevada Home Sales website.
+              Optimize your real estate photos with AI-powered analysis. Get insights on brand fit,
+              quality, SEO potential, and emotional impact for your Las Vegas Nevada Home Sales
+              website.
             </p>
           </div>
         </div>
@@ -165,18 +169,25 @@ export default function PhotoAnalysisPage() {
             Ready to Optimize Your Real Estate Photos?
           </h2>
           <p className="mb-8 text-xl text-blue-100">
-            Start analyzing your photos now and improve your Las Vegas Nevada Home Sales website performance.
+            Start analyzing your photos now and improve your Las Vegas Nevada Home Sales website
+            performance.
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <a href="#photo-analyzer" className="bg-white text-blue-900 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors">
+            <a
+              href="#photo-analyzer"
+              className="bg-white text-blue-900 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
               Try Photo Analysis
             </a>
-            <a href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors">
+            <a
+              href="/contact"
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
               Contact Us
             </a>
           </div>
         </div>
       </section>
     </>
-  )
-} 
+  );
+}

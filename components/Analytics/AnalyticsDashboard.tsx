@@ -1,35 +1,35 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import { analyticsConfig, analyticsHelpers } from '../../config/analytics-config'
+import { useEffect, useState } from 'react';
+import { analyticsConfig, analyticsHelpers } from '../../config/analytics-config';
 
 // Extend Window interface for Vercel Analytics
 declare global {
   interface Window {
     analytics?: {
-      track: (event: string, properties?: Record<string, any>) => void
-    }
+      track: (event: string, properties?: Record<string, any>) => void;
+    };
   }
 }
 
 interface AnalyticsData {
-  pageViews: number
-  uniqueVisitors: number
-  leadSubmissions: number
-  conversionRate: number
-  averageTimeOnPage: number
-  topNeighborhoods: Array<{ name: string; count: number }>
-  topLeadSources: Array<{ source: string; count: number }>
-  userJourney: Array<{ step: string; count: number }>
+  pageViews: number;
+  uniqueVisitors: number;
+  leadSubmissions: number;
+  conversionRate: number;
+  averageTimeOnPage: number;
+  topNeighborhoods: Array<{ name: string; count: number }>;
+  topLeadSources: Array<{ source: string; count: number }>;
+  userJourney: Array<{ step: string; count: number }>;
   performance: {
-    pageLoadTime: number
-    timeToInteractive: number
-  }
+    pageLoadTime: number;
+    timeToInteractive: number;
+  };
 }
 
 interface AnalyticsDashboardProps {
-  pageType: 'home' | 'contact' | 'properties' | 'about' | 'testimonials' | 'faq'
-  debug?: boolean
+  pageType: 'home' | 'contact' | 'properties' | 'about' | 'testimonials' | 'faq';
+  debug?: boolean;
 }
 
 export function AnalyticsDashboard({ pageType, debug = false }: AnalyticsDashboardProps) {
@@ -44,33 +44,35 @@ export function AnalyticsDashboard({ pageType, debug = false }: AnalyticsDashboa
     userJourney: [],
     performance: {
       pageLoadTime: 0,
-      timeToInteractive: 0
-    }
-  })
+      timeToInteractive: 0,
+    },
+  });
 
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     // Only show dashboard in development mode
     if (process.env.NODE_ENV === 'development' && debug) {
-      setIsVisible(true)
+      setIsVisible(true);
     }
 
     // Track page performance
     const trackPerformance = () => {
       if ('performance' in window) {
-        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming
+        const navigation = performance.getEntriesByType(
+          'navigation'
+        )[0] as PerformanceNavigationTiming;
         if (navigation) {
-          const pageLoadTime = navigation.loadEventEnd - navigation.loadEventStart
-          const timeToInteractive = navigation.domInteractive - navigation.fetchStart
+          const pageLoadTime = navigation.loadEventEnd - navigation.loadEventStart;
+          const timeToInteractive = navigation.domInteractive - navigation.fetchStart;
 
-          setAnalyticsData(prev => ({
+          setAnalyticsData((prev) => ({
             ...prev,
             performance: {
               pageLoadTime: Math.round(pageLoadTime),
-              timeToInteractive: Math.round(timeToInteractive)
-            }
-          }))
+              timeToInteractive: Math.round(timeToInteractive),
+            },
+          }));
 
           // Track performance with Vercel Analytics
           if (typeof window !== 'undefined' && window.analytics) {
@@ -78,37 +80,39 @@ export function AnalyticsDashboard({ pageType, debug = false }: AnalyticsDashboa
               metric: 'page_load_time',
               value: pageLoadTime,
               page: window.location.pathname,
-              market: 'las_vegas'
-            })
+              market: 'las_vegas',
+            });
 
             window.analytics.track('Performance Metric', {
               metric: 'time_to_interactive',
               value: timeToInteractive,
               page: window.location.pathname,
-              market: 'las_vegas'
-            })
+              market: 'las_vegas',
+            });
           }
         }
       }
-    }
+    };
 
     // Track user engagement
     const trackEngagement = () => {
-      let startTime = Date.now()
-      let maxScroll = 0
+      const startTime = Date.now();
+      let maxScroll = 0;
 
       const updateEngagement = () => {
-        const timeSpent = Math.round((Date.now() - startTime) / 1000)
-        const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100)
+        const timeSpent = Math.round((Date.now() - startTime) / 1000);
+        const scrollPercent = Math.round(
+          (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+        );
 
         if (scrollPercent > maxScroll) {
-          maxScroll = scrollPercent
+          maxScroll = scrollPercent;
         }
 
-        setAnalyticsData(prev => ({
+        setAnalyticsData((prev) => ({
           ...prev,
-          averageTimeOnPage: timeSpent
-        }))
+          averageTimeOnPage: timeSpent,
+        }));
 
         // Track engagement with Vercel Analytics
         if (typeof window !== 'undefined' && window.analytics) {
@@ -116,62 +120,62 @@ export function AnalyticsDashboard({ pageType, debug = false }: AnalyticsDashboa
             window.analytics.track('Time on Page', {
               timeSpent: 30,
               page: window.location.pathname,
-              market: 'las_vegas'
-            })
+              market: 'las_vegas',
+            });
           } else if (timeSpent >= 60 && timeSpent < 120) {
             window.analytics.track('Time on Page', {
               timeSpent: 60,
               page: window.location.pathname,
-              market: 'las_vegas'
-            })
+              market: 'las_vegas',
+            });
           } else if (timeSpent >= 120) {
             window.analytics.track('Time on Page', {
               timeSpent: 120,
               page: window.location.pathname,
-              market: 'las_vegas'
-            })
+              market: 'las_vegas',
+            });
           }
 
           if (maxScroll >= 25 && maxScroll < 50) {
             window.analytics.track('Scroll Depth Reached', {
               depth: 25,
               page: window.location.pathname,
-              market: 'las_vegas'
-            })
+              market: 'las_vegas',
+            });
           } else if (maxScroll >= 50 && maxScroll < 75) {
             window.analytics.track('Scroll Depth Reached', {
               depth: 50,
               page: window.location.pathname,
-              market: 'las_vegas'
-            })
+              market: 'las_vegas',
+            });
           } else if (maxScroll >= 75) {
             window.analytics.track('Scroll Depth Reached', {
               depth: 75,
               page: window.location.pathname,
-              market: 'las_vegas'
-            })
+              market: 'las_vegas',
+            });
           }
         }
-      }
+      };
 
-      const interval = setInterval(updateEngagement, 10000) // Update every 10 seconds
+      const interval = setInterval(updateEngagement, 10000); // Update every 10 seconds
 
-      return () => clearInterval(interval)
-    }
+      return () => clearInterval(interval);
+    };
 
     // Initialize tracking
-    trackPerformance()
-    const engagementCleanup = trackEngagement()
+    trackPerformance();
+    const engagementCleanup = trackEngagement();
 
     return () => {
       if (engagementCleanup) {
-        engagementCleanup()
+        engagementCleanup();
       }
-    }
-  }, [debug])
+    };
+  }, [debug]);
 
   if (!isVisible) {
-    return null
+    return null;
   }
 
   return (
@@ -292,5 +296,5 @@ export function AnalyticsDashboard({ pageType, debug = false }: AnalyticsDashboa
         </div>
       )}
     </div>
-  )
-} 
+  );
+}

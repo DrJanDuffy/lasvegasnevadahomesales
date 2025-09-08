@@ -1,16 +1,18 @@
-import { Metadata } from "next"
-import { Button } from "../../../../components/Button/Button"
-import { RealScoutYourListings } from "../../../../components/RealScout/RealScoutYourListings"
-import { OptimizedImage } from "../../../../components/OptimizedImage/OptimizedImage"
-import { RealScoutSummerlinGallery } from "../../../../components/RealScout/RealScoutSummerlinGallery"
-import { RealScoutSummerlinShowcase } from "../../../../components/RealScout/RealScoutSummerlinShowcase"
-import { SEOHead } from '../../../../components/SEO/SEOHead'
+import type { Metadata } from 'next';
+import { Button } from '../../../../components/Button/Button';
+import { OptimizedImage } from '../../../../components/OptimizedImage/OptimizedImage';
+import { RealScoutSummerlinGallery } from '../../../../components/RealScout/RealScoutSummerlinGallery';
+import { RealScoutSummerlinShowcase } from '../../../../components/RealScout/RealScoutSummerlinShowcase';
+import { RealScoutYourListings } from '../../../../components/RealScout/RealScoutYourListings';
+import { SEOHead } from '../../../../components/SEO/SEOHead';
 
 export const metadata: Metadata = {
-  title: "Summerlin Las Vegas | Luxury Homes & Master-Planned Community",
-  description: "Discover Summerlin, Las Vegas' premier master-planned community. Luxury homes, golf courses, shopping centers, and top-rated schools in a beautiful desert setting.",
-  keywords: "Summerlin Las Vegas, Summerlin homes, Summerlin real estate, Summerlin golf courses, Summerlin shopping",
-}
+  title: 'Summerlin Las Vegas | Luxury Homes & Master-Planned Community',
+  description:
+    "Discover Summerlin, Las Vegas' premier master-planned community. Luxury homes, golf courses, shopping centers, and top-rated schools in a beautiful desert setting.",
+  keywords:
+    'Summerlin Las Vegas, Summerlin homes, Summerlin real estate, Summerlin golf courses, Summerlin shopping',
+};
 
 export default function SummerlinPage() {
   return (
@@ -40,7 +42,7 @@ export default function SummerlinPage() {
             Powered by RealScout
           </div>
         </div>
-        
+
         {/* Content */}
         <div className="relative mx-auto max-w-7xl px-4 py-16 text-center text-white lg:py-24">
           <div className="mx-auto max-w-4xl">
@@ -48,13 +50,22 @@ export default function SummerlinPage() {
               Summerlin Homes for Sale – Las Vegas Nevada Home Sales
             </h1>
             <p className="mb-8 text-xl font-light text-green-100 md:text-2xl">
-              Discover luxury homes, golf course properties, and family residences in Summerlin with Las Vegas Nevada Home Sales – your trusted local experts.
+              Discover luxury homes, golf course properties, and family residences in Summerlin with
+              Las Vegas Nevada Home Sales – your trusted local experts.
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <Button href="/properties?neighborhood=summerlin" className="bg-white text-green-800 hover:bg-green-50" aria-label="View all Summerlin homes for sale with Las Vegas Nevada Home Sales">
+              <Button
+                href="/properties?neighborhood=summerlin"
+                className="bg-white text-green-800 hover:bg-green-50"
+                aria-label="View all Summerlin homes for sale with Las Vegas Nevada Home Sales"
+              >
                 View Summerlin Homes
               </Button>
-              <Button href="/contact" intent="secondary" className="border-white text-white hover:bg-white hover:text-green-800">
+              <Button
+                href="/contact"
+                intent="secondary"
+                className="border-white text-white hover:bg-white hover:text-green-800"
+              >
                 Contact Local Expert
               </Button>
             </div>
@@ -91,17 +102,17 @@ export default function SummerlinPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
-                About Summerlin
-              </h2>
+              <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">About Summerlin</h2>
               <p className="mb-6 text-lg text-gray-600">
-                Summerlin is Las Vegas' largest and most prestigious master-planned community, spanning over 22,500 acres 
-                at the base of the Red Rock Canyon National Conservation Area. This award-winning community offers 
-                luxury homes, world-class amenities, and a lifestyle that's second to none.
+                Summerlin is Las Vegas' largest and most prestigious master-planned community,
+                spanning over 22,500 acres at the base of the Red Rock Canyon National Conservation
+                Area. This award-winning community offers luxury homes, world-class amenities, and a
+                lifestyle that's second to none.
               </p>
               <p className="mb-6 text-lg text-gray-600">
-                Developed by The Howard Hughes Corporation, Summerlin features meticulously planned neighborhoods, 
-                extensive parks and trails, top-rated schools, and convenient access to shopping, dining, and entertainment.
+                Developed by The Howard Hughes Corporation, Summerlin features meticulously planned
+                neighborhoods, extensive parks and trails, top-rated schools, and convenient access
+                to shopping, dining, and entertainment.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -164,7 +175,8 @@ export default function SummerlinPage() {
             Featured Summerlin Homes
           </h2>
           <p className="mb-12 text-center text-lg text-gray-600">
-            Discover luxury homes in Summerlin with stunning mountain views, premium finishes, and world-class amenities
+            Discover luxury homes in Summerlin with stunning mountain views, premium finishes, and
+            world-class amenities
           </p>
           <RealScoutSummerlinGallery
             galleryType="grid"
@@ -172,20 +184,28 @@ export default function SummerlinPage() {
             showCaptions={true}
             className="mb-16"
           />
-          
+
           {/* Additional RealScout Property Showcase */}
           <div className="mt-16 text-center">
             <h3 className="mb-6 text-2xl font-bold text-gray-900">
               View More Summerlin Properties
             </h3>
             <p className="mb-8 text-lg text-gray-600">
-              Explore our complete inventory of Summerlin homes with detailed photos, virtual tours, and market insights
+              Explore our complete inventory of Summerlin homes with detailed photos, virtual tours,
+              and market insights
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 justify-center">
-              <Button href="/properties?neighborhood=summerlin" className="bg-green-600 text-white hover:bg-green-700">
+              <Button
+                href="/properties?neighborhood=summerlin"
+                className="bg-green-600 text-white hover:bg-green-700"
+              >
                 Browse All Summerlin Homes
               </Button>
-              <Button href="/contact" intent="secondary" className="border-green-600 text-green-600 hover:bg-green-50">
+              <Button
+                href="/contact"
+                intent="secondary"
+                className="border-green-600 text-green-600 hover:bg-green-50"
+              >
                 Get Property Alerts
               </Button>
             </div>
@@ -203,32 +223,44 @@ export default function SummerlinPage() {
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-green-600">⛳</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Golf Courses</h3>
-              <p className="text-gray-600">9 championship golf courses including TPC Summerlin and Red Rock Country Club</p>
+              <p className="text-gray-600">
+                9 championship golf courses including TPC Summerlin and Red Rock Country Club
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-blue-600">🛍️</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Shopping Centers</h3>
-              <p className="text-gray-600">Downtown Summerlin, The Shops at Summerlin, and Trails Village</p>
+              <p className="text-gray-600">
+                Downtown Summerlin, The Shops at Summerlin, and Trails Village
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-purple-600">🏃</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Parks & Trails</h3>
-              <p className="text-gray-600">150+ parks and 150+ miles of trails throughout the community</p>
+              <p className="text-gray-600">
+                150+ parks and 150+ miles of trails throughout the community
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-orange-600">🎓</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Top Schools</h3>
-              <p className="text-gray-600">Award-winning public and private schools serving all grade levels</p>
+              <p className="text-gray-600">
+                Award-winning public and private schools serving all grade levels
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-red-600">🏥</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Healthcare</h3>
-              <p className="text-gray-600">Summerlin Hospital Medical Center and numerous medical facilities</p>
+              <p className="text-gray-600">
+                Summerlin Hospital Medical Center and numerous medical facilities
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-indigo-600">🎭</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Entertainment</h3>
-              <p className="text-gray-600">The Smith Center for the Performing Arts and cultural venues</p>
+              <p className="text-gray-600">
+                The Smith Center for the Performing Arts and cultural venues
+              </p>
             </div>
           </div>
         </div>
@@ -311,35 +343,37 @@ export default function SummerlinPage() {
             Featured Summerlin Properties
           </h2>
           <p className="mb-12 text-center text-lg text-gray-600">
-            Discover luxury homes in Summerlin with RealScout MLS integration - real-time data, professional photos, and detailed property information
+            Discover luxury homes in Summerlin with RealScout MLS integration - real-time data,
+            professional photos, and detailed property information
           </p>
-          <RealScoutSummerlinShowcase
-            showPricing={true}
-            showFeatures={true}
-            className="mb-16"
-          />
+          <RealScoutSummerlinShowcase showPricing={true} showFeatures={true} className="mb-16" />
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="bg-green-800 py-16 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-            Ready to Call Summerlin Home?
-          </h2>
+          <h2 className="mb-6 text-3xl font-bold md:text-4xl">Ready to Call Summerlin Home?</h2>
           <p className="mb-8 text-xl text-green-100">
             Our Summerlin experts can help you find the perfect home in this premier community
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button href="/properties?neighborhood=summerlin" className="bg-white text-green-800 hover:bg-green-50">
+            <Button
+              href="/properties?neighborhood=summerlin"
+              className="bg-white text-green-800 hover:bg-green-50"
+            >
               Browse Summerlin Homes
             </Button>
-            <Button href="/contact" intent="secondary" className="border-white text-white hover:bg-white hover:text-green-800">
+            <Button
+              href="/contact"
+              intent="secondary"
+              className="border-white text-white hover:bg-white hover:text-green-800"
+            >
               Get Expert Guidance
             </Button>
           </div>
         </div>
       </section>
     </>
-  )
-} 
+  );
+}

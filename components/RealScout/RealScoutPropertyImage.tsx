@@ -1,54 +1,54 @@
-import { OptimizedImage } from '../OptimizedImage/OptimizedImage'
+import { OptimizedImage } from '../OptimizedImage/OptimizedImage';
 
 interface RealScoutPropertyImageProps {
-  propertyId: string
-  imageType?: 'hero' | 'gallery' | 'thumbnail'
-  size?: 'small' | 'medium' | 'large'
-  className?: string
-  fallbackSrc?: string
-  alt?: string
+  propertyId: string;
+  imageType?: 'hero' | 'gallery' | 'thumbnail';
+  size?: 'small' | 'medium' | 'large';
+  className?: string;
+  fallbackSrc?: string;
+  alt?: string;
 }
 
 export function RealScoutPropertyImage({
   propertyId,
   imageType = 'hero',
   size = 'large',
-  className = "",
+  className = '',
   fallbackSrc,
-  alt
+  alt,
 }: RealScoutPropertyImageProps) {
   // RealScout image URL patterns
   const getRealScoutImageUrl = () => {
-    const baseUrl = 'https://images.realscout.com'
-    
+    const baseUrl = 'https://images.realscout.com';
+
     switch (imageType) {
       case 'hero':
-        return `${baseUrl}/properties/${propertyId}/hero.jpg`
+        return `${baseUrl}/properties/${propertyId}/hero.jpg`;
       case 'gallery':
-        return `${baseUrl}/properties/${propertyId}/gallery.jpg`
+        return `${baseUrl}/properties/${propertyId}/gallery.jpg`;
       case 'thumbnail':
-        return `${baseUrl}/properties/${propertyId}/thumb.jpg`
+        return `${baseUrl}/properties/${propertyId}/thumb.jpg`;
       default:
-        return `${baseUrl}/properties/${propertyId}/hero.jpg`
+        return `${baseUrl}/properties/${propertyId}/hero.jpg`;
     }
-  }
+  };
 
   const getImageDimensions = () => {
     switch (size) {
       case 'small':
-        return { width: 400, height: 300 }
+        return { width: 400, height: 300 };
       case 'medium':
-        return { width: 800, height: 600 }
+        return { width: 800, height: 600 };
       case 'large':
-        return { width: 1200, height: 800 }
+        return { width: 1200, height: 800 };
       default:
-        return { width: 800, height: 600 }
+        return { width: 800, height: 600 };
     }
-  }
+  };
 
-  const { width, height } = getImageDimensions()
-  const imageUrl = getRealScoutImageUrl()
-  const imageAlt = alt || `Property ${propertyId} ${imageType} image`
+  const { width, height } = getImageDimensions();
+  const imageUrl = getRealScoutImageUrl();
+  const imageAlt = alt || `Property ${propertyId} ${imageType} image`;
 
   return (
     <div className={`relative ${className}`}>
@@ -61,51 +61,51 @@ export function RealScoutPropertyImage({
         onError={() => {
           // Fallback to local image if RealScout image fails
           if (fallbackSrc) {
-            return fallbackSrc
+            return fallbackSrc;
           }
         }}
       />
-      
+
       {/* RealScout branding */}
       <div className="absolute bottom-2 right-2 bg-white bg-opacity-90 rounded px-2 py-1 text-xs text-gray-600">
         Powered by RealScout
       </div>
     </div>
-  )
+  );
 }
 
 // RealScout Property Gallery Component
 interface RealScoutPropertyGalleryProps {
-  propertyId: string
-  className?: string
-  showThumbnails?: boolean
-  autoPlay?: boolean
+  propertyId: string;
+  className?: string;
+  showThumbnails?: boolean;
+  autoPlay?: boolean;
 }
 
 export function RealScoutPropertyGallery({
   propertyId,
-  className = "",
+  className = '',
   showThumbnails = true,
-  autoPlay = false
+  autoPlay = false,
 }: RealScoutPropertyGalleryProps) {
   // Mock gallery images - in real implementation, this would fetch from RealScout API
   const galleryImages = [
     {
       src: `https://images.realscout.com/properties/${propertyId}/gallery/1.jpg`,
       alt: `Property ${propertyId} - Exterior view`,
-      caption: 'Beautiful exterior'
+      caption: 'Beautiful exterior',
     },
     {
       src: `https://images.realscout.com/properties/${propertyId}/gallery/2.jpg`,
       alt: `Property ${propertyId} - Kitchen`,
-      caption: 'Modern kitchen'
+      caption: 'Modern kitchen',
     },
     {
       src: `https://images.realscout.com/properties/${propertyId}/gallery/3.jpg`,
       alt: `Property ${propertyId} - Living room`,
-      caption: 'Spacious living area'
-    }
-  ]
+      caption: 'Spacious living area',
+    },
+  ];
 
   return (
     <div className={className}>
@@ -129,5 +129,5 @@ export function RealScoutPropertyGallery({
         ))}
       </div>
     </div>
-  )
-} 
+  );
+}

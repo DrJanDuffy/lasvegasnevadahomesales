@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { realScoutConfig } from '../../config/realscout-config';
 
@@ -8,22 +8,22 @@ interface RealScoutHomeValueProps {
   style?: React.CSSProperties;
 }
 
-export function RealScoutHomeValue({ 
+export function RealScoutHomeValue({
   agentEncodedId = realScoutConfig.widgets.homeValue.agentEncodedId,
-  className = "",
-  style = {}
+  className = '',
+  style = {},
 }: RealScoutHomeValueProps) {
   return (
-    <div 
+    <div
       className={`realscout-widget realscout-home-value ${className}`}
       style={{
         width: '100%',
         maxWidth: '100%',
-        ...style
+        ...style,
       }}
       dangerouslySetInnerHTML={{
-        __html: `<realscout-home-value agent-encoded-id="${agentEncodedId}"></realscout-home-value>`
+        __html: `<realscout-home-value agent-encoded-id="${agentEncodedId}"></realscout-home-value>`,
       }}
     />
   );
-} 
+}

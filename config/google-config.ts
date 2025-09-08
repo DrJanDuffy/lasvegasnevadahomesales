@@ -7,7 +7,7 @@ export const googleConfig = {
     measurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX',
     enableEnhancedMeasurement: true,
     enableEcommerce: true,
-    enableDebug: process.env.NODE_ENV === 'development'
+    enableDebug: process.env.NODE_ENV === 'development',
   },
 
   // Google Maps
@@ -22,9 +22,9 @@ export const googleConfig = {
           north: 36.2,
           south: 36.1,
           east: -115.3,
-          west: -115.4
+          west: -115.4,
         },
-        center: { lat: 36.15, lng: -115.35 }
+        center: { lat: 36.15, lng: -115.35 },
       },
       {
         name: 'Henderson',
@@ -32,9 +32,9 @@ export const googleConfig = {
           north: 36.05,
           south: 35.95,
           east: -114.9,
-          west: -115.0
+          west: -115.0,
         },
-        center: { lat: 36.0, lng: -114.95 }
+        center: { lat: 36.0, lng: -114.95 },
       },
       {
         name: 'Green Valley',
@@ -42,9 +42,9 @@ export const googleConfig = {
           north: 36.05,
           south: 35.98,
           east: -114.95,
-          west: -115.05
+          west: -115.05,
         },
-        center: { lat: 36.015, lng: -115.0 }
+        center: { lat: 36.015, lng: -115.0 },
       },
       {
         name: 'Downtown Las Vegas',
@@ -52,11 +52,11 @@ export const googleConfig = {
           north: 36.18,
           south: 36.16,
           east: -115.13,
-          west: -115.15
+          west: -115.15,
         },
-        center: { lat: 36.17, lng: -115.14 }
-      }
-    ]
+        center: { lat: 36.17, lng: -115.14 },
+      },
+    ],
   },
 
   // Google My Business
@@ -69,8 +69,8 @@ export const googleConfig = {
       street: '10980 W Charleston Blvd, Suite 180',
       city: 'Las Vegas',
       state: 'NV',
-      zip: '89135'
-    }
+      zip: '89135',
+    },
   },
 
   // Schema Markup
@@ -83,7 +83,8 @@ export const googleConfig = {
     website: 'https://lasvegasnevadahomesales.com',
     rating: 4.9,
     reviewCount: 127,
-    description: 'Expert Summerlin REALTOR Dr. Jan Duffy specializes in luxury homes & investment properties. Office in Downtown Summerlin Suite 180.',
+    description:
+      'Expert Summerlin REALTOR Dr. Jan Duffy specializes in luxury homes & investment properties. Office in Downtown Summerlin Suite 180.',
     primaryCategory: 'Real Estate Agent',
     secondaryCategories: ['Real Estate Consultant', 'Property Management Company'],
     openingHours: {
@@ -93,36 +94,37 @@ export const googleConfig = {
       thursday: '08:00-18:00',
       friday: '08:00-18:00',
       saturday: '09:00-17:00',
-      sunday: '10:00-16:00'
-    }
+      sunday: '10:00-16:00',
+    },
   },
 
   // Google Tag Manager
   gtm: {
-    containerId: process.env.NEXT_PUBLIC_GTM_CONTAINER_ID || 'GTM-XXXXXXX'
+    containerId: process.env.NEXT_PUBLIC_GTM_CONTAINER_ID || 'GTM-XXXXXXX',
   },
 
   // Google Ads
   ads: {
-    conversionId: process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID || 'AW-CONVERSION_ID'
+    conversionId: process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID || 'AW-CONVERSION_ID',
   },
 
   // Google Search Console
   searchConsole: {
-    verificationCode: process.env.NEXT_PUBLIC_SEARCH_CONSOLE_VERIFICATION || 'YOUR_VERIFICATION_CODE'
+    verificationCode:
+      process.env.NEXT_PUBLIC_SEARCH_CONSOLE_VERIFICATION || 'YOUR_VERIFICATION_CODE',
   },
 
   // PageSpeed Insights
   pageSpeed: {
-    apiKey: process.env.NEXT_PUBLIC_PAGESPEED_API_KEY || 'YOUR_API_KEY'
+    apiKey: process.env.NEXT_PUBLIC_PAGESPEED_API_KEY || 'YOUR_API_KEY',
   },
 
   // Core Web Vitals
   webVitals: {
     enabled: true,
-    debug: process.env.NODE_ENV === 'development'
-  }
-}
+    debug: process.env.NODE_ENV === 'development',
+  },
+};
 
 // Environment variables template
 export const envTemplate = `
@@ -149,50 +151,53 @@ NEXT_PUBLIC_SEARCH_CONSOLE_VERIFICATION=YOUR_VERIFICATION_CODE
 
 # PageSpeed Insights
 NEXT_PUBLIC_PAGESPEED_API_KEY=YOUR_API_KEY
-`
+`;
 
 // Validation function
 export const validateGoogleConfig = () => {
-  const warnings: string[] = []
-  const errors: string[] = []
+  const warnings: string[] = [];
+  const errors: string[] = [];
 
   // Check required API keys
-  if (!googleConfig.analytics.measurementId || googleConfig.analytics.measurementId === 'G-XXXXXXXXXX') {
-    warnings.push('Google Analytics measurement ID not configured')
+  if (
+    !googleConfig.analytics.measurementId ||
+    googleConfig.analytics.measurementId === 'G-XXXXXXXXXX'
+  ) {
+    warnings.push('Google Analytics measurement ID not configured');
   }
 
   if (!googleConfig.maps.apiKey || googleConfig.maps.apiKey === 'YOUR_API_KEY') {
-    warnings.push('Google Maps API key not configured')
+    warnings.push('Google Maps API key not configured');
   }
 
   if (!googleConfig.gmb.appId || googleConfig.gmb.appId === 'YOUR_APP_ID') {
-    warnings.push('Google My Business (Elfsight) app ID not configured')
+    warnings.push('Google My Business (Elfsight) app ID not configured');
   }
 
   if (!googleConfig.gtm.containerId || googleConfig.gtm.containerId === 'GTM-XXXXXXX') {
-    warnings.push('Google Tag Manager container ID not configured')
+    warnings.push('Google Tag Manager container ID not configured');
   }
 
   // Log warnings and errors
   if (warnings.length > 0) {
-    console.warn('Google Components Configuration Warnings:', warnings)
+    console.warn('Google Components Configuration Warnings:', warnings);
   }
 
   if (errors.length > 0) {
-    console.error('Google Components Configuration Errors:', errors)
+    console.error('Google Components Configuration Errors:', errors);
   }
 
   return {
     isValid: errors.length === 0,
     warnings,
-    errors
-  }
-}
+    errors,
+  };
+};
 
 // Helper functions
-export const getGoogleConfig = () => googleConfig
+export const getGoogleConfig = () => googleConfig;
 
 export const isGoogleConfigured = () => {
-  const validation = validateGoogleConfig()
-  return validation.isValid && validation.warnings.length === 0
-} 
+  const validation = validateGoogleConfig();
+  return validation.isValid && validation.warnings.length === 0;
+};

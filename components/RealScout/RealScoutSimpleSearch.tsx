@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { realScoutConfig } from '../../config/realscout-config';
 
@@ -10,16 +10,16 @@ interface RealScoutSimpleSearchProps {
 
 export function RealScoutSimpleSearch({
   agentEncodedId = realScoutConfig.widgets.simpleSearch.agentEncodedId,
-  className = "",
-  style = {}
+  className = '',
+  style = {},
 }: RealScoutSimpleSearchProps) {
   return (
-    <div 
+    <div
       className={`realscout-widget realscout-simple-search ${className}`}
       style={style}
       dangerouslySetInnerHTML={{
-        __html: `<realscout-simple-search agent-encoded-id="${agentEncodedId}"></realscout-simple-search>`
+        __html: `<realscout-simple-search agent-encoded-id="${agentEncodedId}"></realscout-simple-search>`,
       }}
     />
   );
-} 
+}

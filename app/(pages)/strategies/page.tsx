@@ -1,29 +1,40 @@
-import { Metadata } from "next"
-import { Button } from "../../../components/Button/Button"
-import { SEOHead } from '../../../components/SEO/SEOHead'
-import { FAQSchema, strategiesPageFAQs } from '../../../components/SEO/FAQSchema'
-import { ReviewSchema, agentReviews, agentAggregateRating } from '../../../components/SEO/ReviewSchema'
-import { HowToSchema, sellHomeHowTo, investRealEstateHowTo } from '../../../components/SEO/HowToSchema'
+import type { Metadata } from 'next';
+import { Button } from '../../../components/Button/Button';
+import { FAQSchema, strategiesPageFAQs } from '../../../components/SEO/FAQSchema';
+import {
+  HowToSchema,
+  investRealEstateHowTo,
+  sellHomeHowTo,
+} from '../../../components/SEO/HowToSchema';
+import {
+  agentAggregateRating,
+  agentReviews,
+  ReviewSchema,
+} from '../../../components/SEO/ReviewSchema';
+import { SEOHead } from '../../../components/SEO/SEOHead';
 
 export const metadata: Metadata = {
-  title: "Real Estate Strategies & Techniques | Las Vegas Real Estate",
-  description: "Discover proven real estate strategies and techniques for buying and selling homes in Las Vegas. Expert tips for negotiation, market timing, and investment success.",
-  keywords: "real estate strategies, Las Vegas real estate techniques, home buying tips, selling strategies, real estate investment techniques",
+  title: 'Real Estate Strategies & Techniques | Las Vegas Real Estate',
+  description:
+    'Discover proven real estate strategies and techniques for buying and selling homes in Las Vegas. Expert tips for negotiation, market timing, and investment success.',
+  keywords:
+    'real estate strategies, Las Vegas real estate techniques, home buying tips, selling strategies, real estate investment techniques',
   openGraph: {
-    url: "https://lasvegasnevadahomesales.com/strategies",
-    title: "Real Estate Strategies & Techniques | Expert Las Vegas Real Estate",
-    description: "Master proven real estate strategies for buying and selling in Las Vegas. Expert techniques for negotiation, market timing, and investment success.",
-    type: "website",
+    url: 'https://lasvegasnevadahomesales.com/strategies',
+    title: 'Real Estate Strategies & Techniques | Expert Las Vegas Real Estate',
+    description:
+      'Master proven real estate strategies for buying and selling in Las Vegas. Expert techniques for negotiation, market timing, and investment success.',
+    type: 'website',
     images: [
       {
-        url: "/images/real-estate-strategies.jpg",
-        alt: "Real Estate Strategies and Techniques",
+        url: '/images/real-estate-strategies.jpg',
+        alt: 'Real Estate Strategies and Techniques',
         width: 1200,
         height: 630,
       },
     ],
   },
-}
+};
 
 export default function StrategiesPage() {
   return (
@@ -36,8 +47,8 @@ export default function StrategiesPage() {
         ogImage="/images/og-strategies.jpg"
       />
       <FAQSchema faqs={strategiesPageFAQs} />
-      <ReviewSchema 
-        reviews={agentReviews} 
+      <ReviewSchema
+        reviews={agentReviews}
         aggregateRating={agentAggregateRating}
         itemName="Las Vegas Nevada Home Sales Real Estate Strategies"
         itemType="RealEstateAgent"
@@ -52,7 +63,8 @@ export default function StrategiesPage() {
               Real Estate Strategies – Las Vegas Nevada Home Sales
             </h1>
             <p className="mb-8 text-xl font-light text-blue-100 md:text-2xl">
-              Master proven strategies for buying and selling homes in Nevada with Las Vegas Nevada Home Sales
+              Master proven strategies for buying and selling homes in Nevada with Las Vegas Nevada
+              Home Sales
             </p>
           </div>
         </div>
@@ -67,7 +79,9 @@ export default function StrategiesPage() {
             </h2>
             <div className="grid gap-8 md:grid-cols-2">
               <div className="rounded-lg bg-gray-50 p-8">
-                <h3 className="mb-4 text-xl font-semibold text-gray-900">Pre-Purchase Strategies</h3>
+                <h3 className="mb-4 text-xl font-semibold text-gray-900">
+                  Pre-Purchase Strategies
+                </h3>
                 <ul className="space-y-2 text-left text-gray-700">
                   <li>• Market research and timing</li>
                   <li>• Financial preparation strategies</li>
@@ -167,25 +181,34 @@ export default function StrategiesPage() {
       <section className="bg-blue-900 py-16 text-white">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="mb-12 text-3xl font-bold md:text-4xl">
-              Expert Tips & Insights
-            </h2>
+            <h2 className="mb-12 text-3xl font-bold md:text-4xl">Expert Tips & Insights</h2>
             <div className="grid gap-8 md:grid-cols-3">
               <div className="rounded-lg bg-blue-800 p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600">
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
                   </svg>
                 </div>
                 <h3 className="mb-3 text-lg font-semibold">Market Timing</h3>
                 <p className="text-blue-100">
-                  Learn when to buy and sell based on market cycles, seasonal trends, and economic indicators.
+                  Learn when to buy and sell based on market cycles, seasonal trends, and economic
+                  indicators.
                 </p>
               </div>
               <div className="rounded-lg bg-blue-800 p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600">
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
                   </svg>
                 </div>
                 <h3 className="mb-3 text-lg font-semibold">Negotiation Mastery</h3>
@@ -196,7 +219,12 @@ export default function StrategiesPage() {
               <div className="rounded-lg bg-blue-800 p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600">
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                    />
                   </svg>
                 </div>
                 <h3 className="mb-3 text-lg font-semibold">Financial Strategy</h3>
@@ -219,15 +247,24 @@ export default function StrategiesPage() {
             Get personalized guidance from our Las Vegas real estate experts
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button href="/contact" className="bg-blue-600 text-white hover:bg-blue-700" aria-label="Get expert advice from Las Vegas Nevada Home Sales">
+            <Button
+              href="/contact"
+              className="bg-blue-600 text-white hover:bg-blue-700"
+              aria-label="Get expert advice from Las Vegas Nevada Home Sales"
+            >
               Get Expert Advice
             </Button>
-            <Button href="/properties" intent="secondary" className="border-blue-600 text-blue-600 hover:bg-blue-50" aria-label="Search Las Vegas Nevada Home Sales properties">
+            <Button
+              href="/properties"
+              intent="secondary"
+              className="border-blue-600 text-blue-600 hover:bg-blue-50"
+              aria-label="Search Las Vegas Nevada Home Sales properties"
+            >
               Search Properties
             </Button>
           </div>
         </div>
       </section>
     </>
-  )
-} 
+  );
+}

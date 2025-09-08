@@ -1,12 +1,14 @@
-import { Metadata } from "next"
-import { Button } from "../../../../components/Button/Button"
-import { RealScoutYourListings } from "../../../../components/RealScout/RealScoutYourListings"
+import type { Metadata } from 'next';
+import { Button } from '../../../../components/Button/Button';
+import { RealScoutYourListings } from '../../../../components/RealScout/RealScoutYourListings';
 
 export const metadata: Metadata = {
-  title: "Advanced Property Search | Las Vegas Real Estate",
-  description: "Advanced property search with comprehensive filters. Find your perfect Las Vegas home with detailed search options for price, location, features, and more.",
-  keywords: "advanced property search, Las Vegas real estate search, property filters, home search Las Vegas",
-}
+  title: 'Advanced Property Search | Las Vegas Real Estate',
+  description:
+    'Advanced property search with comprehensive filters. Find your perfect Las Vegas home with detailed search options for price, location, features, and more.',
+  keywords:
+    'advanced property search, Las Vegas real estate search, property filters, home search Las Vegas',
+};
 
 export default function AdvancedSearchPage() {
   return (
@@ -30,13 +32,23 @@ export default function AdvancedSearchPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="rounded-lg bg-gray-50 p-8">
             <h2 className="mb-8 text-2xl font-bold text-gray-900">Advanced Search Filters</h2>
-            
+
             <form className="space-y-8">
               {/* Location & Price */}
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
                 <div>
-                  <label htmlFor="location" className="mb-2 block text-sm font-medium text-gray-700">Location</label>
-                  <select id="location" name="location" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select location">
+                  <label
+                    htmlFor="location"
+                    className="mb-2 block text-sm font-medium text-gray-700"
+                  >
+                    Location
+                  </label>
+                  <select
+                    id="location"
+                    name="location"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2"
+                    aria-label="Select location"
+                  >
                     <option value="">All Locations</option>
                     <option value="summerlin">Summerlin</option>
                     <option value="henderson">Henderson</option>
@@ -47,8 +59,18 @@ export default function AdvancedSearchPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="price-min" className="mb-2 block text-sm font-medium text-gray-700">Min Price</label>
-                  <select id="price-min" name="price-min" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select minimum price">
+                  <label
+                    htmlFor="price-min"
+                    className="mb-2 block text-sm font-medium text-gray-700"
+                  >
+                    Min Price
+                  </label>
+                  <select
+                    id="price-min"
+                    name="price-min"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2"
+                    aria-label="Select minimum price"
+                  >
                     <option value="">Any</option>
                     <option value="200000">$200K</option>
                     <option value="300000">$300K</option>
@@ -58,8 +80,18 @@ export default function AdvancedSearchPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="price-max" className="mb-2 block text-sm font-medium text-gray-700">Max Price</label>
-                  <select id="price-max" name="price-max" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select maximum price">
+                  <label
+                    htmlFor="price-max"
+                    className="mb-2 block text-sm font-medium text-gray-700"
+                  >
+                    Max Price
+                  </label>
+                  <select
+                    id="price-max"
+                    name="price-max"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2"
+                    aria-label="Select maximum price"
+                  >
                     <option value="">Any</option>
                     <option value="400000">$400K</option>
                     <option value="500000">$500K</option>
@@ -69,8 +101,18 @@ export default function AdvancedSearchPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="property-type" className="mb-2 block text-sm font-medium text-gray-700">Property Type</label>
-                  <select id="property-type" name="property-type" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select property type">
+                  <label
+                    htmlFor="property-type"
+                    className="mb-2 block text-sm font-medium text-gray-700"
+                  >
+                    Property Type
+                  </label>
+                  <select
+                    id="property-type"
+                    name="property-type"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2"
+                    aria-label="Select property type"
+                  >
                     <option value="">All Types</option>
                     <option value="single-family">Single Family</option>
                     <option value="townhouse">Townhouse</option>
@@ -83,8 +125,18 @@ export default function AdvancedSearchPage() {
               {/* Bedrooms & Bathrooms */}
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
                 <div>
-                  <label htmlFor="beds-min" className="mb-2 block text-sm font-medium text-gray-700">Min Bedrooms</label>
-                  <select id="beds-min" name="beds-min" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select minimum bedrooms">
+                  <label
+                    htmlFor="beds-min"
+                    className="mb-2 block text-sm font-medium text-gray-700"
+                  >
+                    Min Bedrooms
+                  </label>
+                  <select
+                    id="beds-min"
+                    name="beds-min"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2"
+                    aria-label="Select minimum bedrooms"
+                  >
                     <option value="">Any</option>
                     <option value="1">1+</option>
                     <option value="2">2+</option>
@@ -94,8 +146,18 @@ export default function AdvancedSearchPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="beds-max" className="mb-2 block text-sm font-medium text-gray-700">Max Bedrooms</label>
-                  <select id="beds-max" name="beds-max" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select maximum bedrooms">
+                  <label
+                    htmlFor="beds-max"
+                    className="mb-2 block text-sm font-medium text-gray-700"
+                  >
+                    Max Bedrooms
+                  </label>
+                  <select
+                    id="beds-max"
+                    name="beds-max"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2"
+                    aria-label="Select maximum bedrooms"
+                  >
                     <option value="">Any</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -105,8 +167,18 @@ export default function AdvancedSearchPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="baths-min" className="mb-2 block text-sm font-medium text-gray-700">Min Bathrooms</label>
-                  <select id="baths-min" name="baths-min" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select minimum bathrooms">
+                  <label
+                    htmlFor="baths-min"
+                    className="mb-2 block text-sm font-medium text-gray-700"
+                  >
+                    Min Bathrooms
+                  </label>
+                  <select
+                    id="baths-min"
+                    name="baths-min"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2"
+                    aria-label="Select minimum bathrooms"
+                  >
                     <option value="">Any</option>
                     <option value="1">1+</option>
                     <option value="2">2+</option>
@@ -115,8 +187,18 @@ export default function AdvancedSearchPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="sqft-min" className="mb-2 block text-sm font-medium text-gray-700">Min Square Feet</label>
-                  <select id="sqft-min" name="sqft-min" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select minimum square feet">
+                  <label
+                    htmlFor="sqft-min"
+                    className="mb-2 block text-sm font-medium text-gray-700"
+                  >
+                    Min Square Feet
+                  </label>
+                  <select
+                    id="sqft-min"
+                    name="sqft-min"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2"
+                    aria-label="Select minimum square feet"
+                  >
                     <option value="">Any</option>
                     <option value="1000">1,000+</option>
                     <option value="1500">1,500+</option>
@@ -139,7 +221,9 @@ export default function AdvancedSearchPage() {
                       value="pool"
                       className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                     />
-                    <label htmlFor="pool" className="ml-2 text-sm text-gray-700">Pool</label>
+                    <label htmlFor="pool" className="ml-2 text-sm text-gray-700">
+                      Pool
+                    </label>
                   </div>
                   <div className="flex items-center">
                     <input
@@ -149,7 +233,9 @@ export default function AdvancedSearchPage() {
                       value="garage"
                       className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                     />
-                    <label htmlFor="garage" className="ml-2 text-sm text-gray-700">Garage</label>
+                    <label htmlFor="garage" className="ml-2 text-sm text-gray-700">
+                      Garage
+                    </label>
                   </div>
                   <div className="flex items-center">
                     <input
@@ -159,7 +245,9 @@ export default function AdvancedSearchPage() {
                       value="fireplace"
                       className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                     />
-                    <label htmlFor="fireplace" className="ml-2 text-sm text-gray-700">Fireplace</label>
+                    <label htmlFor="fireplace" className="ml-2 text-sm text-gray-700">
+                      Fireplace
+                    </label>
                   </div>
                   <div className="flex items-center">
                     <input
@@ -169,7 +257,9 @@ export default function AdvancedSearchPage() {
                       value="garden"
                       className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                     />
-                    <label htmlFor="garden" className="ml-2 text-sm text-gray-700">Garden</label>
+                    <label htmlFor="garden" className="ml-2 text-sm text-gray-700">
+                      Garden
+                    </label>
                   </div>
                   <div className="flex items-center">
                     <input
@@ -179,7 +269,9 @@ export default function AdvancedSearchPage() {
                       value="basement"
                       className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                     />
-                    <label htmlFor="basement" className="ml-2 text-sm text-gray-700">Basement</label>
+                    <label htmlFor="basement" className="ml-2 text-sm text-gray-700">
+                      Basement
+                    </label>
                   </div>
                   <div className="flex items-center">
                     <input
@@ -189,7 +281,9 @@ export default function AdvancedSearchPage() {
                       value="central-ac"
                       className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                     />
-                    <label htmlFor="central-ac" className="ml-2 text-sm text-gray-700">Central AC</label>
+                    <label htmlFor="central-ac" className="ml-2 text-sm text-gray-700">
+                      Central AC
+                    </label>
                   </div>
                 </div>
               </div>
@@ -197,8 +291,18 @@ export default function AdvancedSearchPage() {
               {/* Year Built & Lot Size */}
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
                 <div>
-                  <label htmlFor="year-built-min" className="mb-2 block text-sm font-medium text-gray-700">Min Year Built</label>
-                  <select id="year-built-min" name="year-built-min" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select minimum year built">
+                  <label
+                    htmlFor="year-built-min"
+                    className="mb-2 block text-sm font-medium text-gray-700"
+                  >
+                    Min Year Built
+                  </label>
+                  <select
+                    id="year-built-min"
+                    name="year-built-min"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2"
+                    aria-label="Select minimum year built"
+                  >
                     <option value="">Any</option>
                     <option value="2020">2020+</option>
                     <option value="2015">2015+</option>
@@ -208,8 +312,18 @@ export default function AdvancedSearchPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="lot-size-min" className="mb-2 block text-sm font-medium text-gray-700">Min Lot Size</label>
-                  <select id="lot-size-min" name="lot-size-min" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select minimum lot size">
+                  <label
+                    htmlFor="lot-size-min"
+                    className="mb-2 block text-sm font-medium text-gray-700"
+                  >
+                    Min Lot Size
+                  </label>
+                  <select
+                    id="lot-size-min"
+                    name="lot-size-min"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2"
+                    aria-label="Select minimum lot size"
+                  >
                     <option value="">Any</option>
                     <option value="0.1">0.1 acres+</option>
                     <option value="0.25">0.25 acres+</option>
@@ -218,8 +332,18 @@ export default function AdvancedSearchPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="days-on-market" className="mb-2 block text-sm font-medium text-gray-700">Max Days on Market</label>
-                  <select id="days-on-market" name="days-on-market" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select maximum days on market">
+                  <label
+                    htmlFor="days-on-market"
+                    className="mb-2 block text-sm font-medium text-gray-700"
+                  >
+                    Max Days on Market
+                  </label>
+                  <select
+                    id="days-on-market"
+                    name="days-on-market"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2"
+                    aria-label="Select maximum days on market"
+                  >
                     <option value="">Any</option>
                     <option value="7">7 days</option>
                     <option value="14">14 days</option>
@@ -229,8 +353,15 @@ export default function AdvancedSearchPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="sort-by" className="mb-2 block text-sm font-medium text-gray-700">Sort By</label>
-                  <select id="sort-by" name="sort-by" className="w-full rounded-md border border-gray-300 px-3 py-2" aria-label="Select sort order">
+                  <label htmlFor="sort-by" className="mb-2 block text-sm font-medium text-gray-700">
+                    Sort By
+                  </label>
+                  <select
+                    id="sort-by"
+                    name="sort-by"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2"
+                    aria-label="Select sort order"
+                  >
                     <option value="price-low">Price: Low to High</option>
                     <option value="price-high">Price: High to Low</option>
                     <option value="newest">Newest First</option>
@@ -243,13 +374,23 @@ export default function AdvancedSearchPage() {
 
               {/* Search Buttons */}
               <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                <button type="submit" className="rounded-xl bg-blue-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-blue-700">
+                <button
+                  type="submit"
+                  className="rounded-xl bg-blue-600 px-6 py-2.5 text-lg text-white transition-colors delay-50 hover:bg-blue-700"
+                >
                   Search Properties
                 </button>
-                <button type="reset" className="rounded-xl border border-gray-300 bg-transparent px-6 py-2.5 text-lg text-gray-700 transition-colors delay-50 hover:bg-gray-50">
+                <button
+                  type="reset"
+                  className="rounded-xl border border-gray-300 bg-transparent px-6 py-2.5 text-lg text-gray-700 transition-colors delay-50 hover:bg-gray-50"
+                >
                   Clear Filters
                 </button>
-                <Button href="/properties" intent="secondary" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+                <Button
+                  href="/properties"
+                  intent="secondary"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                >
                   Basic Search
                 </Button>
               </div>
@@ -269,42 +410,48 @@ export default function AdvancedSearchPage() {
               <div className="mb-4 text-3xl text-blue-600">🎯</div>
               <h3 className="mb-3 text-xl font-bold text-gray-900">Start Broad</h3>
               <p className="text-gray-600">
-                Begin with basic filters like location and price range, then narrow down with additional features.
+                Begin with basic filters like location and price range, then narrow down with
+                additional features.
               </p>
             </div>
             <div className="rounded-lg bg-white p-6 shadow-lg">
               <div className="mb-4 text-3xl text-green-600">💰</div>
               <h3 className="mb-3 text-xl font-bold text-gray-900">Consider Total Cost</h3>
               <p className="text-gray-600">
-                Factor in property taxes, HOA fees, and maintenance costs when setting your price range.
+                Factor in property taxes, HOA fees, and maintenance costs when setting your price
+                range.
               </p>
             </div>
             <div className="rounded-lg bg-white p-6 shadow-lg">
               <div className="mb-4 text-3xl text-purple-600">📍</div>
               <h3 className="mb-3 text-xl font-bold text-gray-900">Location Matters</h3>
               <p className="text-gray-600">
-                Research neighborhoods for schools, amenities, and commute times to find the best fit.
+                Research neighborhoods for schools, amenities, and commute times to find the best
+                fit.
               </p>
             </div>
             <div className="rounded-lg bg-white p-6 shadow-lg">
               <div className="mb-4 text-3xl text-orange-600">📊</div>
               <h3 className="mb-3 text-xl font-bold text-gray-900">Market Timing</h3>
               <p className="text-gray-600">
-                Properties with fewer days on market may indicate high demand and competitive pricing.
+                Properties with fewer days on market may indicate high demand and competitive
+                pricing.
               </p>
             </div>
             <div className="rounded-lg bg-white p-6 shadow-lg">
               <div className="mb-4 text-3xl text-red-600">🏠</div>
               <h3 className="mb-3 text-xl font-bold text-gray-900">Property Type</h3>
               <p className="text-gray-600">
-                Consider your lifestyle needs when choosing between single-family, townhouse, or condo.
+                Consider your lifestyle needs when choosing between single-family, townhouse, or
+                condo.
               </p>
             </div>
             <div className="rounded-lg bg-white p-6 shadow-lg">
               <div className="mb-4 text-3xl text-indigo-600">📞</div>
               <h3 className="mb-3 text-xl font-bold text-gray-900">Get Expert Help</h3>
               <p className="text-gray-600">
-                Our local experts can help you refine your search and find properties that match your criteria.
+                Our local experts can help you refine your search and find properties that match
+                your criteria.
               </p>
             </div>
           </div>
@@ -318,11 +465,11 @@ export default function AdvancedSearchPage() {
             Our Latest Listings
           </h2>
           <div className="flex justify-center">
-            <RealScoutYourListings 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE" 
-              listingStatus="For Sale,Sold" 
-              propertyTypes="" 
+            <RealScoutYourListings
+              agentEncodedId="QWdlbnQtMjI1MDUw"
+              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+              listingStatus="For Sale,Sold"
+              propertyTypes=""
               priceMin="500000"
             />
           </div>
@@ -332,9 +479,7 @@ export default function AdvancedSearchPage() {
       {/* CTA Section */}
       <section className="bg-blue-900 py-16 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-            Need Help with Your Search?
-          </h2>
+          <h2 className="mb-6 text-3xl font-bold md:text-4xl">Need Help with Your Search?</h2>
           <p className="mb-8 text-xl text-blue-100">
             Our real estate experts can help you find the perfect home that meets all your criteria
           </p>
@@ -342,12 +487,16 @@ export default function AdvancedSearchPage() {
             <Button href="/contact" className="bg-white text-blue-900 hover:bg-blue-50">
               Contact an Agent
             </Button>
-            <Button href="http://drjanduffy.realscout.com/onboarding" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
+            <Button
+              href="http://drjanduffy.realscout.com/onboarding"
+              intent="secondary"
+              className="border-white text-white hover:bg-white hover:text-blue-900"
+            >
               Get Home Value
             </Button>
           </div>
         </div>
       </section>
     </>
-  )
-} 
+  );
+}

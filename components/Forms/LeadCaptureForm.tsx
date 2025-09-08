@@ -1,39 +1,39 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Button } from '../Button/Button'
+import { useState } from 'react';
+import { Button } from '../Button/Button';
 
 interface LeadCaptureFormProps {
-  title?: string
-  subtitle?: string
-  className?: string
-  onLeadCapture?: (data: LeadData) => void
-  showPhone?: boolean
-  showBudget?: boolean
-  showTimeline?: boolean
-  source?: string
+  title?: string;
+  subtitle?: string;
+  className?: string;
+  onLeadCapture?: (data: LeadData) => void;
+  showPhone?: boolean;
+  showBudget?: boolean;
+  showTimeline?: boolean;
+  source?: string;
 }
 
 interface LeadData {
-  firstName: string
-  lastName: string
-  email: string
-  phone?: string
-  budget?: string
-  timeline?: string
-  message?: string
-  source: string
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone?: string;
+  budget?: string;
+  timeline?: string;
+  message?: string;
+  source: string;
 }
 
 export function LeadCaptureForm({
-  title = "Get Your Free Home Valuation",
+  title = 'Get Your Free Home Valuation',
   subtitle = "Find out what your home is worth in today's Las Vegas market",
   className = '',
   onLeadCapture,
   showPhone = true,
   showBudget = true,
   showTimeline = true,
-  source = 'lead-capture-form'
+  source = 'lead-capture-form',
 }: LeadCaptureFormProps) {
   const [formData, setFormData] = useState<LeadData>({
     firstName: '',
@@ -43,33 +43,33 @@ export function LeadCaptureForm({
     budget: '',
     timeline: '',
     message: '',
-    source: 'lead-capture-form'
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+    source: 'lead-capture-form',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     try {
       // Track form interaction with Vercel Analytics
       if (typeof window !== 'undefined' && window.realEstateTracking?.trackFormInteraction) {
-        window.realEstateTracking.trackFormInteraction('lead-capture-form', 'form_started')
+        window.realEstateTracking.trackFormInteraction('lead-capture-form', 'form_started');
       }
-      
+
       // Track with Google Analytics as well
       if (typeof gtag !== 'undefined') {
         gtag('event', 'form_submit', {
           event_category: 'lead_generation',
           event_label: source,
-          value: 1
-        })
+          value: 1,
+        });
       }
 
       // Call the callback if provided
       if (onLeadCapture) {
-        onLeadCapture(formData)
+        onLeadCapture(formData);
       }
 
       // Prepare enhanced lead data
@@ -80,15 +80,24 @@ export function LeadCaptureForm({
         timestamp: new Date().toISOString(),
         userAgent: typeof window !== 'undefined' ? navigator.userAgent : '',
         // Add UTM parameters if available
-        utm_source: typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('utm_source') || 'direct' : 'direct',
-        utm_medium: typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('utm_medium') || 'website' : 'website',
-        utm_campaign: typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('utm_campaign') || 'organic' : 'organic',
-      }
+        utm_source:
+          typeof window !== 'undefined'
+            ? new URLSearchParams(window.location.search).get('utm_source') || 'direct'
+            : 'direct',
+        utm_medium:
+          typeof window !== 'undefined'
+            ? new URLSearchParams(window.location.search).get('utm_medium') || 'website'
+            : 'website',
+        utm_campaign:
+          typeof window !== 'undefined'
+            ? new URLSearchParams(window.location.search).get('utm_campaign') || 'organic'
+            : 'organic',
+      };
 
       // Submit to API with retry logic
-      let response
-      let retries = 0
-      const maxRetries = 3
+      let response;
+      let retries = 0;
+      const maxRetries = 3;
 
       while (retries < maxRetries) {
         try {
@@ -98,33 +107,37 @@ export function LeadCaptureForm({
               'Content-Type': 'application/json',
             },
             body: JSON.stringify(enhancedFormData),
-          })
+          });
 
-          if (response.ok) break
-          
-          retries++
+          if (response.ok) break;
+
+          retries++;
           if (retries < maxRetries) {
-            await new Promise(resolve => setTimeout(resolve, 1000 * retries)) // Exponential backoff
+            await new Promise((resolve) => setTimeout(resolve, 1000 * retries)); // Exponential backoff
           }
         } catch (fetchError) {
-          retries++
-          if (retries >= maxRetries) throw fetchError
-          await new Promise(resolve => setTimeout(resolve, 1000 * retries))
+          retries++;
+          if (retries >= maxRetries) throw fetchError;
+          await new Promise((resolve) => setTimeout(resolve, 1000 * retries));
         }
       }
 
       if (!response || !response.ok) {
-        throw new Error(`HTTP ${response?.status}: ${response?.statusText || 'Network error'}`)
+        throw new Error(`HTTP ${response?.status}: ${response?.statusText || 'Network error'}`);
       }
 
-      const result = await response.json() as { success: boolean; error?: string; personId?: string }
+      const result = (await response.json()) as {
+        success: boolean;
+        error?: string;
+        personId?: string;
+      };
 
       if (result.success) {
         // Track successful submission with Vercel Analytics
         if (typeof window !== 'undefined' && window.realEstateTracking?.trackLeadSubmission) {
-          window.realEstateTracking.trackLeadSubmission('contact-form', 25, source)
+          window.realEstateTracking.trackLeadSubmission('contact-form', 25, source);
         }
-        
+
         // Track with Google Analytics as well
         if (typeof gtag !== 'undefined') {
           gtag('event', 'lead_submitted', {
@@ -133,14 +146,14 @@ export function LeadCaptureForm({
             value: 1,
             custom_parameter_1: formData.budget,
             custom_parameter_2: formData.timeline,
-          })
+          });
         }
 
-        setIsSubmitted(true)
-        
+        setIsSubmitted(true);
+
         // Reset form after 3 seconds
         setTimeout(() => {
-          setIsSubmitted(false)
+          setIsSubmitted(false);
           setFormData({
             firstName: '',
             lastName: '',
@@ -149,47 +162,51 @@ export function LeadCaptureForm({
             budget: '',
             timeline: '',
             message: '',
-            source: 'lead-capture-form'
-          })
-        }, 3000)
+            source: 'lead-capture-form',
+          });
+        }, 3000);
       } else {
-        throw new Error(result.error || 'Failed to submit lead')
+        throw new Error(result.error || 'Failed to submit lead');
       }
-
     } catch (error) {
-      console.error('Error submitting form:', error)
-      
+      console.error('Error submitting form:', error);
+
       // Track failed submission
       if (typeof gtag !== 'undefined') {
         gtag('event', 'form_error', {
           event_category: 'lead_generation',
           event_label: source,
           value: 1,
-          error_message: error instanceof Error ? error.message : 'Unknown error'
-        })
+          error_message: error instanceof Error ? error.message : 'Unknown error',
+        });
       }
 
       // Show user-friendly error message
-      alert('There was an error submitting your request. Please try again or contact us directly at (702) 555-0123.')
+      alert(
+        'There was an error submitting your request. Please try again or contact us directly at (702) 555-0123.'
+      );
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   const handleInputChange = (field: keyof LeadData, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
   if (isSubmitted) {
     return (
-      <div className={`bg-green-50 border border-green-200 rounded-lg p-6 text-center ${className}`}>
+      <div
+        className={`bg-green-50 border border-green-200 rounded-lg p-6 text-center ${className}`}
+      >
         <div className="text-green-600 text-4xl mb-4">✓</div>
         <h3 className="text-xl font-bold text-green-800 mb-2">Thank You!</h3>
         <p className="text-green-700">
-          We've received your request. Our team will contact you within 24 hours with your personalized home valuation.
+          We've received your request. Our team will contact you within 24 hours with your
+          personalized home valuation.
         </p>
       </div>
-    )
+    );
   }
 
   return (
@@ -327,10 +344,10 @@ export function LeadCaptureForm({
         </button>
 
         <p className="text-xs text-gray-500 text-center">
-          By submitting this form, you agree to receive communications from Las Vegas Nevada Home Sales. 
-          We respect your privacy and will never share your information.
+          By submitting this form, you agree to receive communications from Las Vegas Nevada Home
+          Sales. We respect your privacy and will never share your information.
         </p>
       </form>
     </div>
-  )
-} 
+  );
+}

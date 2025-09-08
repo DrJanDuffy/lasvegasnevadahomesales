@@ -1,4 +1,10 @@
-import { crmConfig, FollowUpBossPerson, FollowUpBossEvent, FollowUpBossTask, LeadData } from '../config/crm-config';
+import {
+  crmConfig,
+  type FollowUpBossEvent,
+  type FollowUpBossPerson,
+  type FollowUpBossTask,
+  type LeadData,
+} from '../config/crm-config';
 
 class FollowUpBossService {
   private baseUrl: string;
@@ -8,30 +14,41 @@ class FollowUpBossService {
     this.baseUrl = crmConfig.followUpBoss.baseUrl;
     this.headers = {
       'Content-Type': 'application/json',
-      'Authorization': `Basic ${Buffer.from(crmConfig.followUpBoss.apiKey + ':').toString('base64')}`,
+      Authorization: `Basic ${Buffer.from(crmConfig.followUpBoss.apiKey + ':').toString('base64')}`,
     };
   }
 
   // Create or update a person in Follow Up Boss
-  async createPerson(leadData: LeadData): Promise<{ success: boolean; personId?: string; error?: string }> {
+  async createPerson(
+    leadData: LeadData
+  ): Promise<{ success: boolean; personId?: string; error?: string }> {
     try {
       const personData: FollowUpBossPerson = {
         firstName: leadData.firstName,
         lastName: leadData.lastName,
         emails: [{ value: leadData.email, type: 'work' }],
         phones: leadData.phone ? [{ value: leadData.phone, type: 'mobile' }] : undefined,
-        addresses: leadData.address ? [{
-          street: leadData.address,
-          city: leadData.city || 'Las Vegas',
-          state: leadData.state || 'NV',
-          zip: leadData.zip,
-          country: 'US'
-        }] : undefined,
+        addresses: leadData.address
+          ? [
+              {
+                street: leadData.address,
+                city: leadData.city || 'Las Vegas',
+                state: leadData.state || 'NV',
+                zip: leadData.zip,
+                country: 'US',
+              },
+            ]
+          : undefined,
         tags: ['Website Lead', 'Las Vegas'],
-        source: crmConfig.leadSources[leadData.source as keyof typeof crmConfig.leadSources] || 'Website',
+        source:
+          crmConfig.leadSources[leadData.source as keyof typeof crmConfig.leadSources] || 'Website',
         customFields: {
-          budget: leadData.budget ? crmConfig.budgetRanges[leadData.budget as keyof typeof crmConfig.budgetRanges] : undefined,
-          timeline: leadData.timeline ? crmConfig.timelines[leadData.timeline as keyof typeof crmConfig.timelines] : undefined,
+          budget: leadData.budget
+            ? crmConfig.budgetRanges[leadData.budget as keyof typeof crmConfig.budgetRanges]
+            : undefined,
+          timeline: leadData.timeline
+            ? crmConfig.timelines[leadData.timeline as keyof typeof crmConfig.timelines]
+            : undefined,
           pageUrl: leadData.pageUrl,
           userAgent: leadData.userAgent,
           ipAddress: leadData.ipAddress,
@@ -51,9 +68,8 @@ class FollowUpBossService {
         return { success: false, error: `API Error: ${response.status} ${response.statusText}` };
       }
 
-      const result = await response.json() as any;
+      const result = (await response.json()) as any;
       return { success: true, personId: result.id };
-
     } catch (error) {
       console.error('Error creating person in Follow Up Boss:', error);
       return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
@@ -61,7 +77,10 @@ class FollowUpBossService {
   }
 
   // Create an event for a person
-  async createEvent(personId: string, eventData: Partial<FollowUpBossEvent>): Promise<{ success: boolean; error?: string }> {
+  async createEvent(
+    personId: string,
+    eventData: Partial<FollowUpBossEvent>
+  ): Promise<{ success: boolean; error?: string }> {
     try {
       const event: FollowUpBossEvent = {
         personId,
@@ -84,7 +103,6 @@ class FollowUpBossService {
       }
 
       return { success: true };
-
     } catch (error) {
       console.error('Error creating event in Follow Up Boss:', error);
       return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
@@ -92,7 +110,10 @@ class FollowUpBossService {
   }
 
   // Create a task for follow-up
-  async createTask(personId: string, taskData: Partial<FollowUpBossTask>): Promise<{ success: boolean; error?: string }> {
+  async createTask(
+    personId: string,
+    taskData: Partial<FollowUpBossTask>
+  ): Promise<{ success: boolean; error?: string }> {
     try {
       const task: FollowUpBossTask = {
         personId,
@@ -115,7 +136,6 @@ class FollowUpBossService {
       }
 
       return { success: true };
-
     } catch (error) {
       console.error('Error creating task in Follow Up Boss:', error);
       return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
@@ -123,20 +143,24 @@ class FollowUpBossService {
   }
 
   // Search for existing person by email
-  async findPersonByEmail(email: string): Promise<{ success: boolean; person?: FollowUpBossPerson; error?: string }> {
+  async findPersonByEmail(
+    email: string
+  ): Promise<{ success: boolean; person?: FollowUpBossPerson; error?: string }> {
     try {
-      const response = await fetch(`${this.baseUrl}${crmConfig.followUpBoss.endpoints.people}?emails=${encodeURIComponent(email)}`, {
-        method: 'GET',
-        headers: this.headers,
-      });
+      const response = await fetch(
+        `${this.baseUrl}${crmConfig.followUpBoss.endpoints.people}?emails=${encodeURIComponent(email)}`,
+        {
+          method: 'GET',
+          headers: this.headers,
+        }
+      );
 
       if (!response.ok) {
         return { success: false, error: `API Error: ${response.status} ${response.statusText}` };
       }
 
-      const result = await response.json() as any;
+      const result = (await response.json()) as any;
       return { success: true, person: result.people?.[0] };
-
     } catch (error) {
       console.error('Error searching person in Follow Up Boss:', error);
       return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
@@ -144,13 +168,15 @@ class FollowUpBossService {
   }
 
   // Process a complete lead submission
-  async processLead(leadData: LeadData): Promise<{ success: boolean; personId?: string; error?: string }> {
+  async processLead(
+    leadData: LeadData
+  ): Promise<{ success: boolean; personId?: string; error?: string }> {
     try {
       // First, check if person already exists
       const searchResult = await this.findPersonByEmail(leadData.email);
-      
+
       let personId: string;
-      
+
       if (searchResult.success && searchResult.person) {
         // Person exists, update them
         personId = searchResult.person.id!;
@@ -193,7 +219,6 @@ class FollowUpBossService {
       }
 
       return { success: true, personId };
-
     } catch (error) {
       console.error('Error processing lead:', error);
       return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
@@ -210,4 +235,4 @@ class FollowUpBossService {
 }
 
 // Export singleton instance
-export const followUpBossService = new FollowUpBossService(); 
+export const followUpBossService = new FollowUpBossService();

@@ -1,35 +1,37 @@
-'use client'
+'use client';
 
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 
 interface GMBReviewsProps {
-  appId?: string
-  className?: string
-  title?: string
-  showTitle?: boolean
+  appId?: string;
+  className?: string;
+  title?: string;
+  showTitle?: boolean;
 }
 
-export function GMBReviews({ 
-  appId = 'YOUR_APP_ID', 
+export function GMBReviews({
+  appId = 'YOUR_APP_ID',
   className = '',
   title = 'What Our Clients Say',
-  showTitle = true
+  showTitle = true,
 }: GMBReviewsProps) {
   useEffect(() => {
     // Load Elfsight platform script
-    const script = document.createElement('script')
-    script.src = 'https://apps.elfsight.com/p/platform.js'
-    script.defer = true
-    document.head.appendChild(script)
+    const script = document.createElement('script');
+    script.src = 'https://apps.elfsight.com/p/platform.js';
+    script.defer = true;
+    document.head.appendChild(script);
 
     return () => {
       // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://apps.elfsight.com/p/platform.js"]')
+      const existingScript = document.querySelector(
+        'script[src="https://apps.elfsight.com/p/platform.js"]'
+      );
       if (existingScript) {
-        existingScript.remove()
+        existingScript.remove();
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <section className={`gmb-reviews-section ${className}`}>
@@ -37,18 +39,16 @@ export function GMBReviews({
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-[#0A2540] mb-4">{title}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Real reviews from satisfied Las Vegas homeowners who trusted us with their property evaluations
+            Real reviews from satisfied Las Vegas homeowners who trusted us with their property
+            evaluations
           </p>
         </div>
       )}
-      
+
       <div className="gmb-reviews-container">
-        <div 
-          className="elfsight-app-google-reviews" 
-          data-app-id={appId}
-        />
+        <div className="elfsight-app-google-reviews" data-app-id={appId} />
       </div>
-      
+
       {/* Fallback content if widget fails to load */}
       <div className="gmb-fallback hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -63,8 +63,8 @@ export function GMBReviews({
               </div>
             </div>
             <p className="text-gray-600 mb-4">
-              "The evaluation was spot-on! We sold our Summerlin home for $25,000 more than we expected. 
-              The market insights were invaluable."
+              "The evaluation was spot-on! We sold our Summerlin home for $25,000 more than we
+              expected. The market insights were invaluable."
             </p>
             <div className="flex items-center">
               <div className="w-10 h-10 bg-[#3A8DDE] rounded-full flex items-center justify-center text-white font-bold mr-3">
@@ -76,7 +76,7 @@ export function GMBReviews({
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <div className="flex items-center mb-4">
               <div className="flex text-yellow-400">
@@ -88,7 +88,7 @@ export function GMBReviews({
               </div>
             </div>
             <p className="text-gray-600 mb-4">
-              "Professional, accurate, and fast! Got our Henderson property evaluation in 24 hours. 
+              "Professional, accurate, and fast! Got our Henderson property evaluation in 24 hours.
               Highly recommend for anyone selling in Vegas."
             </p>
             <div className="flex items-center">
@@ -101,7 +101,7 @@ export function GMBReviews({
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <div className="flex items-center mb-4">
               <div className="flex text-yellow-400">
@@ -113,8 +113,8 @@ export function GMBReviews({
               </div>
             </div>
             <p className="text-gray-600 mb-4">
-              "Outstanding service! The team really knows the Las Vegas market. 
-              Our Green Valley home sold above asking price thanks to their expertise."
+              "Outstanding service! The team really knows the Las Vegas market. Our Green Valley
+              home sold above asking price thanks to their expertise."
             </p>
             <div className="flex items-center">
               <div className="w-10 h-10 bg-[#FF6B35] rounded-full flex items-center justify-center text-white font-bold mr-3">
@@ -129,5 +129,5 @@ export function GMBReviews({
         </div>
       </div>
     </section>
-  )
-} 
+  );
+}

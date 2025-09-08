@@ -1,12 +1,14 @@
-import { Metadata } from "next"
-import { Button } from "../../../../components/Button/Button"
-import { RealScoutYourListings } from "../../../../components/RealScout/RealScoutYourListings"
+import type { Metadata } from 'next';
+import { Button } from '../../../../components/Button/Button';
+import { RealScoutYourListings } from '../../../../components/RealScout/RealScoutYourListings';
 
 export const metadata: Metadata = {
-  title: "Downtown Las Vegas | Urban Living & Entertainment",
-  description: "Discover Downtown Las Vegas, the heart of the city with urban living, entertainment, cultural attractions, and nightlife. Find your perfect urban home in Las Vegas.",
-  keywords: "Downtown Las Vegas, Las Vegas urban living, Downtown Las Vegas real estate, Las Vegas entertainment district",
-}
+  title: 'Downtown Las Vegas | Urban Living & Entertainment',
+  description:
+    'Discover Downtown Las Vegas, the heart of the city with urban living, entertainment, cultural attractions, and nightlife. Find your perfect urban home in Las Vegas.',
+  keywords:
+    'Downtown Las Vegas, Las Vegas urban living, Downtown Las Vegas real estate, Las Vegas entertainment district',
+};
 
 export default function DowntownPage() {
   return (
@@ -22,10 +24,17 @@ export default function DowntownPage() {
               Urban Living in the Heart of Las Vegas
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <Button href="/properties?neighborhood=downtown" className="bg-white text-red-800 hover:bg-red-50">
+              <Button
+                href="/properties?neighborhood=downtown"
+                className="bg-white text-red-800 hover:bg-red-50"
+              >
                 View Downtown Homes
               </Button>
-              <Button href="/contact" intent="secondary" className="border-white text-white hover:bg-white hover:text-red-800">
+              <Button
+                href="/contact"
+                intent="secondary"
+                className="border-white text-white hover:bg-white hover:text-red-800"
+              >
                 Contact Local Expert
               </Button>
             </div>
@@ -66,14 +75,16 @@ export default function DowntownPage() {
                 About Downtown Las Vegas
               </h2>
               <p className="mb-6 text-lg text-gray-600">
-                Downtown Las Vegas is the historic heart of the city, offering a vibrant urban lifestyle with 
-                world-class entertainment, cultural attractions, and a growing residential community. This 
-                dynamic area combines the excitement of city living with the unique character of Las Vegas.
+                Downtown Las Vegas is the historic heart of the city, offering a vibrant urban
+                lifestyle with world-class entertainment, cultural attractions, and a growing
+                residential community. This dynamic area combines the excitement of city living with
+                the unique character of Las Vegas.
               </p>
               <p className="mb-6 text-lg text-gray-600">
-                From the iconic Fremont Street Experience to the Arts District, Downtown Las Vegas is 
-                experiencing a renaissance with new developments, restaurants, and cultural venues making 
-                it an increasingly popular choice for urban professionals and entertainment enthusiasts.
+                From the iconic Fremont Street Experience to the Arts District, Downtown Las Vegas
+                is experiencing a renaissance with new developments, restaurants, and cultural
+                venues making it an increasingly popular choice for urban professionals and
+                entertainment enthusiasts.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -109,32 +120,45 @@ export default function DowntownPage() {
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-red-600">🎰</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Fremont Street Experience</h3>
-              <p className="text-gray-600">Iconic pedestrian mall with casinos, entertainment, and the world's largest video screen</p>
+              <p className="text-gray-600">
+                Iconic pedestrian mall with casinos, entertainment, and the world's largest video
+                screen
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-blue-600">🎨</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Arts District</h3>
-              <p className="text-gray-600">Growing arts community with galleries, studios, and First Friday events</p>
+              <p className="text-gray-600">
+                Growing arts community with galleries, studios, and First Friday events
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-purple-600">🍽️</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Dining & Nightlife</h3>
-              <p className="text-gray-600">Diverse restaurants, bars, and clubs offering everything from casual to fine dining</p>
+              <p className="text-gray-600">
+                Diverse restaurants, bars, and clubs offering everything from casual to fine dining
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-green-600">🎭</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Entertainment</h3>
-              <p className="text-gray-600">Live music venues, theaters, and cultural events throughout the year</p>
+              <p className="text-gray-600">
+                Live music venues, theaters, and cultural events throughout the year
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-orange-600">🚗</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Transportation</h3>
-              <p className="text-gray-600">RTC bus system, rideshare services, and walkable urban environment</p>
+              <p className="text-gray-600">
+                RTC bus system, rideshare services, and walkable urban environment
+              </p>
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <div className="mb-4 text-3xl text-indigo-600">🏢</div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Business District</h3>
-              <p className="text-gray-600">Growing business community with office spaces and professional services</p>
+              <p className="text-gray-600">
+                Growing business community with office spaces and professional services
+              </p>
             </div>
           </div>
         </div>
@@ -219,7 +243,9 @@ export default function DowntownPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-3 text-xl font-bold text-gray-900">Fremont East</h3>
-              <p className="mb-4 text-gray-600">Historic district with renovated buildings, bars, and entertainment venues</p>
+              <p className="mb-4 text-gray-600">
+                Historic district with renovated buildings, bars, and entertainment venues
+              </p>
               <div className="text-sm text-gray-500">
                 <p>Median Price: $280,000</p>
                 <p>Avg. Days on Market: 30</p>
@@ -227,7 +253,9 @@ export default function DowntownPage() {
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-3 text-xl font-bold text-gray-900">Arts District</h3>
-              <p className="mb-4 text-gray-600">Creative community with galleries, studios, and cultural events</p>
+              <p className="mb-4 text-gray-600">
+                Creative community with galleries, studios, and cultural events
+              </p>
               <div className="text-sm text-gray-500">
                 <p>Median Price: $350,000</p>
                 <p>Avg. Days on Market: 40</p>
@@ -235,7 +263,9 @@ export default function DowntownPage() {
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-3 text-xl font-bold text-gray-900">Symphony Park</h3>
-              <p className="mb-4 text-gray-600">New development with luxury condos and cultural venues</p>
+              <p className="mb-4 text-gray-600">
+                New development with luxury condos and cultural venues
+              </p>
               <div className="text-sm text-gray-500">
                 <p>Median Price: $450,000</p>
                 <p>Avg. Days on Market: 25</p>
@@ -243,7 +273,9 @@ export default function DowntownPage() {
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-3 text-xl font-bold text-gray-900">Medical District</h3>
-              <p className="mb-4 text-gray-600">Near medical facilities with convenient access to healthcare</p>
+              <p className="mb-4 text-gray-600">
+                Near medical facilities with convenient access to healthcare
+              </p>
               <div className="text-sm text-gray-500">
                 <p>Median Price: $320,000</p>
                 <p>Avg. Days on Market: 35</p>
@@ -251,7 +283,9 @@ export default function DowntownPage() {
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-3 text-xl font-bold text-gray-900">Container Park</h3>
-              <p className="mb-4 text-gray-600">Innovative shopping and dining area with unique architecture</p>
+              <p className="mb-4 text-gray-600">
+                Innovative shopping and dining area with unique architecture
+              </p>
               <div className="text-sm text-gray-500">
                 <p>Median Price: $380,000</p>
                 <p>Avg. Days on Market: 28</p>
@@ -259,7 +293,9 @@ export default function DowntownPage() {
             </div>
             <div className="rounded-lg bg-gray-50 p-6">
               <h3 className="mb-3 text-xl font-bold text-gray-900">Fremont West</h3>
-              <p className="mb-4 text-gray-600">Residential area with historic homes and growing development</p>
+              <p className="mb-4 text-gray-600">
+                Residential area with historic homes and growing development
+              </p>
               <div className="text-sm text-gray-500">
                 <p>Median Price: $290,000</p>
                 <p>Avg. Days on Market: 32</p>
@@ -276,11 +312,11 @@ export default function DowntownPage() {
             Our Latest Listings
           </h2>
           <div className="flex justify-center">
-            <RealScoutYourListings 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE" 
-              listingStatus="For Sale,Sold" 
-              propertyTypes="" 
+            <RealScoutYourListings
+              agentEncodedId="QWdlbnQtMjI1MDUw"
+              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+              listingStatus="For Sale,Sold"
+              propertyTypes=""
               priceMin="500000"
             />
           </div>
@@ -290,22 +326,27 @@ export default function DowntownPage() {
       {/* CTA Section */}
       <section className="bg-red-800 py-16 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-            Ready for Downtown Living?
-          </h2>
+          <h2 className="mb-6 text-3xl font-bold md:text-4xl">Ready for Downtown Living?</h2>
           <p className="mb-8 text-xl text-red-100">
             Our Downtown experts can help you find the perfect urban home in the heart of Las Vegas
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button href="/properties?neighborhood=downtown" className="bg-white text-red-800 hover:bg-red-50">
+            <Button
+              href="/properties?neighborhood=downtown"
+              className="bg-white text-red-800 hover:bg-red-50"
+            >
               Browse Downtown Homes
             </Button>
-            <Button href="/contact" intent="secondary" className="border-white text-white hover:bg-white hover:text-red-800">
+            <Button
+              href="/contact"
+              intent="secondary"
+              className="border-white text-white hover:bg-white hover:text-red-800"
+            >
               Get Expert Guidance
             </Button>
           </div>
         </div>
       </section>
     </>
-  )
-} 
+  );
+}

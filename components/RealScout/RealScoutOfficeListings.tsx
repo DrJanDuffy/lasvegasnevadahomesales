@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { realScoutConfig } from '../../config/realscout-config';
 
@@ -15,16 +15,16 @@ interface RealScoutOfficeListingsProps {
 
 export function RealScoutOfficeListings({
   agentEncodedId = realScoutConfig.widgets.officeListings.agentEncodedId,
-  sortOrder = "STATUS_AND_SIGNIFICANT_CHANGE",
-  listingStatus = "For Sale",
-  propertyTypes = "SFR,MF,TC",
+  sortOrder = 'STATUS_AND_SIGNIFICANT_CHANGE',
+  listingStatus = 'For Sale',
+  propertyTypes = 'SFR,MF,TC',
   priceMin,
   priceMax,
-  className = "",
-  style = {}
+  className = '',
+  style = {},
 }: RealScoutOfficeListingsProps) {
   return (
-    <div 
+    <div
       className={`realscout-widget realscout-office-listings ${className}`}
       style={style}
       dangerouslySetInnerHTML={{
@@ -35,8 +35,8 @@ export function RealScoutOfficeListings({
           property-types="${propertyTypes}"
           ${priceMin ? `price-min="${priceMin}"` : ''}
           ${priceMax ? `price-max="${priceMax}"` : ''}
-        ></realscout-office-listings>`
+        ></realscout-office-listings>`,
       }}
     />
   );
-} 
+}

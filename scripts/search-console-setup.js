@@ -2,7 +2,7 @@
 
 /**
  * Search Console Setup Helper Script
- * 
+ *
  * This script helps with the initial setup of Google Search Console
  * for the Las Vegas Nevada Home Sales website.
  */
@@ -24,7 +24,7 @@ const config = {
     'https://lasvegasnevadahomesales.com/strategies',
     'https://lasvegasnevadahomesales.com/neighborhoods/summerlin',
     'https://lasvegasnevadahomesales.com/home-value',
-    'https://lasvegasnevadahomesales.com/market-reports'
+    'https://lasvegasnevadahomesales.com/market-reports',
   ],
   targetKeywords: [
     'Las Vegas Nevada Home Sales',
@@ -32,8 +32,8 @@ const config = {
     'Summerlin homes for sale',
     'Henderson real estate',
     'Las Vegas homes for sale',
-    'Nevada real estate'
-  ]
+    'Nevada real estate',
+  ],
 };
 
 // Setup checklist
@@ -48,8 +48,8 @@ const setupChecklist = [
       'Click "Add Property"',
       'Enter: ' + config.domain,
       'Choose "Domain" property type',
-      'Follow verification instructions'
-    ]
+      'Follow verification instructions',
+    ],
   },
   {
     step: 2,
@@ -60,8 +60,8 @@ const setupChecklist = [
       'In Search Console, go to "Sitemaps"',
       'Enter: sitemap.xml',
       'Click "Submit"',
-      'Verify successful processing'
-    ]
+      'Verify successful processing',
+    ],
   },
   {
     step: 3,
@@ -71,9 +71,9 @@ const setupChecklist = [
     instructions: [
       'Go to URL Inspection tool',
       'Test each key page:',
-      ...config.keyPages.map(url => `  - ${url}`),
-      'Check for indexing status and structured data'
-    ]
+      ...config.keyPages.map((url) => `  - ${url}`),
+      'Check for indexing status and structured data',
+    ],
   },
   {
     step: 4,
@@ -87,8 +87,8 @@ const setupChecklist = [
       '  - Properties page (FAQ, Review)',
       '  - Contact page (FAQ, Review)',
       '  - Strategies page (FAQ, Review, How-To)',
-      'Verify all structured data is valid'
-    ]
+      'Verify all structured data is valid',
+    ],
   },
   {
     step: 5,
@@ -99,8 +99,8 @@ const setupChecklist = [
       'Go to Core Web Vitals report',
       'Check mobile and desktop performance',
       'Target: 75%+ pages in "Good" range',
-      'Monitor LCP, FID, and CLS metrics'
-    ]
+      'Monitor LCP, FID, and CLS metrics',
+    ],
   },
   {
     step: 6,
@@ -110,22 +110,22 @@ const setupChecklist = [
     instructions: [
       'Go to Performance report',
       'Filter by target keywords:',
-      ...config.targetKeywords.map(keyword => `  - "${keyword}"`),
+      ...config.targetKeywords.map((keyword) => `  - "${keyword}"`),
       'Set up weekly monitoring schedule',
-      'Track clicks, impressions, CTR, and position'
-    ]
-  }
+      'Track clicks, impressions, CTR, and position',
+    ],
+  },
 ];
 
 // Display setup instructions
 console.log('📋 Setup Checklist:\n');
 
-setupChecklist.forEach(item => {
+setupChecklist.forEach((item) => {
   console.log(`${item.step}. ${item.title}`);
   console.log(`   ${item.description}`);
   console.log(`   URL: ${item.url}`);
   console.log('   Instructions:');
-  item.instructions.forEach(instruction => {
+  item.instructions.forEach((instruction) => {
     console.log(`   - ${instruction}`);
   });
   console.log('');
@@ -219,5 +219,5 @@ console.log('🎯 For advanced SEO features, see: ADVANCED_SEO_IMPLEMENTATION.md
 
 module.exports = {
   config,
-  setupChecklist
-}; 
+  setupChecklist,
+};

@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import React, { useEffect } from 'react';
 
@@ -21,7 +21,7 @@ export default function AdvancedSEOMonitor({
   pageTitle = document.title,
   debug = false,
   trackUserBehavior = true,
-  trackConversions = true
+  trackConversions = true,
 }: AdvancedSEOMonitorProps) {
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -34,14 +34,14 @@ export default function AdvancedSEOMonitor({
       if (debug) {
         console.log(`Page load time: ${loadTime.toFixed(2)}ms`);
       }
-      
+
       // Send to analytics
       if (typeof gtag !== 'undefined') {
         gtag('event', 'timing_complete', {
           name: 'page_load',
           value: Math.round(loadTime),
           page_url: pageUrl,
-          page_title: pageTitle
+          page_title: pageTitle,
         });
       }
     };
@@ -60,7 +60,7 @@ export default function AdvancedSEOMonitor({
             gtag('event', 'timing_complete', {
               name: 'lcp',
               value: Math.round(lastEntry.startTime),
-              page_url: pageUrl
+              page_url: pageUrl,
             });
           }
         }
@@ -81,7 +81,7 @@ export default function AdvancedSEOMonitor({
               gtag('event', 'timing_complete', {
                 name: 'fid',
                 value: Math.round(fid),
-                page_url: pageUrl
+                page_url: pageUrl,
               });
             }
           }
@@ -106,7 +106,7 @@ export default function AdvancedSEOMonitor({
           gtag('event', 'timing_complete', {
             name: 'cls',
             value: Math.round(clsValue * 1000),
-            page_url: pageUrl
+            page_url: pageUrl,
           });
         }
       });
@@ -120,7 +120,9 @@ export default function AdvancedSEOMonitor({
       // Track scroll depth
       let maxScrollDepth = 0;
       const trackScroll = () => {
-        const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        const scrollDepth = Math.round(
+          (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+        );
         if (scrollDepth > maxScrollDepth) {
           maxScrollDepth = scrollDepth;
           if (debug && maxScrollDepth % 25 === 0) {
@@ -149,7 +151,7 @@ export default function AdvancedSEOMonitor({
             gtag('event', 'click', {
               event_category: 'user_interaction',
               event_label: target.textContent?.trim() || target.tagName,
-              page_url: pageUrl
+              page_url: pageUrl,
             });
           }
         }
@@ -181,7 +183,7 @@ export default function AdvancedSEOMonitor({
           gtag('event', 'form_submit', {
             event_category: 'conversion',
             event_label: form.action,
-            page_url: pageUrl
+            page_url: pageUrl,
           });
         }
       };
@@ -200,7 +202,7 @@ export default function AdvancedSEOMonitor({
               gtag('event', 'click', {
                 event_category: 'conversion',
                 event_label: href,
-                page_url: pageUrl
+                page_url: pageUrl,
               });
             }
           }
@@ -241,4 +243,4 @@ export default function AdvancedSEOMonitor({
   return null;
 }
 
-export { AdvancedSEOMonitor }; 
+export { AdvancedSEOMonitor };

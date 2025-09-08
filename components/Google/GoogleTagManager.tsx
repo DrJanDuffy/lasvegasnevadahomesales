@@ -1,20 +1,20 @@
-'use client'
+'use client';
 
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 
 interface GoogleTagManagerProps {
-  containerId?: string
-  enableDebug?: boolean
+  containerId?: string;
+  enableDebug?: boolean;
 }
 
 export function GoogleTagManager({
   containerId = 'GTM-XXXXXXX',
-  enableDebug = false
+  enableDebug = false,
 }: GoogleTagManagerProps) {
   useEffect(() => {
     if (!containerId || containerId === 'GTM-XXXXXXX') {
-      console.warn('Google Tag Manager: Please provide a valid container ID')
-      return
+      console.warn('Google Tag Manager: Please provide a valid container ID');
+      return;
     }
 
     // GTM Head Script
@@ -24,35 +24,35 @@ export function GoogleTagManager({
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','${containerId}');
-    `
+    `;
 
     // Create and inject GTM head script
-    const script = document.createElement('script')
-    script.innerHTML = gtmHeadScript
-    script.id = 'gtm-head-script'
-    document.head.appendChild(script)
+    const script = document.createElement('script');
+    script.innerHTML = gtmHeadScript;
+    script.id = 'gtm-head-script';
+    document.head.appendChild(script);
 
     // Debug mode
     if (enableDebug) {
-      console.log('Google Tag Manager initialized with container ID:', containerId)
+      console.log('Google Tag Manager initialized with container ID:', containerId);
     }
 
     return () => {
       // Cleanup
-      const existingScript = document.getElementById('gtm-head-script')
+      const existingScript = document.getElementById('gtm-head-script');
       if (existingScript) {
-        existingScript.remove()
+        existingScript.remove();
       }
-    }
-  }, [containerId, enableDebug])
+    };
+  }, [containerId, enableDebug]);
 
-  return null
+  return null;
 }
 
 // GTM Body component (noscript fallback)
 export function GoogleTagManagerBody({ containerId = 'GTM-XXXXXXX' }: { containerId?: string }) {
   if (!containerId || containerId === 'GTM-XXXXXXX') {
-    return null
+    return null;
   }
 
   return (
@@ -64,5 +64,5 @@ export function GoogleTagManagerBody({ containerId = 'GTM-XXXXXXX' }: { containe
         style={{ display: 'none', visibility: 'hidden' }}
       />
     </noscript>
-  )
-} 
+  );
+}

@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { Button } from '../Button/Button'
-import Link from 'next/link'
+import Link from 'next/link';
+import { Button } from '../Button/Button';
 
 export function SummerlinLandingPage() {
   return (
@@ -11,19 +11,36 @@ export function SummerlinLandingPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center">
             <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">
-              Summerlin Real Estate | Dr. Jan Duffy | Berkshire Hathaway HomeServices Nevada Affiliate
+              Summerlin Real Estate | Dr. Jan Duffy | Berkshire Hathaway HomeServices Nevada
+              Affiliate
             </h1>
-            
+
             <p className="mx-auto max-w-4xl mb-8 text-xl text-blue-100">
-              Experience the best of both worlds: the global reach and reputation of Berkshire Hathaway HomeServices Nevada combined with the personalized service of Las Vegas Nevada Home Sales. Dr. Jan Duffy's Suite 180 office in Downtown Summerlin provides convenient access to the area's most prestigious neighborhoods.
+              Experience the best of both worlds: the global reach and reputation of Berkshire
+              Hathaway HomeServices Nevada combined with the personalized service of Las Vegas
+              Nevada Home Sales. Dr. Jan Duffy's Suite 180 office in Downtown Summerlin provides
+              convenient access to the area's most prestigious neighborhoods.
             </p>
-            
+
             <div className="mb-8 space-y-2 text-lg">
-              <p>📧 Email: <a href="mailto:drjanduffy@lasvegasnevadahomesales.com" className="underline hover:text-blue-200">drjanduffy@lasvegasnevadahomesales.com</a></p>
-              <p>📞 Phone: <a href="tel:+17025001981" className="underline hover:text-blue-200">(702) 500-1981</a></p>
+              <p>
+                📧 Email:{' '}
+                <a
+                  href="mailto:drjanduffy@lasvegasnevadahomesales.com"
+                  className="underline hover:text-blue-200"
+                >
+                  drjanduffy@lasvegasnevadahomesales.com
+                </a>
+              </p>
+              <p>
+                📞 Phone:{' '}
+                <a href="tel:+17025001981" className="underline hover:text-blue-200">
+                  (702) 500-1981
+                </a>
+              </p>
               <p>🏢 Office: Suite 180, Downtown Summerlin</p>
             </div>
-            
+
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 justify-center">
               <Button
                 href="tel:+17025001981"
@@ -50,26 +67,44 @@ export function SummerlinLandingPage() {
               Why Choose Dr. Jan Duffy for Summerlin Real Estate?
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-              <h3 className="mb-4 text-xl font-bold text-[#0A2540]">✅ Berkshire Hathaway HomeServices Nevada Affiliate</h3>
-              <p className="text-gray-600">Access to global resources, advanced technology, and the trusted Berkshire Hathaway brand reputation.</p>
+              <h3 className="mb-4 text-xl font-bold text-[#0A2540]">
+                ✅ Berkshire Hathaway HomeServices Nevada Affiliate
+              </h3>
+              <p className="text-gray-600">
+                Access to global resources, advanced technology, and the trusted Berkshire Hathaway
+                brand reputation.
+              </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-              <h3 className="mb-4 text-xl font-bold text-[#0A2540]">✅ Independent Las Vegas Nevada Home Sales Practice</h3>
-              <p className="text-gray-600">Personalized attention and local market expertise through Dr. Duffy's independent practice.</p>
+              <h3 className="mb-4 text-xl font-bold text-[#0A2540]">
+                ✅ Independent Las Vegas Nevada Home Sales Practice
+              </h3>
+              <p className="text-gray-600">
+                Personalized attention and local market expertise through Dr. Duffy's independent
+                practice.
+              </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-              <h3 className="mb-4 text-xl font-bold text-[#0A2540]">✅ Downtown Summerlin Office Location</h3>
-              <p className="text-gray-600">Conveniently located in Suite 180 at 10980 W Charleston Blvd, serving the luxury real estate market.</p>
+              <h3 className="mb-4 text-xl font-bold text-[#0A2540]">
+                ✅ Downtown Summerlin Office Location
+              </h3>
+              <p className="text-gray-600">
+                Conveniently located in Suite 180 at 10980 W Charleston Blvd, serving the luxury
+                real estate market.
+              </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
               <h3 className="mb-4 text-xl font-bold text-[#0A2540]">✅ Direct Contact Access</h3>
-              <p className="text-gray-600">Immediate response via phone (702) 500-1981 or email drjanduffy@lasvegasnevadahomesales.com</p>
+              <p className="text-gray-600">
+                Immediate response via phone (702) 500-1981 or email
+                drjanduffy@lasvegasnevadahomesales.com
+              </p>
             </div>
           </div>
         </div>
@@ -83,31 +118,40 @@ export function SummerlinLandingPage() {
               Summerlin Real Estate Expertise
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <h3 className="mb-4 text-xl font-bold text-[#0A2540]">Downtown Summerlin</h3>
-              <p className="mb-4 text-gray-600">Luxury homes and investment properties in the heart of Summerlin's premier community. Access to world-class shopping, dining, and entertainment.</p>
+              <p className="mb-4 text-gray-600">
+                Luxury homes and investment properties in the heart of Summerlin's premier
+                community. Access to world-class shopping, dining, and entertainment.
+              </p>
               <ul className="space-y-2 text-gray-600">
                 <li>• Luxury single-family homes</li>
                 <li>• Investment properties</li>
                 <li>• New construction opportunities</li>
               </ul>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <h3 className="mb-4 text-xl font-bold text-[#0A2540]">Red Rock Country Club</h3>
-              <p className="mb-4 text-gray-600">Premium golf course communities and luxury estates with world-class amenities and stunning mountain views.</p>
+              <p className="mb-4 text-gray-600">
+                Premium golf course communities and luxury estates with world-class amenities and
+                stunning mountain views.
+              </p>
               <ul className="space-y-2 text-gray-600">
                 <li>• Golf course properties</li>
                 <li>• Luxury estates</li>
                 <li>• Mountain view homes</li>
               </ul>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <h3 className="mb-4 text-xl font-bold text-[#0A2540]">The Ridges</h3>
-              <p className="mb-4 text-gray-600">Exclusive gated communities featuring custom luxury homes and spectacular Red Rock Canyon views.</p>
+              <p className="mb-4 text-gray-600">
+                Exclusive gated communities featuring custom luxury homes and spectacular Red Rock
+                Canyon views.
+              </p>
               <ul className="space-y-2 text-gray-600">
                 <li>• Custom luxury homes</li>
                 <li>• Gated communities</li>
@@ -126,12 +170,15 @@ export function SummerlinLandingPage() {
               Summerlin Real Estate Market Expertise
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h3 className="mb-4 text-2xl font-bold text-[#0A2540]">Local Market Knowledge</h3>
-              <p className="mb-6 text-gray-600">Dr. Jan Duffy specializes in the Summerlin real estate market, providing clients with:</p>
-              
+              <p className="mb-6 text-gray-600">
+                Dr. Jan Duffy specializes in the Summerlin real estate market, providing clients
+                with:
+              </p>
+
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-3">
                   <span className="text-[#16B286] font-bold">✅</span>
@@ -155,11 +202,15 @@ export function SummerlinLandingPage() {
                 </li>
               </ul>
             </div>
-            
+
             <div>
-              <h3 className="mb-4 text-2xl font-bold text-[#0A2540]">Berkshire Hathaway HomeServices Nevada Resources</h3>
-              <p className="mb-6 text-gray-600">As a Berkshire Hathaway HomeServices Nevada affiliate, Dr. Duffy provides access to:</p>
-              
+              <h3 className="mb-4 text-2xl font-bold text-[#0A2540]">
+                Berkshire Hathaway HomeServices Nevada Resources
+              </h3>
+              <p className="mb-6 text-gray-600">
+                As a Berkshire Hathaway HomeServices Nevada affiliate, Dr. Duffy provides access to:
+              </p>
+
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-3">
                   <span className="text-[#3A8DDE] font-bold">🌍</span>
@@ -195,21 +246,52 @@ export function SummerlinLandingPage() {
               Contact Dr. Jan Duffy - Summerlin Real Estate Expert
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="mb-6 text-2xl font-bold text-[#0A2540]">Professional Contact Information</h3>
-                              <div className="space-y-3 text-gray-700">
-                  <p><strong>Office:</strong> Las Vegas Nevada Home Sales</p>
-                  <p><strong>Affiliation:</strong> Berkshire Hathaway HomeServices Nevada</p>
-                  <p><strong>Address:</strong> 10980 W Charleston Blvd, Suite 180, Las Vegas, NV 89135</p>
-                  <p><strong>Phone:</strong> <a href="tel:+17025001981" className="text-[#3A8DDE] hover:underline">(702) 500-1981</a></p>
-                  <p><strong>Email:</strong> <a href="mailto:drjanduffy@lasvegasnevadahomesales.com" className="text-[#3A8DDE] hover:underline">drjanduffy@lasvegasnevadahomesales.com</a></p>
-                  <p><strong>Website:</strong> <a href="https://LasVegasNevadaHomesSales.com" className="text-[#3A8DDE] hover:underline">LasVegasNevadaHomesSales.com</a></p>
-                  <p><strong>License:</strong> Nevada Real Estate License #0197614</p>
-                </div>
+              <h3 className="mb-6 text-2xl font-bold text-[#0A2540]">
+                Professional Contact Information
+              </h3>
+              <div className="space-y-3 text-gray-700">
+                <p>
+                  <strong>Office:</strong> Las Vegas Nevada Home Sales
+                </p>
+                <p>
+                  <strong>Affiliation:</strong> Berkshire Hathaway HomeServices Nevada
+                </p>
+                <p>
+                  <strong>Address:</strong> 10980 W Charleston Blvd, Suite 180, Las Vegas, NV 89135
+                </p>
+                <p>
+                  <strong>Phone:</strong>{' '}
+                  <a href="tel:+17025001981" className="text-[#3A8DDE] hover:underline">
+                    (702) 500-1981
+                  </a>
+                </p>
+                <p>
+                  <strong>Email:</strong>{' '}
+                  <a
+                    href="mailto:drjanduffy@lasvegasnevadahomesales.com"
+                    className="text-[#3A8DDE] hover:underline"
+                  >
+                    drjanduffy@lasvegasnevadahomesales.com
+                  </a>
+                </p>
+                <p>
+                  <strong>Website:</strong>{' '}
+                  <a
+                    href="https://LasVegasNevadaHomesSales.com"
+                    className="text-[#3A8DDE] hover:underline"
+                  >
+                    LasVegasNevadaHomesSales.com
+                  </a>
+                </p>
+                <p>
+                  <strong>License:</strong> Nevada Real Estate License #0197614
+                </p>
+              </div>
             </div>
-            
+
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="mb-6 text-2xl font-bold text-[#0A2540]">Send Dr. Duffy a Message</h3>
               <form className="space-y-4">
@@ -276,27 +358,55 @@ export function SummerlinLandingPage() {
               Presented by Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Affiliate
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                         <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-               <h3 className="mb-4 text-xl font-bold text-[#0A2540]">Downtown Summerlin Luxury Home</h3>
-               <p className="mb-4 text-gray-600">Stunning luxury home in the heart of Downtown Summerlin with premium finishes and convenient access to shopping and dining.</p>
-               <Link href="http://drjanduffy.realscout.com/onboarding" className="text-[#3A8DDE] hover:underline font-semibold">View Details →</Link>
-             </div>
-             
-             <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-               <h3 className="mb-4 text-xl font-bold text-[#0A2540]">Red Rock Country Club Estate</h3>
-               <p className="mb-4 text-gray-600">Magnificent estate with golf course views and world-class amenities in the prestigious Red Rock Country Club community.</p>
-               <Link href="http://drjanduffy.realscout.com/onboarding" className="text-[#3A8DDE] hover:underline font-semibold">View Details →</Link>
-             </div>
-             
-             <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-               <h3 className="mb-4 text-xl font-bold text-[#0A2540]">The Ridges Custom Home</h3>
-               <p className="mb-4 text-gray-600">Custom luxury home with spectacular Red Rock Canyon views in the exclusive Ridges community.</p>
-               <Link href="http://drjanduffy.realscout.com/onboarding" className="text-[#3A8DDE] hover:underline font-semibold">View Details →</Link>
-             </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <h3 className="mb-4 text-xl font-bold text-[#0A2540]">
+                Downtown Summerlin Luxury Home
+              </h3>
+              <p className="mb-4 text-gray-600">
+                Stunning luxury home in the heart of Downtown Summerlin with premium finishes and
+                convenient access to shopping and dining.
+              </p>
+              <Link
+                href="http://drjanduffy.realscout.com/onboarding"
+                className="text-[#3A8DDE] hover:underline font-semibold"
+              >
+                View Details →
+              </Link>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <h3 className="mb-4 text-xl font-bold text-[#0A2540]">
+                Red Rock Country Club Estate
+              </h3>
+              <p className="mb-4 text-gray-600">
+                Magnificent estate with golf course views and world-class amenities in the
+                prestigious Red Rock Country Club community.
+              </p>
+              <Link
+                href="http://drjanduffy.realscout.com/onboarding"
+                className="text-[#3A8DDE] hover:underline font-semibold"
+              >
+                View Details →
+              </Link>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <h3 className="mb-4 text-xl font-bold text-[#0A2540]">The Ridges Custom Home</h3>
+              <p className="mb-4 text-gray-600">
+                Custom luxury home with spectacular Red Rock Canyon views in the exclusive Ridges
+                community.
+              </p>
+              <Link
+                href="http://drjanduffy.realscout.com/onboarding"
+                className="text-[#3A8DDE] hover:underline font-semibold"
+              >
+                View Details →
+              </Link>
+            </div>
           </div>
-          
+
           <div className="text-center">
             <p className="mb-6 text-xl text-gray-600">Ready to find your perfect Summerlin home?</p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 justify-center">
@@ -317,5 +427,5 @@ export function SummerlinLandingPage() {
         </div>
       </section>
     </div>
-  )
-} 
+  );
+}

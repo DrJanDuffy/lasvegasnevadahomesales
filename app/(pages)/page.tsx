@@ -1,37 +1,44 @@
-import { Metadata } from "next"
-import { Button } from "../../components/Button/Button"
-import { RealScoutOfficeListings } from "../../components/RealScout/RealScoutOfficeListings"
-import { RealScoutYourListings } from "../../components/RealScout/RealScoutYourListings"
-import { OptimizedImage } from "../../components/OptimizedImage/OptimizedImage"
-import { SEOHead } from '../../components/SEO/SEOHead'
-import { FAQSchema, homePageFAQs } from '../../components/SEO/FAQSchema'
-import { ReviewSchema, companyReviews, companyAggregateRating } from '../../components/SEO/ReviewSchema'
-import { HowToSchema, buyHomeHowTo } from '../../components/SEO/HowToSchema'
-import { LocalBusinessSchema } from '../../components/SEO/LocalBusinessSchema'
-import { AdvancedSEOMonitor } from '../../components/SEO/AdvancedSEOMonitor'
-import { MarketDataWidget } from '../../components/MarketData/MarketDataWidget'
+import type { Metadata } from 'next';
+import { Button } from '../../components/Button/Button';
+import { MarketDataWidget } from '../../components/MarketData/MarketDataWidget';
+import { OptimizedImage } from '../../components/OptimizedImage/OptimizedImage';
+import { RealScoutOfficeListings } from '../../components/RealScout/RealScoutOfficeListings';
+import { RealScoutYourListings } from '../../components/RealScout/RealScoutYourListings';
+import { AdvancedSEOMonitor } from '../../components/SEO/AdvancedSEOMonitor';
+import { FAQSchema, homePageFAQs } from '../../components/SEO/FAQSchema';
+import { buyHomeHowTo, HowToSchema } from '../../components/SEO/HowToSchema';
+import { LocalBusinessSchema } from '../../components/SEO/LocalBusinessSchema';
+import {
+  companyAggregateRating,
+  companyReviews,
+  ReviewSchema,
+} from '../../components/SEO/ReviewSchema';
+import { SEOHead } from '../../components/SEO/SEOHead';
 
 export const metadata: Metadata = {
-  title: "Las Vegas Real Estate Market | Homes for Sale in Las Vegas, NV",
-  description: "Discover the latest Las Vegas real estate market trends, homes for sale, and expert insights. Find your dream home in Las Vegas, Henderson, Summerlin, and surrounding areas.",
-  keywords: "Las Vegas real estate, homes for sale Las Vegas, Las Vegas housing market, Las Vegas properties, Las Vegas homes",
+  title: 'Las Vegas Real Estate Market | Homes for Sale in Las Vegas, NV',
+  description:
+    'Discover the latest Las Vegas real estate market trends, homes for sale, and expert insights. Find your dream home in Las Vegas, Henderson, Summerlin, and surrounding areas.',
+  keywords:
+    'Las Vegas real estate, homes for sale Las Vegas, Las Vegas housing market, Las Vegas properties, Las Vegas homes',
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
   },
   openGraph: {
-    url: "https://lasvegasnevadahomesales.com/",
-    title: "Las Vegas Real Estate Market | Expert Insights & Homes for Sale",
-    description: "Your trusted source for Las Vegas real estate. Expert market analysis, neighborhood guides, and the latest homes for sale in Las Vegas, NV.",
+    url: 'https://lasvegasnevadahomesales.com/',
+    title: 'Las Vegas Real Estate Market | Expert Insights & Homes for Sale',
+    description:
+      'Your trusted source for Las Vegas real estate. Expert market analysis, neighborhood guides, and the latest homes for sale in Las Vegas, NV.',
     images: [
       {
         width: 1200,
         height: 630,
-        url: "/images/las-vegas-real-estate-market.jpg",
-        alt: "Las Vegas Real Estate Market Overview",
+        url: '/images/las-vegas-real-estate-market.jpg',
+        alt: 'Las Vegas Real Estate Market Overview',
       },
     ],
   },
-}
+};
 
 export default function LasVegasMarketOverview() {
   return (
@@ -44,14 +51,14 @@ export default function LasVegasMarketOverview() {
         ogImage="/images/og-home.jpg"
       />
       <FAQSchema faqs={homePageFAQs} />
-      <ReviewSchema 
-        reviews={companyReviews} 
+      <ReviewSchema
+        reviews={companyReviews}
         aggregateRating={companyAggregateRating}
         itemType="Organization"
       />
       <HowToSchema {...buyHomeHowTo} />
       <LocalBusinessSchema />
-      <AdvancedSEOMonitor 
+      <AdvancedSEOMonitor
         pageUrl="/"
         pageTitle="Las Vegas Nevada Home Sales – Your Trusted Real Estate Experts"
         debug={process.env.NODE_ENV === 'development'}
@@ -65,17 +72,27 @@ export default function LasVegasMarketOverview() {
             <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl xl:text-6xl">
               Las Vegas Nevada Home Sales – Your Trusted Real Estate Experts
             </h1>
-        <p className="mb-8 text-xl font-light text-blue-100 md:text-2xl">
-          Welcome to Las Vegas Nevada Home Sales, your premier source for luxury homes, family residences, and investment properties in the heart of Nevada. Start your journey to homeownership in Summerlin, Henderson, and all of Las Vegas.
-        </p>
+            <p className="mb-8 text-xl font-light text-blue-100 md:text-2xl">
+              Welcome to Las Vegas Nevada Home Sales, your premier source for luxury homes, family
+              residences, and investment properties in the heart of Nevada. Start your journey to
+              homeownership in Summerlin, Henderson, and all of Las Vegas.
+            </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
               <Button href="/properties" className="bg-white text-blue-900 hover:bg-blue-50">
                 Search Homes
               </Button>
-              <Button href="/home-valuation" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
+              <Button
+                href="/home-valuation"
+                intent="secondary"
+                className="border-white text-white hover:bg-white hover:text-blue-900"
+              >
                 Get Home Value
               </Button>
-              <Button href="/strategies" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
+              <Button
+                href="/strategies"
+                intent="secondary"
+                className="border-white text-white hover:bg-white hover:text-blue-900"
+              >
                 Real Estate Strategies
               </Button>
             </div>
@@ -137,8 +154,14 @@ export default function LasVegasMarketOverview() {
               </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Summerlin</h3>
-                <p className="mb-4 text-gray-600">Master-planned community with luxury homes and amenities</p>
-                <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm" aria-label="See all Summerlin homes for sale with Las Vegas Nevada Home Sales">
+                <p className="mb-4 text-gray-600">
+                  Master-planned community with luxury homes and amenities
+                </p>
+                <Button
+                  href="http://drjanduffy.realscout.com/onboarding"
+                  className="text-sm"
+                  aria-label="See all Summerlin homes for sale with Las Vegas Nevada Home Sales"
+                >
                   Learn More
                 </Button>
               </div>
@@ -156,7 +179,9 @@ export default function LasVegasMarketOverview() {
               </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Henderson</h3>
-                <p className="mb-4 text-gray-600">Family-friendly city with excellent schools and parks</p>
+                <p className="mb-4 text-gray-600">
+                  Family-friendly city with excellent schools and parks
+                </p>
                 <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
                   Learn More
                 </Button>
@@ -175,7 +200,9 @@ export default function LasVegasMarketOverview() {
               </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Green Valley</h3>
-                <p className="mb-4 text-gray-600">Affordable homes with great community amenities</p>
+                <p className="mb-4 text-gray-600">
+                  Affordable homes with great community amenities
+                </p>
                 <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
                   Learn More
                 </Button>
@@ -194,7 +221,9 @@ export default function LasVegasMarketOverview() {
               </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">Downtown</h3>
-                <p className="mb-4 text-gray-600">Urban living with entertainment and cultural attractions</p>
+                <p className="mb-4 text-gray-600">
+                  Urban living with entertainment and cultural attractions
+                </p>
                 <Button href="http://drjanduffy.realscout.com/onboarding" className="text-sm">
                   Learn More
                 </Button>
@@ -211,12 +240,12 @@ export default function LasVegasMarketOverview() {
             Featured Luxury Properties
           </h2>
           <div className="flex justify-center">
-            <RealScoutOfficeListings 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE" 
-              listingStatus="For Sale" 
-              propertyTypes="SFR,MF,TC" 
-              priceMin="600000" 
+            <RealScoutOfficeListings
+              agentEncodedId="QWdlbnQtMjI1MDUw"
+              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+              listingStatus="For Sale"
+              propertyTypes="SFR,MF,TC"
+              priceMin="600000"
               priceMax="1200000"
             />
           </div>
@@ -230,11 +259,11 @@ export default function LasVegasMarketOverview() {
             Our Latest Listings
           </h2>
           <div className="flex justify-center">
-            <RealScoutYourListings 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE" 
-              listingStatus="For Sale,Sold" 
-              propertyTypes="" 
+            <RealScoutYourListings
+              agentEncodedId="QWdlbnQtMjI1MDUw"
+              sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+              listingStatus="For Sale,Sold"
+              propertyTypes=""
               priceMin="500000"
             />
           </div>
@@ -244,9 +273,7 @@ export default function LasVegasMarketOverview() {
       {/* CTA Section */}
       <section className="bg-blue-900 py-16 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-            Ready to Find Your Dream Home?
-          </h2>
+          <h2 className="mb-6 text-3xl font-bold md:text-4xl">Ready to Find Your Dream Home?</h2>
           <p className="mb-8 text-xl text-blue-100">
             Get expert guidance and access to the latest Las Vegas real estate listings
           </p>
@@ -254,12 +281,16 @@ export default function LasVegasMarketOverview() {
             <Button href="/contact" className="bg-white text-blue-900 hover:bg-blue-50">
               Contact Us
             </Button>
-            <Button href="/market-reports" intent="secondary" className="border-white text-white hover:bg-white hover:text-blue-900">
+            <Button
+              href="/market-reports"
+              intent="secondary"
+              className="border-white text-white hover:bg-white hover:text-blue-900"
+            >
               View Market Reports
             </Button>
           </div>
         </div>
       </section>
     </>
-  )
+  );
 }

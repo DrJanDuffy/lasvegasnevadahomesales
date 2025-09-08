@@ -1,11 +1,11 @@
-import { Metadata } from 'next'
-import { seoConfig } from '../config/seo-config'
+import type { Metadata } from 'next';
+import { seoConfig } from '../config/seo-config';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.lasvegasnevadahomesales.com'),
   title: {
     default: seoConfig.pages.home.title,
-    template: `%s | ${seoConfig.site.name}`
+    template: `%s | ${seoConfig.site.name}`,
   },
   description: seoConfig.pages.home.description,
   keywords: seoConfig.pages.home.keywords,
@@ -73,12 +73,12 @@ export const metadata: Metadata = {
     'mobile-web-app-capable': seoConfig.meta.mobileWebAppCapable,
     'msapplication-config': seoConfig.meta.msapplicationConfig,
   },
-}
+};
 
 // Helper function to generate page-specific metadata
 export function generatePageMetadata(page: keyof typeof seoConfig.pages): Metadata {
-  const pageConfig = seoConfig.pages[page]
-  
+  const pageConfig = seoConfig.pages[page];
+
   return {
     title: pageConfig.title,
     description: pageConfig.description,
@@ -104,17 +104,17 @@ export function generatePageMetadata(page: keyof typeof seoConfig.pages): Metada
       description: pageConfig.description,
       images: [pageConfig.ogImage],
     },
-  }
+  };
 }
 
 // Specific page metadata generators
-export const homeMetadata = generatePageMetadata('home')
-export const propertiesMetadata = generatePageMetadata('properties')
-export const summerlinMetadata = generatePageMetadata('summerlin')
-export const hendersonMetadata = generatePageMetadata('henderson')
-export const greenValleyMetadata = generatePageMetadata('greenValley')
-export const downtownMetadata = generatePageMetadata('downtown')
-export const homeValuationMetadata = generatePageMetadata('homeValuation')
-export const marketReportsMetadata = generatePageMetadata('marketReports')
-export const strategiesMetadata = generatePageMetadata('strategies')
-export const contactMetadata = generatePageMetadata('contact') 
+export const homeMetadata = generatePageMetadata('home');
+export const propertiesMetadata = generatePageMetadata('properties');
+export const summerlinMetadata = generatePageMetadata('summerlin');
+export const hendersonMetadata = generatePageMetadata('henderson');
+export const greenValleyMetadata = generatePageMetadata('greenValley');
+export const downtownMetadata = generatePageMetadata('downtown');
+export const homeValuationMetadata = generatePageMetadata('homeValuation');
+export const marketReportsMetadata = generatePageMetadata('marketReports');
+export const strategiesMetadata = generatePageMetadata('strategies');
+export const contactMetadata = generatePageMetadata('contact');

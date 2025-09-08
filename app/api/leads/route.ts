@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
+import type { LeadData } from '../../../config/crm-config';
 import { followUpBossService } from '../../../services/followUpBossService';
-import { LeadData } from '../../../config/crm-config';
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,14 +13,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const body = await request.json() as any;
+    const body = (await request.json()) as any;
     const leadData: LeadData = {
       ...body,
       pageUrl: request.headers.get('referer') || 'Unknown',
       userAgent: request.headers.get('user-agent') || 'Unknown',
-      ipAddress: request.headers.get('x-forwarded-for') || 
-                 request.headers.get('x-real-ip') || 
-                 'Unknown',
+      ipAddress:
+        request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'Unknown',
     };
 
     // Validate required fields
@@ -34,17 +33,14 @@ export async function POST(request: NextRequest) {
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(leadData.email)) {
-      return NextResponse.json(
-        { error: 'Invalid email format' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
     }
 
     // Log lead submission attempt
     console.log('Processing lead submission:', {
       source: leadData.source,
       email: leadData.email,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
 
     // Process the lead through Follow Up Boss
@@ -55,7 +51,7 @@ export async function POST(request: NextRequest) {
       console.log('Lead processed successfully:', {
         personId: result.personId,
         source: leadData.source,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
 
       return NextResponse.json({
@@ -70,13 +66,9 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
-
   } catch (error) {
     console.error('Error processing lead submission:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
 
@@ -85,4 +77,4 @@ export async function GET() {
     { message: 'Lead submission endpoint. Use POST to submit leads.' },
     { status: 200 }
   );
-} 
+}
